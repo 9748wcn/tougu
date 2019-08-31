@@ -1,0 +1,6 @@
+module NSObject_Rx {
+  umbrella header "NSObject+Rx-umbrella.h"
+
+  export *
+  module * { export * }
+}

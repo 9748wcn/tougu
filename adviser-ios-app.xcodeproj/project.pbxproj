@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,74 @@
 		76C9D4FA2317818A0091ECE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D4F82317818A0091ECE4 /* LaunchScreen.storyboard */; };
 		76C9D5052317818A0091ECE4 /* adviser_ios_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5042317818A0091ECE4 /* adviser_ios_appTests.swift */; };
 		76C9D5102317818A0091ECE4 /* adviser_ios_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D50F2317818A0091ECE4 /* adviser_ios_appUITests.swift */; };
+		76C9D529231784760091ECE4 /* HDAlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D51F231784750091ECE4 /* HDAlbumListViewController.swift */; };
+		76C9D52A231784760091ECE4 /* HDPhotoImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D520231784750091ECE4 /* HDPhotoImageManager.swift */; };
+		76C9D52B231784760091ECE4 /* HDAlbumListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D521231784750091ECE4 /* HDAlbumListCell.xib */; };
+		76C9D52C231784760091ECE4 /* HDImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D522231784750091ECE4 /* HDImageCell.swift */; };
+		76C9D52D231784760091ECE4 /* HDAlbumListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D523231784750091ECE4 /* HDAlbumListCell.swift */; };
+		76C9D52E231784760091ECE4 /* HDAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D524231784750091ECE4 /* HDAlbumCell.swift */; };
+		76C9D52F231784760091ECE4 /* HDImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D525231784760091ECE4 /* HDImageListViewController.swift */; };
+		76C9D530231784760091ECE4 /* HDImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D526231784760091ECE4 /* HDImageModel.swift */; };
+		76C9D531231784760091ECE4 /* HDAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D527231784760091ECE4 /* HDAlbumModel.swift */; };
+		76C9D532231784760091ECE4 /* HDImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D528231784760091ECE4 /* HDImagePickerViewController.swift */; };
+		76C9D535231785130091ECE4 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D534231785130091ECE4 /* UIColorHex.swift */; };
+		76C9D53B2317A5760091ECE4 /* HDThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5372317A5750091ECE4 /* HDThemeColor.swift */; };
+		76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5392317A5750091ECE4 /* HDConstant.swift */; };
+		76C9D53D2317A5760091ECE4 /* BaseConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D53A2317A5760091ECE4 /* BaseConst.swift */; };
+		76C9D5462317A7910091ECE4 /* HXReuseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D53F2317A7910091ECE4 /* HXReuseable.swift */; };
+		76C9D5472317A7910091ECE4 /* UIScrollView+EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5402317A7910091ECE4 /* UIScrollView+EmptyDataView.swift */; };
+		76C9D5482317A7910091ECE4 /* UIImage-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5412317A7910091ECE4 /* UIImage-Extention.swift */; };
+		76C9D5492317A7910091ECE4 /* HDToast+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5422317A7910091ECE4 /* HDToast+Rx.swift */; };
+		76C9D54A2317A7910091ECE4 /* HDResponse+HandyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5432317A7910091ECE4 /* HDResponse+HandyJSON.swift */; };
+		76C9D54B2317A7910091ECE4 /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5442317A7910091ECE4 /* MoyaProvider+Rx.swift */; };
+		76C9D54C2317A7910091ECE4 /* NSObject-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5452317A7910091ECE4 /* NSObject-Extension.swift */; };
+		76C9D5502317A9610091ECE4 /* HDHudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D54E2317A9610091ECE4 /* HDHudManager.swift */; };
+		76C9D5512317A9610091ECE4 /* HDToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D54F2317A9610091ECE4 /* HDToast.swift */; };
+		76C9D5542317A9ED0091ECE4 /* HDViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5532317A9ED0091ECE4 /* HDViewModelType.swift */; };
+		76C9D55A2317AA480091ECE4 /* HDNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5562317AA480091ECE4 /* HDNetworkClient.swift */; };
+		76C9D55B2317AA480091ECE4 /* HDBaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5572317AA480091ECE4 /* HDBaseApi.swift */; };
+		76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5582317AA480091ECE4 /* HDHTTPRequest.swift */; };
+		76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5592317AA480091ECE4 /* HDNetworkAPI.swift */; };
+		76C9D5602317AAC80091ECE4 /* HDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D55F2317AAC80091ECE4 /* HDLog.swift */; };
+		76C9D5632317AB160091ECE4 /* HDUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5622317AB160091ECE4 /* HDUserDefaults.swift */; };
+		76C9D5752317AB560091ECE4 /* Public.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5662317AB550091ECE4 /* Public.xcdatamodeld */; };
+		76C9D5762317AB560091ECE4 /* EncryptedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56A2317AB550091ECE4 /* EncryptedStore.m */; };
+		76C9D5772317AB560091ECE4 /* HDDBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56C2317AB550091ECE4 /* HDDBConfig.swift */; };
+		76C9D5782317AB560091ECE4 /* HDStorageDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56E2317AB550091ECE4 /* HDStorageDao.swift */; };
+		76C9D5792317AB560091ECE4 /* HDPublicEncCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56F2317AB550091ECE4 /* HDPublicEncCoreDataManager.swift */; };
+		76C9D57A2317AB560091ECE4 /* HDManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5712317AB560091ECE4 /* HDManagedObjectContext.swift */; };
+		76C9D57B2317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5732317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift */; };
+		76C9D57C2317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5742317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift */; };
+		76C9D5812317ABEC0091ECE4 /* HDBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5802317ABEC0091ECE4 /* HDBaseModel.swift */; };
+		76C9D5842317AC160091ECE4 /* HDAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5832317AC160091ECE4 /* HDAssert.swift */; };
+		76C9D58C2317AEB80091ECE4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D58A2317AEB80091ECE4 /* MBProgressHUD.m */; };
+		76C9D58F2317AF420091ECE4 /* HDDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D58E2317AF420091ECE4 /* HDDeviceInfo.swift */; };
+		76C9D5922317B2380091ECE4 /* UILabel-Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5912317B2380091ECE4 /* UILabel-Extend.swift */; };
+		76C9D5962317B2470091ECE4 /* TPPreciseTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5952317B2470091ECE4 /* TPPreciseTimer.m */; };
+		76C9D5992317B2690091ECE4 /* HDRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5982317B2690091ECE4 /* HDRuntime.swift */; };
+		76C9D5A02317B2830091ECE4 /* HDLoadingEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D59B2317B2830091ECE4 /* HDLoadingEmptyView.xib */; };
+		76C9D5A12317B2830091ECE4 /* UIView+HDEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59C2317B2830091ECE4 /* UIView+HDEmptyView.swift */; };
+		76C9D5A22317B2830091ECE4 /* DispatchQueue+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59D2317B2830091ECE4 /* DispatchQueue+extension.swift */; };
+		76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59E2317B2830091ECE4 /* HDLoadingEmptyView.swift */; };
+		76C9D5A42317B2830091ECE4 /* BQTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59F2317B2830091ECE4 /* BQTool.swift */; };
+		76C9D5AA2317B2B40091ECE4 /* HDView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5A92317B2B40091ECE4 /* HDView+Extend.swift */; };
+		76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5AC2317B2BC0091ECE4 /* HDClientIDService.swift */; };
+		76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */; };
+		76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */; };
+		76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B22317B2D40091ECE4 /* HDSting-Ecryption.swift */; };
+		76C9D5B82317B2E70091ECE4 /* HDCustomBution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B62317B2E70091ECE4 /* HDCustomBution.swift */; };
+		76C9D5B92317B2E70091ECE4 /* HDCountDownButtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B72317B2E70091ECE4 /* HDCountDownButtion.swift */; };
+		76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */; };
+		76C9D5C62317B2F10091ECE4 /* HDAlertDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */; };
+		76C9D5C72317B2F10091ECE4 /* HDAlertDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */; };
+		76C9D5C82317B2F10091ECE4 /* HDAlertImagePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D5BE2317B2F10091ECE4 /* HDAlertImagePickerView.xib */; };
+		76C9D5C92317B2F10091ECE4 /* HDAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BF2317B2F10091ECE4 /* HDAlertManager.swift */; };
+		76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5C02317B2F10091ECE4 /* HDAlertBgView.swift */; };
+		76C9D5CB2317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D5C12317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib */; };
+		76C9D5CC2317B2F10091ECE4 /* HDAlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */; };
+		76C9D5CD2317B2F10091ECE4 /* HDAlertBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */; };
+		76C9D5ED231A11B10091ECE4 /* HomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5EC231A11B10091ECE4 /* HomeMainViewController.swift */; };
+		DCB4527E755C554FB442490B /* libPods-adviser-ios-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adviser-ios-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C9D4EC2317818A0091ECE4 /* adviser-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "adviser-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C9D4EF2317818A0091ECE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C9D4F12317818A0091ECE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +116,80 @@
 		76C9D50B2317818A0091ECE4 /* adviser-ios-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "adviser-ios-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C9D50F2317818A0091ECE4 /* adviser_ios_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adviser_ios_appUITests.swift; sourceTree = "<group>"; };
 		76C9D5112317818A0091ECE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76C9D51F231784750091ECE4 /* HDAlbumListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlbumListViewController.swift; sourceTree = "<group>"; };
+		76C9D520231784750091ECE4 /* HDPhotoImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDPhotoImageManager.swift; sourceTree = "<group>"; };
+		76C9D521231784750091ECE4 /* HDAlbumListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlbumListCell.xib; sourceTree = "<group>"; };
+		76C9D522231784750091ECE4 /* HDImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDImageCell.swift; sourceTree = "<group>"; };
+		76C9D523231784750091ECE4 /* HDAlbumListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlbumListCell.swift; sourceTree = "<group>"; };
+		76C9D524231784750091ECE4 /* HDAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlbumCell.swift; sourceTree = "<group>"; };
+		76C9D525231784760091ECE4 /* HDImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDImageListViewController.swift; sourceTree = "<group>"; };
+		76C9D526231784760091ECE4 /* HDImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDImageModel.swift; sourceTree = "<group>"; };
+		76C9D527231784760091ECE4 /* HDAlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlbumModel.swift; sourceTree = "<group>"; };
+		76C9D528231784760091ECE4 /* HDImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDImagePickerViewController.swift; sourceTree = "<group>"; };
+		76C9D534231785130091ECE4 /* UIColorHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		76C9D5372317A5750091ECE4 /* HDThemeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDThemeColor.swift; sourceTree = "<group>"; };
+		76C9D5382317A5750091ECE4 /* HDWindowLevelConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDWindowLevelConstraint.h; sourceTree = "<group>"; };
+		76C9D5392317A5750091ECE4 /* HDConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDConstant.swift; sourceTree = "<group>"; };
+		76C9D53A2317A5760091ECE4 /* BaseConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseConst.swift; sourceTree = "<group>"; };
+		76C9D53F2317A7910091ECE4 /* HXReuseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXReuseable.swift; sourceTree = "<group>"; };
+		76C9D5402317A7910091ECE4 /* UIScrollView+EmptyDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+EmptyDataView.swift"; sourceTree = "<group>"; };
+		76C9D5412317A7910091ECE4 /* UIImage-Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Extention.swift"; sourceTree = "<group>"; };
+		76C9D5422317A7910091ECE4 /* HDToast+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDToast+Rx.swift"; sourceTree = "<group>"; };
+		76C9D5432317A7910091ECE4 /* HDResponse+HandyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDResponse+HandyJSON.swift"; sourceTree = "<group>"; };
+		76C9D5442317A7910091ECE4 /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
+		76C9D5452317A7910091ECE4 /* NSObject-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject-Extension.swift"; sourceTree = "<group>"; };
+		76C9D54E2317A9610091ECE4 /* HDHudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDHudManager.swift; sourceTree = "<group>"; };
+		76C9D54F2317A9610091ECE4 /* HDToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDToast.swift; sourceTree = "<group>"; };
+		76C9D5532317A9ED0091ECE4 /* HDViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDViewModelType.swift; sourceTree = "<group>"; };
+		76C9D5562317AA480091ECE4 /* HDNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDNetworkClient.swift; sourceTree = "<group>"; };
+		76C9D5572317AA480091ECE4 /* HDBaseApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDBaseApi.swift; sourceTree = "<group>"; };
+		76C9D5582317AA480091ECE4 /* HDHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDHTTPRequest.swift; sourceTree = "<group>"; };
+		76C9D5592317AA480091ECE4 /* HDNetworkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDNetworkAPI.swift; sourceTree = "<group>"; };
+		76C9D55F2317AAC80091ECE4 /* HDLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDLog.swift; sourceTree = "<group>"; };
+		76C9D5622317AB160091ECE4 /* HDUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDUserDefaults.swift; sourceTree = "<group>"; };
+		76C9D5672317AB550091ECE4 /* Public.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Public.xcdatamodel; sourceTree = "<group>"; };
+		76C9D5692317AB550091ECE4 /* EncryptedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptedStore.h; sourceTree = "<group>"; };
+		76C9D56A2317AB550091ECE4 /* EncryptedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptedStore.m; sourceTree = "<group>"; };
+		76C9D56C2317AB550091ECE4 /* HDDBConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDDBConfig.swift; sourceTree = "<group>"; };
+		76C9D56E2317AB550091ECE4 /* HDStorageDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDStorageDao.swift; sourceTree = "<group>"; };
+		76C9D56F2317AB550091ECE4 /* HDPublicEncCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDPublicEncCoreDataManager.swift; sourceTree = "<group>"; };
+		76C9D5712317AB560091ECE4 /* HDManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDManagedObjectContext.swift; sourceTree = "<group>"; };
+		76C9D5732317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataCacheEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		76C9D5742317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataCacheEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		76C9D5802317ABEC0091ECE4 /* HDBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDBaseModel.swift; sourceTree = "<group>"; };
+		76C9D5832317AC160091ECE4 /* HDAssert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAssert.swift; sourceTree = "<group>"; };
+		76C9D5892317ADAD0091ECE4 /* SwiftOC-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftOC-Header.h"; sourceTree = "<group>"; };
+		76C9D58A2317AEB80091ECE4 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		76C9D58B2317AEB80091ECE4 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		76C9D58E2317AF420091ECE4 /* HDDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDDeviceInfo.swift; sourceTree = "<group>"; };
+		76C9D5912317B2380091ECE4 /* UILabel-Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel-Extend.swift"; sourceTree = "<group>"; };
+		76C9D5942317B2470091ECE4 /* TPPreciseTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPreciseTimer.h; sourceTree = "<group>"; };
+		76C9D5952317B2470091ECE4 /* TPPreciseTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPreciseTimer.m; sourceTree = "<group>"; };
+		76C9D5982317B2690091ECE4 /* HDRuntime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDRuntime.swift; sourceTree = "<group>"; };
+		76C9D59B2317B2830091ECE4 /* HDLoadingEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDLoadingEmptyView.xib; sourceTree = "<group>"; };
+		76C9D59C2317B2830091ECE4 /* UIView+HDEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+HDEmptyView.swift"; sourceTree = "<group>"; };
+		76C9D59D2317B2830091ECE4 /* DispatchQueue+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+extension.swift"; sourceTree = "<group>"; };
+		76C9D59E2317B2830091ECE4 /* HDLoadingEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDLoadingEmptyView.swift; sourceTree = "<group>"; };
+		76C9D59F2317B2830091ECE4 /* BQTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQTool.swift; sourceTree = "<group>"; };
+		76C9D5A92317B2B40091ECE4 /* HDView+Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDView+Extend.swift"; sourceTree = "<group>"; };
+		76C9D5AC2317B2BC0091ECE4 /* HDClientIDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDClientIDService.swift; sourceTree = "<group>"; };
+		76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKeyChainHelper.swift; sourceTree = "<group>"; };
+		76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDStringExtend.swift; sourceTree = "<group>"; };
+		76C9D5B22317B2D40091ECE4 /* HDSting-Ecryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDSting-Ecryption.swift"; sourceTree = "<group>"; };
+		76C9D5B62317B2E70091ECE4 /* HDCustomBution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDCustomBution.swift; sourceTree = "<group>"; };
+		76C9D5B72317B2E70091ECE4 /* HDCountDownButtion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDCountDownButtion.swift; sourceTree = "<group>"; };
+		76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertImagePickerView.swift; sourceTree = "<group>"; };
+		76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertDefaultView.swift; sourceTree = "<group>"; };
+		76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlertDefaultView.xib; sourceTree = "<group>"; };
+		76C9D5BE2317B2F10091ECE4 /* HDAlertImagePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlertImagePickerView.xib; sourceTree = "<group>"; };
+		76C9D5BF2317B2F10091ECE4 /* HDAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertManager.swift; sourceTree = "<group>"; };
+		76C9D5C02317B2F10091ECE4 /* HDAlertBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertBgView.swift; sourceTree = "<group>"; };
+		76C9D5C12317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlertInvestDetailPopupView.xib; sourceTree = "<group>"; };
+		76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertWindow.swift; sourceTree = "<group>"; };
+		76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertBaseView.swift; sourceTree = "<group>"; };
+		76C9D5EC231A11B10091ECE4 /* HomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewController.swift; sourceTree = "<group>"; };
+		9DE9F7939FB47DD58B7E74D7 /* Pods-adviser-ios-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adviser-ios-app.release.xcconfig"; path = "Target Support Files/Pods-adviser-ios-app/Pods-adviser-ios-app.release.xcconfig"; sourceTree = "<group>"; };
+		C139B93A07E3AC10ACD35662 /* Pods-adviser-ios-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adviser-ios-app.debug.xcconfig"; path = "Target Support Files/Pods-adviser-ios-app/Pods-adviser-ios-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB4527E755C554FB442490B /* libPods-adviser-ios-app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +218,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D24C0698228BE353B2CDB5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		76C9D4E32317818A0091ECE4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +233,8 @@
 				76C9D5032317818A0091ECE4 /* adviser-ios-appTests */,
 				76C9D50E2317818A0091ECE4 /* adviser-ios-appUITests */,
 				76C9D4ED2317818A0091ECE4 /* Products */,
+				ECD30F9FF1E98C9402234CAD /* Pods */,
+				6D24C0698228BE353B2CDB5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +251,9 @@
 		76C9D4EE2317818A0091ECE4 /* adviser-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				76C9D57D2317ABBA0091ECE4 /* Classes */,
+				76C9D5552317AA310091ECE4 /* NetWorking */,
+				76C9D51D2317844A0091ECE4 /* Tools */,
 				76C9D4EF2317818A0091ECE4 /* AppDelegate.swift */,
 				76C9D4F12317818A0091ECE4 /* ViewController.swift */,
 				76C9D4F32317818A0091ECE4 /* Main.storyboard */,
@@ -125,6 +282,375 @@
 			path = "adviser-ios-appUITests";
 			sourceTree = "<group>";
 		};
+		76C9D51D2317844A0091ECE4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5BA2317B2F10091ECE4 /* Alert */,
+				76C9D5B52317B2E70091ECE4 /* Button */,
+				76C9D5B02317B2D40091ECE4 /* String */,
+				76C9D5AB2317B2BC0091ECE4 /* KeyChain */,
+				76C9D5A82317B2B40091ECE4 /* View */,
+				76C9D5A52317B2A20091ECE4 /* viewController */,
+				76C9D59A2317B2830091ECE4 /* HDEmptyView */,
+				76C9D5972317B2690091ECE4 /* HDRuntime */,
+				76C9D5932317B2470091ECE4 /* Timer */,
+				76C9D5902317B2380091ECE4 /* UILabel */,
+				76C9D58D2317AF330091ECE4 /* HDDeviceInfo */,
+				76C9D5882317AD690091ECE4 /* BrideHeader */,
+				76C9D5822317AC080091ECE4 /* Assert */,
+				76C9D5642317AB430091ECE4 /* DB */,
+				76C9D5612317AAF70091ECE4 /* UserDefaults */,
+				76C9D55E2317AABD0091ECE4 /* Log */,
+				76C9D5522317A9D30091ECE4 /* Protocol */,
+				76C9D54D2317A94B0091ECE4 /* Toast */,
+				76C9D53E2317A77B0091ECE4 /* Extension */,
+				76C9D5362317A55E0091ECE4 /* Constant */,
+				76C9D533231785050091ECE4 /* Color */,
+				76C9D51E231784560091ECE4 /* ImagePicker */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		76C9D51E231784560091ECE4 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D524231784750091ECE4 /* HDAlbumCell.swift */,
+				76C9D523231784750091ECE4 /* HDAlbumListCell.swift */,
+				76C9D521231784750091ECE4 /* HDAlbumListCell.xib */,
+				76C9D51F231784750091ECE4 /* HDAlbumListViewController.swift */,
+				76C9D527231784760091ECE4 /* HDAlbumModel.swift */,
+				76C9D522231784750091ECE4 /* HDImageCell.swift */,
+				76C9D525231784760091ECE4 /* HDImageListViewController.swift */,
+				76C9D526231784760091ECE4 /* HDImageModel.swift */,
+				76C9D528231784760091ECE4 /* HDImagePickerViewController.swift */,
+				76C9D520231784750091ECE4 /* HDPhotoImageManager.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		76C9D533231785050091ECE4 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D534231785130091ECE4 /* UIColorHex.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		76C9D5362317A55E0091ECE4 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D53A2317A5760091ECE4 /* BaseConst.swift */,
+				76C9D5392317A5750091ECE4 /* HDConstant.swift */,
+				76C9D5372317A5750091ECE4 /* HDThemeColor.swift */,
+				76C9D5382317A5750091ECE4 /* HDWindowLevelConstraint.h */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		76C9D53E2317A77B0091ECE4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5432317A7910091ECE4 /* HDResponse+HandyJSON.swift */,
+				76C9D5422317A7910091ECE4 /* HDToast+Rx.swift */,
+				76C9D53F2317A7910091ECE4 /* HXReuseable.swift */,
+				76C9D5442317A7910091ECE4 /* MoyaProvider+Rx.swift */,
+				76C9D5452317A7910091ECE4 /* NSObject-Extension.swift */,
+				76C9D5412317A7910091ECE4 /* UIImage-Extention.swift */,
+				76C9D5402317A7910091ECE4 /* UIScrollView+EmptyDataView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		76C9D54D2317A94B0091ECE4 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D58B2317AEB80091ECE4 /* MBProgressHUD.h */,
+				76C9D58A2317AEB80091ECE4 /* MBProgressHUD.m */,
+				76C9D54E2317A9610091ECE4 /* HDHudManager.swift */,
+				76C9D54F2317A9610091ECE4 /* HDToast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		76C9D5522317A9D30091ECE4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5532317A9ED0091ECE4 /* HDViewModelType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		76C9D5552317AA310091ECE4 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5592317AA480091ECE4 /* HDNetworkAPI.swift */,
+				76C9D5562317AA480091ECE4 /* HDNetworkClient.swift */,
+				76C9D5572317AA480091ECE4 /* HDBaseApi.swift */,
+				76C9D5582317AA480091ECE4 /* HDHTTPRequest.swift */,
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		76C9D55E2317AABD0091ECE4 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D55F2317AAC80091ECE4 /* HDLog.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		76C9D5612317AAF70091ECE4 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D56B2317AB550091ECE4 /* Common */,
+				76C9D5682317AB550091ECE4 /* EncryptedCoreData */,
+				76C9D56D2317AB550091ECE4 /* CoreDataManager */,
+				76C9D5702317AB560091ECE4 /* ManagedContext */,
+				76C9D5722317AB560091ECE4 /* Models */,
+				76C9D5652317AB550091ECE4 /* Template */,
+				76C9D5622317AB160091ECE4 /* HDUserDefaults.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		76C9D5642317AB430091ECE4 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		76C9D5652317AB550091ECE4 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5662317AB550091ECE4 /* Public.xcdatamodeld */,
+			);
+			name = Template;
+			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/Template";
+			sourceTree = "<group>";
+		};
+		76C9D5682317AB550091ECE4 /* EncryptedCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5692317AB550091ECE4 /* EncryptedStore.h */,
+				76C9D56A2317AB550091ECE4 /* EncryptedStore.m */,
+			);
+			name = EncryptedCoreData;
+			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/EncryptedCoreData";
+			sourceTree = "<group>";
+		};
+		76C9D56B2317AB550091ECE4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D56C2317AB550091ECE4 /* HDDBConfig.swift */,
+			);
+			name = Common;
+			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/Common";
+			sourceTree = "<group>";
+		};
+		76C9D56D2317AB550091ECE4 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D56E2317AB550091ECE4 /* HDStorageDao.swift */,
+				76C9D56F2317AB550091ECE4 /* HDPublicEncCoreDataManager.swift */,
+			);
+			name = CoreDataManager;
+			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/CoreDataManager";
+			sourceTree = "<group>";
+		};
+		76C9D5702317AB560091ECE4 /* ManagedContext */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5712317AB560091ECE4 /* HDManagedObjectContext.swift */,
+			);
+			name = ManagedContext;
+			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/ManagedContext";
+			sourceTree = "<group>";
+		};
+		76C9D5722317AB560091ECE4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5732317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift */,
+				76C9D5742317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift */,
+			);
+			name = Models;
+			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/Models";
+			sourceTree = "<group>";
+		};
+		76C9D57D2317ABBA0091ECE4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5EB231A10420091ECE4 /* HomeMain */,
+				76C9D5EA231A0FE00091ECE4 /* Login */,
+				76C9D57E2317ABD00091ECE4 /* Base */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		76C9D57E2317ABD00091ECE4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D57F2317ABDC0091ECE4 /* model */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		76C9D57F2317ABDC0091ECE4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5802317ABEC0091ECE4 /* HDBaseModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		76C9D5822317AC080091ECE4 /* Assert */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5832317AC160091ECE4 /* HDAssert.swift */,
+			);
+			path = Assert;
+			sourceTree = "<group>";
+		};
+		76C9D5882317AD690091ECE4 /* BrideHeader */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5892317ADAD0091ECE4 /* SwiftOC-Header.h */,
+			);
+			path = BrideHeader;
+			sourceTree = "<group>";
+		};
+		76C9D58D2317AF330091ECE4 /* HDDeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D58E2317AF420091ECE4 /* HDDeviceInfo.swift */,
+			);
+			path = HDDeviceInfo;
+			sourceTree = "<group>";
+		};
+		76C9D5902317B2380091ECE4 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5912317B2380091ECE4 /* UILabel-Extend.swift */,
+			);
+			name = UILabel;
+			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/UILabel";
+			sourceTree = "<group>";
+		};
+		76C9D5932317B2470091ECE4 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5942317B2470091ECE4 /* TPPreciseTimer.h */,
+				76C9D5952317B2470091ECE4 /* TPPreciseTimer.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		76C9D5972317B2690091ECE4 /* HDRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5982317B2690091ECE4 /* HDRuntime.swift */,
+			);
+			name = HDRuntime;
+			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/HDRuntime";
+			sourceTree = "<group>";
+		};
+		76C9D59A2317B2830091ECE4 /* HDEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D59B2317B2830091ECE4 /* HDLoadingEmptyView.xib */,
+				76C9D59C2317B2830091ECE4 /* UIView+HDEmptyView.swift */,
+				76C9D59D2317B2830091ECE4 /* DispatchQueue+extension.swift */,
+				76C9D59E2317B2830091ECE4 /* HDLoadingEmptyView.swift */,
+				76C9D59F2317B2830091ECE4 /* BQTool.swift */,
+			);
+			path = HDEmptyView;
+			sourceTree = "<group>";
+		};
+		76C9D5A52317B2A20091ECE4 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = viewController;
+			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/viewController";
+			sourceTree = "<group>";
+		};
+		76C9D5A82317B2B40091ECE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5A92317B2B40091ECE4 /* HDView+Extend.swift */,
+			);
+			name = View;
+			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/View";
+			sourceTree = "<group>";
+		};
+		76C9D5AB2317B2BC0091ECE4 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5AC2317B2BC0091ECE4 /* HDClientIDService.swift */,
+				76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		76C9D5B02317B2D40091ECE4 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */,
+				76C9D5B22317B2D40091ECE4 /* HDSting-Ecryption.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		76C9D5B52317B2E70091ECE4 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5B62317B2E70091ECE4 /* HDCustomBution.swift */,
+				76C9D5B72317B2E70091ECE4 /* HDCountDownButtion.swift */,
+			);
+			name = Button;
+			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/Button";
+			sourceTree = "<group>";
+		};
+		76C9D5BA2317B2F10091ECE4 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */,
+				76C9D5BE2317B2F10091ECE4 /* HDAlertImagePickerView.xib */,
+				76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */,
+				76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */,
+				76C9D5BF2317B2F10091ECE4 /* HDAlertManager.swift */,
+				76C9D5C02317B2F10091ECE4 /* HDAlertBgView.swift */,
+				76C9D5C12317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib */,
+				76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */,
+				76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		76C9D5EA231A0FE00091ECE4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		76C9D5EB231A10420091ECE4 /* HomeMain */ = {
+			isa = PBXGroup;
+			children = (
+				76C9D5EC231A11B10091ECE4 /* HomeMainViewController.swift */,
+			);
+			path = HomeMain;
+			sourceTree = "<group>";
+		};
+		ECD30F9FF1E98C9402234CAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C139B93A07E3AC10ACD35662 /* Pods-adviser-ios-app.debug.xcconfig */,
+				9DE9F7939FB47DD58B7E74D7 /* Pods-adviser-ios-app.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +658,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76C9D5142317818A0091ECE4 /* Build configuration list for PBXNativeTarget "adviser-ios-app" */;
 			buildPhases = (
+				128CA90E1C10CDB53A9F2A26 /* [CP] Check Pods Manifest.lock */,
 				76C9D4E82317818A0091ECE4 /* Sources */,
 				76C9D4E92317818A0091ECE4 /* Frameworks */,
 				76C9D4EA2317818A0091ECE4 /* Resources */,
+				5891E79D92ED2FAA06F9B6EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,8 +757,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C9D5CB2317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib in Resources */,
 				76C9D4FA2317818A0091ECE4 /* LaunchScreen.storyboard in Resources */,
+				76C9D5C82317B2F10091ECE4 /* HDAlertImagePickerView.xib in Resources */,
+				76C9D5C72317B2F10091ECE4 /* HDAlertDefaultView.xib in Resources */,
+				76C9D52B231784760091ECE4 /* HDAlbumListCell.xib in Resources */,
 				76C9D4F72317818A0091ECE4 /* Assets.xcassets in Resources */,
+				76C9D5A02317B2830091ECE4 /* HDLoadingEmptyView.xib in Resources */,
 				76C9D4F52317818A0091ECE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +784,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		128CA90E1C10CDB53A9F2A26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-adviser-ios-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5891E79D92ED2FAA06F9B6EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-adviser-ios-app/Pods-adviser-ios-app-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-adviser-ios-app/Pods-adviser-ios-app-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-adviser-ios-app/Pods-adviser-ios-app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		76C9D4E82317818A0091ECE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C9D5AA2317B2B40091ECE4 /* HDView+Extend.swift in Sources */,
+				76C9D5762317AB560091ECE4 /* EncryptedStore.m in Sources */,
+				76C9D57B2317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift in Sources */,
+				76C9D5782317AB560091ECE4 /* HDStorageDao.swift in Sources */,
+				76C9D5472317A7910091ECE4 /* UIScrollView+EmptyDataView.swift in Sources */,
+				76C9D5B92317B2E70091ECE4 /* HDCountDownButtion.swift in Sources */,
+				76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */,
+				76C9D52A231784760091ECE4 /* HDPhotoImageManager.swift in Sources */,
+				76C9D5792317AB560091ECE4 /* HDPublicEncCoreDataManager.swift in Sources */,
+				76C9D5922317B2380091ECE4 /* UILabel-Extend.swift in Sources */,
+				76C9D5CD2317B2F10091ECE4 /* HDAlertBaseView.swift in Sources */,
+				76C9D531231784760091ECE4 /* HDAlbumModel.swift in Sources */,
+				76C9D53B2317A5760091ECE4 /* HDThemeColor.swift in Sources */,
+				76C9D5482317A7910091ECE4 /* UIImage-Extention.swift in Sources */,
+				76C9D52E231784760091ECE4 /* HDAlbumCell.swift in Sources */,
+				76C9D5962317B2470091ECE4 /* TPPreciseTimer.m in Sources */,
+				76C9D5462317A7910091ECE4 /* HXReuseable.swift in Sources */,
+				76C9D58F2317AF420091ECE4 /* HDDeviceInfo.swift in Sources */,
+				76C9D5842317AC160091ECE4 /* HDAssert.swift in Sources */,
+				76C9D5C62317B2F10091ECE4 /* HDAlertDefaultView.swift in Sources */,
+				76C9D52C231784760091ECE4 /* HDImageCell.swift in Sources */,
+				76C9D58C2317AEB80091ECE4 /* MBProgressHUD.m in Sources */,
+				76C9D5812317ABEC0091ECE4 /* HDBaseModel.swift in Sources */,
+				76C9D5602317AAC80091ECE4 /* HDLog.swift in Sources */,
+				76C9D530231784760091ECE4 /* HDImageModel.swift in Sources */,
+				76C9D5752317AB560091ECE4 /* Public.xcdatamodeld in Sources */,
+				76C9D5A22317B2830091ECE4 /* DispatchQueue+extension.swift in Sources */,
+				76C9D54A2317A7910091ECE4 /* HDResponse+HandyJSON.swift in Sources */,
+				76C9D5632317AB160091ECE4 /* HDUserDefaults.swift in Sources */,
+				76C9D5542317A9ED0091ECE4 /* HDViewModelType.swift in Sources */,
+				76C9D529231784760091ECE4 /* HDAlbumListViewController.swift in Sources */,
+				76C9D52F231784760091ECE4 /* HDImageListViewController.swift in Sources */,
+				76C9D52D231784760091ECE4 /* HDAlbumListCell.swift in Sources */,
+				76C9D54C2317A7910091ECE4 /* NSObject-Extension.swift in Sources */,
+				76C9D5502317A9610091ECE4 /* HDHudManager.swift in Sources */,
 				76C9D4F22317818A0091ECE4 /* ViewController.swift in Sources */,
+				76C9D535231785130091ECE4 /* UIColorHex.swift in Sources */,
+				76C9D5B82317B2E70091ECE4 /* HDCustomBution.swift in Sources */,
+				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
+				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,
+				76C9D57C2317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift in Sources */,
+				76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */,
+				76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */,
+				76C9D55A2317AA480091ECE4 /* HDNetworkClient.swift in Sources */,
+				76C9D5772317AB560091ECE4 /* HDDBConfig.swift in Sources */,
+				76C9D57A2317AB560091ECE4 /* HDManagedObjectContext.swift in Sources */,
+				76C9D53D2317A5760091ECE4 /* BaseConst.swift in Sources */,
+				76C9D5C92317B2F10091ECE4 /* HDAlertManager.swift in Sources */,
+				76C9D532231784760091ECE4 /* HDImagePickerViewController.swift in Sources */,
+				76C9D5ED231A11B10091ECE4 /* HomeMainViewController.swift in Sources */,
+				76C9D5CC2317B2F10091ECE4 /* HDAlertWindow.swift in Sources */,
+				76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */,
+				76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */,
+				76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */,
+				76C9D5492317A7910091ECE4 /* HDToast+Rx.swift in Sources */,
+				76C9D55B2317AA480091ECE4 /* HDBaseApi.swift in Sources */,
+				76C9D54B2317A7910091ECE4 /* MoyaProvider+Rx.swift in Sources */,
+				76C9D5A42317B2830091ECE4 /* BQTool.swift in Sources */,
+				76C9D5A12317B2830091ECE4 /* UIView+HDEmptyView.swift in Sources */,
 				76C9D4F02317818A0091ECE4 /* AppDelegate.swift in Sources */,
+				76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */,
+				76C9D5992317B2690091ECE4 /* HDRuntime.swift in Sources */,
+				76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */,
+				76C9D5512317A9610091ECE4 /* HDToast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,35 +1067,43 @@
 		};
 		76C9D5152317818A0091ECE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C139B93A07E3AC10ACD35662 /* Pods-adviser-ios-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XYYA37S5K6;
 				INFOPLIST_FILE = "adviser-ios-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.evergrande.eif.iOS.hengdatougu.adviser-ios-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evergrande.eif.iOS.hengdatougu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "adviser-ios-app/Tools/BrideHeader/SwiftOC-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		76C9D5162317818A0091ECE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE9F7939FB47DD58B7E74D7 /* Pods-adviser-ios-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XYYA37S5K6;
 				INFOPLIST_FILE = "adviser-ios-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.evergrande.eif.iOS.hengdatougu.adviser-ios-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evergrande.eif.iOS.hengdatougu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "adviser-ios-app/Tools/BrideHeader/SwiftOC-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -580,6 +1225,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76C9D5662317AB550091ECE4 /* Public.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76C9D5672317AB550091ECE4 /* Public.xcdatamodel */,
+			);
+			currentVersion = 76C9D5672317AB550091ECE4 /* Public.xcdatamodel */;
+			path = Public.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 76C9D4E42317818A0091ECE4 /* Project object */;
 }

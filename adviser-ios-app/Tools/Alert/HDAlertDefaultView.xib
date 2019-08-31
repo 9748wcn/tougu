@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HDAlertDefaultView" customModule="mgr_combat_map_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码错误，请重新输入或找回密码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWT-KU-vwW">
+                    <rect key="frame" x="25" y="0.0" width="280" height="66"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dag-wP-Qes">
+                    <rect key="frame" x="0.0" y="66" width="330" height="54"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="0.5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-lv-xny">
+                            <rect key="frame" x="0.0" y="0.5" width="330" height="53.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqk-SK-iJW">
+                                    <rect key="frame" x="0.0" y="0.0" width="165" height="53.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="重新输入">
+                                        <color key="titleColor" red="0.082352941176470587" green="0.49411764705882355" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="firstBtnPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="bE2-bU-hf2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oW-oV-Agm">
+                                    <rect key="frame" x="165.5" y="0.0" width="164.5" height="53.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="找回密码">
+                                        <color key="titleColor" red="0.082352941176470587" green="0.49411764705882355" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="secondBtnPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sw5-Fw-ZSz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="jAS-lv-xny" secondAttribute="trailing" id="1cY-L8-J8O"/>
+                        <constraint firstAttribute="height" constant="54" id="bSN-OA-KSG"/>
+                        <constraint firstItem="jAS-lv-xny" firstAttribute="top" secondItem="dag-wP-Qes" secondAttribute="top" constant="0.5" id="gng-WW-FNQ"/>
+                        <constraint firstItem="jAS-lv-xny" firstAttribute="leading" secondItem="dag-wP-Qes" secondAttribute="leading" id="qlI-kG-OeZ"/>
+                        <constraint firstAttribute="bottom" secondItem="jAS-lv-xny" secondAttribute="bottom" id="xY3-1a-CVM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JWT-KU-vwW" secondAttribute="trailing" constant="25" id="H5G-H1-nRK"/>
+                <constraint firstItem="JWT-KU-vwW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O1V-Hy-Pfd"/>
+                <constraint firstAttribute="trailing" secondItem="dag-wP-Qes" secondAttribute="trailing" id="d3w-Zh-uUr"/>
+                <constraint firstAttribute="bottom" secondItem="dag-wP-Qes" secondAttribute="bottom" id="lpF-HM-0Rx"/>
+                <constraint firstItem="dag-wP-Qes" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m9E-mY-sSX"/>
+                <constraint firstItem="JWT-KU-vwW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="oah-lH-rbu"/>
+                <constraint firstItem="dag-wP-Qes" firstAttribute="top" secondItem="JWT-KU-vwW" secondAttribute="bottom" id="rb0-P1-JHW"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomContainerView" destination="dag-wP-Qes" id="iwJ-Mv-OYW"/>
+                <outlet property="firstBtn" destination="aqk-SK-iJW" id="QVw-q7-Dkn"/>
+                <outlet property="secondBtn" destination="7oW-oV-Agm" id="G2q-EG-1rC"/>
+                <outlet property="stackView" destination="jAS-lv-xny" id="uuy-rO-93o"/>
+                <outlet property="titleLabel" destination="JWT-KU-vwW" id="aS6-A5-yXs"/>
+            </connections>
+            <point key="canvasLocation" x="35.982008995502248" y="-192"/>
+        </view>
+    </objects>
+</document>
