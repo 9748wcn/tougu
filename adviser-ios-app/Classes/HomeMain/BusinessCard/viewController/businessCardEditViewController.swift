@@ -1,5 +1,5 @@
 //
-//  HomeMainViewController.swift
+//  businessCardEditViewController.swift
 //  adviser-ios-app
 //
 //  Created by HDCF001 on 2019/8/31.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomeMainViewController: baseViewController {
+class businessCardEditViewController: baseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red
+
         // Do any additional setup after loading the view.
     }
     

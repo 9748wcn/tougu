@@ -1,5 +1,5 @@
 //
-//  HomeMainViewController.swift
+//  HomeTabbarViewController.swift
 //  adviser-ios-app
 //
 //  Created by HDCF001 on 2019/8/31.
@@ -8,12 +8,17 @@
 
 import UIKit
 
-class HomeMainViewController: baseViewController {
+class HomeTabbarViewController: baseTabbarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red
+
         // Do any additional setup after loading the view.
+    }
+    
+    override func addChildViewControllers() {
+        self.setupOneChildViewController("首页", image: "mainUnSelected", selectedImage: "mainSelected", controller: HomeMainViewController())
+        self.setupOneChildViewController("我的", image: "mineUnSelected", selectedImage: "mineSelected", controller: HomeMineViewController())
     }
     
 
