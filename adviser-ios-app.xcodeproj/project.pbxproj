@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7636FABD231CC2B9008B1F80 /* businessCardEditVC+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FABC231CC2B9008B1F80 /* businessCardEditVC+Extention.swift */; };
+		7636FAC1231CF2A5008B1F80 /* ASAutoHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC0231CF2A5008B1F80 /* ASAutoHeightTextView.swift */; };
+		7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */; };
+		7636FAC5231D058E008B1F80 /* textViewPalceHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */; };
+		7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC6231D119D008B1F80 /* baseNavigationViewController.swift */; };
 		76C9D4F02317818A0091ECE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D4EF2317818A0091ECE4 /* AppDelegate.swift */; };
 		76C9D4F22317818A0091ECE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D4F12317818A0091ECE4 /* ViewController.swift */; };
 		76C9D4F52317818A0091ECE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D4F32317818A0091ECE4 /* Main.storyboard */; };
@@ -114,6 +119,11 @@
 
 /* Begin PBXFileReference section */
 		0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adviser-ios-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7636FABC231CC2B9008B1F80 /* businessCardEditVC+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "businessCardEditVC+Extention.swift"; sourceTree = "<group>"; };
+		7636FAC0231CF2A5008B1F80 /* ASAutoHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASAutoHeightTextView.swift; sourceTree = "<group>"; };
+		7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardIntroduceView.swift; sourceTree = "<group>"; };
+		7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewPalceHold.swift; sourceTree = "<group>"; };
+		7636FAC6231D119D008B1F80 /* baseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseNavigationViewController.swift; sourceTree = "<group>"; };
 		76C9D4EC2317818A0091ECE4 /* adviser-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "adviser-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C9D4EF2317818A0091ECE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C9D4F12317818A0091ECE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -502,6 +512,7 @@
 		76C9D57D2317ABBA0091ECE4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				76C9D5FC231A60870091ECE4 /* BusinessCard */,
 				76C9D5F5231A217F0091ECE4 /* HomeMine */,
 				76C9D5EB231A10420091ECE4 /* HomeMain */,
 				76C9D5EA231A0FE00091ECE4 /* Login */,
@@ -602,6 +613,8 @@
 			isa = PBXGroup;
 			children = (
 				76C9D5A92317B2B40091ECE4 /* HDView+Extend.swift */,
+				7636FAC0231CF2A5008B1F80 /* ASAutoHeightTextView.swift */,
+				7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */,
 			);
 			name = View;
 			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/View";
@@ -663,7 +676,6 @@
 		76C9D5EB231A10420091ECE4 /* HomeMain */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D5FC231A60870091ECE4 /* BusinessCard */,
 				76C9D5EC231A11B10091ECE4 /* HomeMainViewController.swift */,
 				76C9D5F3231A20DC0091ECE4 /* HomeTabbarViewController.swift */,
 			);
@@ -675,6 +687,7 @@
 			children = (
 				76C9D5EF231A1F2E0091ECE4 /* baseViewController.swift */,
 				76C9D5F1231A20000091ECE4 /* baseTabbarController.swift */,
+				7636FAC6231D119D008B1F80 /* baseNavigationViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -700,6 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				76C9D5FD231A61380091ECE4 /* businessCardEditViewController.swift */,
+				7636FABC231CC2B9008B1F80 /* businessCardEditVC+Extention.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -711,6 +725,7 @@
 				76C9D602231A61F00091ECE4 /* businessCardEditTableViewCell.xib */,
 				76C9D605231A67980091ECE4 /* businessCardHeadCell.swift */,
 				76C9D606231A67980091ECE4 /* businessCardHeadCell.xib */,
+				7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -953,20 +968,25 @@
 				76C9D535231785130091ECE4 /* UIColorHex.swift in Sources */,
 				76C9D5B82317B2E70091ECE4 /* HDCustomBution.swift in Sources */,
 				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
+				7636FAC5231D058E008B1F80 /* textViewPalceHold.swift in Sources */,
 				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,
 				76C9D57C2317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift in Sources */,
 				76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */,
 				76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */,
 				76C9D55A2317AA480091ECE4 /* HDNetworkClient.swift in Sources */,
 				76C9D5772317AB560091ECE4 /* HDDBConfig.swift in Sources */,
+				7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */,
 				76C9D5F2231A20000091ECE4 /* baseTabbarController.swift in Sources */,
 				76C9D57A2317AB560091ECE4 /* HDManagedObjectContext.swift in Sources */,
+				7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */,
 				76C9D53D2317A5760091ECE4 /* BaseConst.swift in Sources */,
 				76C9D5C92317B2F10091ECE4 /* HDAlertManager.swift in Sources */,
 				76C9D532231784760091ECE4 /* HDImagePickerViewController.swift in Sources */,
 				76C9D5ED231A11B10091ECE4 /* HomeMainViewController.swift in Sources */,
 				76C9D5CC2317B2F10091ECE4 /* HDAlertWindow.swift in Sources */,
+				7636FAC1231CF2A5008B1F80 /* ASAutoHeightTextView.swift in Sources */,
 				76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */,
+				7636FABD231CC2B9008B1F80 /* businessCardEditVC+Extention.swift in Sources */,
 				76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */,
 				76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */,
 				76C9D5492317A7910091ECE4 /* HDToast+Rx.swift in Sources */,

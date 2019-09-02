@@ -10,10 +10,25 @@ import UIKit
 
 class HomeMainViewController: baseViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
         // Do any additional setup after loading the view.
+        
+        let button: HDCustomBution = HDCustomBution()
+        button.setupConfig(radius: 3.0, borderW: 1.0, borderC: UIColor.white.cgColor, defaultColor: UIColor.green)
+        button.frame = CGRect(x: 100, y: 100, width: 100, height: 45)
+        button.setTitle("点击到编辑", for: .normal)
+        button.addTarget(self, action: #selector(gotoVC), for: .touchUpInside)
+        view.addSubview(button)
+        
+    }
+    
+    @objc func gotoVC() {
+        let vc:businessCardEditViewController = businessCardEditViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 

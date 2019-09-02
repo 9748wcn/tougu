@@ -38,7 +38,7 @@
                     </textField>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOg-qM-AXf">
                         <rect key="frame" x="15" y="48.5" width="305" height="1"/>
-                        <color key="backgroundColor" red="0.8508874773979187" green="0.85103398561477661" blue="0.85087817907333374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90564209222793579" green="0.90965604782104492" blue="0.92198389768600464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="ufr-nq-pxM"/>
                         </constraints>
@@ -58,6 +58,10 @@
                     <constraint firstItem="pOg-qM-AXf" firstAttribute="top" secondItem="95H-os-Ssd" secondAttribute="bottom" id="l6E-1n-5Cr"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentTextFeild" destination="95H-os-Ssd" id="DB9-hc-nCD"/>
+                <outlet property="leftTitleLabel" destination="uky-aG-3rW" id="lNX-TM-B1Z"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
         </tableViewCell>
     </objects>

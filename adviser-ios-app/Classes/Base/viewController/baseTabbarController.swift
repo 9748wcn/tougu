@@ -28,7 +28,7 @@ class baseTabbarController: UITabBarController {
         controller.view.backgroundColor = UIColor.white
         controller.tabBarItem.image = UIImage(named: image)?.withRenderingMode(.alwaysOriginal)
         controller.tabBarItem.selectedImage = UIImage(named: selectedImage)?.withRenderingMode(.alwaysOriginal)
-        let nav = UINavigationController.init(rootViewController: controller)
+        let nav = baseNavigationViewController.init(rootViewController: controller)
         addChild(nav)
     }
 

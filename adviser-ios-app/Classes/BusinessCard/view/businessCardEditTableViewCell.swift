@@ -1,5 +1,5 @@
 //
-//  businessCardHeadCell.swift
+//  businessCardEditTableViewCell.swift
 //  adviser-ios-app
 //
 //  Created by HDCF001 on 2019/8/31.
@@ -8,8 +8,12 @@
 
 import UIKit
 
-class businessCardHeadCell: UITableViewCell {
+class businessCardEditTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var leftTitleLabel: UILabel!
+    
+    @IBOutlet weak var contentTextFeild: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
