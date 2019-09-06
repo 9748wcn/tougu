@@ -15,6 +15,7 @@ extension businessCardEditViewController {
         static var phoneTextFeild: UITextField!
         static var wechatTextFeild: UITextField!
         static var emailTextFeild: UITextField!
+        static var submitButton: UIButton!
         
     }
     var nameTextFeild: UITextField {
@@ -55,6 +56,14 @@ extension businessCardEditViewController {
         }
         set {
             objc_setAssociatedObject(self, &AssociatedKeys.emailTextFeild, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    var submitButton: UIButton {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.submitButton) as? UIButton ?? UIButton()
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.submitButton, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
     

@@ -10,10 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class businessCardEditViewController: baseViewController {
+class businessCardEditViewController: baseViewController, buttonClickDelegate {
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height - 50), style: .plain)
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
@@ -24,6 +24,8 @@ class businessCardEditViewController: baseViewController {
         
         return tableView
     }()
+    let disposeBag = DisposeBag()
+    var intrudutionHeight: CGFloat = 200.0
     
     
     
@@ -51,7 +53,9 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                 return 50
             }
         }else if indexPath.section == 3{
-            return 100.0
+            return intrudutionHeight
+        }else if indexPath.section == 4 {
+            return 65
         }
         return 50.0;
     }
@@ -65,23 +69,45 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardHeadCell
-                cell.headImageView.image = UIImage.init(named: "")
+                cell.headImageView.image = UIImage.init(named: "normalHeader")
                 cell.headerClickBlock = {
                     
                     let alertController = UIAlertController(title: nil, message: nil,
                                                             preferredStyle: .actionSheet)
                     let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                    let deleteAction = UIAlertAction(title: "拍照", style: .default, handler: nil)
-//                    let dd = UIAlertAction(title: "hahh", style: .default, handler: { (make) in
-//                        HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
-//                            guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
-//                                return
-//                            }
-//
-//                        })
-//                    })
                     
-                    let archiveAction = UIAlertAction(title: "从手机相册选择", style: .default, handler: nil)
+                    let deleteAction = UIAlertAction(title: "拍照", style: .default, handler: { (make) in
+                        HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
+                            guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                                return
+                            }
+                            UIImagePickerController.rx.createWithParent(self) { picker in
+                                picker.sourceType = .camera
+                                }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                                .map{ $0[.originalImage] as! UIImage }
+                                .bind(to: cell.headImageView.rx.image)
+                            .disposed(by: self.disposeBag)
+
+                        })
+                    })
+
+                    let archiveAction = UIAlertAction(title: "从手机相册选择", style: .default, handler: { (make) in
+                        HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
+                            guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+                                return
+                            }
+                            UIImagePickerController.rx.createWithParent(self) { picker in
+                                picker.sourceType = .photoLibrary
+                                picker.modalPresentationStyle = .overCurrentContext
+                                }
+                                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                                .map { $0[.originalImage] as! UIImage}
+                                .bind(to: cell.headImageView.rx.image)
+                                .disposed(by: self.disposeBag)
+                            
+                        }
+                        
+                    })
                     alertController.addAction(cancelAction)
                     alertController.addAction(deleteAction)
                     alertController.addAction(archiveAction)
@@ -127,6 +153,19 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             return cell
         }else if indexPath.section == 3 {
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardIntroduceView
+//            var sizeh: CGRect = tableView.frame
+//            sizeh.size.height = sizeh.size.height + 100
+            cell.changeHeightBlock = { (h) in
+//                let subH = h - self.intrudutionHeight
+//
+////                var sizeh: CGRect = tableView.frame
+//                sizeh.size.height = sizeh.size.height + subH
+//                tableView.frame.size.height = sizeh.size.height + subH
+                self.intrudutionHeight = h
+                tableView.reloadData()
+                tableView.scrollToRow(at: indexPath, at: .none, animated: false)
+                cell.contentTextView.becomeFirstResponder()
+            }
             return cell
             
         }
@@ -142,6 +181,10 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             return 50
         }
         return 10
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -175,9 +218,14 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             return 3
         }else if section == 3 {
             return 1
+        }else if section == 4 {
+            return 1
         }
         return 0
     }
     
+    func butonClickBy(_ sender: UIButton) {
+        
+    }
     
 }

@@ -23,10 +23,23 @@ class HomeMainViewController: baseViewController {
         button.addTarget(self, action: #selector(gotoVC), for: .touchUpInside)
         view.addSubview(button)
         
+        let button2: HDCustomBution = HDCustomBution()
+        button2.setupConfig(radius: 3.0, borderW: 1.0, borderC: UIColor.white.cgColor, defaultColor: UIColor.green)
+        button2.frame = CGRect(x: 100, y: 300, width: 100, height: 45)
+        button2.setTitle("点击到登录", for: .normal)
+        button2.addTarget(self, action: #selector(gotoLogin), for: .touchUpInside)
+        view.addSubview(button2)
+        
     }
     
     @objc func gotoVC() {
         let vc:businessCardEditViewController = businessCardEditViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @objc func gotoLogin() {
+        let vc: HomeLoginViewController = HomeLoginViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

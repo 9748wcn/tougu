@@ -11,6 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeLoginViewController" customModule="adviser_ios_app" customModuleProvider="target">
             <connections>
+                <outlet property="codeTextFeild" destination="g3e-rh-2Cf" id="Z7J-dG-vDq"/>
+                <outlet property="forgotPassWord" destination="4DX-w9-Z1c" id="E8o-s6-khi"/>
+                <outlet property="getPhoneCodeClick" destination="qCX-6A-m3e" id="OPb-O3-ecx"/>
+                <outlet property="icTextFeild" destination="ViO-1W-tMV" id="P81-hA-bzu"/>
+                <outlet property="loginByPassWordClick" destination="JrC-aZ-VIS" id="af7-DV-9ya"/>
+                <outlet property="loginByPhoneClick" destination="hkz-7e-y4X" id="N4G-P0-ZLJ"/>
+                <outlet property="loginClick" destination="bUi-Ob-iiD" id="o2t-Z4-wtt"/>
+                <outlet property="phoneNumberTextFeild" destination="3fs-bT-JF9" id="Rxf-HO-G5q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,6 +52,9 @@
                     <state key="normal" title="验证码登录">
                         <color key="titleColor" red="0.15113100409507751" green="0.19411784410476685" blue="0.28955751657485962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="loginByPhone:" destination="-1" eventType="touchUpInside" id="F32-n2-Yc7"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JrC-aZ-VIS">
                     <rect key="frame" x="127.5" y="145" width="62" height="25"/>
@@ -53,6 +64,9 @@
                     <state key="normal" title="密码登录">
                         <color key="titleColor" red="0.15113100409507751" green="0.19411784410476685" blue="0.28955751657485962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="loginByPassWord:" destination="-1" eventType="touchUpInside" id="tnr-OR-fch"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxV-RP-RV6">
                     <rect key="frame" x="112" y="151.5" width="0.5" height="12"/>
@@ -60,14 +74,6 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="0.5" id="R12-HP-NZB"/>
                         <constraint firstAttribute="height" constant="12" id="tkj-F2-jRY"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7y-0c-7ul">
-                    <rect key="frame" x="44" y="170" width="29" height="3"/>
-                    <color key="backgroundColor" red="0.27502882480621338" green="0.4670257568359375" blue="0.89483660459518433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="3" id="A8L-ap-EV9"/>
-                        <constraint firstAttribute="width" constant="29" id="xuY-mH-8Ef"/>
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入IC工号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-1W-tMV">
@@ -118,9 +124,16 @@
                         <constraint firstAttribute="height" constant="1" id="uw8-1g-ZLt"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCX-6A-m3e">
-                    <rect key="frame" x="247" y="400" width="108" height="30"/>
-                    <state key="normal" title="获取短信验证码"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCX-6A-m3e" customClass="HDCountDownButtion" customModule="adviser_ios_app" customModuleProvider="target">
+                    <rect key="frame" x="240" y="398" width="115" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="Vtx-II-EOM"/>
+                        <constraint firstAttribute="width" constant="115" id="c6Z-kd-YWf"/>
+                    </constraints>
+                    <state key="normal" title="获取验证码"/>
+                    <connections>
+                        <action selector="getPhoneCode:" destination="-1" eventType="touchUpInside" id="bCi-jQ-UMf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-Ob-iiD">
                     <rect key="frame" x="14" y="471" width="346" height="45"/>
@@ -129,6 +142,15 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="登录"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DX-w9-Z1c">
+                    <rect key="frame" x="283" y="531" width="62" height="30"/>
+                    <state key="normal" title="忘记密码">
+                        <color key="titleColor" red="0.5599408745765686" green="0.57908916473388672" blue="0.65379351377487183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="forgotPassWordClick:" destination="-1" eventType="touchUpInside" id="SVv-cO-Uo9"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -149,9 +171,10 @@
                 <constraint firstAttribute="trailing" secondItem="g3e-rh-2Cf" secondAttribute="trailing" constant="140" id="R5u-jD-fCp"/>
                 <constraint firstItem="3I3-e6-1mP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="RQU-Yh-x4U"/>
                 <constraint firstItem="g4s-Up-r8Y" firstAttribute="top" secondItem="3fs-bT-JF9" secondAttribute="bottom" constant="5" id="S8W-b7-XUk"/>
+                <constraint firstItem="ViO-1W-tMV" firstAttribute="top" secondItem="hkz-7e-y4X" secondAttribute="bottom" constant="53" id="Y9O-3R-n9b"/>
                 <constraint firstItem="MxV-RP-RV6" firstAttribute="centerY" secondItem="hkz-7e-y4X" secondAttribute="centerY" id="Zg7-SD-X4z"/>
                 <constraint firstAttribute="trailing" secondItem="bUi-Ob-iiD" secondAttribute="trailing" constant="15" id="b0I-aq-3WN"/>
-                <constraint firstItem="ViO-1W-tMV" firstAttribute="top" secondItem="S7y-0c-7ul" secondAttribute="bottom" constant="50" id="eI9-4z-fZO"/>
+                <constraint firstAttribute="trailing" secondItem="4DX-w9-Z1c" secondAttribute="trailing" constant="30" id="dT9-jg-NEg"/>
                 <constraint firstAttribute="trailing" secondItem="ViO-1W-tMV" secondAttribute="trailing" constant="20" id="eht-4C-vSo"/>
                 <constraint firstItem="g4s-Up-r8Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ekH-gE-wNi"/>
                 <constraint firstItem="ViO-1W-tMV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="fIo-7S-FKI"/>
@@ -163,8 +186,7 @@
                 <constraint firstItem="bUi-Ob-iiD" firstAttribute="top" secondItem="PDv-jh-ao6" secondAttribute="bottom" constant="30" id="mHO-T1-Dor"/>
                 <constraint firstItem="qCX-6A-m3e" firstAttribute="centerY" secondItem="g3e-rh-2Cf" secondAttribute="centerY" id="o8L-Lg-p4g"/>
                 <constraint firstItem="MxV-RP-RV6" firstAttribute="leading" secondItem="hkz-7e-y4X" secondAttribute="trailing" constant="15" id="phy-gX-nTV"/>
-                <constraint firstItem="S7y-0c-7ul" firstAttribute="centerX" secondItem="hkz-7e-y4X" secondAttribute="centerX" id="uYD-cu-IoJ"/>
-                <constraint firstItem="S7y-0c-7ul" firstAttribute="top" secondItem="hkz-7e-y4X" secondAttribute="bottom" id="vFL-J1-SGp"/>
+                <constraint firstItem="4DX-w9-Z1c" firstAttribute="top" secondItem="bUi-Ob-iiD" secondAttribute="bottom" constant="15" id="vl9-rd-xmt"/>
                 <constraint firstAttribute="trailing" secondItem="j3q-KB-bIC" secondAttribute="trailing" constant="20" id="wjR-b0-DTM"/>
                 <constraint firstItem="hkz-7e-y4X" firstAttribute="top" secondItem="GeC-jb-g8N" secondAttribute="bottom" constant="35" id="yCg-oj-Hh5"/>
                 <constraint firstItem="PDv-jh-ao6" firstAttribute="top" secondItem="g3e-rh-2Cf" secondAttribute="bottom" constant="5" id="ysd-TF-joD"/>

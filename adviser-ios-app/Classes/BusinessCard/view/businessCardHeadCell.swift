@@ -17,11 +17,13 @@ class businessCardHeadCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .none
         headImageView.layer.cornerRadius = 25.0
         headImageView.clipsToBounds = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(gotoChangeHead))
         headImageView.addGestureRecognizer(tap)
         headImageView.isUserInteractionEnabled = true
+        headImageView.contentMode = .scaleAspectFill
         
     }
 

@@ -17,5 +17,6 @@ target 'adviser-ios-app' do
   pod 'Moya/RxSwift'
   pod 'EmptyDataSet-Swift'
   pod 'Kingfisher'
+  pod 'IQKeyboardManagerSwift', '~> 6.4.1'
 
 end
