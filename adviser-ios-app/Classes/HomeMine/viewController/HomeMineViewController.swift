@@ -10,6 +10,15 @@ import UIKit
 
 class HomeMineViewController: baseViewController {
 
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), style: .plain)
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = HomeBackground_Color
+        return tableView
+        
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 

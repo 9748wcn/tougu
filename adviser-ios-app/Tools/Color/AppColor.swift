@@ -21,5 +21,8 @@ public let background_Color = UIColor(rgb: 0xF8F8F8)
 public let text_Color = UIColor(rgb: 0x27314A)
 
 //不可编辑文字颜色
-public let Notext_Color = UIColor(rgb: 0x27314A)
+public let Notext_Color = UIColor(rgb: 0x8F94A7)
+
+//首页背景色
+public let HomeBackground_Color = UIColor(rgb: 0xF6F7F8)
 
