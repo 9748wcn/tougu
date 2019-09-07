@@ -1,15 +1,15 @@
 //
-//  HomeMineViewController.swift
+//  HomeMineShareCardViewController.swift
 //  adviser-ios-app
 //
-//  Created by HDCF001 on 2019/8/31.
+//  Created by HDCF001 on 2019/9/7.
 //  Copyright © 2019 HDCF001. All rights reserved.
 //
 
 import UIKit
 
-class HomeMineViewController: baseViewController {
-
+class HomeMineShareCardViewController: baseViewController {
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), style: .plain)
         tableView.separatorStyle = .none
@@ -20,15 +20,11 @@ class HomeMineViewController: baseViewController {
         return tableView
         
     }()
-    
-    let headImages: Array = ["infoImage","settingImage","versionImage"]
-    let headTitles: Array = ["公司对外信息","设置","版本信息"]
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(tableView)
+
+        // Do any additional setup after loading the view.
     }
     
 

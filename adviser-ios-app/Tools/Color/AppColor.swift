@@ -26,3 +26,10 @@ public let Notext_Color = UIColor(rgb: 0x8F94A7)
 //首页背景色
 public let HomeBackground_Color = UIColor(rgb: 0xF6F7F8)
 
+//浅分割色
+public let lightSeparate_Color = UIColor(rgb: 0xF1F5FE)
+
+public let is_iphoneX = (screenWidth >= 375.0 && screenHeight >= 812.0)
+
+public let bottomSafeHeight = CGFloat(is_iphoneX ? 34.0 : 0)
+

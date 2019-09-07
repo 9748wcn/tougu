@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B623238F0B003DB6C4 /* TitleCell.swift */; };
+		7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */; };
+		7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */; };
+		7615F5BD2323AA02003DB6C4 /* shareCard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BC2323AA02003DB6C4 /* shareCard+Extension.swift */; };
+		7615F5BF2323AA64003DB6C4 /* shareCardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BE2323AA64003DB6C4 /* shareCardHeaderView.swift */; };
+		7615F5C12323AA6F003DB6C4 /* shareCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5C02323AA6F003DB6C4 /* shareCardHeaderView.xib */; };
 		7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */; };
 		7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */; };
 		7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */; };
@@ -26,6 +32,13 @@
 		7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */; };
 		7636FAC5231D058E008B1F80 /* textViewPalceHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */; };
 		7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC6231D119D008B1F80 /* baseNavigationViewController.swift */; };
+		76BED4A023223FAC00B7FEFC /* personInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BED49F23223FAC00B7FEFC /* personInfoViewController.swift */; };
+		76BED4A22322404700B7FEFC /* personInfo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BED4A12322404700B7FEFC /* personInfo+Extension.swift */; };
+		76BED4A52322426F00B7FEFC /* personInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BED4A32322426F00B7FEFC /* personInfoTableViewCell.swift */; };
+		76BED4A62322426F00B7FEFC /* personInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BED4A42322426F00B7FEFC /* personInfoTableViewCell.xib */; };
+		76BED4A82322445400B7FEFC /* personInfoHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BED4A72322445400B7FEFC /* personInfoHeadView.swift */; };
+		76BED4AA2322446600B7FEFC /* personInfoHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BED4A92322446600B7FEFC /* personInfoHeadView.xib */; };
+		76BED4AC23226EC900B7FEFC /* ASBottomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BED4AB23226EC900B7FEFC /* ASBottomAlertView.swift */; };
 		76C9D4F02317818A0091ECE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D4EF2317818A0091ECE4 /* AppDelegate.swift */; };
 		76C9D4F22317818A0091ECE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D4F12317818A0091ECE4 /* ViewController.swift */; };
 		76C9D4F52317818A0091ECE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D4F32317818A0091ECE4 /* Main.storyboard */; };
@@ -133,6 +146,12 @@
 
 /* Begin PBXFileReference section */
 		0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adviser-ios-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7615F5B623238F0B003DB6C4 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
+		7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMineShareCardViewController.swift; sourceTree = "<group>"; };
+		7615F5BC2323AA02003DB6C4 /* shareCard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shareCard+Extension.swift"; sourceTree = "<group>"; };
+		7615F5BE2323AA64003DB6C4 /* shareCardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareCardHeaderView.swift; sourceTree = "<group>"; };
+		7615F5C02323AA6F003DB6C4 /* shareCardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shareCardHeaderView.xib; sourceTree = "<group>"; };
 		7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDSettingViewModel.swift; sourceTree = "<group>"; };
 		7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessSubmitBtnCell.swift; sourceTree = "<group>"; };
 		7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = businessSubmitBtnCell.xib; sourceTree = "<group>"; };
@@ -152,6 +171,13 @@
 		7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardIntroduceView.swift; sourceTree = "<group>"; };
 		7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewPalceHold.swift; sourceTree = "<group>"; };
 		7636FAC6231D119D008B1F80 /* baseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseNavigationViewController.swift; sourceTree = "<group>"; };
+		76BED49F23223FAC00B7FEFC /* personInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoViewController.swift; sourceTree = "<group>"; };
+		76BED4A12322404700B7FEFC /* personInfo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "personInfo+Extension.swift"; sourceTree = "<group>"; };
+		76BED4A32322426F00B7FEFC /* personInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoTableViewCell.swift; sourceTree = "<group>"; };
+		76BED4A42322426F00B7FEFC /* personInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = personInfoTableViewCell.xib; sourceTree = "<group>"; };
+		76BED4A72322445400B7FEFC /* personInfoHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoHeadView.swift; sourceTree = "<group>"; };
+		76BED4A92322446600B7FEFC /* personInfoHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = personInfoHeadView.xib; sourceTree = "<group>"; };
+		76BED4AB23226EC900B7FEFC /* ASBottomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASBottomAlertView.swift; sourceTree = "<group>"; };
 		76C9D4EC2317818A0091ECE4 /* adviser-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "adviser-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C9D4EF2317818A0091ECE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76C9D4F12317818A0091ECE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +336,10 @@
 			children = (
 				76C9D5F6231A264E0091ECE4 /* HomeMineViewController.swift */,
 				7623DFA22321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift */,
+				76BED49F23223FAC00B7FEFC /* personInfoViewController.swift */,
+				76BED4A12322404700B7FEFC /* personInfo+Extension.swift */,
+				7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */,
+				7615F5BC2323AA02003DB6C4 /* shareCard+Extension.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -321,6 +351,12 @@
 				7623DFA52322008100CD79A2 /* HomeMineTableViewCell.xib */,
 				7623DFA82322036E00CD79A2 /* HomeMineHeadView.swift */,
 				7623DFAA2322038B00CD79A2 /* HomeMineHeadView.xib */,
+				76BED4A32322426F00B7FEFC /* personInfoTableViewCell.swift */,
+				76BED4A42322426F00B7FEFC /* personInfoTableViewCell.xib */,
+				76BED4A72322445400B7FEFC /* personInfoHeadView.swift */,
+				76BED4A92322446600B7FEFC /* personInfoHeadView.xib */,
+				7615F5BE2323AA64003DB6C4 /* shareCardHeaderView.swift */,
+				7615F5C02323AA6F003DB6C4 /* shareCardHeaderView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -726,6 +762,8 @@
 		76C9D5BA2317B2F10091ECE4 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */,
+				7615F5B623238F0B003DB6C4 /* TitleCell.swift */,
 				76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */,
 				76C9D5BE2317B2F10091ECE4 /* HDAlertImagePickerView.xib */,
 				76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */,
@@ -735,6 +773,7 @@
 				76C9D5C12317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib */,
 				76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */,
 				76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */,
+				76BED4AB23226EC900B7FEFC /* ASBottomAlertView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -931,15 +970,18 @@
 				76C9D604231A61F00091ECE4 /* businessCardEditTableViewCell.xib in Resources */,
 				7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */,
 				76C9D4FA2317818A0091ECE4 /* LaunchScreen.storyboard in Resources */,
+				76BED4AA2322446600B7FEFC /* personInfoHeadView.xib in Resources */,
 				7623DFAB2322038B00CD79A2 /* HomeMineHeadView.xib in Resources */,
 				7623DF9E2321F0B700CD79A2 /* resetPassWordSetViewController.xib in Resources */,
 				76C9D5C82317B2F10091ECE4 /* HDAlertImagePickerView.xib in Resources */,
+				76BED4A62322426F00B7FEFC /* personInfoTableViewCell.xib in Resources */,
 				76C9D5C72317B2F10091ECE4 /* HDAlertDefaultView.xib in Resources */,
 				7623DFA72322008100CD79A2 /* HomeMineTableViewCell.xib in Resources */,
 				76C9D5FB231A4C7C0091ECE4 /* HomeLoginViewController.xib in Resources */,
 				76C9D608231A67980091ECE4 /* businessCardHeadCell.xib in Resources */,
 				76C9D52B231784760091ECE4 /* HDAlbumListCell.xib in Resources */,
 				76C9D4F72317818A0091ECE4 /* Assets.xcassets in Resources */,
+				7615F5C12323AA6F003DB6C4 /* shareCardHeaderView.xib in Resources */,
 				7623DF9A2321230600CD79A2 /* resetPassWordVerifyViewController.xib in Resources */,
 				76C9D5A02317B2830091ECE4 /* HDLoadingEmptyView.xib in Resources */,
 				76C9D4F52317818A0091ECE4 /* Main.storyboard in Resources */,
@@ -1009,9 +1051,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */,
 				76C9D5AA2317B2B40091ECE4 /* HDView+Extend.swift in Sources */,
 				76C9D5762317AB560091ECE4 /* EncryptedStore.m in Sources */,
 				76C9D57B2317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift in Sources */,
+				76BED4A023223FAC00B7FEFC /* personInfoViewController.swift in Sources */,
 				76C9D5782317AB560091ECE4 /* HDStorageDao.swift in Sources */,
 				76C9D5472317A7910091ECE4 /* UIScrollView+EmptyDataView.swift in Sources */,
 				76C9D5FA231A4C7C0091ECE4 /* HomeLoginViewController.swift in Sources */,
@@ -1024,22 +1068,27 @@
 				76C9D5FE231A61380091ECE4 /* businessCardEditViewController.swift in Sources */,
 				76C9D531231784760091ECE4 /* HDAlbumModel.swift in Sources */,
 				76C9D5F7231A264E0091ECE4 /* HomeMineViewController.swift in Sources */,
+				7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */,
 				76C9D53B2317A5760091ECE4 /* HDThemeColor.swift in Sources */,
 				76C9D5482317A7910091ECE4 /* UIImage-Extention.swift in Sources */,
 				76C9D52E231784760091ECE4 /* HDAlbumCell.swift in Sources */,
 				76C9D5962317B2470091ECE4 /* TPPreciseTimer.m in Sources */,
 				76C9D5462317A7910091ECE4 /* HXReuseable.swift in Sources */,
+				76BED4AC23226EC900B7FEFC /* ASBottomAlertView.swift in Sources */,
 				7623DF992321230600CD79A2 /* resetPassWordVerifyViewController.swift in Sources */,
 				76C9D58F2317AF420091ECE4 /* HDDeviceInfo.swift in Sources */,
 				7623DFA62322008100CD79A2 /* HomeMineTableViewCell.swift in Sources */,
 				76C9D5F0231A1F2E0091ECE4 /* baseViewController.swift in Sources */,
 				76C9D5842317AC160091ECE4 /* HDAssert.swift in Sources */,
+				76BED4A52322426F00B7FEFC /* personInfoTableViewCell.swift in Sources */,
+				76BED4A82322445400B7FEFC /* personInfoHeadView.swift in Sources */,
 				76C9D5C62317B2F10091ECE4 /* HDAlertDefaultView.swift in Sources */,
 				76C9D52C231784760091ECE4 /* HDImageCell.swift in Sources */,
 				76C9D58C2317AEB80091ECE4 /* MBProgressHUD.m in Sources */,
 				76C9D5812317ABEC0091ECE4 /* HDBaseModel.swift in Sources */,
 				76C9D5602317AAC80091ECE4 /* HDLog.swift in Sources */,
 				76C9D530231784760091ECE4 /* HDImageModel.swift in Sources */,
+				7615F5BF2323AA64003DB6C4 /* shareCardHeaderView.swift in Sources */,
 				76C9D607231A67980091ECE4 /* businessCardHeadCell.swift in Sources */,
 				7623DFA92322036E00CD79A2 /* HomeMineHeadView.swift in Sources */,
 				76C9D5752317AB560091ECE4 /* Public.xcdatamodeld in Sources */,
@@ -1056,7 +1105,9 @@
 				7623DF932320F01900CD79A2 /* AppColor.swift in Sources */,
 				76C9D5502317A9610091ECE4 /* HDHudManager.swift in Sources */,
 				76C9D4F22317818A0091ECE4 /* ViewController.swift in Sources */,
+				76BED4A22322404700B7FEFC /* personInfo+Extension.swift in Sources */,
 				76C9D535231785130091ECE4 /* UIColorHex.swift in Sources */,
+				7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */,
 				76C9D5B82317B2E70091ECE4 /* HDCustomBution.swift in Sources */,
 				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
 				7636FAC5231D058E008B1F80 /* textViewPalceHold.swift in Sources */,
@@ -1080,6 +1131,7 @@
 				7636FAC1231CF2A5008B1F80 /* ASAutoHeightTextView.swift in Sources */,
 				7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */,
 				76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */,
+				7615F5BD2323AA02003DB6C4 /* shareCard+Extension.swift in Sources */,
 				7636FABD231CC2B9008B1F80 /* businessCardEditVC+Extention.swift in Sources */,
 				76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */,
 				76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */,

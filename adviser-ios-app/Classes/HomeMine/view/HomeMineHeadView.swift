@@ -9,13 +9,16 @@
 import UIKit
 
 class HomeMineHeadView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+   weak var delegate:buttonClickDelegate?
+    
+    @IBAction func seePersionInfo(_ sender: Any) {
+        delegate?.butonClickBy(sender as! UIButton)
     }
-    */
-
+    @IBAction func editCardClick(_ sender: Any) {
+        delegate?.butonClickBy(sender as! UIButton)
+    }
+    @IBAction func shareCardClick(_ sender: Any) {
+        delegate?.butonClickBy(sender as! UIButton)
+    }
 }

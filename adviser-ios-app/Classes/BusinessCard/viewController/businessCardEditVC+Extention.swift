@@ -66,5 +66,4 @@ extension businessCardEditViewController {
             objc_setAssociatedObject(self, &AssociatedKeys.submitButton, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
-    
 }
