@@ -11,5 +11,8 @@
 
 #import "EncryptedStore.h"
 #import "MBProgressHUD.h"
+#import <UMShare/UMShare.h>
+#import <UShareUI/UShareUI.h>
+#import <UMCommon/UMCommon.h>
 
 #endif /* SwiftOC_Header_h */

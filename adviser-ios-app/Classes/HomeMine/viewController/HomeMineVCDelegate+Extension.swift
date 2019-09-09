@@ -41,12 +41,32 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
         return headerView
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+            let companyVC: companyInfoViewController = companyInfoViewController()
+            self.navigationController?.pushViewController(companyVC, animated: true)
+            
+            
+        }else if indexPath.row == 1 {
+            
+        }else if indexPath.row == 2 {
+            
+        }else if indexPath.row == 3 {
+            
+        }
+    }
+    
     func butonClickBy(_ sender: UIButton) {
         if sender.tag == 1000 {
-            let personVC:personInfoViewController = personInfoViewController()
+            let personVC: personInfoViewController = personInfoViewController()
             self.navigationController?.pushViewController(personVC, animated: true)
         }else if sender.tag == 1002 {
             //分享我的名片
+            let shareCardVC: HomeMineShareCardViewController = HomeMineShareCardViewController()
+            shareCardVC.isHiddenTabbar = true
+            self.navigationController?.pushViewController(shareCardVC, animated: true)
+//            self.navigationController?.hidesBottomBarWhenPushed = false
             
         }
     }

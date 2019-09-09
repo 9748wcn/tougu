@@ -36,6 +36,28 @@ PODS:
     - RxSwiftExt/Core
   - SnapKit (4.2.0)
   - SwiftyJSON (5.0.0)
+  - UMCCommon (2.1.1)
+  - UMCCommonLog (1.0.0)
+  - UMCSecurityPlugins (1.0.6)
+  - UMCShare/Core (6.9.6):
+    - UMCCommon
+  - UMCShare/Social/QQ (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedQQ (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/WeChat (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
   - WCDBOptimizedSQLCipher (1.2.1)
 
 DEPENDENCIES:
@@ -54,6 +76,12 @@ DEPENDENCIES:
   - RxSwiftExt
   - SnapKit
   - SwiftyJSON
+  - UMCCommon
+  - UMCCommonLog
+  - UMCSecurityPlugins
+  - UMCShare/Social/QQ
+  - UMCShare/Social/WeChat
+  - UMCShare/UI
   - WCDBOptimizedSQLCipher (~> 1.2.1)
 
 SPEC REPOS:
@@ -76,6 +104,10 @@ SPEC REPOS:
     - RxSwiftExt
     - SnapKit
     - SwiftyJSON
+    - UMCCommon
+    - UMCCommonLog
+    - UMCSecurityPlugins
+    - UMCShare
     - WCDBOptimizedSQLCipher
 
 SPEC CHECKSUMS:
@@ -97,8 +129,12 @@ SPEC CHECKSUMS:
   RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
+  UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 3f857fea7c6fc27dd97a55e9e95836098991de02
+PODFILE CHECKSUM: e50032af117d939cf4327bc75cb6fb0ee7d4babb
 
 COCOAPODS: 1.7.2
