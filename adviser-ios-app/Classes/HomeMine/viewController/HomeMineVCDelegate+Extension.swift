@@ -46,12 +46,12 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
         if indexPath.row == 0 {
             let companyVC: companyInfoViewController = companyInfoViewController()
             self.navigationController?.pushViewController(companyVC, animated: true)
-            
-            
         }else if indexPath.row == 1 {
-            
+            let settingVC: SettingViewController = SettingViewController()
+            self.navigationController?.pushViewController(settingVC, animated: true)
         }else if indexPath.row == 2 {
-            
+            let versionVC: VersionViewController = VersionViewController()
+            self.navigationController?.pushViewController(versionVC, animated: true)
         }else if indexPath.row == 3 {
             
         }
@@ -66,7 +66,10 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
             let shareCardVC: HomeMineShareCardViewController = HomeMineShareCardViewController()
             shareCardVC.isHiddenTabbar = true
             self.navigationController?.pushViewController(shareCardVC, animated: true)
-//            self.navigationController?.hidesBottomBarWhenPushed = false
+        }else if sender.tag == 1001 {
+            //编辑我的名片
+            let vc:businessCardEditViewController = businessCardEditViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
     }

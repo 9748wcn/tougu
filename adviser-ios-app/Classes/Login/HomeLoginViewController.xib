@@ -27,14 +27,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3I3-e6-1mP">
-                    <rect key="frame" x="335" y="50" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="2Um-fp-Ma3"/>
-                        <constraint firstAttribute="width" constant="20" id="pI3-Zv-ZtK"/>
-                    </constraints>
-                    <state key="normal" title="Button" image="closeLogin"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeC-jb-g8N">
                     <rect key="frame" x="20" y="80" width="57" height="30"/>
                     <constraints>
@@ -142,6 +134,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="登录"/>
+                    <connections>
+                        <action selector="loginClick:" destination="-1" eventType="touchUpInside" id="b30-jb-cIp"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DX-w9-Z1c">
                     <rect key="frame" x="283" y="531" width="62" height="30"/>
@@ -160,7 +155,6 @@
                 <constraint firstItem="j3q-KB-bIC" firstAttribute="top" secondItem="ViO-1W-tMV" secondAttribute="bottom" constant="5" id="5lk-qE-0US"/>
                 <constraint firstItem="bUi-Ob-iiD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="7qV-Vg-zYp"/>
                 <constraint firstItem="g3e-rh-2Cf" firstAttribute="top" secondItem="g4s-Up-r8Y" secondAttribute="bottom" constant="40" id="A45-He-gE7"/>
-                <constraint firstAttribute="trailing" secondItem="3I3-e6-1mP" secondAttribute="trailing" constant="20" id="DOv-QG-f2j"/>
                 <constraint firstAttribute="trailing" secondItem="qCX-6A-m3e" secondAttribute="trailing" constant="20" id="Fun-u1-qyG"/>
                 <constraint firstAttribute="trailing" secondItem="PDv-jh-ao6" secondAttribute="trailing" constant="20" id="JxQ-ep-3KQ"/>
                 <constraint firstItem="hkz-7e-y4X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="LS7-wJ-WVC"/>
@@ -169,7 +163,6 @@
                 <constraint firstItem="JrC-aZ-VIS" firstAttribute="leading" secondItem="MxV-RP-RV6" secondAttribute="trailing" constant="15" id="Nak-6z-qkZ"/>
                 <constraint firstAttribute="trailing" secondItem="3fs-bT-JF9" secondAttribute="trailing" constant="20" id="QvL-KE-TcC"/>
                 <constraint firstAttribute="trailing" secondItem="g3e-rh-2Cf" secondAttribute="trailing" constant="140" id="R5u-jD-fCp"/>
-                <constraint firstItem="3I3-e6-1mP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="RQU-Yh-x4U"/>
                 <constraint firstItem="g4s-Up-r8Y" firstAttribute="top" secondItem="3fs-bT-JF9" secondAttribute="bottom" constant="5" id="S8W-b7-XUk"/>
                 <constraint firstItem="ViO-1W-tMV" firstAttribute="top" secondItem="hkz-7e-y4X" secondAttribute="bottom" constant="53" id="Y9O-3R-n9b"/>
                 <constraint firstItem="MxV-RP-RV6" firstAttribute="centerY" secondItem="hkz-7e-y4X" secondAttribute="centerY" id="Zg7-SD-X4z"/>
@@ -194,7 +187,4 @@
             <point key="canvasLocation" x="89.855072463768124" y="43.206521739130437"/>
         </view>
     </objects>
-    <resources>
-        <image name="closeLogin" width="15" height="15"/>
-    </resources>
 </document>

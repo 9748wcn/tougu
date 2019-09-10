@@ -33,6 +33,9 @@ public let is_iphoneX = (screenWidth >= 375.0 && screenHeight >= 812.0)
 
 public let bottomSafeHeight = CGFloat(is_iphoneX ? 34.0 : 0)
 
+public let navHeight = CGFloat(is_iphoneX ? 88.0 : 64.0)
+
+
 //12号字体
 public let textFont12 = UIFont.systemFont(ofSize: 12.0)
 //10号字体

@@ -14,5 +14,5 @@
 #import <UMShare/UMShare.h>
 #import <UShareUI/UShareUI.h>
 #import <UMCommon/UMCommon.h>
-
+#import <UMCommonLog/UMCommonLogHeaders.h>
 #endif /* SwiftOC_Header_h */

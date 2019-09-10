@@ -15,7 +15,7 @@ class baseTabbarController: UITabBarController {
 
         // Do any additional setup after loading the view.
         addChildViewControllers()
-        tabBar.tintColor = UIColor(red: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+        tabBar.tintColor = main_buttonColor
     }
     
     public func addChildViewControllers() {

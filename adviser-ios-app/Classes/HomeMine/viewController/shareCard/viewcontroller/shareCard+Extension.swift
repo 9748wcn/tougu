@@ -25,6 +25,7 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let headerView: shareCardHeaderView = shareCardHeaderView.loadFromXib()
+            self.sectionHeaderView = headerView
             return headerView
             
         }else{
@@ -95,6 +96,27 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
         return headerView
         
     }
+}
+
+// MARK - methods
+extension HomeMineShareCardViewController {
     
+    @objc func editCardClick() {
+        let vc:businessCardEditViewController = businessCardEditViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
+    @objc func saveCardClick() {
+        let size: CGSize = sectionHeaderView.bounds.size
+        UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale);
+        sectionHeaderView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext();
+        UIImageWriteToSavedPhotosAlbum(image,self,nil,nil);
+        
+    }
+    
+    @objc func shareCardClick() {
+        
+    }
 }

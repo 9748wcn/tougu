@@ -14,11 +14,12 @@ class companyInfoViewController: baseViewController {
         super.viewDidLoad()
         title = "公司对外信息"
         // Do any additional setup after loading the view.
-        let cancelItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancelItemClicked))
-        navigationItem.rightBarButtonItem = cancelItem
+        let shareItem = UIBarButtonItem(image: UIImage(named: "shareIcon"), style: .plain, target: self, action: #selector(shareItemClicked))
+//        let shareItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancelItemClicked))
+        navigationItem.rightBarButtonItem = shareItem
     }
     
-    @objc private func cancelItemClicked() {
+    @objc private func shareItemClicked() {
         UMSocialUIManager.showShareMenuViewInWindow { (UMSocialPlatformType, [AnyHashable : Any]?) in
             
         }

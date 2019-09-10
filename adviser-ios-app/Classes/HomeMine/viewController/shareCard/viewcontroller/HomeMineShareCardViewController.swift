@@ -12,9 +12,10 @@ class HomeMineShareCardViewController: baseViewController {
     
     var isHiddenTabbar: Bool = false
     
+    var sectionHeaderView: shareCardHeaderView!
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-52 - bottomSafeHeight - (isHiddenTabbar ? 0 : 49)), style: .grouped)
+        let tableView = UITableView(frame: CGRect(x: 0, y: navHeight, width: view.bounds.width, height: view.bounds.height-52 - bottomSafeHeight - (isHiddenTabbar ? 0 : 49) - navHeight), style: .grouped)
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,7 +29,7 @@ class HomeMineShareCardViewController: baseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "名片转发"
+        title = isHiddenTabbar ? "名片转发" : "首页"
         let bottonView = bottomView()
         view.addSubview(bottonView)
         view.addSubview(tableView)
@@ -42,14 +43,17 @@ class HomeMineShareCardViewController: baseViewController {
         editBtn.imageButton.setImage(UIImage(named: "editCard"), for: .normal)
         editBtn.buttonNameLabel.text = "名片编辑"
         editBtn.frame = CGRect(x: view.bounds.width - 345, y: (52 - 38)/2.0, width: 50, height: 38)
+        editBtn.imageButton.addTarget(self, action: #selector(editCardClick), for: .touchUpInside)
         let saveBtn: tabbarButton = tabbarButton.loadFromXib()
         bottonView.addSubview(saveBtn)
         saveBtn.imageButton.setImage(UIImage(named: "saveCard"), for: .normal)
         saveBtn.buttonNameLabel.text = "名片保存"
+        saveBtn.imageButton.addTarget(self, action: #selector(saveCardClick), for: .touchUpInside)
         saveBtn.frame = CGRect(x: view.bounds.width - 345 + 50 + 50, y: (52 - 38)/2.0, width: 50, height: 38)
         let shareCardBtn: HDCustomBution = HDCustomBution()
         shareCardBtn.setupConfig(radius: 16.0, borderW: 1.0, borderC: UIColor(rgb: 0x497BEC).cgColor, defaultColor: UIColor(rgb: 0x497BEC), selectColor: UIColor(rgb: 0x497BEC))
         shareCardBtn.setTitle("分享名片链接", for: .normal)
+        shareCardBtn.addTarget(self, action: #selector(shareCardClick), for: .touchUpInside)
         shareCardBtn.frame = CGRect(x: view.bounds.width - 130 - 15, y: 10, width: 130, height: 32)
         bottonView.addSubview(shareCardBtn)
         return bottonView

@@ -23,6 +23,8 @@ class UmengShareManager: NSObject {
     }
     
     func configUSharePlatforms() {
+        UMCommonLogManager.setUp()
+        UMConfigure.setLogEnabled(true)
         UMConfigure.initWithAppkey(umengKey, channel: "App Store")
         UMSocialManager.default()?.setPlaform(UMSocialPlatformType.wechatSession, appKey: wechatAppId, appSecret: wechatAppSecret, redirectURL: "http://mobile.umeng.com/social")
         UMSocialManager.default()?.setPlaform(UMSocialPlatformType.wechatTimeLine, appKey: wechatAppId, appSecret: wechatAppSecret, redirectURL: "http://mobile.umeng.com/social")

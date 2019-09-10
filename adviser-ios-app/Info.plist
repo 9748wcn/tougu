@@ -103,6 +103,8 @@
 	<string>开启后，便于您拍摄个人头像等画面</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>开启后，便于您使用相册中的图片</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>请允许APP保存图片到相册</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

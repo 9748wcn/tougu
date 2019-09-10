@@ -20,6 +20,10 @@
 		7615F5D023263B0E003DB6C4 /* tabbarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5CF23263B0E003DB6C4 /* tabbarButton.xib */; };
 		7615F5D323265953003DB6C4 /* UmengShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5D223265953003DB6C4 /* UmengShareManager.swift */; };
 		7615F5D62326661A003DB6C4 /* companyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5D52326661A003DB6C4 /* companyInfoViewController.swift */; };
+		7615F5D9232736E6003DB6C4 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5D8232736E6003DB6C4 /* QRCodeView.swift */; };
+		7615F5DD23273F95003DB6C4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5DC23273F95003DB6C4 /* SettingViewController.swift */; };
+		7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5E32327566D003DB6C4 /* VersionViewController.swift */; };
+		7615F5E62327566D003DB6C4 /* VersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5E42327566D003DB6C4 /* VersionViewController.xib */; };
 		7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */; };
 		7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */; };
 		7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */; };
@@ -166,6 +170,10 @@
 		7615F5CF23263B0E003DB6C4 /* tabbarButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tabbarButton.xib; sourceTree = "<group>"; };
 		7615F5D223265953003DB6C4 /* UmengShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmengShareManager.swift; sourceTree = "<group>"; };
 		7615F5D52326661A003DB6C4 /* companyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companyInfoViewController.swift; sourceTree = "<group>"; };
+		7615F5D8232736E6003DB6C4 /* QRCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		7615F5DC23273F95003DB6C4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		7615F5E32327566D003DB6C4 /* VersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
+		7615F5E42327566D003DB6C4 /* VersionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VersionViewController.xib; sourceTree = "<group>"; };
 		7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDSettingViewModel.swift; sourceTree = "<group>"; };
 		7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessSubmitBtnCell.swift; sourceTree = "<group>"; };
 		7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = businessSubmitBtnCell.xib; sourceTree = "<group>"; };
@@ -329,7 +337,6 @@
 		7615F5C22325E816003DB6C4 /* shareCard */ = {
 			isa = PBXGroup;
 			children = (
-				7615F5CC2325FCAE003DB6C4 /* viewcontroller */,
 				7615F5CB2325FCA2003DB6C4 /* view */,
 			);
 			path = shareCard;
@@ -394,6 +401,39 @@
 			path = company;
 			sourceTree = "<group>";
 		};
+		7615F5D7232736D5003DB6C4 /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				7615F5D8232736E6003DB6C4 /* QRCodeView.swift */,
+			);
+			path = QR;
+			sourceTree = "<group>";
+		};
+		7615F5DA23273F3D003DB6C4 /* shareCard */ = {
+			isa = PBXGroup;
+			children = (
+				7615F5CC2325FCAE003DB6C4 /* viewcontroller */,
+			);
+			path = shareCard;
+			sourceTree = "<group>";
+		};
+		7615F5DB23273F61003DB6C4 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				7615F5DC23273F95003DB6C4 /* SettingViewController.swift */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		7615F5DE23275431003DB6C4 /* version */ = {
+			isa = PBXGroup;
+			children = (
+				7615F5E32327566D003DB6C4 /* VersionViewController.swift */,
+				7615F5E42327566D003DB6C4 /* VersionViewController.xib */,
+			);
+			path = version;
+			sourceTree = "<group>";
+		};
 		7623DF8B2320935400CD79A2 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +456,9 @@
 		7623DF9F2321FD4900CD79A2 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				7615F5DE23275431003DB6C4 /* version */,
+				7615F5DB23273F61003DB6C4 /* setting */,
+				7615F5DA23273F3D003DB6C4 /* shareCard */,
 				7615F5D4232665E5003DB6C4 /* company */,
 				76C9D5F6231A264E0091ECE4 /* HomeMineViewController.swift */,
 				7623DFA22321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift */,
@@ -501,6 +544,7 @@
 		76C9D51D2317844A0091ECE4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7615F5D7232736D5003DB6C4 /* QR */,
 				7615F5D123265924003DB6C4 /* shareManager */,
 				76C9D5BA2317B2F10091ECE4 /* Alert */,
 				76C9D5B52317B2E70091ECE4 /* Button */,
@@ -1046,6 +1090,7 @@
 				76C9D5CB2317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib in Resources */,
 				76C9D604231A61F00091ECE4 /* businessCardEditTableViewCell.xib in Resources */,
 				7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */,
+				7615F5E62327566D003DB6C4 /* VersionViewController.xib in Resources */,
 				76C9D4FA2317818A0091ECE4 /* LaunchScreen.storyboard in Resources */,
 				76BED4AA2322446600B7FEFC /* personInfoHeadView.xib in Resources */,
 				7623DFAB2322038B00CD79A2 /* HomeMineHeadView.xib in Resources */,
@@ -1142,6 +1187,7 @@
 				76C9D5B92317B2E70091ECE4 /* HDCountDownButtion.swift in Sources */,
 				76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */,
 				76C9D52A231784760091ECE4 /* HDPhotoImageManager.swift in Sources */,
+				7615F5D9232736E6003DB6C4 /* QRCodeView.swift in Sources */,
 				76C9D5792317AB560091ECE4 /* HDPublicEncCoreDataManager.swift in Sources */,
 				76C9D5922317B2380091ECE4 /* UILabel-Extend.swift in Sources */,
 				76C9D5CD2317B2F10091ECE4 /* HDAlertBaseView.swift in Sources */,
@@ -1196,6 +1242,7 @@
 				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,
 				76C9D57C2317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift in Sources */,
 				7623DFA32321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift in Sources */,
+				7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */,
 				76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */,
 				7615F5D62326661A003DB6C4 /* companyInfoViewController.swift in Sources */,
 				76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */,
@@ -1208,6 +1255,7 @@
 				76C9D53D2317A5760091ECE4 /* BaseConst.swift in Sources */,
 				76C9D5C92317B2F10091ECE4 /* HDAlertManager.swift in Sources */,
 				7623DF9D2321F0B700CD79A2 /* resetPassWordSetViewController.swift in Sources */,
+				7615F5DD23273F95003DB6C4 /* SettingViewController.swift in Sources */,
 				76C9D532231784760091ECE4 /* HDImagePickerViewController.swift in Sources */,
 				76C9D5ED231A11B10091ECE4 /* HomeMainViewController.swift in Sources */,
 				76C9D5CC2317B2F10091ECE4 /* HDAlertWindow.swift in Sources */,

@@ -12,8 +12,8 @@ class baseNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        setupNavigationBarAppearance()
 
-        // Do any additional setup after loading the view.
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -23,6 +23,10 @@ class baseNavigationViewController: UINavigationController {
         super.pushViewController(viewController, animated: animated)
     }
     
+//    func setupNavigationBarAppearance() {
+//        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+//        self.navigationItem.backBarButtonItem = item;
+//    }
 
     /*
     // MARK: - Navigation

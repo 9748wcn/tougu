@@ -55,6 +55,11 @@ class HomeLoginViewController: baseViewController {
         self.delegate = self
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
 
     @IBAction func loginByPassWord(_ sender: Any) {
         if sender as? UIButton != currentBtn {
@@ -84,14 +89,11 @@ class HomeLoginViewController: baseViewController {
         self.navigationController?.pushViewController(setVC, animated: true)
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func loginClick(_ sender: Any) {
+        self.view.endEditing(true)
+        
     }
-    */
+    
 
 }

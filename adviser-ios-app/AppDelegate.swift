@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         gotoMainVC()
+        configShared()
         window?.makeKeyAndVisible()
         return true
     }

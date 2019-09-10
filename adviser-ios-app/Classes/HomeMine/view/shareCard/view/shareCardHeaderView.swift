@@ -26,4 +26,9 @@ class shareCardHeaderView: UIView {
     
     @IBOutlet weak var QRCodeLabel: UIImageView!
     
+    override func awakeFromNib() {
+        let codeView = QRCodeView(frame: CGRect(x: 0, y: 0, width: 64, height: 64), content: "测试", colors: [UIColor.yellow,UIColor.red])
+        QRCodeLabel.addSubview(codeView)
+    }
+    
 }

@@ -17,7 +17,7 @@ class HomeTabbarViewController: baseTabbarController {
     }
     
     override func addChildViewControllers() {
-        self.setupOneChildViewController("首页", image: "mainUnSelected", selectedImage: "mainSelected", controller: HomeMainViewController())
+        self.setupOneChildViewController("首页", image: "mainUnSelected", selectedImage: "mainSelected", controller: HomeMineShareCardViewController())
         self.setupOneChildViewController("我的", image: "mineUnSelected", selectedImage: "mineSelected", controller: HomeMineViewController())
     }
     
