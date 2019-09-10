@@ -26,6 +26,9 @@
 		7615F5ED232786AC003DB6C4 /* HDCountDownButtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5EC232786AC003DB6C4 /* HDCountDownButtion.swift */; };
 		7615F5EF232786C4003DB6C4 /* tabbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5EE232786C4003DB6C4 /* tabbarButton.swift */; };
 		7615F5F1232786D0003DB6C4 /* tabbarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5F0232786D0003DB6C4 /* tabbarButton.xib */; };
+		7615F5FA232788A8003DB6C4 /* ASAutoHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5F9232788A8003DB6C4 /* ASAutoHeightTextView.swift */; };
+		7615F5FC232788AE003DB6C4 /* HDView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5FB232788AE003DB6C4 /* HDView+Extend.swift */; };
+		7615F5FE232788B5003DB6C4 /* textViewPalceHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5FD232788B5003DB6C4 /* textViewPalceHold.swift */; };
 		7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */; };
 		7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */; };
 		7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */; };
@@ -41,9 +44,7 @@
 		7623DFA92322036E00CD79A2 /* HomeMineHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DFA82322036E00CD79A2 /* HomeMineHeadView.swift */; };
 		7623DFAB2322038B00CD79A2 /* HomeMineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7623DFAA2322038B00CD79A2 /* HomeMineHeadView.xib */; };
 		7636FABD231CC2B9008B1F80 /* businessCardEditVC+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FABC231CC2B9008B1F80 /* businessCardEditVC+Extention.swift */; };
-		7636FAC1231CF2A5008B1F80 /* ASAutoHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC0231CF2A5008B1F80 /* ASAutoHeightTextView.swift */; };
 		7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */; };
-		7636FAC5231D058E008B1F80 /* textViewPalceHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */; };
 		7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636FAC6231D119D008B1F80 /* baseNavigationViewController.swift */; };
 		76BED4A023223FAC00B7FEFC /* personInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BED49F23223FAC00B7FEFC /* personInfoViewController.swift */; };
 		76BED4A22322404700B7FEFC /* personInfo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BED4A12322404700B7FEFC /* personInfo+Extension.swift */; };
@@ -109,7 +110,6 @@
 		76C9D5A22317B2830091ECE4 /* DispatchQueue+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59D2317B2830091ECE4 /* DispatchQueue+extension.swift */; };
 		76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59E2317B2830091ECE4 /* HDLoadingEmptyView.swift */; };
 		76C9D5A42317B2830091ECE4 /* BQTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59F2317B2830091ECE4 /* BQTool.swift */; };
-		76C9D5AA2317B2B40091ECE4 /* HDView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5A92317B2B40091ECE4 /* HDView+Extend.swift */; };
 		76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5AC2317B2BC0091ECE4 /* HDClientIDService.swift */; };
 		76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */; };
 		76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */; };
@@ -176,6 +176,9 @@
 		7615F5EC232786AC003DB6C4 /* HDCountDownButtion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDCountDownButtion.swift; sourceTree = "<group>"; };
 		7615F5EE232786C4003DB6C4 /* tabbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabbarButton.swift; sourceTree = "<group>"; };
 		7615F5F0232786D0003DB6C4 /* tabbarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tabbarButton.xib; sourceTree = "<group>"; };
+		7615F5F9232788A8003DB6C4 /* ASAutoHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAutoHeightTextView.swift; sourceTree = "<group>"; };
+		7615F5FB232788AE003DB6C4 /* HDView+Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDView+Extend.swift"; sourceTree = "<group>"; };
+		7615F5FD232788B5003DB6C4 /* textViewPalceHold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textViewPalceHold.swift; sourceTree = "<group>"; };
 		7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDSettingViewModel.swift; sourceTree = "<group>"; };
 		7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessSubmitBtnCell.swift; sourceTree = "<group>"; };
 		7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = businessSubmitBtnCell.xib; sourceTree = "<group>"; };
@@ -191,9 +194,7 @@
 		7623DFA82322036E00CD79A2 /* HomeMineHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMineHeadView.swift; sourceTree = "<group>"; };
 		7623DFAA2322038B00CD79A2 /* HomeMineHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMineHeadView.xib; sourceTree = "<group>"; };
 		7636FABC231CC2B9008B1F80 /* businessCardEditVC+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "businessCardEditVC+Extention.swift"; sourceTree = "<group>"; };
-		7636FAC0231CF2A5008B1F80 /* ASAutoHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASAutoHeightTextView.swift; sourceTree = "<group>"; };
 		7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardIntroduceView.swift; sourceTree = "<group>"; };
-		7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewPalceHold.swift; sourceTree = "<group>"; };
 		7636FAC6231D119D008B1F80 /* baseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseNavigationViewController.swift; sourceTree = "<group>"; };
 		76BED49F23223FAC00B7FEFC /* personInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoViewController.swift; sourceTree = "<group>"; };
 		76BED4A12322404700B7FEFC /* personInfo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "personInfo+Extension.swift"; sourceTree = "<group>"; };
@@ -270,7 +271,6 @@
 		76C9D59D2317B2830091ECE4 /* DispatchQueue+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+extension.swift"; sourceTree = "<group>"; };
 		76C9D59E2317B2830091ECE4 /* HDLoadingEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDLoadingEmptyView.swift; sourceTree = "<group>"; };
 		76C9D59F2317B2830091ECE4 /* BQTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BQTool.swift; sourceTree = "<group>"; };
-		76C9D5A92317B2B40091ECE4 /* HDView+Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDView+Extend.swift"; sourceTree = "<group>"; };
 		76C9D5AC2317B2BC0091ECE4 /* HDClientIDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDClientIDService.swift; sourceTree = "<group>"; };
 		76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKeyChainHelper.swift; sourceTree = "<group>"; };
 		76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDStringExtend.swift; sourceTree = "<group>"; };
@@ -445,6 +445,16 @@
 			path = button;
 			sourceTree = "<group>";
 		};
+		7615F5F823278888003DB6C4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7615F5F9232788A8003DB6C4 /* ASAutoHeightTextView.swift */,
+				7615F5FB232788AE003DB6C4 /* HDView+Extend.swift */,
+				7615F5FD232788B5003DB6C4 /* textViewPalceHold.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		7623DF8B2320935400CD79A2 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,13 +565,13 @@
 		76C9D51D2317844A0091ECE4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7615F5F823278888003DB6C4 /* view */,
 				7615F5E92327863A003DB6C4 /* button */,
 				7615F5D7232736D5003DB6C4 /* QR */,
 				7615F5D123265924003DB6C4 /* shareManager */,
 				76C9D5BA2317B2F10091ECE4 /* Alert */,
 				76C9D5B02317B2D40091ECE4 /* String */,
 				76C9D5AB2317B2BC0091ECE4 /* KeyChain */,
-				76C9D5A82317B2B40091ECE4 /* View */,
 				76C9D5A52317B2A20091ECE4 /* viewController */,
 				76C9D59A2317B2830091ECE4 /* HDEmptyView */,
 				76C9D5972317B2690091ECE4 /* HDRuntime */,
@@ -848,17 +858,6 @@
 			);
 			name = viewController;
 			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/viewController";
-			sourceTree = "<group>";
-		};
-		76C9D5A82317B2B40091ECE4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				76C9D5A92317B2B40091ECE4 /* HDView+Extend.swift */,
-				7636FAC0231CF2A5008B1F80 /* ASAutoHeightTextView.swift */,
-				7636FAC4231D058E008B1F80 /* textViewPalceHold.swift */,
-			);
-			name = View;
-			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/View";
 			sourceTree = "<group>";
 		};
 		76C9D5AB2317B2BC0091ECE4 /* KeyChain */ = {
@@ -1177,7 +1176,6 @@
 				7615F5ED232786AC003DB6C4 /* HDCountDownButtion.swift in Sources */,
 				7615F5D323265953003DB6C4 /* UmengShareManager.swift in Sources */,
 				7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */,
-				76C9D5AA2317B2B40091ECE4 /* HDView+Extend.swift in Sources */,
 				76C9D5762317AB560091ECE4 /* EncryptedStore.m in Sources */,
 				76C9D57B2317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift in Sources */,
 				76BED4A023223FAC00B7FEFC /* personInfoViewController.swift in Sources */,
@@ -1237,14 +1235,15 @@
 				7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */,
 				7615F5CA2325EA9F003DB6C4 /* RecordTableViewCell.swift in Sources */,
 				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
-				7636FAC5231D058E008B1F80 /* textViewPalceHold.swift in Sources */,
 				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,
 				76C9D57C2317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift in Sources */,
 				7623DFA32321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift in Sources */,
+				7615F5FC232788AE003DB6C4 /* HDView+Extend.swift in Sources */,
 				7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */,
 				76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */,
 				7615F5D62326661A003DB6C4 /* companyInfoViewController.swift in Sources */,
 				76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */,
+				7615F5FE232788B5003DB6C4 /* textViewPalceHold.swift in Sources */,
 				76C9D55A2317AA480091ECE4 /* HDNetworkClient.swift in Sources */,
 				76C9D5772317AB560091ECE4 /* HDDBConfig.swift in Sources */,
 				7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */,
@@ -1258,7 +1257,6 @@
 				76C9D532231784760091ECE4 /* HDImagePickerViewController.swift in Sources */,
 				76C9D5ED231A11B10091ECE4 /* HomeMainViewController.swift in Sources */,
 				76C9D5CC2317B2F10091ECE4 /* HDAlertWindow.swift in Sources */,
-				7636FAC1231CF2A5008B1F80 /* ASAutoHeightTextView.swift in Sources */,
 				7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */,
 				76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */,
 				7615F5BD2323AA02003DB6C4 /* shareCard+Extension.swift in Sources */,
@@ -1276,6 +1274,7 @@
 				76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */,
 				76C9D5992317B2690091ECE4 /* HDRuntime.swift in Sources */,
 				7623DF952321056900CD79A2 /* LoginVC+Extension.swift in Sources */,
+				7615F5FA232788A8003DB6C4 /* ASAutoHeightTextView.swift in Sources */,
 				76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */,
 				76C9D5512317A9610091ECE4 /* HDToast.swift in Sources */,
 			);
