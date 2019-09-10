@@ -16,14 +16,16 @@
 		7615F5C72325E88D003DB6C4 /* ShareCardIntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5C52325E88D003DB6C4 /* ShareCardIntroduceCell.swift */; };
 		7615F5C82325E88D003DB6C4 /* ShareCardIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5C62325E88D003DB6C4 /* ShareCardIntroduceCell.xib */; };
 		7615F5CA2325EA9F003DB6C4 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5C92325EA9F003DB6C4 /* RecordTableViewCell.swift */; };
-		7615F5CE23263B04003DB6C4 /* tabbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5CD23263B04003DB6C4 /* tabbarButton.swift */; };
-		7615F5D023263B0E003DB6C4 /* tabbarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5CF23263B0E003DB6C4 /* tabbarButton.xib */; };
 		7615F5D323265953003DB6C4 /* UmengShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5D223265953003DB6C4 /* UmengShareManager.swift */; };
 		7615F5D62326661A003DB6C4 /* companyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5D52326661A003DB6C4 /* companyInfoViewController.swift */; };
 		7615F5D9232736E6003DB6C4 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5D8232736E6003DB6C4 /* QRCodeView.swift */; };
 		7615F5DD23273F95003DB6C4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5DC23273F95003DB6C4 /* SettingViewController.swift */; };
 		7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5E32327566D003DB6C4 /* VersionViewController.swift */; };
 		7615F5E62327566D003DB6C4 /* VersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5E42327566D003DB6C4 /* VersionViewController.xib */; };
+		7615F5EB2327867B003DB6C4 /* HDCustomBution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5EA2327867A003DB6C4 /* HDCustomBution.swift */; };
+		7615F5ED232786AC003DB6C4 /* HDCountDownButtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5EC232786AC003DB6C4 /* HDCountDownButtion.swift */; };
+		7615F5EF232786C4003DB6C4 /* tabbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5EE232786C4003DB6C4 /* tabbarButton.swift */; };
+		7615F5F1232786D0003DB6C4 /* tabbarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7615F5F0232786D0003DB6C4 /* tabbarButton.xib */; };
 		7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */; };
 		7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */; };
 		7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */; };
@@ -112,8 +114,6 @@
 		76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */; };
 		76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */; };
 		76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B22317B2D40091ECE4 /* HDSting-Ecryption.swift */; };
-		76C9D5B82317B2E70091ECE4 /* HDCustomBution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B62317B2E70091ECE4 /* HDCustomBution.swift */; };
-		76C9D5B92317B2E70091ECE4 /* HDCountDownButtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B72317B2E70091ECE4 /* HDCountDownButtion.swift */; };
 		76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */; };
 		76C9D5C62317B2F10091ECE4 /* HDAlertDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */; };
 		76C9D5C72317B2F10091ECE4 /* HDAlertDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */; };
@@ -166,14 +166,16 @@
 		7615F5C52325E88D003DB6C4 /* ShareCardIntroduceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardIntroduceCell.swift; sourceTree = "<group>"; };
 		7615F5C62325E88D003DB6C4 /* ShareCardIntroduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareCardIntroduceCell.xib; sourceTree = "<group>"; };
 		7615F5C92325EA9F003DB6C4 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
-		7615F5CD23263B04003DB6C4 /* tabbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbarButton.swift; sourceTree = "<group>"; };
-		7615F5CF23263B0E003DB6C4 /* tabbarButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tabbarButton.xib; sourceTree = "<group>"; };
 		7615F5D223265953003DB6C4 /* UmengShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmengShareManager.swift; sourceTree = "<group>"; };
 		7615F5D52326661A003DB6C4 /* companyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companyInfoViewController.swift; sourceTree = "<group>"; };
 		7615F5D8232736E6003DB6C4 /* QRCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		7615F5DC23273F95003DB6C4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		7615F5E32327566D003DB6C4 /* VersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
 		7615F5E42327566D003DB6C4 /* VersionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VersionViewController.xib; sourceTree = "<group>"; };
+		7615F5EA2327867A003DB6C4 /* HDCustomBution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDCustomBution.swift; sourceTree = "<group>"; };
+		7615F5EC232786AC003DB6C4 /* HDCountDownButtion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDCountDownButtion.swift; sourceTree = "<group>"; };
+		7615F5EE232786C4003DB6C4 /* tabbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabbarButton.swift; sourceTree = "<group>"; };
+		7615F5F0232786D0003DB6C4 /* tabbarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tabbarButton.xib; sourceTree = "<group>"; };
 		7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDSettingViewModel.swift; sourceTree = "<group>"; };
 		7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessSubmitBtnCell.swift; sourceTree = "<group>"; };
 		7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = businessSubmitBtnCell.xib; sourceTree = "<group>"; };
@@ -273,8 +275,6 @@
 		76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKeyChainHelper.swift; sourceTree = "<group>"; };
 		76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDStringExtend.swift; sourceTree = "<group>"; };
 		76C9D5B22317B2D40091ECE4 /* HDSting-Ecryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDSting-Ecryption.swift"; sourceTree = "<group>"; };
-		76C9D5B62317B2E70091ECE4 /* HDCustomBution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDCustomBution.swift; sourceTree = "<group>"; };
-		76C9D5B72317B2E70091ECE4 /* HDCountDownButtion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDCountDownButtion.swift; sourceTree = "<group>"; };
 		76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertImagePickerView.swift; sourceTree = "<group>"; };
 		76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertDefaultView.swift; sourceTree = "<group>"; };
 		76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlertDefaultView.xib; sourceTree = "<group>"; };
@@ -434,6 +434,17 @@
 			path = version;
 			sourceTree = "<group>";
 		};
+		7615F5E92327863A003DB6C4 /* button */ = {
+			isa = PBXGroup;
+			children = (
+				7615F5EA2327867A003DB6C4 /* HDCustomBution.swift */,
+				7615F5EC232786AC003DB6C4 /* HDCountDownButtion.swift */,
+				7615F5EE232786C4003DB6C4 /* tabbarButton.swift */,
+				7615F5F0232786D0003DB6C4 /* tabbarButton.xib */,
+			);
+			path = button;
+			sourceTree = "<group>";
+		};
 		7623DF8B2320935400CD79A2 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,10 +555,10 @@
 		76C9D51D2317844A0091ECE4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7615F5E92327863A003DB6C4 /* button */,
 				7615F5D7232736D5003DB6C4 /* QR */,
 				7615F5D123265924003DB6C4 /* shareManager */,
 				76C9D5BA2317B2F10091ECE4 /* Alert */,
-				76C9D5B52317B2E70091ECE4 /* Button */,
 				76C9D5B02317B2D40091ECE4 /* String */,
 				76C9D5AB2317B2BC0091ECE4 /* KeyChain */,
 				76C9D5A82317B2B40091ECE4 /* View */,
@@ -868,18 +879,6 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		76C9D5B52317B2E70091ECE4 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				76C9D5B62317B2E70091ECE4 /* HDCustomBution.swift */,
-				76C9D5B72317B2E70091ECE4 /* HDCountDownButtion.swift */,
-				7615F5CD23263B04003DB6C4 /* tabbarButton.swift */,
-				7615F5CF23263B0E003DB6C4 /* tabbarButton.xib */,
-			);
-			name = Button;
-			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/Button";
-			sourceTree = "<group>";
-		};
 		76C9D5BA2317B2F10091ECE4 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,10 +1091,10 @@
 				7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */,
 				7615F5E62327566D003DB6C4 /* VersionViewController.xib in Resources */,
 				76C9D4FA2317818A0091ECE4 /* LaunchScreen.storyboard in Resources */,
+				7615F5F1232786D0003DB6C4 /* tabbarButton.xib in Resources */,
 				76BED4AA2322446600B7FEFC /* personInfoHeadView.xib in Resources */,
 				7623DFAB2322038B00CD79A2 /* HomeMineHeadView.xib in Resources */,
 				7623DF9E2321F0B700CD79A2 /* resetPassWordSetViewController.xib in Resources */,
-				7615F5D023263B0E003DB6C4 /* tabbarButton.xib in Resources */,
 				76C9D5C82317B2F10091ECE4 /* HDAlertImagePickerView.xib in Resources */,
 				76BED4A62322426F00B7FEFC /* personInfoTableViewCell.xib in Resources */,
 				7615F5C82325E88D003DB6C4 /* ShareCardIntroduceCell.xib in Resources */,
@@ -1175,6 +1174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7615F5ED232786AC003DB6C4 /* HDCountDownButtion.swift in Sources */,
 				7615F5D323265953003DB6C4 /* UmengShareManager.swift in Sources */,
 				7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */,
 				76C9D5AA2317B2B40091ECE4 /* HDView+Extend.swift in Sources */,
@@ -1184,7 +1184,6 @@
 				76C9D5782317AB560091ECE4 /* HDStorageDao.swift in Sources */,
 				76C9D5472317A7910091ECE4 /* UIScrollView+EmptyDataView.swift in Sources */,
 				76C9D5FA231A4C7C0091ECE4 /* HomeLoginViewController.swift in Sources */,
-				76C9D5B92317B2E70091ECE4 /* HDCountDownButtion.swift in Sources */,
 				76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */,
 				76C9D52A231784760091ECE4 /* HDPhotoImageManager.swift in Sources */,
 				7615F5D9232736E6003DB6C4 /* QRCodeView.swift in Sources */,
@@ -1220,6 +1219,7 @@
 				7623DFA92322036E00CD79A2 /* HomeMineHeadView.swift in Sources */,
 				76C9D5752317AB560091ECE4 /* Public.xcdatamodeld in Sources */,
 				76C9D5A22317B2830091ECE4 /* DispatchQueue+extension.swift in Sources */,
+				7615F5EF232786C4003DB6C4 /* tabbarButton.swift in Sources */,
 				76C9D54A2317A7910091ECE4 /* HDResponse+HandyJSON.swift in Sources */,
 				76C9D603231A61F00091ECE4 /* businessCardEditTableViewCell.swift in Sources */,
 				76C9D5632317AB160091ECE4 /* HDUserDefaults.swift in Sources */,
@@ -1236,7 +1236,6 @@
 				76C9D535231785130091ECE4 /* UIColorHex.swift in Sources */,
 				7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */,
 				7615F5CA2325EA9F003DB6C4 /* RecordTableViewCell.swift in Sources */,
-				76C9D5B82317B2E70091ECE4 /* HDCustomBution.swift in Sources */,
 				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
 				7636FAC5231D058E008B1F80 /* textViewPalceHold.swift in Sources */,
 				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,
@@ -1263,10 +1262,10 @@
 				7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */,
 				76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */,
 				7615F5BD2323AA02003DB6C4 /* shareCard+Extension.swift in Sources */,
-				7615F5CE23263B04003DB6C4 /* tabbarButton.swift in Sources */,
 				7636FABD231CC2B9008B1F80 /* businessCardEditVC+Extention.swift in Sources */,
 				76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */,
 				76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */,
+				7615F5EB2327867B003DB6C4 /* HDCustomBution.swift in Sources */,
 				76C9D5492317A7910091ECE4 /* HDToast+Rx.swift in Sources */,
 				76C9D55B2317AA480091ECE4 /* HDBaseApi.swift in Sources */,
 				76C9D54B2317A7910091ECE4 /* MoyaProvider+Rx.swift in Sources */,
