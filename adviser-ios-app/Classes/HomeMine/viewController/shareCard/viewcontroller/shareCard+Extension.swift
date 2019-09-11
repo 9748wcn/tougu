@@ -64,12 +64,14 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
         if indexPath.section == 0 {
             let introduceCell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as ShareCardIntroduceCell
             introduceCell.introduceContentLabel.text = "累计从业经验5年，美国留学工作生活经验，知名财经论坛专业撰稿人，擅长中短线操作，为每一位投资者提供最专业的私募基金走势分析及业务咨询! 建议不少于10个字，不超过100个字，一行约20个字，不超过五行文字介绍为佳。默认文案“丰富理财业务经验，为您提供专业理财服务”以产品经理给的为准。"
+            introduceCell.selectionStyle = .none
             return introduceCell
         }else{
             var recordCell = tableView.dequeueReusableCell(withIdentifier: "recordCell")
             if recordCell == nil {
                 recordCell = RecordTableViewCell.init(style: .default, reuseIdentifier: "recordCell", recordList: ["查看了您的名片","拨打了电话号码","复制了微信号","点击了绑定"])
             }
+            recordCell!.selectionStyle = .none
             return recordCell!
         }
     }

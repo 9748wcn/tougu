@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7601B2222328851A009D7C78 /* ASRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2212328851A009D7C78 /* ASRefreshHeader.swift */; };
 		7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B623238F0B003DB6C4 /* TitleCell.swift */; };
 		7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */; };
 		7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */; };
@@ -29,6 +30,9 @@
 		7615F5FA232788A8003DB6C4 /* ASAutoHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5F9232788A8003DB6C4 /* ASAutoHeightTextView.swift */; };
 		7615F5FC232788AE003DB6C4 /* HDView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5FB232788AE003DB6C4 /* HDView+Extend.swift */; };
 		7615F5FE232788B5003DB6C4 /* textViewPalceHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5FD232788B5003DB6C4 /* textViewPalceHold.swift */; };
+		7615F601232791A6003DB6C4 /* ASLoginProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F600232791A6003DB6C4 /* ASLoginProto.swift */; };
+		7615F6032327935F003DB6C4 /* ASUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */; };
+		7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F604232793BA003DB6C4 /* ASLoginModel.swift */; };
 		7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */; };
 		7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */; };
 		7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */; };
@@ -157,6 +161,7 @@
 
 /* Begin PBXFileReference section */
 		0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adviser-ios-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7601B2212328851A009D7C78 /* ASRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRefreshHeader.swift; sourceTree = "<group>"; };
 		7615F5B623238F0B003DB6C4 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMineShareCardViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +184,9 @@
 		7615F5F9232788A8003DB6C4 /* ASAutoHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAutoHeightTextView.swift; sourceTree = "<group>"; };
 		7615F5FB232788AE003DB6C4 /* HDView+Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDView+Extend.swift"; sourceTree = "<group>"; };
 		7615F5FD232788B5003DB6C4 /* textViewPalceHold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textViewPalceHold.swift; sourceTree = "<group>"; };
+		7615F600232791A6003DB6C4 /* ASLoginProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLoginProto.swift; sourceTree = "<group>"; };
+		7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASUserInfoModel.swift; sourceTree = "<group>"; };
+		7615F604232793BA003DB6C4 /* ASLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLoginModel.swift; sourceTree = "<group>"; };
 		7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDSettingViewModel.swift; sourceTree = "<group>"; };
 		7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessSubmitBtnCell.swift; sourceTree = "<group>"; };
 		7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = businessSubmitBtnCell.xib; sourceTree = "<group>"; };
@@ -455,6 +463,24 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		7615F5FF2327914E003DB6C4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7615F600232791A6003DB6C4 /* ASLoginProto.swift */,
+				7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */,
+				7615F604232793BA003DB6C4 /* ASLoginModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		7615F6062327A49B003DB6C4 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				7601B2212328851A009D7C78 /* ASRefreshHeader.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		7623DF8B2320935400CD79A2 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +591,7 @@
 		76C9D51D2317844A0091ECE4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7615F6062327A49B003DB6C4 /* Refresh */,
 				7615F5F823278888003DB6C4 /* view */,
 				7615F5E92327863A003DB6C4 /* button */,
 				7615F5D7232736D5003DB6C4 /* QR */,
@@ -900,6 +927,7 @@
 		76C9D5EA231A0FE00091ECE4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				7615F5FF2327914E003DB6C4 /* model */,
 				7623DF962321227F00CD79A2 /* resetPassWord */,
 				76C9D5F8231A4C7C0091ECE4 /* HomeLoginViewController.swift */,
 				76C9D5F9231A4C7C0091ECE4 /* HomeLoginViewController.xib */,
@@ -1199,6 +1227,7 @@
 				7615F5C72325E88D003DB6C4 /* ShareCardIntroduceCell.swift in Sources */,
 				76C9D5462317A7910091ECE4 /* HXReuseable.swift in Sources */,
 				76BED4AC23226EC900B7FEFC /* ASBottomAlertView.swift in Sources */,
+				7615F6032327935F003DB6C4 /* ASUserInfoModel.swift in Sources */,
 				7623DF992321230600CD79A2 /* resetPassWordVerifyViewController.swift in Sources */,
 				76C9D58F2317AF420091ECE4 /* HDDeviceInfo.swift in Sources */,
 				7623DFA62322008100CD79A2 /* HomeMineTableViewCell.swift in Sources */,
@@ -1217,6 +1246,7 @@
 				7623DFA92322036E00CD79A2 /* HomeMineHeadView.swift in Sources */,
 				76C9D5752317AB560091ECE4 /* Public.xcdatamodeld in Sources */,
 				76C9D5A22317B2830091ECE4 /* DispatchQueue+extension.swift in Sources */,
+				7601B2222328851A009D7C78 /* ASRefreshHeader.swift in Sources */,
 				7615F5EF232786C4003DB6C4 /* tabbarButton.swift in Sources */,
 				76C9D54A2317A7910091ECE4 /* HDResponse+HandyJSON.swift in Sources */,
 				76C9D603231A61F00091ECE4 /* businessCardEditTableViewCell.swift in Sources */,
@@ -1225,6 +1255,7 @@
 				76C9D529231784760091ECE4 /* HDAlbumListViewController.swift in Sources */,
 				76C9D52F231784760091ECE4 /* HDImageListViewController.swift in Sources */,
 				76C9D5F4231A20DC0091ECE4 /* HomeTabbarViewController.swift in Sources */,
+				7615F601232791A6003DB6C4 /* ASLoginProto.swift in Sources */,
 				76C9D52D231784760091ECE4 /* HDAlbumListCell.swift in Sources */,
 				76C9D54C2317A7910091ECE4 /* NSObject-Extension.swift in Sources */,
 				7623DF932320F01900CD79A2 /* AppColor.swift in Sources */,
@@ -1274,6 +1305,7 @@
 				76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */,
 				76C9D5992317B2690091ECE4 /* HDRuntime.swift in Sources */,
 				7623DF952321056900CD79A2 /* LoginVC+Extension.swift in Sources */,
+				7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */,
 				7615F5FA232788A8003DB6C4 /* ASAutoHeightTextView.swift in Sources */,
 				76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */,
 				76C9D5512317A9610091ECE4 /* HDToast.swift in Sources */,

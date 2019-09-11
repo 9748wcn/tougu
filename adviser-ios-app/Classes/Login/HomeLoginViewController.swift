@@ -95,5 +95,88 @@ class HomeLoginViewController: baseViewController {
         
     }
     
-
+    func vaildatePhone() -> Bool {
+        let phone = self.phoneNumberTextFeild.text!
+        if phone.isEmpty {
+            HDToast.showTextToast(message: "请输入手机号")
+            return false
+        }
+        
+        guard phone.isPhoneNo() else {
+            HDToast.showTextToast(message: "手机号格式不正确")
+            return false
+        }
+        
+        return true
+    }
+    
+    func vaildateICCode() -> Bool {
+        let ICCode = self.icTextFeild.text!
+        if ICCode.isEmpty {
+            HDToast.showTextToast(message: "请输入IC工号")
+            return false
+        }
+        return true
+    }
+    
+    func vaildatePhoneCode() -> Bool {
+        let phoneCodeOrPassWord = self.codeTextFeild.text!
+        if phoneCodeOrPassWord.isEmpty {
+            if currentBtn == loginByPhoneClick {
+                HDToast.showTextToast(message: "请输入验证码")
+                return false
+            }else {
+                HDToast.showTextToast(message: "请输入登录密码")
+                return false
+            }
+            
+        }
+        return true
+        
+    }
+    
+    func requestData(icCode: String,phone: String,phoneCode: String?=nil,passWord:String?=nil) {
+        let api = ASLoginProto()
+        api.apiType = .setting
+        api.icCode = icCode
+        api.phoneValue = phone
+        if phoneCode != nil {
+            api.phoneCode = phoneCode!
+        }
+        if passWord != nil {
+            api.password = passWord!
+        }
+        let request = HDHTTPRequest()
+        request.api = api
+        request.delegate = self
+        request.start()
+        
+    }
+}
+// MARK: --------------HDAsyncDelegate-------------
+extension HomeLoginViewController: HDAsyncDelegate {
+    func asyncerDidStart(request: HDHTTPRequest) {
+    }
+    
+    func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
+        HDHudManager.shared.hide()
+        let loginModel = result as? ASLoginModel
+        if loginModel?.code == 0{
+            HDToast.showTextToast(message: (loginModel?.errMessage)!)
+            return
+        }
+        if loginModel?.code == 1002 {
+            HDToast.showTextToast(message: "账号不存在，请重新输入")
+            return
+        }
+        HDUserDefaults.hd_add(object: self.phoneNumberTextFeild.text!, forKey: USERPHONEKEY)
+        //进入首页
+        appDelegate.gotoMainVC()
+    }
+    
+    func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
+        
+    }
+    
+    
 }

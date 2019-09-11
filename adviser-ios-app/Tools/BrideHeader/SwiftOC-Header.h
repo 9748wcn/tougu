@@ -15,4 +15,6 @@
 #import <UShareUI/UShareUI.h>
 #import <UMCommon/UMCommon.h>
 #import <UMCommonLog/UMCommonLogHeaders.h>
+#import "MJRefresh.h"
+
 #endif /* SwiftOC_Header_h */

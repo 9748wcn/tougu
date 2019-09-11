@@ -10,6 +10,7 @@ import UIKit
 
 class HomeMineShareCardViewController: baseViewController {
     
+    
     var isHiddenTabbar: Bool = false
     
     var sectionHeaderView: shareCardHeaderView!
@@ -33,6 +34,10 @@ class HomeMineShareCardViewController: baseViewController {
         let bottonView = bottomView()
         view.addSubview(bottonView)
         view.addSubview(tableView)
+        let headerRefresh: ASRefreshHeader = ASRefreshHeader()
+        headerRefresh.setRefreshingTarget(self, refreshingAction: #selector(refreshDate))
+        tableView.mj_header = headerRefresh
+        
     }
     
     func bottomView() -> UIView {
@@ -58,6 +63,19 @@ class HomeMineShareCardViewController: baseViewController {
         bottonView.addSubview(shareCardBtn)
         return bottonView
         
+    }
+    
+    func delay(_ seconds: Double, completion:@escaping ()->()) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
+        
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
+            completion()
+        }
+    }
+    
+    @objc func refreshDate() {
+        sleep(2)
+        tableView.mj_header.endRefreshing()
     }
 
 }

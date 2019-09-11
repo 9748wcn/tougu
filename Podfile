@@ -24,5 +24,6 @@ target 'adviser-ios-app' do
   pod 'UMCShare/Social/WeChat'
   pod 'UMCShare/Social/QQ'
   pod 'UMCCommonLog'
+  pod 'MJRefresh'
 
 end

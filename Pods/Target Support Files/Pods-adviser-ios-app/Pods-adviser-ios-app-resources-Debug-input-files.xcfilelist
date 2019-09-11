@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-adviser-ios-app/Pods-adviser-ios-app-resources.sh
 ${PODS_CONFIGURATION_BUILD_DIR}/CLToast/CLToast.bundle
 ${PODS_ROOT}/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
 ${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle
 ${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle
