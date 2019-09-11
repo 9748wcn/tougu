@@ -22,7 +22,7 @@ class resetPassWordSetViewController: baseViewController {
         finishBtn.layer.cornerRadius = 22.5
     }
 
-
+    //这里重置密码之后跳转到登录页
     @IBAction func finishBtnClick(_ sender: Any) {
         
     }

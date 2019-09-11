@@ -13,22 +13,22 @@ import RxCocoa
 class businessCardEditViewController: baseViewController, buttonClickDelegate {
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .grouped)
+        tableView.sectionFooterHeight = 0
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = 100;
+        tableView.rowHeight = UITableView.automaticDimension;
         tableView.hx_registerCell(cellClass: businessCardHeadCell.self)
         tableView.hx_registerCell(cellClass: businessCardEditTableViewCell.self)
-        tableView.hx_registerCell(cellClass: businessCardIntroduceView.self)
+        tableView.hx_registerCell(cellClass: editCardIntroduceCell.self)
         tableView.backgroundColor = UIColor(rgb: 0xF8F8F8)
         
         return tableView
     }()
     let disposeBag = DisposeBag()
-    var intrudutionHeight: CGFloat = 200.0
-    
-    
-    
+    var intrudutionHeight: CGFloat = 120
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,28 +37,12 @@ class businessCardEditViewController: baseViewController, buttonClickDelegate {
         view.backgroundColor = UIColor(rgb: 0xF8F8F8)
         view.addSubview(tableView)
         
-
-        // Do any additional setup after loading the view.
     }
 
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            if indexPath.row == 0{
-                return 70
-            }else{
-                return 50
-            }
-        }else if indexPath.section == 3{
-            return intrudutionHeight
-        }else if indexPath.section == 4 {
-            return 65
-        }
-        return 50.0;
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
@@ -72,59 +56,93 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                 cell.headImageView.image = UIImage.init(named: "normalHeader")
                 cell.headerClickBlock = {
                     
-                    let alertController = UIAlertController(title: nil, message: nil,
-                                                            preferredStyle: .actionSheet)
-                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                    
-                    let deleteAction = UIAlertAction(title: "拍照", style: .default, handler: { (make) in
-                        HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
-                            guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                                return
-                            }
-                            UIImagePickerController.rx.createWithParent(self) { picker in
-                                picker.sourceType = .camera
-                                }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                                .map{ $0[.originalImage] as! UIImage }
-                                .bind(to: cell.headImageView.rx.image)
-                            .disposed(by: self.disposeBag)
-
-                        })
-                    })
-
-                    let archiveAction = UIAlertAction(title: "从手机相册选择", style: .default, handler: { (make) in
-                        HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
-                            guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-                                return
-                            }
-                            UIImagePickerController.rx.createWithParent(self) { picker in
-                                picker.sourceType = .photoLibrary
-                                picker.modalPresentationStyle = .overCurrentContext
+                    let acVC = ActionSheetViewController(cellTitleList: ["拍照", "从手机相册选择"])!
+                    acVC.valueBlock = { index in
+                        if index == 0 {
+                            HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
+                                guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                                    return
                                 }
-                                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                                .map { $0[.originalImage] as! UIImage}
-                                .bind(to: cell.headImageView.rx.image)
-                                .disposed(by: self.disposeBag)
-                            
+                                UIImagePickerController.rx.createWithParent(self) { picker in
+                                    picker.sourceType = .camera
+                                    }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                                    .map{ $0[.originalImage] as! UIImage }
+                                    .bind(to: cell.headImageView.rx.image)
+                                    .disposed(by: self.disposeBag)
+                                
+                            })
+                        }else if index == 1 {
+                            HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
+                                guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+                                    return
+                                }
+                                UIImagePickerController.rx.createWithParent(self) { picker in
+                                    picker.sourceType = .photoLibrary
+                                    picker.modalPresentationStyle = .overCurrentContext
+                                    }
+                                    .flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                                    .map { $0[.originalImage] as! UIImage}
+                                    .bind(to: cell.headImageView.rx.image)
+                                    .disposed(by: self.disposeBag)
+                                
+                            }
                         }
-                        
-                    })
-                    alertController.addAction(cancelAction)
-                    alertController.addAction(deleteAction)
-                    alertController.addAction(archiveAction)
-//                    alertController.addAction(dd)
-                    self.present(alertController, animated: true, completion: nil)
-//                    let view:HDAlertImagePickerView = HDAlertImagePickerView.loadFromXib()
-//                    hdSharedAlertManager.addContentView(contentView: view)
-//                    hdSharedAlertManager.show()
+                    }
+                    self.present(acVC, animated: false, completion:  nil)
+                    
+//                    let alertController = UIAlertController(title: nil, message: nil,
+//                                                            preferredStyle: .actionSheet)
+//                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+//
+//                    let deleteAction = UIAlertAction(title: "拍照", style: .default, handler: { (make) in
+//                        HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
+//                            guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
+//                                return
+//                            }
+//                            UIImagePickerController.rx.createWithParent(self) { picker in
+//                                picker.sourceType = .camera
+//                                }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
+//                                .map{ $0[.originalImage] as! UIImage }
+//                                .bind(to: cell.headImageView.rx.image)
+//                            .disposed(by: self.disposeBag)
+//
+//                        })
+//                    })
+//
+//                    let archiveAction = UIAlertAction(title: "从手机相册选择", style: .default, handler: { (make) in
+//                        HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
+//                            guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+//                                return
+//                            }
+//                            UIImagePickerController.rx.createWithParent(self) { picker in
+//                                picker.sourceType = .photoLibrary
+//                                picker.modalPresentationStyle = .overCurrentContext
+//                                }
+//                                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
+//                                .map { $0[.originalImage] as! UIImage}
+//                                .bind(to: cell.headImageView.rx.image)
+//                                .disposed(by: self.disposeBag)
+//
+//                        }
+//
+//                    })
+//                    alertController.addAction(cancelAction)
+//                    alertController.addAction(deleteAction)
+//                    alertController.addAction(archiveAction)
+//                    self.present(alertController, animated: true, completion: nil)
                 }
                 return cell
             }else{
                 let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardEditTableViewCell
                 if indexPath.row == 1 {
                     cell.leftTitleLabel.text = "姓名"
+                    cell.contentTextFeild.placeholder = "此项必填"
                     self.nameTextFeild = cell.contentTextFeild;
+                    
                 }else{
                     cell.leftTitleLabel.text = "工号"
+                    cell.contentTextFeild.placeholder = "此项必填"
+                    cell.lineView.isHidden = true
                 }
                 return cell
             }
@@ -133,9 +151,12 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardEditTableViewCell
             if indexPath.row == 0 {
                 cell.leftTitleLabel.text = "公司"
+                cell.contentTextFeild.placeholder = "此项必填"
             }else{
                 cell.leftTitleLabel.text = "职位"
                 self.positionTextFeild = cell.contentTextFeild
+                cell.contentTextFeild.placeholder = "此项必填"
+                cell.lineView.isHidden = true
             }
             return cell
         }else if indexPath.section == 2 {
@@ -143,29 +164,22 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             if indexPath.row == 0 {
                 cell.leftTitleLabel.text = "手机"
                 self.phoneTextFeild = cell.contentTextFeild
+                cell.contentTextFeild.placeholder = "此项必填"
             }else if indexPath.row == 1{
                 cell.leftTitleLabel.text = "微信号"
                 self.wechatTextFeild = cell.contentTextFeild
+                cell.contentTextFeild.placeholder = "未填写"
+                cell.needLabel.isHidden = true
             }else{
                 cell.leftTitleLabel.text = "邮箱"
+                cell.contentTextFeild.placeholder = "未填写"
+                cell.lineView.isHidden = true
+                cell.needLabel.isHidden = true
                 self.emailTextFeild = cell.contentTextFeild
             }
             return cell
         }else if indexPath.section == 3 {
-            let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardIntroduceView
-//            var sizeh: CGRect = tableView.frame
-//            sizeh.size.height = sizeh.size.height + 100
-            cell.changeHeightBlock = { (h) in
-//                let subH = h - self.intrudutionHeight
-//
-////                var sizeh: CGRect = tableView.frame
-//                sizeh.size.height = sizeh.size.height + subH
-//                tableView.frame.size.height = sizeh.size.height + subH
-                self.intrudutionHeight = h
-                tableView.reloadData()
-                tableView.scrollToRow(at: indexPath, at: .none, animated: false)
-                cell.contentTextView.becomeFirstResponder()
-            }
+            let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as editCardIntroduceCell
             return cell
             
         }
@@ -181,6 +195,14 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             return 50
         }
         return 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 3 {
+            return 85
+        }else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -203,10 +225,29 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
         }
         
         let headView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 10))
-        //        headView.backgroundColor = UIColor.lightGray
+//                headView.backgroundColor = background_Color
         return headView
         
         
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 3 {
+          let spaceView = UIView.init(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 85))
+            spaceView.backgroundColor = UIColor(rgb: 0xF8F8F8)
+           let submitBtn = UIButton.init(type: .roundedRect)
+            spaceView.addSubview(submitBtn)
+            submitBtn.frame = CGRect(x: 15, y: 20, width: view.bounds.width - 30, height: 45)
+            submitBtn.backgroundColor = UIColor(rgb: 0x497BEC)
+            submitBtn.setTitle("提交审核", for: .normal)
+            submitBtn.setTitleColor(UIColor.white, for: .normal)
+            submitBtn.layer.cornerRadius = 23.0
+            return spaceView
+        }else {
+            let footView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 0))
+            footView.backgroundColor = background_Color
+            return footView
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -227,5 +268,4 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
     func butonClickBy(_ sender: UIButton) {
         
     }
-    
 }

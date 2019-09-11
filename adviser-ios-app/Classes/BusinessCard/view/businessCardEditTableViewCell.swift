@@ -14,6 +14,9 @@ class businessCardEditTableViewCell: UITableViewCell {
     
     @IBOutlet weak var contentTextFeild: UITextField!
     
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var needLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

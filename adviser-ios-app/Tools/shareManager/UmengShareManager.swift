@@ -28,7 +28,7 @@ class UmengShareManager: NSObject {
         UMConfigure.initWithAppkey(umengKey, channel: "App Store")
         UMSocialManager.default()?.setPlaform(UMSocialPlatformType.wechatSession, appKey: wechatAppId, appSecret: wechatAppSecret, redirectURL: "http://mobile.umeng.com/social")
         UMSocialManager.default()?.setPlaform(UMSocialPlatformType.wechatTimeLine, appKey: wechatAppId, appSecret: wechatAppSecret, redirectURL: "http://mobile.umeng.com/social")
-        UMSocialManager.default()?.setPlaform(UMSocialPlatformType.wechatTimeLine, appKey: qqShareAppId, appSecret: nil, redirectURL: "http://mobile.umeng.com/social")
+        UMSocialManager.default()?.setPlaform(UMSocialPlatformType.QQ, appKey: qqShareAppId, appSecret: nil, redirectURL: "http://mobile.umeng.com/social")
     }
     
     

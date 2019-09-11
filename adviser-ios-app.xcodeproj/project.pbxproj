@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7601B2222328851A009D7C78 /* ASRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2212328851A009D7C78 /* ASRefreshHeader.swift */; };
+		7601B22423289050009D7C78 /* shareBottomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B22323289050009D7C78 /* shareBottomAlertView.swift */; };
+		7601B22623289064009D7C78 /* shareBottomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7601B22523289064009D7C78 /* shareBottomAlertView.xib */; };
+		7601B2282328A218009D7C78 /* ASUmengshareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2272328A218009D7C78 /* ASUmengshareView.swift */; };
+		7601B22B2328EB56009D7C78 /* editCardIntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2292328EB56009D7C78 /* editCardIntroduceCell.swift */; };
+		7601B22C2328EB56009D7C78 /* editCardIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7601B22A2328EB56009D7C78 /* editCardIntroduceCell.xib */; };
 		7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B623238F0B003DB6C4 /* TitleCell.swift */; };
 		7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */; };
 		7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */; };
@@ -162,6 +167,11 @@
 /* Begin PBXFileReference section */
 		0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adviser-ios-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7601B2212328851A009D7C78 /* ASRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRefreshHeader.swift; sourceTree = "<group>"; };
+		7601B22323289050009D7C78 /* shareBottomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareBottomAlertView.swift; sourceTree = "<group>"; };
+		7601B22523289064009D7C78 /* shareBottomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shareBottomAlertView.xib; sourceTree = "<group>"; };
+		7601B2272328A218009D7C78 /* ASUmengshareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASUmengshareView.swift; sourceTree = "<group>"; };
+		7601B2292328EB56009D7C78 /* editCardIntroduceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editCardIntroduceCell.swift; sourceTree = "<group>"; };
+		7601B22A2328EB56009D7C78 /* editCardIntroduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = editCardIntroduceCell.xib; sourceTree = "<group>"; };
 		7615F5B623238F0B003DB6C4 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMineShareCardViewController.swift; sourceTree = "<group>"; };
@@ -920,6 +930,9 @@
 				76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */,
 				76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */,
 				76BED4AB23226EC900B7FEFC /* ASBottomAlertView.swift */,
+				7601B22323289050009D7C78 /* shareBottomAlertView.swift */,
+				7601B22523289064009D7C78 /* shareBottomAlertView.xib */,
+				7601B2272328A218009D7C78 /* ASUmengshareView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -994,6 +1007,8 @@
 				7636FAC2231CF4C2008B1F80 /* businessCardIntroduceView.swift */,
 				7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */,
 				7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */,
+				7601B2292328EB56009D7C78 /* editCardIntroduceCell.swift */,
+				7601B22A2328EB56009D7C78 /* editCardIntroduceCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1125,6 +1140,7 @@
 				76C9D5C82317B2F10091ECE4 /* HDAlertImagePickerView.xib in Resources */,
 				76BED4A62322426F00B7FEFC /* personInfoTableViewCell.xib in Resources */,
 				7615F5C82325E88D003DB6C4 /* ShareCardIntroduceCell.xib in Resources */,
+				7601B22623289064009D7C78 /* shareBottomAlertView.xib in Resources */,
 				76C9D5C72317B2F10091ECE4 /* HDAlertDefaultView.xib in Resources */,
 				7623DFA72322008100CD79A2 /* HomeMineTableViewCell.xib in Resources */,
 				76C9D5FB231A4C7C0091ECE4 /* HomeLoginViewController.xib in Resources */,
@@ -1135,6 +1151,7 @@
 				7623DF9A2321230600CD79A2 /* resetPassWordVerifyViewController.xib in Resources */,
 				76C9D5A02317B2830091ECE4 /* HDLoadingEmptyView.xib in Resources */,
 				76C9D4F52317818A0091ECE4 /* Main.storyboard in Resources */,
+				7601B22C2328EB56009D7C78 /* editCardIntroduceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1272,12 +1289,14 @@
 				7615F5FC232788AE003DB6C4 /* HDView+Extend.swift in Sources */,
 				7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */,
 				76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */,
+				7601B22423289050009D7C78 /* shareBottomAlertView.swift in Sources */,
 				7615F5D62326661A003DB6C4 /* companyInfoViewController.swift in Sources */,
 				76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */,
 				7615F5FE232788B5003DB6C4 /* textViewPalceHold.swift in Sources */,
 				76C9D55A2317AA480091ECE4 /* HDNetworkClient.swift in Sources */,
 				76C9D5772317AB560091ECE4 /* HDDBConfig.swift in Sources */,
 				7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */,
+				7601B22B2328EB56009D7C78 /* editCardIntroduceCell.swift in Sources */,
 				76C9D5F2231A20000091ECE4 /* baseTabbarController.swift in Sources */,
 				76C9D57A2317AB560091ECE4 /* HDManagedObjectContext.swift in Sources */,
 				7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */,
@@ -1299,6 +1318,7 @@
 				76C9D55B2317AA480091ECE4 /* HDBaseApi.swift in Sources */,
 				76C9D54B2317A7910091ECE4 /* MoyaProvider+Rx.swift in Sources */,
 				76C9D5A42317B2830091ECE4 /* BQTool.swift in Sources */,
+				7601B2282328A218009D7C78 /* ASUmengshareView.swift in Sources */,
 				76C9D5A12317B2830091ECE4 /* UIView+HDEmptyView.swift in Sources */,
 				7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */,
 				76C9D4F02317818A0091ECE4 /* AppDelegate.swift in Sources */,
@@ -1484,16 +1504,18 @@
 			baseConfigurationReference = C139B93A07E3AC10ACD35662 /* Pods-adviser-ios-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYYA37S5K6;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q48CH7BX23;
 				INFOPLIST_FILE = "adviser-ios-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evergrande.eif.iOS.hengdatoug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evergrande.eif.iOS.hengdatougu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = eif_hengdatougu_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "adviser-ios-app/Tools/BrideHeader/SwiftOC-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1505,16 +1527,18 @@
 			baseConfigurationReference = 9DE9F7939FB47DD58B7E74D7 /* Pods-adviser-ios-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYYA37S5K6;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q48CH7BX23;
 				INFOPLIST_FILE = "adviser-ios-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evergrande.eif.iOS.hengdatoug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evergrande.eif.iOS.hengdatougu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = eif_hengdatougu_dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "adviser-ios-app/Tools/BrideHeader/SwiftOC-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

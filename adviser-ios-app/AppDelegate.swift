@@ -60,6 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return result!
         
     }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let result = UMSocialManager.default()?.handleOpen(url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        return result!
+    }
 
 
 }

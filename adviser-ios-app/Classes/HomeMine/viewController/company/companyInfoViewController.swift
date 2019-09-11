@@ -8,8 +8,8 @@
 
 import UIKit
 
-class companyInfoViewController: baseViewController {
-
+class companyInfoViewController: baseViewController,ASShareClickDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "公司对外信息"
@@ -20,19 +20,35 @@ class companyInfoViewController: baseViewController {
     }
     
     @objc private func shareItemClicked() {
-        UMSocialUIManager.showShareMenuViewInWindow { (UMSocialPlatformType, [AnyHashable : Any]?) in
+        let shareView:ASUmengshareView = ASUmengshareView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        shareView.shareDelegate = self
+        shareView.showInView(bgView: view)
+        
+//        UMSocialUIManager.showShareMenuViewInWindow { (UMSocialPlatformType, [AnyHashable : Any]?) in
+//
+//        }
+    }
+
+    func wechatShareClick() {
+        let messegeObject: UMSocialMessageObject = UMSocialMessageObject.init()
+//        let shareObject = UMShareObject.shareObject(withTitle: "haha", descr: "hahahahha", thumImage: nil)
+//        messegeObject.shareObject = shareObject
+        messegeObject.text = "随便写"
+        UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatSession, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
             
-        }
+            } as? UMSocialRequestCompletionHandler)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func wechatFrendsShareClick() {
+        
     }
-    */
+    
+    func QQShareClick() {
+        let messegeObject: UMSocialMessageObject = UMSocialMessageObject.init()
+        messegeObject.text = "随便写"
+        UMSocialManager.default()?.share(to: UMSocialPlatformType.QQ, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
+            
+            } as? UMSocialRequestCompletionHandler)
+    }
 
 }

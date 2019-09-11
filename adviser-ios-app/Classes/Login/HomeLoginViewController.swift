@@ -92,7 +92,7 @@ class HomeLoginViewController: baseViewController {
     
     @IBAction func loginClick(_ sender: Any) {
         self.view.endEditing(true)
-        
+        appDelegate.gotoMainVC()
     }
     
     func vaildatePhone() -> Bool {

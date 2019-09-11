@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mb-Wg-NBr">
-                        <rect key="frame" x="15" y="25" width="33" height="19.5"/>
+                        <rect key="frame" x="15" y="25" width="33" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.5599408745765686" green="0.57908916473388672" blue="0.65379351377487183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8O-fG-Sxe">
-                        <rect key="frame" x="53" y="26.5" width="8" height="21"/>
+                        <rect key="frame" x="53" y="24.5" width="8" height="25"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.95953899620000005" green="0.19241565469999999" blue="0.1935019791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -61,6 +61,7 @@
                     <constraint firstItem="W8O-fG-Sxe" firstAttribute="centerY" secondItem="3mb-Wg-NBr" secondAttribute="centerY" constant="2.25" id="FZV-HP-YR2"/>
                     <constraint firstAttribute="trailing" secondItem="xdy-ps-dRI" secondAttribute="trailing" constant="15" id="Hud-Sb-6TI"/>
                     <constraint firstItem="xdy-ps-dRI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SL5-18-2h4"/>
+                    <constraint firstItem="PZa-bO-gdz" firstAttribute="top" secondItem="W8O-fG-Sxe" secondAttribute="bottom" constant="19" id="Vdh-Ua-8YF"/>
                     <constraint firstAttribute="trailing" secondItem="zC0-Fp-REB" secondAttribute="trailing" constant="35" id="l4O-g3-Bzb"/>
                     <constraint firstAttribute="trailing" secondItem="PZa-bO-gdz" secondAttribute="trailing" id="p40-sc-8lx"/>
                     <constraint firstItem="W8O-fG-Sxe" firstAttribute="leading" secondItem="3mb-Wg-NBr" secondAttribute="trailing" constant="5" id="wo6-2t-izK"/>
@@ -69,11 +70,11 @@
             <connections>
                 <outlet property="headImageView" destination="zC0-Fp-REB" id="ruF-Sp-HqT"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
+            <point key="canvasLocation" x="148" y="117"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="nextPageIcon" width="8" height="15"/>
-        <image name="normalHeader" width="92" height="92"/>
+        <image name="normalHeader" width="74" height="74"/>
     </resources>
 </document>

@@ -115,7 +115,17 @@ extension HomeMineShareCardViewController {
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext();
         UIImageWriteToSavedPhotosAlbum(image,self,nil,nil);
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(save(image:didFinishSavingWithError:contextInfo:)), nil)
         
+    }
+    
+    @objc func save(image:UIImage, didFinishSavingWithError:NSError?,contextInfo:AnyObject) {
+        
+        if didFinishSavingWithError != nil {
+            HDToast.showTextToast(message: "保存失败")
+        } else {
+            HDToast.showTextToast(message: "保存成功")
+        }
     }
     
     @objc func shareCardClick() {
