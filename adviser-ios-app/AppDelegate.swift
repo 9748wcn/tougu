@@ -25,7 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarManageBehaviour = .byPosition
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        gotoMainVC()
+        if (HDUserDefaults.hd_getCurrentUser() != nil) {
+            gotoMainVC()
+        }else{
+            gotoLogin()
+        }
         configShared()
         window?.makeKeyAndVisible()
         return true
@@ -74,6 +78,14 @@ extension AppDelegate{
     func gotoMainVC() {
         let mainVC  = HomeTabbarViewController()
         window?.rootViewController = mainVC
+    }
+    
+    func gotoLogin() {
+        let loginVC = HomeLoginViewController()
+        let navLogin = baseNavigationViewController.init(rootViewController: loginVC)
+        
+        window?.rootViewController = navLogin
+        
     }
 }
 

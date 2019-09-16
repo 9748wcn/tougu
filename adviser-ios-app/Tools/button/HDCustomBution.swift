@@ -24,6 +24,12 @@ class HDCustomBution: UIButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            updateApperance(enable: isEnabled)
+        }
+    }
+    
 //    required init?(coder aDecoder: NSCoder) {
 //        super.init(coder: aDecoder)
 //        self.commonInit()
@@ -85,6 +91,19 @@ class HDCustomBution: UIButton {
             self.backgroundColor = self.normalBgColor
         }
         
+    }
+    
+    func updateApperance(enable:Bool) {
+        if enable {
+            
+            self.backgroundColor = noClick_buttonColor
+            self.borderColor = noClick_buttonColor.cgColor
+            
+        }else {
+            
+            self.backgroundColor = main_buttonColor
+            self.borderColor = main_buttonColor.cgColor
+        }
     }
     
     deinit {

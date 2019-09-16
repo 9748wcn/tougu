@@ -25,8 +25,8 @@
                         <constraint firstAttribute="width" constant="72" id="jZP-h0-O5Q"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张晓晗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVg-VI-VKr">
-                    <rect key="frame" x="118" y="39" width="56" height="22"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVg-VI-VKr">
+                    <rect key="frame" x="118" y="39" width="0.0" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="Kd1-tO-SJw"/>
                     </constraints>
@@ -34,20 +34,20 @@
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高级投资顾问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-bW-5VA">
-                    <rect key="frame" x="118" y="72" width="74" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-bW-5VA">
+                    <rect key="frame" x="118" y="72" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恒大金融财富管理（深圳）有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlm-BM-tqa">
-                    <rect key="frame" x="118" y="91" width="164" height="12"/>
+                    <rect key="frame" x="118" y="76" width="164" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IC0088" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-jY-Go6">
-                    <rect key="frame" x="184" y="46" width="42.5" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-jY-Go6">
+                    <rect key="frame" x="128" y="46" width="0.0" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="r7N-Zi-sa3"/>
                     </constraints>
@@ -76,8 +76,8 @@
                         <constraint firstAttribute="height" constant="15" id="s5A-gI-R4i"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18178646986" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDx-fp-10h">
-                    <rect key="frame" x="49" y="125.5" width="79.5" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDx-fp-10h">
+                    <rect key="frame" x="49" y="125.5" width="0.0" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="wSh-p6-ZnM"/>
                     </constraints>
@@ -85,8 +85,8 @@
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZXH1988CO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx6-BH-9dT">
-                    <rect key="frame" x="49" y="152.5" width="71.5" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx6-BH-9dT">
+                    <rect key="frame" x="49" y="152.5" width="0.0" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="bxe-4K-FIG"/>
                     </constraints>
@@ -94,8 +94,8 @@
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZhangXiaohan@evergrande.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNM-az-kKF">
-                    <rect key="frame" x="49" y="175.5" width="184.5" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNM-az-kKF">
+                    <rect key="frame" x="49" y="175.5" width="0.0" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="8Ao-me-UZR"/>
                     </constraints>

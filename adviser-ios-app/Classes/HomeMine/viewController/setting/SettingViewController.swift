@@ -79,6 +79,7 @@ extension SettingViewController {
     
     //退出登录
     @objc func logoutBtnClick() {
+        HDUserDefaults.hd_deleteObject(forKey: USERPHONEKEY)
         let vc: HomeLoginViewController = HomeLoginViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

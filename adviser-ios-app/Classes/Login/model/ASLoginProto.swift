@@ -12,21 +12,29 @@ class ASLoginProto: HDBaseApi {
     
     override init() {
         super.init()
-        urlString = ""
+        urlString = "/login/login"
     }
+    //验证码登录参数
+    var loginType: NSInteger!
+    var employeeNo: String = ""
+    var verifyCode: String = ""
+    var phoneNo: String = ""
     
-    var icCode: String = ""
+    //密码登录参数
     var password: String = ""
-    var phoneValue: String = ""
-    var phoneCode: String = ""
     
     override func responseObjectFromJson<T>(jsonStr: String) -> T where T : HDBaseModel {
        return ASLoginModel.deserialize(from: jsonStr) as! T
     }
     
    override func getParameters() -> [String: Any]? {
-        return ["icCode":icCode,"password":password,"phoneValue":phoneValue,"phoneCode":phoneCode]
+    if loginType == 1 {
+        return ["phoneNo":phoneNo, "employeeNo":employeeNo, "verifyCode":verifyCode, "loginType":loginType!]
+    }else {
+        return ["phoneNo":phoneNo, "employeeNo":employeeNo, "password":password, "loginType":loginType!]
     }
+    
+  }
     
     
     

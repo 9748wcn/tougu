@@ -38,6 +38,12 @@
 		7615F601232791A6003DB6C4 /* ASLoginProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F600232791A6003DB6C4 /* ASLoginProto.swift */; };
 		7615F6032327935F003DB6C4 /* ASUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */; };
 		7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F604232793BA003DB6C4 /* ASLoginModel.swift */; };
+		761CCAFB232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */; };
+		761CCAFD232F779300BE7F36 /* ASResetPassWordVerifyProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */; };
+		761CCAFF232F821F00BE7F36 /* ASResetPassWordProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */; };
+		761CCB04232F969000BE7F36 /* ShareCardGetInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCB03232F968F00BE7F36 /* ShareCardGetInfoManager.swift */; };
+		761CCB06232F96E000BE7F36 /* shareCardGetInfoProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCB05232F96E000BE7F36 /* shareCardGetInfoProto.swift */; };
+		761CCB08232F981000BE7F36 /* shareCardInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCB07232F981000BE7F36 /* shareCardInfoModel.swift */; };
 		7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */; };
 		7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */; };
 		7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */; };
@@ -197,6 +203,12 @@
 		7615F600232791A6003DB6C4 /* ASLoginProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLoginProto.swift; sourceTree = "<group>"; };
 		7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASUserInfoModel.swift; sourceTree = "<group>"; };
 		7615F604232793BA003DB6C4 /* ASLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLoginModel.swift; sourceTree = "<group>"; };
+		761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGetPhoneCodeProto.swift; sourceTree = "<group>"; };
+		761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordVerifyProto.swift; sourceTree = "<group>"; };
+		761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordProto.swift; sourceTree = "<group>"; };
+		761CCB03232F968F00BE7F36 /* ShareCardGetInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardGetInfoManager.swift; sourceTree = "<group>"; };
+		761CCB05232F96E000BE7F36 /* shareCardGetInfoProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareCardGetInfoProto.swift; sourceTree = "<group>"; };
+		761CCB07232F981000BE7F36 /* shareCardInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareCardInfoModel.swift; sourceTree = "<group>"; };
 		7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDSettingViewModel.swift; sourceTree = "<group>"; };
 		7623DF8E23209D5300CD79A2 /* businessSubmitBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessSubmitBtnCell.swift; sourceTree = "<group>"; };
 		7623DF8F23209D5300CD79A2 /* businessSubmitBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = businessSubmitBtnCell.xib; sourceTree = "<group>"; };
@@ -479,6 +491,9 @@
 				7615F600232791A6003DB6C4 /* ASLoginProto.swift */,
 				7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */,
 				7615F604232793BA003DB6C4 /* ASLoginModel.swift */,
+				761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */,
+				761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */,
+				761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -489,6 +504,31 @@
 				7601B2212328851A009D7C78 /* ASRefreshHeader.swift */,
 			);
 			path = Refresh;
+			sourceTree = "<group>";
+		};
+		761CCB00232F962F00BE7F36 /* shareCard */ = {
+			isa = PBXGroup;
+			children = (
+				761CCB03232F968F00BE7F36 /* ShareCardGetInfoManager.swift */,
+			);
+			path = shareCard;
+			sourceTree = "<group>";
+		};
+		761CCB01232F964600BE7F36 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				761CCB00232F962F00BE7F36 /* shareCard */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		761CCB02232F965B00BE7F36 /* shareCard */ = {
+			isa = PBXGroup;
+			children = (
+				761CCB05232F96E000BE7F36 /* shareCardGetInfoProto.swift */,
+				761CCB07232F981000BE7F36 /* shareCardInfoModel.swift */,
+			);
+			path = shareCard;
 			sourceTree = "<group>";
 		};
 		7623DF8B2320935400CD79A2 /* viewModel */ = {
@@ -538,6 +578,7 @@
 		7623DFA12321FD7D00CD79A2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				761CCB02232F965B00BE7F36 /* shareCard */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -971,6 +1012,7 @@
 		76C9D5F5231A217F0091ECE4 /* HomeMine */ = {
 			isa = PBXGroup;
 			children = (
+				761CCB01232F964600BE7F36 /* ViewModel */,
 				7623DFA12321FD7D00CD79A2 /* model */,
 				7623DFA02321FD7700CD79A2 /* view */,
 				7623DF9F2321FD4900CD79A2 /* viewController */,
@@ -1219,6 +1261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7615F5ED232786AC003DB6C4 /* HDCountDownButtion.swift in Sources */,
+				761CCB08232F981000BE7F36 /* shareCardInfoModel.swift in Sources */,
 				7615F5D323265953003DB6C4 /* UmengShareManager.swift in Sources */,
 				7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */,
 				76C9D5762317AB560091ECE4 /* EncryptedStore.m in Sources */,
@@ -1233,6 +1276,7 @@
 				76C9D5792317AB560091ECE4 /* HDPublicEncCoreDataManager.swift in Sources */,
 				76C9D5922317B2380091ECE4 /* UILabel-Extend.swift in Sources */,
 				76C9D5CD2317B2F10091ECE4 /* HDAlertBaseView.swift in Sources */,
+				761CCB04232F969000BE7F36 /* ShareCardGetInfoManager.swift in Sources */,
 				76C9D5FE231A61380091ECE4 /* businessCardEditViewController.swift in Sources */,
 				76C9D531231784760091ECE4 /* HDAlbumModel.swift in Sources */,
 				76C9D5F7231A264E0091ECE4 /* HomeMineViewController.swift in Sources */,
@@ -1267,12 +1311,14 @@
 				7615F5EF232786C4003DB6C4 /* tabbarButton.swift in Sources */,
 				76C9D54A2317A7910091ECE4 /* HDResponse+HandyJSON.swift in Sources */,
 				76C9D603231A61F00091ECE4 /* businessCardEditTableViewCell.swift in Sources */,
+				761CCAFB232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift in Sources */,
 				76C9D5632317AB160091ECE4 /* HDUserDefaults.swift in Sources */,
 				76C9D5542317A9ED0091ECE4 /* HDViewModelType.swift in Sources */,
 				76C9D529231784760091ECE4 /* HDAlbumListViewController.swift in Sources */,
 				76C9D52F231784760091ECE4 /* HDImageListViewController.swift in Sources */,
 				76C9D5F4231A20DC0091ECE4 /* HomeTabbarViewController.swift in Sources */,
 				7615F601232791A6003DB6C4 /* ASLoginProto.swift in Sources */,
+				761CCAFD232F779300BE7F36 /* ASResetPassWordVerifyProto.swift in Sources */,
 				76C9D52D231784760091ECE4 /* HDAlbumListCell.swift in Sources */,
 				76C9D54C2317A7910091ECE4 /* NSObject-Extension.swift in Sources */,
 				7623DF932320F01900CD79A2 /* AppColor.swift in Sources */,
@@ -1318,6 +1364,7 @@
 				76C9D55B2317AA480091ECE4 /* HDBaseApi.swift in Sources */,
 				76C9D54B2317A7910091ECE4 /* MoyaProvider+Rx.swift in Sources */,
 				76C9D5A42317B2830091ECE4 /* BQTool.swift in Sources */,
+				761CCB06232F96E000BE7F36 /* shareCardGetInfoProto.swift in Sources */,
 				7601B2282328A218009D7C78 /* ASUmengshareView.swift in Sources */,
 				76C9D5A12317B2830091ECE4 /* UIView+HDEmptyView.swift in Sources */,
 				7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */,
@@ -1325,6 +1372,7 @@
 				76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */,
 				76C9D5992317B2690091ECE4 /* HDRuntime.swift in Sources */,
 				7623DF952321056900CD79A2 /* LoginVC+Extension.swift in Sources */,
+				761CCAFF232F821F00BE7F36 /* ASResetPassWordProto.swift in Sources */,
 				7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */,
 				7615F5FA232788A8003DB6C4 /* ASAutoHeightTextView.swift in Sources */,
 				76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */,

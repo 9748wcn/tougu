@@ -11,6 +11,6 @@ import HandyJSON
 
 class HDBaseModel: HandyJSON {
     var code:Int = 0
-    var errMessage:String?
+    var message:String?
     required init() {}
 }

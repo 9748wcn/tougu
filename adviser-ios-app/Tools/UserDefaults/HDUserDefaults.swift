@@ -9,7 +9,7 @@
 import UIKit
 //let HDUSERNAMELOGINED = "HDUSERNAMELOGINED"
 //let HDTEAMSEARCHRECORD = "HDTEAMSEARCHRECORD"
-let USERNAMEKEY = "USERNAME"
+let USERICNO = "USERICNO"
 let USERPASSWORDKEY = "USERPASSWORD"
 let USERPHONEKEY = "USERPHONE"
 
@@ -56,7 +56,7 @@ class HDUserDefaults: NSObject {
     }
     
     static func hd_getCurrentUser() -> String?{
-        return HDUserDefaults.hd_getObject(forKey: USERNAMEKEY)
+        return HDUserDefaults.hd_getObject(forKey: USERPHONEKEY)
     }
     
     static func hd_deleteObject(forKey:String) {

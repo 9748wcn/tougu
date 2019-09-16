@@ -10,8 +10,7 @@ import UIKit
 import HandyJSON
 
 class ASUserInfoModel: HandyJSON {
-    var userSn:Int!
-    var userName:String!
-    var logged:Bool!
+    var loginName:String!
+    var employeeNumber:String!
     required init() {}
 }

@@ -21,6 +21,12 @@ class HomeTabbarViewController: baseTabbarController {
         self.setupOneChildViewController("我的", image: "mineUnSelected", selectedImage: "mineSelected", controller: HomeMineViewController())
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    
 
     /*
     // MARK: - Navigation

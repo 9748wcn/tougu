@@ -27,8 +27,8 @@ enum HTTPMethod: String {
     func asyncerdidFinishWithResult(request:HDHTTPRequest,result:AnyObject)
     func asyncerdidFailWithError(request:HDHTTPRequest,error:NSError)
 }
-//    let baseUrl:String = "http://172.16.68.252:8301"
-let baseUrl:String = "http://combatmap.hdfax.com"
+    let baseUrl:String = "http://172.24.19.132:8749"
+//let baseUrl:String = "http://combatmap.hdfax.com"
     let baseSettingUrl:String = "http://17391l3n18.imwork.net"
 //let baseUrl:String = "http://172.16.40.34:8082"
 class HDHTTPRequest {
@@ -61,12 +61,16 @@ class HDHTTPRequest {
         }else {
              url = baseSettingUrl + api.urlString
         }
-        
-        
+        if api.method == .get {
+            url = getAppendUrl(url: url, aa: api.getParameters()!)
+        }
+       
         var urlRequest = URLRequest(url: URL(string: url)!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30)
-        if let param = api.getParameters() {
-            let jsonData = try? JSONSerialization.data(withJSONObject: param)
-            urlRequest.httpBody = jsonData
+        if api.method != .get {
+            if let param = api.getParameters() {
+                let jsonData = try? JSONSerialization.data(withJSONObject: param)
+                urlRequest.httpBody = jsonData
+            }
         }
         for (key,value) in api.httpHeaders {
             urlRequest.setValue(value, forHTTPHeaderField:key)
@@ -87,10 +91,10 @@ class HDHTTPRequest {
                     HDLog("responseJSON : \(responseJson)")
                     switch responseCode.statusCode {
                     case 200:
-                        if !self.jsonCheck(json: responseJson) {
-                            self.performApiResponse(.failure(.parseError))
-                            return
-                        }
+//                        if !self.jsonCheck(json: responseJson) {
+//                            self.performApiResponse(.failure(.parseError))
+//                            return
+//                        }
 
                         self.performApiResponse(.success(jsonStr!))
                     case 400...499:
@@ -121,28 +125,28 @@ class HDHTTPRequest {
                 let model = self.api.responseObjectFromJson(jsonStr:jsonStr)
                 switch model.code {
                 case 0:
-                    HDToast.showTextToast(message: model.errMessage)
-                    self.performFailure(code: model.code,errorMessage: model.errMessage)
+                    HDToast.showTextToast(message: model.message)
+                    self.performFailure(code: model.code,errorMessage: model.message)
                 case 1:
                     self.performSuccess(model: model)
                 case 1001:
-                    HDToast.showTextToast(message: model.errMessage)
+                    HDToast.showTextToast(message: model.message)
                     self.performFailure(code: model.code,errorMessage: "手机号已注册")
                 case 1002:
-                    HDToast.showTextToast(message: model.errMessage)
+                    HDToast.showTextToast(message: model.message)
                     self.performFailure(code: model.code,errorMessage: "手机号未注册")
                 case 1003:
-                    HDToast.showTextToast(message: model.errMessage)
+                    HDToast.showTextToast(message: model.message)
                     self.performFailure(code: model.code,errorMessage: "手机号未注册")
                 case 1004:
-                    HDToast.showTextToast(message: model.errMessage)
+                    HDToast.showTextToast(message: model.message)
                     self.performFailure(code: model.code,errorMessage: "验证码已过期")
                 case 5001:
-                    HDToast.showTextToast(message: model.errMessage)
+                    HDToast.showTextToast(message: model.message)
                     self.performFailure(code: model.code,errorMessage: "未知错误")
                     
                 case 5002:
-                    HDToast.showTextToast(message: model.errMessage)
+                    HDToast.showTextToast(message: model.message)
                     self.performFailure(code: model.code,errorMessage: "系统错误")
                     
                 default:
@@ -190,6 +194,23 @@ class HDHTTPRequest {
         }
         return false
     }
+    
+    /**
+     * @Description get请求URL拼接参数
+     * @param url
+     *            接口地址(无参数)
+     * @param map
+     *            拼接参数集合
+     */
+    func getAppendUrl(url: String, aa: [String:Any]) -> String {
+        let array = aa.keys
+        let strArr = array.map { (value) -> String in
+            return String(format:"%@=%@",value,String(describing: aa[value]!))
+        }
+        let str = strArr.joined(separator: "&")
+        
+        return url + "?" + str
+   }
     
     
     func cancel() {

@@ -98,6 +98,12 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
         return headerView
         
     }
+    
+    func updateHeaderView(shareModel: shareCardInfoModel) {
+        
+        self.sectionHeaderView.updateUI(dataModel: shareModel)
+    
+    }
 }
 
 // MARK - methods
