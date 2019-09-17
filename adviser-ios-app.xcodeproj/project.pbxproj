@@ -54,6 +54,7 @@
 		761B7FCD2330CF0A00F94759 /* UpdateAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 761B7FCC2330CF0A00F94759 /* UpdateAlertView.xib */; };
 		761B7FD02330D62E00F94759 /* UpdateVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FCE2330D62E00F94759 /* UpdateVersionCell.swift */; };
 		761B7FD12330D62E00F94759 /* UpdateVersionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 761B7FCF2330D62E00F94759 /* UpdateVersionCell.xib */; };
+		761B7FD42330ED1F00F94759 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FD32330ED1F00F94759 /* UpdateViewController.swift */; };
 		761CCAFB232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */; };
 		761CCAFD232F779300BE7F36 /* ASResetPassWordVerifyProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */; };
 		761CCAFF232F821F00BE7F36 /* ASResetPassWordProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */; };
@@ -225,6 +226,7 @@
 		761B7FCC2330CF0A00F94759 /* UpdateAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateAlertView.xib; sourceTree = "<group>"; };
 		761B7FCE2330D62E00F94759 /* UpdateVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionCell.swift; sourceTree = "<group>"; };
 		761B7FCF2330D62E00F94759 /* UpdateVersionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateVersionCell.xib; sourceTree = "<group>"; };
+		761B7FD32330ED1F00F94759 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGetPhoneCodeProto.swift; sourceTree = "<group>"; };
 		761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordVerifyProto.swift; sourceTree = "<group>"; };
 		761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordProto.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				761B7FCC2330CF0A00F94759 /* UpdateAlertView.xib */,
 				761B7FCE2330D62E00F94759 /* UpdateVersionCell.swift */,
 				761B7FCF2330D62E00F94759 /* UpdateVersionCell.xib */,
+				761B7FD32330ED1F00F94759 /* UpdateViewController.swift */,
 			);
 			path = version;
 			sourceTree = "<group>";
@@ -1353,6 +1356,7 @@
 				76C9D5F7231A264E0091ECE4 /* HomeMineViewController.swift in Sources */,
 				7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */,
 				76C9D53B2317A5760091ECE4 /* HDThemeColor.swift in Sources */,
+				761B7FD42330ED1F00F94759 /* UpdateViewController.swift in Sources */,
 				76C9D5482317A7910091ECE4 /* UIImage-Extention.swift in Sources */,
 				76C9D52E231784760091ECE4 /* HDAlbumCell.swift in Sources */,
 				76C9D5962317B2470091ECE4 /* TPPreciseTimer.m in Sources */,

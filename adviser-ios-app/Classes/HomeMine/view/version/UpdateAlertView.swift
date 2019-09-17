@@ -14,7 +14,8 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     var contentArray:Array<String>? {
         didSet {
-            
+            updateSelfHeight(count: contentArray!.count)
+            contentTableView.reloadData()
         }
     }
     
@@ -25,11 +26,13 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         contentTableView.hx_registerCell(cellClass: UpdateVersionCell.self)
         contentTableView.rowHeight = UITableView.automaticDimension
         contentTableView.estimatedRowHeight = 20
+        contentTableView.separatorStyle = .none
     }
     
     func updateSelfHeight(count: Int) {
-//        let selfFrame: CGRect = self.frame
-        
+        var selfFrame: CGRect = self.frame
+        selfFrame.size.height = CGFloat(280 + (count * 15))
+        self.frame = selfFrame
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -44,7 +47,7 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         versionLabel.textAlignment = .center
         versionLabel.text = "v1.0.0"
         versionLabel.font = UIFont.systemFont(ofSize: 10)
-        
+        headerView.backgroundColor = UIColor.white
         return headerView
         
     }
@@ -58,6 +61,7 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         updateButton.setTitle("立即更新", for: .normal)
         updateButton.setTitleColor(UIColor.white, for: .normal)
         footView.addSubview(updateButton)
+        footView.backgroundColor = UIColor.white
         return footView
     }
     
@@ -80,7 +84,7 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let contentCell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as UpdateVersionCell
-        contentCell.numberLabel.text = "\(indexPath.row)"
+        contentCell.numberLabel.text = "\(indexPath.row)" + "、"
         contentCell.contentItemLabel.text = contentArray![indexPath.row]
         return contentCell
     }
