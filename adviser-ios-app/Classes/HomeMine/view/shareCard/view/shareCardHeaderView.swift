@@ -28,19 +28,19 @@ class shareCardHeaderView: UIView {
     @IBOutlet weak var QRCodeLabel: UIImageView!
     
     override func awakeFromNib() {
-        let codeView = QRCodeView(frame: CGRect(x: 0, y: 0, width: 64, height: 64), content: "测试", colors: [UIColor.yellow,UIColor.red])
-        QRCodeLabel.addSubview(codeView)
+//        let codeView = QRCodeView(frame: CGRect(x: 0, y: 0, width: 64, height: 64), content: "测试", colors: [UIColor.yellow,UIColor.red])
+//        QRCodeLabel.addSubview(codeView)
     }
     
     func updateUI(dataModel: shareCardInfoModel) {
-        self.headerImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: dataModel.avatar!)!), placeholder: UIImage(named: "normalHeader"))
-        self.nameLabel.text = dataModel.employeeName
-        self.cardNoLabel.text = dataModel.employeeNo
-        self.workNameLabel.text = dataModel.jobNames
-        self.phoneLabel.text = dataModel.phoneNo
-        self.wechatLabel.text = dataModel.wechatAccount
-        self.emailLabel.text = dataModel.email
-        self.emailLabel.text = dataModel.email
+        self.headerImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: (dataModel.data?.avatar!)!)!), placeholder: UIImage(named: "normalHeader"))
+        self.nameLabel.text = dataModel.data?.employeeName
+        self.cardNoLabel.text = dataModel.data?.employeeNo
+        self.workNameLabel.text = dataModel.data?.jobNames
+        self.phoneLabel.text = dataModel.data?.phoneNo
+        self.wechatLabel.text = dataModel.data?.wechatAccount
+        self.emailLabel.text = dataModel.data?.email
+        self.emailLabel.text = dataModel.data?.email
     }
     
 }

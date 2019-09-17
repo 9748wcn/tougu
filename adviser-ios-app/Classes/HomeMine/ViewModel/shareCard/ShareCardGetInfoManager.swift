@@ -30,7 +30,7 @@ class ShareCardGetInfoManager: NSObject,HDAsyncDelegate {
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
         let model = result as? shareCardInfoModel
-        if model?.code == 1 {
+        if model?.code == 1 && ((model?.data) != nil) {
             //布局界面
             if let shareMainVC = self.vc as? HomeMineShareCardViewController {
                 shareMainVC.updateHeaderView(shareModel: model!)

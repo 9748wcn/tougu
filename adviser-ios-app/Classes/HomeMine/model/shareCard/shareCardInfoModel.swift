@@ -10,13 +10,7 @@ import UIKit
 
 class shareCardInfoModel: HDBaseModel {
     
-    var wechatAccount: String?
-    var employeeName: String?
-    var profile: String?
-    var avatar: String?
-    var employeeNo: String?
-    var phoneNo: String?
-    var email: String?
-    var jobNames: String?
+    var data: shareCardItemModel?
+    
 
 }
