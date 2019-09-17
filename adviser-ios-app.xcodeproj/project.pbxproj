@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1F5BE02330AFAE00EC1ABF /* businessCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */; };
+		3F92C8E1233090210088651C /* businessCardEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92C8E0233090210088651C /* businessCardEditManager.swift */; };
+		3F92C8E32330911A0088651C /* businessCardEditProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92C8E22330911A0088651C /* businessCardEditProto.swift */; };
 		7601B2222328851A009D7C78 /* ASRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2212328851A009D7C78 /* ASRefreshHeader.swift */; };
 		7601B22423289050009D7C78 /* shareBottomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B22323289050009D7C78 /* shareBottomAlertView.swift */; };
 		7601B22623289064009D7C78 /* shareBottomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7601B22523289064009D7C78 /* shareBottomAlertView.xib */; };
@@ -175,6 +178,9 @@
 
 /* Begin PBXFileReference section */
 		0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adviser-ios-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardModel.swift; sourceTree = "<group>"; };
+		3F92C8E0233090210088651C /* businessCardEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardEditManager.swift; sourceTree = "<group>"; };
+		3F92C8E22330911A0088651C /* businessCardEditProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardEditProto.swift; sourceTree = "<group>"; };
 		7601B2212328851A009D7C78 /* ASRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRefreshHeader.swift; sourceTree = "<group>"; };
 		7601B22323289050009D7C78 /* shareBottomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareBottomAlertView.swift; sourceTree = "<group>"; };
 		7601B22523289064009D7C78 /* shareBottomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shareBottomAlertView.xib; sourceTree = "<group>"; };
@@ -361,6 +367,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1F5BDE2330AF8100EC1ABF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */,
+				3F92C8E22330911A0088651C /* businessCardEditProto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6D24C0698228BE353B2CDB5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				7623DF8C2320936300CD79A2 /* HDSettingViewModel.swift */,
+				3F92C8E0233090210088651C /* businessCardEditManager.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -1078,6 +1094,7 @@
 		76C9D5FC231A60870091ECE4 /* BusinessCard */ = {
 			isa = PBXGroup;
 			children = (
+				3F1F5BDE2330AF8100EC1ABF /* Model */,
 				7623DF8B2320935400CD79A2 /* viewModel */,
 				76C9D600231A616C0091ECE4 /* view */,
 				76C9D5FF231A613F0091ECE4 /* viewController */,
@@ -1342,6 +1359,7 @@
 				7615F5C72325E88D003DB6C4 /* ShareCardIntroduceCell.swift in Sources */,
 				76C9D5462317A7910091ECE4 /* HXReuseable.swift in Sources */,
 				76BED4AC23226EC900B7FEFC /* ASBottomAlertView.swift in Sources */,
+				3F92C8E1233090210088651C /* businessCardEditManager.swift in Sources */,
 				7615F6032327935F003DB6C4 /* ASUserInfoModel.swift in Sources */,
 				7623DF992321230600CD79A2 /* resetPassWordVerifyViewController.swift in Sources */,
 				76C9D58F2317AF420091ECE4 /* HDDeviceInfo.swift in Sources */,
@@ -1391,6 +1409,7 @@
 				761B7FC82330BEE400F94759 /* VersionValueManager.swift in Sources */,
 				761B7FC12330BD1F00F94759 /* VersionValueProto.swift in Sources */,
 				76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */,
+				3F92C8E32330911A0088651C /* businessCardEditProto.swift in Sources */,
 				7601B22423289050009D7C78 /* shareBottomAlertView.swift in Sources */,
 				7615F5D62326661A003DB6C4 /* companyInfoViewController.swift in Sources */,
 				76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */,
@@ -1433,6 +1452,7 @@
 				7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */,
 				7615F5FA232788A8003DB6C4 /* ASAutoHeightTextView.swift in Sources */,
 				76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */,
+				3F1F5BE02330AFAE00EC1ABF /* businessCardModel.swift in Sources */,
 				761B7FB32330687000F94759 /* shareCardItemModel.swift in Sources */,
 				76C9D5512317A9610091ECE4 /* HDToast.swift in Sources */,
 			);

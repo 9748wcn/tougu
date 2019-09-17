@@ -22,6 +22,4 @@ class shareCardGetInfoProto: HDBaseApi {
     override func getParameters() -> [String: Any]? {
         return ["phoneNo":phoneNo]
     }
-    
-
 }

@@ -47,8 +47,6 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
             cell.typeValueLabel.text = (secondSectionValues?[indexPath.row] != nil) ? firstSectionValues?[indexPath.row] : ""
             return cell
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

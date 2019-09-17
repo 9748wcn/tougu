@@ -30,7 +30,7 @@
                         <color key="textColor" red="0.95953899620000005" green="0.19241565469999999" blue="0.1935019791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="未填写" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95H-os-Ssd">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="未填写" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95H-os-Ssd" customClass="BusinessCardTextField" customModule="adviser_ios_app" customModuleProvider="target">
                         <rect key="frame" x="90" y="0.0" width="230" height="48.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="gla-nG-ldw"/>
