@@ -45,7 +45,7 @@
                         <color key="textColor" red="0.15113100409507751" green="0.19411784410476685" blue="0.28955751657485962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d2d-ZZ-Mio">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d2d-ZZ-Mio" customClass="BusinessCardTextView" customModule="adviser_ios_app" customModuleProvider="target">
                         <rect key="frame" x="15" y="40" width="290" height="74.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

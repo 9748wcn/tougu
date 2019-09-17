@@ -8,19 +8,23 @@
 
 import UIKit
 
+class BusinessCardTextField: UITextField{
+    var indexPath:IndexPath?
+}
+
 class businessCardEditTableViewCell: UITableViewCell {
 
     @IBOutlet weak var leftTitleLabel: UILabel!
     
-    @IBOutlet weak var contentTextFeild: UITextField!
+    @IBOutlet weak var contentTextFeild: BusinessCardTextField!
     
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var needLabel: UILabel!
-    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
+        self.selectionStyle = .none        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

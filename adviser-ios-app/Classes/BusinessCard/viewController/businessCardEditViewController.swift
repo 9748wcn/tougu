@@ -10,8 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class businessCardEditViewController: baseViewController, buttonClickDelegate {
-    
+class businessCardEditViewController: baseViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .grouped)
         tableView.sectionFooterHeight = 0
@@ -29,165 +28,131 @@ class businessCardEditViewController: baseViewController, buttonClickDelegate {
     }()
     let disposeBag = DisposeBag()
     var intrudutionHeight: CGFloat = 120
+    
+    var configuration:[[(title:String,
+        placeholder:String,
+        isNeed:Bool,
+        isEnabled:Bool,
+        keyboardType: UIKeyboardType)]]
+        = [[("头像", "此项必填", true, true, .default),
+            ("姓名", "此项必填", true, true, .default),
+            ("工号", "此项必填", true, true, .default)],
+           [("公司", "此项必填", true, false, .default),
+            ("职位", "此项必填", true, true, .default)],
+          [("手机", "此项必填", true, true, .namePhonePad),
+           ("微信号", "此项必填", false, true, .default),
+           ("邮箱", "此项必填", false, true, .emailAddress)],
+          [("个人简介", "此项必填", true, true, .default)]]
 
+    var contentArr    =  [["","",""],
+                          ["恒大金融财富管理（深圳）有限公司",""],
+                          ["","",""],
+                          [""]]
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(contentTextFieldDidEndEditing(_:)), name: UITextField.textDidEndEditingNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(contentTextFieldDidEndEditing(_:)), name: UITextView.textDidEndEditingNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "名片编辑"
         view.backgroundColor = UIColor(rgb: 0xF8F8F8)
         view.addSubview(tableView)
-        
+        if let phoneNo = UserDefaults.standard.string(forKey: USERPHONEKEY) {
+            businessCardEditManager.shared.getCardInfo(vc: self, phoneNo: phoneNo)
+        }
     }
-
+    func refrenUI(with model:businessCardItemModel) {
+        let content = [[model.avatar,model.employeeName,model.employeeNo],
+                       ["恒大金融财富管理（深圳）有限公司",model.jobNames],
+                       [model.phoneNo,model.wechatAccount,model.email],
+                       [model.profile]]
+        for (section, arr) in content.enumerated() {
+            for(row, contentStr) in arr.enumerated() {
+                contentArr[section][row] = contentStr
+            }
+        }
+    }
+    @objc func contentTextFieldDidEndEditing(_ noti:NSNotification) {
+        if let textFiled = noti.object as? BusinessCardTextField,
+           let indexPath = textFiled.indexPath{
+           contentArr[indexPath.section][indexPath.row] = textFiled.text ?? ""
+        }
+        if let textView = noti.object as? BusinessCardTextView,
+           let indexPath = textView.indexPath{
+            contentArr[indexPath.section][indexPath.row] = textView.text ?? ""
+        }
+        self.tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return configuration.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardHeadCell
-                cell.headImageView.image = UIImage.init(named: "normalHeader")
-                cell.headerClickBlock = {
-                    
-                    let acVC = ActionSheetViewController(cellTitleList: ["拍照", "从手机相册选择"])!
-                    acVC.valueBlock = { index in
-                        if index == 0 {
-                            HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
-                                guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                                    return
-                                }
-                                UIImagePickerController.rx.createWithParent(self) { picker in
-                                    picker.sourceType = .camera
-                                    }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                                    .map{ $0[.originalImage] as! UIImage }
-                                    .bind(to: cell.headImageView.rx.image)
-                                    .disposed(by: self.disposeBag)
-                                
-                            })
-                        }else if index == 1 {
-                            HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
-                                guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-                                    return
-                                }
-                                UIImagePickerController.rx.createWithParent(self) { picker in
-                                    picker.sourceType = .photoLibrary
-                                    picker.modalPresentationStyle = .overCurrentContext
-                                    }
-                                    .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                                    .map { $0[.originalImage] as! UIImage}
-                                    .bind(to: cell.headImageView.rx.image)
-                                    .disposed(by: self.disposeBag)
-                                
+        if indexPath.section == 0,indexPath.row == 0  {
+            let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardHeadCell
+            cell.headImageView.image = UIImage.init(named: "normalHeader")
+            cell.headerClickBlock = {[unowned self] () in
+                let acVC = ActionSheetViewController(cellTitleList: ["拍照", "从手机相册选择"])!
+                acVC.valueBlock = { [unowned self] index  in
+                    if index == 0 {
+                        HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
+                            guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                                return
                             }
+                            UIImagePickerController.rx.createWithParent(self) { picker in
+                                picker.sourceType = .camera
+                                }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                                .map{ $0[.originalImage] as! UIImage }
+                                .bind(to: cell.headImageView.rx.image)
+                                .disposed(by: self.disposeBag)
+                            
+                        })
+                    }else if index == 1 {
+                        HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
+                            guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+                                return
+                            }
+                            UIImagePickerController.rx.createWithParent(self) { picker in
+                                picker.sourceType = .photoLibrary
+                                picker.modalPresentationStyle = .overCurrentContext
+                                }
+                                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                                .map { $0[.originalImage] as! UIImage}
+                                .bind(to: cell.headImageView.rx.image)
+                                .disposed(by: self.disposeBag)
+                            
                         }
                     }
-                    self.present(acVC, animated: false, completion:  nil)
-                    
-//                    let alertController = UIAlertController(title: nil, message: nil,
-//                                                            preferredStyle: .actionSheet)
-//                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-//
-//                    let deleteAction = UIAlertAction(title: "拍照", style: .default, handler: { (make) in
-//                        HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
-//                            guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
-//                                return
-//                            }
-//                            UIImagePickerController.rx.createWithParent(self) { picker in
-//                                picker.sourceType = .camera
-//                                }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
-//                                .map{ $0[.originalImage] as! UIImage }
-//                                .bind(to: cell.headImageView.rx.image)
-//                            .disposed(by: self.disposeBag)
-//
-//                        })
-//                    })
-//
-//                    let archiveAction = UIAlertAction(title: "从手机相册选择", style: .default, handler: { (make) in
-//                        HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
-//                            guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-//                                return
-//                            }
-//                            UIImagePickerController.rx.createWithParent(self) { picker in
-//                                picker.sourceType = .photoLibrary
-//                                picker.modalPresentationStyle = .overCurrentContext
-//                                }
-//                                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-//                                .map { $0[.originalImage] as! UIImage}
-//                                .bind(to: cell.headImageView.rx.image)
-//                                .disposed(by: self.disposeBag)
-//
-//                        }
-//
-//                    })
-//                    alertController.addAction(cancelAction)
-//                    alertController.addAction(deleteAction)
-//                    alertController.addAction(archiveAction)
-//                    self.present(alertController, animated: true, completion: nil)
                 }
-                return cell
-            }else{
-                let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardEditTableViewCell
-                if indexPath.row == 1 {
-                    cell.leftTitleLabel.text = "姓名"
-                    cell.contentTextFeild.placeholder = "此项必填"
-                    self.nameTextFeild = cell.contentTextFeild;
-                    
-                }else{
-                    cell.leftTitleLabel.text = "工号"
-                    cell.contentTextFeild.placeholder = "此项必填"
-                    cell.lineView.isHidden = true
-                }
-                return cell
-            }
-            
-        }else if indexPath.section == 1 {
-            let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardEditTableViewCell
-            if indexPath.row == 0 {
-                cell.leftTitleLabel.text = "公司"
-                cell.contentTextFeild.placeholder = "此项必填"
-            }else{
-                cell.leftTitleLabel.text = "职位"
-                self.positionTextFeild = cell.contentTextFeild
-                cell.contentTextFeild.placeholder = "此项必填"
-                cell.lineView.isHidden = true
+                self.present(acVC, animated: false, completion:  nil)
             }
             return cell
-        }else if indexPath.section == 2 {
-            let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardEditTableViewCell
-            if indexPath.row == 0 {
-                cell.leftTitleLabel.text = "手机"
-                self.phoneTextFeild = cell.contentTextFeild
-                cell.contentTextFeild.placeholder = "此项必填"
-            }else if indexPath.row == 1{
-                cell.leftTitleLabel.text = "微信号"
-                self.wechatTextFeild = cell.contentTextFeild
-                cell.contentTextFeild.placeholder = "未填写"
-                cell.needLabel.isHidden = true
-            }else{
-                cell.leftTitleLabel.text = "邮箱"
-                cell.contentTextFeild.placeholder = "未填写"
-                cell.lineView.isHidden = true
-                cell.needLabel.isHidden = true
-                self.emailTextFeild = cell.contentTextFeild
-            }
-            return cell
-        }else if indexPath.section == 3 {
+        }else if indexPath.section == configuration.count - 1 {
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as editCardIntroduceCell
+            cell.contentTextView.indexPath = indexPath
+            cell.contentTextView.text = contentArr[indexPath.section][indexPath.row]
             return cell
-            
         }
-        
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "")
-        
+        let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardEditTableViewCell
+        cell.leftTitleLabel.text = configuration[indexPath.section][indexPath.row].title
+        cell.contentTextFeild.placeholder = configuration[indexPath.section][indexPath.row].placeholder
+        cell.contentTextFeild.text = contentArr[indexPath.section][indexPath.row]
+        cell.needLabel.isHidden = !configuration[indexPath.section][indexPath.row].isNeed
+        cell.lineView.isHidden  = indexPath.row == configuration[indexPath.section].count - 1
+        cell.contentTextFeild.indexPath = indexPath
+        cell.contentTextFeild.keyboardType = configuration[indexPath.section][indexPath.row].keyboardType
+        cell.contentTextFeild.isEnabled = configuration[indexPath.section][indexPath.row].isEnabled
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -225,10 +190,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
         }
         
         let headView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 10))
-//                headView.backgroundColor = background_Color
         return headView
-        
-        
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -241,6 +203,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             submitBtn.backgroundColor = UIColor(rgb: 0x497BEC)
             submitBtn.setTitle("提交审核", for: .normal)
             submitBtn.setTitleColor(UIColor.white, for: .normal)
+            submitBtn.addTarget(self, action: #selector(submitBtnBtnClicked), for: .touchUpInside)
             submitBtn.layer.cornerRadius = 23.0
             return spaceView
         }else {
@@ -249,23 +212,19 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             return footView
         }
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 3
-        }else if section == 1 {
-            return 2
-        }else if section == 2 {
-            return 3
-        }else if section == 3 {
-            return 1
-        }else if section == 4 {
-            return 1
-        }
-        return 0
+        return configuration[section].count
     }
     
-    func butonClickBy(_ sender: UIButton) {
-        
+    @objc func submitBtnBtnClicked() {
+        let paramter = ["avatar":contentArr[0][0],
+                        "name":contentArr[0][1],
+                        "employeeNumber":contentArr[0][2],
+                        "jobNames":contentArr[1][1],
+                        "phoneNo":contentArr[2][0],
+                        "wechatAccount":contentArr[2][1],
+                        "email":contentArr[2][2],
+                        "profile":contentArr[3][0]]
+        businessCardEditManager.shared.updateCardInfo(vc: self, paramter: paramter)
     }
 }

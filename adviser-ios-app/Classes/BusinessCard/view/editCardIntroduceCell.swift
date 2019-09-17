@@ -7,15 +7,18 @@
 //
 
 import UIKit
-
+class BusinessCardTextView: UITextView{
+    var indexPath:IndexPath?
+}
 class editCardIntroduceCell: UITableViewCell, UITextViewDelegate {
-    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var contentTextView: BusinessCardTextView!
     
     @IBOutlet weak var wordCountLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         contentTextView.delegate = self
         contentTextView.isScrollEnabled = false
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
