@@ -208,8 +208,11 @@ extension HomeLoginViewController: HDAsyncDelegate {
                 HDToast.showTextToast(message: "账号不存在，请重新输入")
                 return
             }
-            HDUserDefaults.hd_add(object: self.phoneNumberTextFeild.text!, forKey: USERPHONEKEY)
-            HDUserDefaults.hd_add(object: (loginModel?.data?.employeeNumber!)!, forKey: USERICNO)
+            let defaultStand = UserDefaults.standard
+            defaultStand.set(self.phoneNumberTextFeild.text!, forKey: USERPHONEKEY)
+            defaultStand.set((loginModel?.data?.employeeNumber!)!, forKey: USERICNO)
+//            HDUserDefaults.hd_add(object: self.phoneNumberTextFeild.text!, forKey: USERPHONEKEY)
+//            HDUserDefaults.hd_add(object: (loginModel?.data?.employeeNumber!)!, forKey: USERICNO)
             //进入首页
             appDelegate.gotoMainVC()
             return

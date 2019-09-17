@@ -38,8 +38,10 @@ class HomeMineShareCardViewController: baseViewController {
         headerRefresh.setRefreshingTarget(self, refreshingAction: #selector(refreshDate))
         tableView.mj_header = headerRefresh
         
-        let phoneNo = HDUserDefaults.hd_getCurrentUser()!
-        ShareCardGetInfoManager.shared.getemployeeInfo(vc: self, phoneNo: phoneNo)
+        let defaultStand = UserDefaults.standard
+        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+//        let phoneNo = HDUserDefaults.hd_getCurrentUser()!
+        ShareCardGetInfoManager.shared.getemployeeInfo(vc: self, phoneNo: phoneNo!)
         
     }
     

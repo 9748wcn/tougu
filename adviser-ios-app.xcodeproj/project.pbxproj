@@ -39,6 +39,8 @@
 		7615F6032327935F003DB6C4 /* ASUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */; };
 		7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F604232793BA003DB6C4 /* ASLoginModel.swift */; };
 		761B7FB32330687000F94759 /* shareCardItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FB22330687000F94759 /* shareCardItemModel.swift */; };
+		761B7FB823306F9C00F94759 /* PersonInfoGetValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FB723306F9C00F94759 /* PersonInfoGetValueManager.swift */; };
+		761B7FBA23306FD900F94759 /* personInfoProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FB923306FD900F94759 /* personInfoProto.swift */; };
 		761CCAFB232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */; };
 		761CCAFD232F779300BE7F36 /* ASResetPassWordVerifyProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */; };
 		761CCAFF232F821F00BE7F36 /* ASResetPassWordProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */; };
@@ -106,21 +108,11 @@
 		76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5592317AA480091ECE4 /* HDNetworkAPI.swift */; };
 		76C9D5602317AAC80091ECE4 /* HDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D55F2317AAC80091ECE4 /* HDLog.swift */; };
 		76C9D5632317AB160091ECE4 /* HDUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5622317AB160091ECE4 /* HDUserDefaults.swift */; };
-		76C9D5752317AB560091ECE4 /* Public.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5662317AB550091ECE4 /* Public.xcdatamodeld */; };
-		76C9D5762317AB560091ECE4 /* EncryptedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56A2317AB550091ECE4 /* EncryptedStore.m */; };
-		76C9D5772317AB560091ECE4 /* HDDBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56C2317AB550091ECE4 /* HDDBConfig.swift */; };
-		76C9D5782317AB560091ECE4 /* HDStorageDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56E2317AB550091ECE4 /* HDStorageDao.swift */; };
-		76C9D5792317AB560091ECE4 /* HDPublicEncCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D56F2317AB550091ECE4 /* HDPublicEncCoreDataManager.swift */; };
-		76C9D57A2317AB560091ECE4 /* HDManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5712317AB560091ECE4 /* HDManagedObjectContext.swift */; };
-		76C9D57B2317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5732317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift */; };
-		76C9D57C2317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5742317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift */; };
 		76C9D5812317ABEC0091ECE4 /* HDBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5802317ABEC0091ECE4 /* HDBaseModel.swift */; };
 		76C9D5842317AC160091ECE4 /* HDAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5832317AC160091ECE4 /* HDAssert.swift */; };
 		76C9D58C2317AEB80091ECE4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D58A2317AEB80091ECE4 /* MBProgressHUD.m */; };
 		76C9D58F2317AF420091ECE4 /* HDDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D58E2317AF420091ECE4 /* HDDeviceInfo.swift */; };
-		76C9D5922317B2380091ECE4 /* UILabel-Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5912317B2380091ECE4 /* UILabel-Extend.swift */; };
 		76C9D5962317B2470091ECE4 /* TPPreciseTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5952317B2470091ECE4 /* TPPreciseTimer.m */; };
-		76C9D5992317B2690091ECE4 /* HDRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5982317B2690091ECE4 /* HDRuntime.swift */; };
 		76C9D5A02317B2830091ECE4 /* HDLoadingEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D59B2317B2830091ECE4 /* HDLoadingEmptyView.xib */; };
 		76C9D5A12317B2830091ECE4 /* UIView+HDEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59C2317B2830091ECE4 /* UIView+HDEmptyView.swift */; };
 		76C9D5A22317B2830091ECE4 /* DispatchQueue+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D59D2317B2830091ECE4 /* DispatchQueue+extension.swift */; };
@@ -205,6 +197,8 @@
 		7615F6022327935F003DB6C4 /* ASUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASUserInfoModel.swift; sourceTree = "<group>"; };
 		7615F604232793BA003DB6C4 /* ASLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLoginModel.swift; sourceTree = "<group>"; };
 		761B7FB22330687000F94759 /* shareCardItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareCardItemModel.swift; sourceTree = "<group>"; };
+		761B7FB723306F9C00F94759 /* PersonInfoGetValueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoGetValueManager.swift; sourceTree = "<group>"; };
+		761B7FB923306FD900F94759 /* personInfoProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoProto.swift; sourceTree = "<group>"; };
 		761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGetPhoneCodeProto.swift; sourceTree = "<group>"; };
 		761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordVerifyProto.swift; sourceTree = "<group>"; };
 		761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordProto.swift; sourceTree = "<group>"; };
@@ -279,25 +273,14 @@
 		76C9D5592317AA480091ECE4 /* HDNetworkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDNetworkAPI.swift; sourceTree = "<group>"; };
 		76C9D55F2317AAC80091ECE4 /* HDLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDLog.swift; sourceTree = "<group>"; };
 		76C9D5622317AB160091ECE4 /* HDUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDUserDefaults.swift; sourceTree = "<group>"; };
-		76C9D5672317AB550091ECE4 /* Public.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Public.xcdatamodel; sourceTree = "<group>"; };
-		76C9D5692317AB550091ECE4 /* EncryptedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptedStore.h; sourceTree = "<group>"; };
-		76C9D56A2317AB550091ECE4 /* EncryptedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptedStore.m; sourceTree = "<group>"; };
-		76C9D56C2317AB550091ECE4 /* HDDBConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDDBConfig.swift; sourceTree = "<group>"; };
-		76C9D56E2317AB550091ECE4 /* HDStorageDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDStorageDao.swift; sourceTree = "<group>"; };
-		76C9D56F2317AB550091ECE4 /* HDPublicEncCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDPublicEncCoreDataManager.swift; sourceTree = "<group>"; };
-		76C9D5712317AB560091ECE4 /* HDManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDManagedObjectContext.swift; sourceTree = "<group>"; };
-		76C9D5732317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataCacheEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		76C9D5742317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataCacheEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		76C9D5802317ABEC0091ECE4 /* HDBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDBaseModel.swift; sourceTree = "<group>"; };
 		76C9D5832317AC160091ECE4 /* HDAssert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAssert.swift; sourceTree = "<group>"; };
 		76C9D5892317ADAD0091ECE4 /* SwiftOC-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftOC-Header.h"; sourceTree = "<group>"; };
 		76C9D58A2317AEB80091ECE4 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		76C9D58B2317AEB80091ECE4 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		76C9D58E2317AF420091ECE4 /* HDDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDDeviceInfo.swift; sourceTree = "<group>"; };
-		76C9D5912317B2380091ECE4 /* UILabel-Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel-Extend.swift"; sourceTree = "<group>"; };
 		76C9D5942317B2470091ECE4 /* TPPreciseTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPreciseTimer.h; sourceTree = "<group>"; };
 		76C9D5952317B2470091ECE4 /* TPPreciseTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPreciseTimer.m; sourceTree = "<group>"; };
-		76C9D5982317B2690091ECE4 /* HDRuntime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDRuntime.swift; sourceTree = "<group>"; };
 		76C9D59B2317B2830091ECE4 /* HDLoadingEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDLoadingEmptyView.xib; sourceTree = "<group>"; };
 		76C9D59C2317B2830091ECE4 /* UIView+HDEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+HDEmptyView.swift"; sourceTree = "<group>"; };
 		76C9D59D2317B2830091ECE4 /* DispatchQueue+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+extension.swift"; sourceTree = "<group>"; };
@@ -508,6 +491,31 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		761B7FB423306F1D00F94759 /* personInfo */ = {
+			isa = PBXGroup;
+			children = (
+				76BED49F23223FAC00B7FEFC /* personInfoViewController.swift */,
+				76BED4A12322404700B7FEFC /* personInfo+Extension.swift */,
+			);
+			path = personInfo;
+			sourceTree = "<group>";
+		};
+		761B7FB523306F5B00F94759 /* personInfo */ = {
+			isa = PBXGroup;
+			children = (
+				761B7FB923306FD900F94759 /* personInfoProto.swift */,
+			);
+			path = personInfo;
+			sourceTree = "<group>";
+		};
+		761B7FB623306F6900F94759 /* personInfo */ = {
+			isa = PBXGroup;
+			children = (
+				761B7FB723306F9C00F94759 /* PersonInfoGetValueManager.swift */,
+			);
+			path = personInfo;
+			sourceTree = "<group>";
+		};
 		761CCB00232F962F00BE7F36 /* shareCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +527,7 @@
 		761CCB01232F964600BE7F36 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				761B7FB623306F6900F94759 /* personInfo */,
 				761CCB00232F962F00BE7F36 /* shareCard */,
 			);
 			path = ViewModel;
@@ -556,14 +565,13 @@
 		7623DF9F2321FD4900CD79A2 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				761B7FB423306F1D00F94759 /* personInfo */,
 				7615F5DE23275431003DB6C4 /* version */,
 				7615F5DB23273F61003DB6C4 /* setting */,
 				7615F5DA23273F3D003DB6C4 /* shareCard */,
 				7615F5D4232665E5003DB6C4 /* company */,
 				76C9D5F6231A264E0091ECE4 /* HomeMineViewController.swift */,
 				7623DFA22321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift */,
-				76BED49F23223FAC00B7FEFC /* personInfoViewController.swift */,
-				76BED4A12322404700B7FEFC /* personInfo+Extension.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -581,6 +589,7 @@
 		7623DFA12321FD7D00CD79A2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				761B7FB523306F5B00F94759 /* personInfo */,
 				761CCB02232F965B00BE7F36 /* shareCard */,
 			);
 			path = model;
@@ -787,7 +796,6 @@
 		76C9D5652317AB550091ECE4 /* Template */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D5662317AB550091ECE4 /* Public.xcdatamodeld */,
 			);
 			name = Template;
 			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/Template";
@@ -796,8 +804,6 @@
 		76C9D5682317AB550091ECE4 /* EncryptedCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D5692317AB550091ECE4 /* EncryptedStore.h */,
-				76C9D56A2317AB550091ECE4 /* EncryptedStore.m */,
 			);
 			name = EncryptedCoreData;
 			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/EncryptedCoreData";
@@ -806,7 +812,6 @@
 		76C9D56B2317AB550091ECE4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D56C2317AB550091ECE4 /* HDDBConfig.swift */,
 			);
 			name = Common;
 			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/Common";
@@ -815,8 +820,6 @@
 		76C9D56D2317AB550091ECE4 /* CoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D56E2317AB550091ECE4 /* HDStorageDao.swift */,
-				76C9D56F2317AB550091ECE4 /* HDPublicEncCoreDataManager.swift */,
 			);
 			name = CoreDataManager;
 			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/CoreDataManager";
@@ -825,7 +828,6 @@
 		76C9D5702317AB560091ECE4 /* ManagedContext */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D5712317AB560091ECE4 /* HDManagedObjectContext.swift */,
 			);
 			name = ManagedContext;
 			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/ManagedContext";
@@ -834,8 +836,6 @@
 		76C9D5722317AB560091ECE4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D5732317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift */,
-				76C9D5742317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift */,
 			);
 			name = Models;
 			path = "../../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/DB/Models";
@@ -897,7 +897,6 @@
 		76C9D5902317B2380091ECE4 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D5912317B2380091ECE4 /* UILabel-Extend.swift */,
 			);
 			name = UILabel;
 			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/UILabel";
@@ -915,7 +914,6 @@
 		76C9D5972317B2690091ECE4 /* HDRuntime */ = {
 			isa = PBXGroup;
 			children = (
-				76C9D5982317B2690091ECE4 /* HDRuntime.swift */,
 			);
 			name = HDRuntime;
 			path = "../../../../combat/mgr-combat-map-ios/mgr-combat-map-ios/Tools/HDRuntime";
@@ -1267,17 +1265,12 @@
 				761CCB08232F981000BE7F36 /* shareCardInfoModel.swift in Sources */,
 				7615F5D323265953003DB6C4 /* UmengShareManager.swift in Sources */,
 				7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */,
-				76C9D5762317AB560091ECE4 /* EncryptedStore.m in Sources */,
-				76C9D57B2317AB560091ECE4 /* DataCacheEntry+CoreDataProperties.swift in Sources */,
 				76BED4A023223FAC00B7FEFC /* personInfoViewController.swift in Sources */,
-				76C9D5782317AB560091ECE4 /* HDStorageDao.swift in Sources */,
 				76C9D5472317A7910091ECE4 /* UIScrollView+EmptyDataView.swift in Sources */,
 				76C9D5FA231A4C7C0091ECE4 /* HomeLoginViewController.swift in Sources */,
 				76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */,
 				76C9D52A231784760091ECE4 /* HDPhotoImageManager.swift in Sources */,
 				7615F5D9232736E6003DB6C4 /* QRCodeView.swift in Sources */,
-				76C9D5792317AB560091ECE4 /* HDPublicEncCoreDataManager.swift in Sources */,
-				76C9D5922317B2380091ECE4 /* UILabel-Extend.swift in Sources */,
 				76C9D5CD2317B2F10091ECE4 /* HDAlertBaseView.swift in Sources */,
 				761CCB04232F969000BE7F36 /* ShareCardGetInfoManager.swift in Sources */,
 				76C9D5FE231A61380091ECE4 /* businessCardEditViewController.swift in Sources */,
@@ -1308,7 +1301,6 @@
 				7615F5BF2323AA64003DB6C4 /* shareCardHeaderView.swift in Sources */,
 				76C9D607231A67980091ECE4 /* businessCardHeadCell.swift in Sources */,
 				7623DFA92322036E00CD79A2 /* HomeMineHeadView.swift in Sources */,
-				76C9D5752317AB560091ECE4 /* Public.xcdatamodeld in Sources */,
 				76C9D5A22317B2830091ECE4 /* DispatchQueue+extension.swift in Sources */,
 				7601B2222328851A009D7C78 /* ASRefreshHeader.swift in Sources */,
 				7615F5EF232786C4003DB6C4 /* tabbarButton.swift in Sources */,
@@ -1333,7 +1325,7 @@
 				7615F5CA2325EA9F003DB6C4 /* RecordTableViewCell.swift in Sources */,
 				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
 				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,
-				76C9D57C2317AB560091ECE4 /* DataCacheEntry+CoreDataClass.swift in Sources */,
+				761B7FB823306F9C00F94759 /* PersonInfoGetValueManager.swift in Sources */,
 				7623DFA32321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift in Sources */,
 				7615F5FC232788AE003DB6C4 /* HDView+Extend.swift in Sources */,
 				7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */,
@@ -1343,12 +1335,11 @@
 				76C9D55C2317AA480091ECE4 /* HDHTTPRequest.swift in Sources */,
 				7615F5FE232788B5003DB6C4 /* textViewPalceHold.swift in Sources */,
 				76C9D55A2317AA480091ECE4 /* HDNetworkClient.swift in Sources */,
-				76C9D5772317AB560091ECE4 /* HDDBConfig.swift in Sources */,
 				7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */,
 				7601B22B2328EB56009D7C78 /* editCardIntroduceCell.swift in Sources */,
 				76C9D5F2231A20000091ECE4 /* baseTabbarController.swift in Sources */,
-				76C9D57A2317AB560091ECE4 /* HDManagedObjectContext.swift in Sources */,
 				7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */,
+				761B7FBA23306FD900F94759 /* personInfoProto.swift in Sources */,
 				76C9D53D2317A5760091ECE4 /* BaseConst.swift in Sources */,
 				76C9D5C92317B2F10091ECE4 /* HDAlertManager.swift in Sources */,
 				7623DF9D2321F0B700CD79A2 /* resetPassWordSetViewController.swift in Sources */,
@@ -1373,7 +1364,6 @@
 				7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */,
 				76C9D4F02317818A0091ECE4 /* AppDelegate.swift in Sources */,
 				76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */,
-				76C9D5992317B2690091ECE4 /* HDRuntime.swift in Sources */,
 				7623DF952321056900CD79A2 /* LoginVC+Extension.swift in Sources */,
 				761CCAFF232F821F00BE7F36 /* ASResetPassWordProto.swift in Sources */,
 				7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */,
@@ -1715,19 +1705,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		76C9D5662317AB550091ECE4 /* Public.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				76C9D5672317AB550091ECE4 /* Public.xcdatamodel */,
-			);
-			currentVersion = 76C9D5672317AB550091ECE4 /* Public.xcdatamodel */;
-			path = Public.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 76C9D4E42317818A0091ECE4 /* Project object */;
 }

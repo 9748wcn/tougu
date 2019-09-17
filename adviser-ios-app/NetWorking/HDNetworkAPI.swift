@@ -73,9 +73,9 @@ extension HDNetworkAPI:Moya.TargetType {
 extension HDNetworkAPI {
     func addUserName(with dict:[String:Any]) -> [String:Any] {
         var paramer = dict
-        if let username = HDUserDefaults.hd_getCurrentUser() {
-            paramer["username"] = username
-        }
+//        if let username = HDUserDefaults.hd_getCurrentUser() {
+//            paramer["username"] = username
+//        }
         return paramer
     }
 }

@@ -9,7 +9,7 @@
 #ifndef SwiftOC_Header_h
 #define SwiftOC_Header_h
 
-#import "EncryptedStore.h"
+//#import "EncryptedStore.h"
 #import "MBProgressHUD.h"
 #import <UMShare/UMShare.h>
 #import <UShareUI/UShareUI.h>

@@ -18,17 +18,17 @@ let USERPHONEKEY = "USERPHONE"
 class HDUserDefaults: NSObject {
 
     static func hd_set(object:Any,forKey:String) {
-        HDStorageDao.dao().insertOrUpdate(key: forKey, value: object)
+//        HDStorageDao.dao().insertOrUpdate(key: forKey, value: object)
 //        UserDefaults.standard.set(object, forKey: forKey)
 //        UserDefaults.standard.synchronize()
     }
     
    static func hd_getObject(forKey:String) -> String? {
 //        let object = UserDefaults.standard.object(forKey: forKey)
-    let object = HDStorageDao.dao().getValueBy(key: forKey)
-        if object != nil {
-            return (object as! String)
-        }
+//    let object = HDStorageDao.dao().getValueBy(key: forKey)
+//        if object != nil {
+//            return (object as! String)
+//        }
         return nil
     }
     
@@ -63,7 +63,7 @@ class HDUserDefaults: NSObject {
         if forKey.isEmpty {
             return
         }
-        HDStorageDao.dao().delete(key: forKey)
+//        HDStorageDao.dao().delete(key: forKey)
 //        UserDefaults.standard.removeObject(forKey: forKey)
     }
     
