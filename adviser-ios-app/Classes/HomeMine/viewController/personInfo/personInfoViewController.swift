@@ -23,9 +23,9 @@ class personInfoViewController: baseViewController {
         
     }()
     let firstSectionKeys:Array = ["姓名","手机号","工号","职务"]
-    let firstSectionValues:Array = ["张大海","150****5271","IC5016","初级投资顾问"]
+    var firstSectionValues:Array<String>?
     let secondSectionKeys:Array = ["所属团队","团队名称","团队类型"]
-    let secondSectionValues:Array = ["恒大财富","上海电销团队","电销"]
+    var secondSectionValues:Array<String>?
     var headerBtn: UIButton!
     let disposeBag = DisposeBag()
     
@@ -36,6 +36,18 @@ class personInfoViewController: baseViewController {
 
         title = "员工信息"
         view.addSubview(tableView)
+        
+        let defaultStand = UserDefaults.standard
+        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+        PersonInfoGetValueManager.shared.getPersonInfo(vc: self, phoneNo: phoneNo!)
+        
+    }
+    
+    func setupWithData(firstValueArray: [String?],secondValueArray: [String?]) {
+        
+        firstSectionValues = firstValueArray as? Array<String>
+        secondSectionValues = secondValueArray as? Array<String>
+        tableView.reloadData()
     }
 
 }

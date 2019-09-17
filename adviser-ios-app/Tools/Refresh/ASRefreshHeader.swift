@@ -64,7 +64,7 @@ class ASRefreshHeader: MJRefreshStateHeader {
         rotationAnimation.toValue = NSNumber.init(value: M_PI * 2.0 * 3)
         rotationAnimation.duration = 1;
         rotationAnimation.isCumulative = false;
-        rotationAnimation.repeatCount = 2;
+        rotationAnimation.repeatCount = MAXFLOAT;
         loadingImage.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
 

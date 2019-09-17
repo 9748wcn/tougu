@@ -39,12 +39,12 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
         if indexPath.section == 0 {
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as personInfoTableViewCell
             cell.typeLabel.text = firstSectionKeys[indexPath.row]
-            cell.typeValueLabel.text = firstSectionValues[indexPath.row]
+            cell.typeValueLabel.text = (firstSectionValues?[indexPath.row] != nil) ? firstSectionValues?[indexPath.row] : ""
             return cell
         }else{
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as personInfoTableViewCell
             cell.typeLabel.text = secondSectionKeys[indexPath.row]
-            cell.typeValueLabel.text = secondSectionValues[indexPath.row]
+            cell.typeValueLabel.text = (secondSectionValues?[indexPath.row] != nil) ? firstSectionValues?[indexPath.row] : ""
             return cell
         }
         

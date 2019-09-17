@@ -89,47 +89,6 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                         }
                     }
                     self.present(acVC, animated: false, completion:  nil)
-                    
-//                    let alertController = UIAlertController(title: nil, message: nil,
-//                                                            preferredStyle: .actionSheet)
-//                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-//
-//                    let deleteAction = UIAlertAction(title: "拍照", style: .default, handler: { (make) in
-//                        HDPhotoImageManager.getCameraAuthorization({ [unowned self](bool) in
-//                            guard bool, UIImagePickerController.isSourceTypeAvailable(.camera) else {
-//                                return
-//                            }
-//                            UIImagePickerController.rx.createWithParent(self) { picker in
-//                                picker.sourceType = .camera
-//                                }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
-//                                .map{ $0[.originalImage] as! UIImage }
-//                                .bind(to: cell.headImageView.rx.image)
-//                            .disposed(by: self.disposeBag)
-//
-//                        })
-//                    })
-//
-//                    let archiveAction = UIAlertAction(title: "从手机相册选择", style: .default, handler: { (make) in
-//                        HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
-//                            guard bool, UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-//                                return
-//                            }
-//                            UIImagePickerController.rx.createWithParent(self) { picker in
-//                                picker.sourceType = .photoLibrary
-//                                picker.modalPresentationStyle = .overCurrentContext
-//                                }
-//                                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-//                                .map { $0[.originalImage] as! UIImage}
-//                                .bind(to: cell.headImageView.rx.image)
-//                                .disposed(by: self.disposeBag)
-//
-//                        }
-//
-//                    })
-//                    alertController.addAction(cancelAction)
-//                    alertController.addAction(deleteAction)
-//                    alertController.addAction(archiveAction)
-//                    self.present(alertController, animated: true, completion: nil)
                 }
                 return cell
             }else{

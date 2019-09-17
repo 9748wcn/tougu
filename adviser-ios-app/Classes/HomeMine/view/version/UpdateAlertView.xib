@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UpdateAlertView" customModule="adviser_ios_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="388"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="updateHeader" translatesAutoresizingMaskIntoConstraints="NO" id="jjB-gc-YfA">
+                    <rect key="frame" x="0.0" y="0.0" width="290" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="AF2-cO-19q"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G1R-Tv-8B4">
+                    <rect key="frame" x="0.0" y="160" width="290" height="228"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="G1R-Tv-8B4" secondAttribute="trailing" id="8Ix-2k-EVd"/>
+                <constraint firstAttribute="trailing" secondItem="jjB-gc-YfA" secondAttribute="trailing" id="F6G-W1-JoS"/>
+                <constraint firstItem="jjB-gc-YfA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QfY-I4-QSa"/>
+                <constraint firstItem="G1R-Tv-8B4" firstAttribute="top" secondItem="jjB-gc-YfA" secondAttribute="bottom" id="VzG-Kb-Njf"/>
+                <constraint firstAttribute="bottom" secondItem="G1R-Tv-8B4" secondAttribute="bottom" id="cgn-Pr-FT6"/>
+                <constraint firstItem="G1R-Tv-8B4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gEs-7n-Zre"/>
+                <constraint firstItem="jjB-gc-YfA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ren-MK-VS7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentTableView" destination="G1R-Tv-8B4" id="Tev-40-KiH"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="updateHeader" width="290" height="159"/>
+    </resources>
+</document>

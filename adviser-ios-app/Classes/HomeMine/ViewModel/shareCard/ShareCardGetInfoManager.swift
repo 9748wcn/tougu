@@ -25,15 +25,21 @@ class ShareCardGetInfoManager: NSObject,HDAsyncDelegate {
     }
     
     func asyncerDidStart(request: HDHTTPRequest) {
+//        HDHudManager.shared.show()
+        if let shareMainVC = self.vc as? HomeMineShareCardViewController {
+            shareMainVC.startGetData()
+        }
         
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
+        HDHudManager.shared.hide()
         let model = result as? shareCardInfoModel
         if model?.code == 1 && ((model?.data) != nil) {
             //布局界面
             if let shareMainVC = self.vc as? HomeMineShareCardViewController {
                 shareMainVC.updateHeaderView(shareModel: model!)
+                shareMainVC.getDataFinish()
             }
         }
         
@@ -41,6 +47,9 @@ class ShareCardGetInfoManager: NSObject,HDAsyncDelegate {
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
         
+        if let shareMainVC = self.vc as? HomeMineShareCardViewController {
+            shareMainVC.getDataFinish()
+        }
     }
     
 

@@ -158,6 +158,7 @@ class HDHTTPRequest {
                 switch failure {
                 case .connectionError:
                     HDToast.showTextToast(message: "网路异常")
+                    self.performFailure(code: 1,errorMessage: "系统异常")
                 case .authorizationError(let errorJson):
                     HDToast.showTextToast(message: errorJson["message"].stringValue)
                 case .serverError:
@@ -203,6 +204,9 @@ class HDHTTPRequest {
      *            拼接参数集合
      */
     func getAppendUrl(url: String, aa: [String:Any]) -> String {
+        if aa.isEmpty {
+            return url + ""
+        }
         let array = aa.keys
         let strArr = array.map { (value) -> String in
             return String(format:"%@=%@",value,String(describing: aa[value]!))

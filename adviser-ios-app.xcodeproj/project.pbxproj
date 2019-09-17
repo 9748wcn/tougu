@@ -41,6 +41,16 @@
 		761B7FB32330687000F94759 /* shareCardItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FB22330687000F94759 /* shareCardItemModel.swift */; };
 		761B7FB823306F9C00F94759 /* PersonInfoGetValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FB723306F9C00F94759 /* PersonInfoGetValueManager.swift */; };
 		761B7FBA23306FD900F94759 /* personInfoProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FB923306FD900F94759 /* personInfoProto.swift */; };
+		761B7FBC2330874200F94759 /* personInfoItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FBB2330874200F94759 /* personInfoItemModel.swift */; };
+		761B7FBE2330885F00F94759 /* personInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FBD2330885F00F94759 /* personInfoModel.swift */; };
+		761B7FC12330BD1F00F94759 /* VersionValueProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FC02330BD1F00F94759 /* VersionValueProto.swift */; };
+		761B7FC32330BD5E00F94759 /* VersionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FC22330BD5E00F94759 /* VersionItemModel.swift */; };
+		761B7FC52330BE3100F94759 /* VersionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FC42330BE3100F94759 /* VersionModel.swift */; };
+		761B7FC82330BEE400F94759 /* VersionValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FC72330BEE400F94759 /* VersionValueManager.swift */; };
+		761B7FCB2330CEF900F94759 /* UpdateAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FCA2330CEF900F94759 /* UpdateAlertView.swift */; };
+		761B7FCD2330CF0A00F94759 /* UpdateAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 761B7FCC2330CF0A00F94759 /* UpdateAlertView.xib */; };
+		761B7FD02330D62E00F94759 /* UpdateVersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B7FCE2330D62E00F94759 /* UpdateVersionCell.swift */; };
+		761B7FD12330D62E00F94759 /* UpdateVersionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 761B7FCF2330D62E00F94759 /* UpdateVersionCell.xib */; };
 		761CCAFB232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */; };
 		761CCAFD232F779300BE7F36 /* ASResetPassWordVerifyProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */; };
 		761CCAFF232F821F00BE7F36 /* ASResetPassWordProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */; };
@@ -199,6 +209,16 @@
 		761B7FB22330687000F94759 /* shareCardItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareCardItemModel.swift; sourceTree = "<group>"; };
 		761B7FB723306F9C00F94759 /* PersonInfoGetValueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoGetValueManager.swift; sourceTree = "<group>"; };
 		761B7FB923306FD900F94759 /* personInfoProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoProto.swift; sourceTree = "<group>"; };
+		761B7FBB2330874200F94759 /* personInfoItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoItemModel.swift; sourceTree = "<group>"; };
+		761B7FBD2330885F00F94759 /* personInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personInfoModel.swift; sourceTree = "<group>"; };
+		761B7FC02330BD1F00F94759 /* VersionValueProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionValueProto.swift; sourceTree = "<group>"; };
+		761B7FC22330BD5E00F94759 /* VersionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionItemModel.swift; sourceTree = "<group>"; };
+		761B7FC42330BE3100F94759 /* VersionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionModel.swift; sourceTree = "<group>"; };
+		761B7FC72330BEE400F94759 /* VersionValueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionValueManager.swift; sourceTree = "<group>"; };
+		761B7FCA2330CEF900F94759 /* UpdateAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAlertView.swift; sourceTree = "<group>"; };
+		761B7FCC2330CF0A00F94759 /* UpdateAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateAlertView.xib; sourceTree = "<group>"; };
+		761B7FCE2330D62E00F94759 /* UpdateVersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionCell.swift; sourceTree = "<group>"; };
+		761B7FCF2330D62E00F94759 /* UpdateVersionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateVersionCell.xib; sourceTree = "<group>"; };
 		761CCAFA232F2B5F00BE7F36 /* ASGetPhoneCodeProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGetPhoneCodeProto.swift; sourceTree = "<group>"; };
 		761CCAFC232F779300BE7F36 /* ASResetPassWordVerifyProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordVerifyProto.swift; sourceTree = "<group>"; };
 		761CCAFE232F821F00BE7F36 /* ASResetPassWordProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASResetPassWordProto.swift; sourceTree = "<group>"; };
@@ -504,6 +524,8 @@
 			isa = PBXGroup;
 			children = (
 				761B7FB923306FD900F94759 /* personInfoProto.swift */,
+				761B7FBB2330874200F94759 /* personInfoItemModel.swift */,
+				761B7FBD2330885F00F94759 /* personInfoModel.swift */,
 			);
 			path = personInfo;
 			sourceTree = "<group>";
@@ -514,6 +536,35 @@
 				761B7FB723306F9C00F94759 /* PersonInfoGetValueManager.swift */,
 			);
 			path = personInfo;
+			sourceTree = "<group>";
+		};
+		761B7FBF2330BCED00F94759 /* version */ = {
+			isa = PBXGroup;
+			children = (
+				761B7FC02330BD1F00F94759 /* VersionValueProto.swift */,
+				761B7FC22330BD5E00F94759 /* VersionItemModel.swift */,
+				761B7FC42330BE3100F94759 /* VersionModel.swift */,
+			);
+			path = version;
+			sourceTree = "<group>";
+		};
+		761B7FC62330BEC200F94759 /* version */ = {
+			isa = PBXGroup;
+			children = (
+				761B7FC72330BEE400F94759 /* VersionValueManager.swift */,
+			);
+			path = version;
+			sourceTree = "<group>";
+		};
+		761B7FC92330CED800F94759 /* version */ = {
+			isa = PBXGroup;
+			children = (
+				761B7FCA2330CEF900F94759 /* UpdateAlertView.swift */,
+				761B7FCC2330CF0A00F94759 /* UpdateAlertView.xib */,
+				761B7FCE2330D62E00F94759 /* UpdateVersionCell.swift */,
+				761B7FCF2330D62E00F94759 /* UpdateVersionCell.xib */,
+			);
+			path = version;
 			sourceTree = "<group>";
 		};
 		761CCB00232F962F00BE7F36 /* shareCard */ = {
@@ -527,6 +578,7 @@
 		761CCB01232F964600BE7F36 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				761B7FC62330BEC200F94759 /* version */,
 				761B7FB623306F6900F94759 /* personInfo */,
 				761CCB00232F962F00BE7F36 /* shareCard */,
 			);
@@ -579,6 +631,7 @@
 		7623DFA02321FD7700CD79A2 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				761B7FC92330CED800F94759 /* version */,
 				7615F5C42325E84B003DB6C4 /* home */,
 				7615F5C32325E832003DB6C4 /* personInfo */,
 				7615F5C22325E816003DB6C4 /* shareCard */,
@@ -589,6 +642,7 @@
 		7623DFA12321FD7D00CD79A2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				761B7FBF2330BCED00F94759 /* version */,
 				761B7FB523306F5B00F94759 /* personInfo */,
 				761CCB02232F965B00BE7F36 /* shareCard */,
 			);
@@ -1186,6 +1240,8 @@
 				7601B22623289064009D7C78 /* shareBottomAlertView.xib in Resources */,
 				76C9D5C72317B2F10091ECE4 /* HDAlertDefaultView.xib in Resources */,
 				7623DFA72322008100CD79A2 /* HomeMineTableViewCell.xib in Resources */,
+				761B7FD12330D62E00F94759 /* UpdateVersionCell.xib in Resources */,
+				761B7FCD2330CF0A00F94759 /* UpdateAlertView.xib in Resources */,
 				76C9D5FB231A4C7C0091ECE4 /* HomeLoginViewController.xib in Resources */,
 				76C9D608231A67980091ECE4 /* businessCardHeadCell.xib in Resources */,
 				76C9D52B231784760091ECE4 /* HDAlbumListCell.xib in Resources */,
@@ -1266,6 +1322,8 @@
 				7615F5D323265953003DB6C4 /* UmengShareManager.swift in Sources */,
 				7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */,
 				76BED4A023223FAC00B7FEFC /* personInfoViewController.swift in Sources */,
+				761B7FCB2330CEF900F94759 /* UpdateAlertView.swift in Sources */,
+				761B7FC32330BD5E00F94759 /* VersionItemModel.swift in Sources */,
 				76C9D5472317A7910091ECE4 /* UIScrollView+EmptyDataView.swift in Sources */,
 				76C9D5FA231A4C7C0091ECE4 /* HomeLoginViewController.swift in Sources */,
 				76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */,
@@ -1329,6 +1387,9 @@
 				7623DFA32321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift in Sources */,
 				7615F5FC232788AE003DB6C4 /* HDView+Extend.swift in Sources */,
 				7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */,
+				761B7FBE2330885F00F94759 /* personInfoModel.swift in Sources */,
+				761B7FC82330BEE400F94759 /* VersionValueManager.swift in Sources */,
+				761B7FC12330BD1F00F94759 /* VersionValueProto.swift in Sources */,
 				76C9D53C2317A5760091ECE4 /* HDConstant.swift in Sources */,
 				7601B22423289050009D7C78 /* shareBottomAlertView.swift in Sources */,
 				7615F5D62326661A003DB6C4 /* companyInfoViewController.swift in Sources */,
@@ -1337,6 +1398,7 @@
 				76C9D55A2317AA480091ECE4 /* HDNetworkClient.swift in Sources */,
 				7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */,
 				7601B22B2328EB56009D7C78 /* editCardIntroduceCell.swift in Sources */,
+				761B7FD02330D62E00F94759 /* UpdateVersionCell.swift in Sources */,
 				76C9D5F2231A20000091ECE4 /* baseTabbarController.swift in Sources */,
 				7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */,
 				761B7FBA23306FD900F94759 /* personInfoProto.swift in Sources */,
@@ -1350,11 +1412,13 @@
 				7623DF8D2320936300CD79A2 /* HDSettingViewModel.swift in Sources */,
 				76C9D55D2317AA480091ECE4 /* HDNetworkAPI.swift in Sources */,
 				7615F5BD2323AA02003DB6C4 /* shareCard+Extension.swift in Sources */,
+				761B7FBC2330874200F94759 /* personInfoItemModel.swift in Sources */,
 				7636FABD231CC2B9008B1F80 /* businessCardEditVC+Extention.swift in Sources */,
 				76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */,
 				76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */,
 				7615F5EB2327867B003DB6C4 /* HDCustomBution.swift in Sources */,
 				76C9D5492317A7910091ECE4 /* HDToast+Rx.swift in Sources */,
+				761B7FC52330BE3100F94759 /* VersionModel.swift in Sources */,
 				76C9D55B2317AA480091ECE4 /* HDBaseApi.swift in Sources */,
 				76C9D54B2317A7910091ECE4 /* MoyaProvider+Rx.swift in Sources */,
 				76C9D5A42317B2830091ECE4 /* BQTool.swift in Sources */,
