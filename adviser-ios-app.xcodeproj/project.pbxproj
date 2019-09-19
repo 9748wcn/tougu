@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F046F18233384CB0028A908 /* businessCardCommitAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F046F17233384CB0028A908 /* businessCardCommitAlertView.swift */; };
 		3F1F5BE02330AFAE00EC1ABF /* businessCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */; };
 		3F92C8E1233090210088651C /* businessCardEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92C8E0233090210088651C /* businessCardEditManager.swift */; };
 		3F92C8E32330911A0088651C /* businessCardEditProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92C8E22330911A0088651C /* businessCardEditProto.swift */; };
@@ -185,6 +186,7 @@
 
 /* Begin PBXFileReference section */
 		0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-adviser-ios-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F046F17233384CB0028A908 /* businessCardCommitAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardCommitAlertView.swift; sourceTree = "<group>"; };
 		3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardModel.swift; sourceTree = "<group>"; };
 		3F92C8E0233090210088651C /* businessCardEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardEditManager.swift; sourceTree = "<group>"; };
 		3F92C8E22330911A0088651C /* businessCardEditProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardEditProto.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				76BED4A42322426F00B7FEFC /* personInfoTableViewCell.xib */,
 				76BED4A72322445400B7FEFC /* personInfoHeadView.swift */,
 				76BED4A92322446600B7FEFC /* personInfoHeadView.xib */,
+				3F046F17233384CB0028A908 /* businessCardCommitAlertView.swift */,
 			);
 			path = personInfo;
 			sourceTree = "<group>";
@@ -1417,6 +1420,7 @@
 				76C9D54C2317A7910091ECE4 /* NSObject-Extension.swift in Sources */,
 				7623DF932320F01900CD79A2 /* AppColor.swift in Sources */,
 				76C9D5502317A9610091ECE4 /* HDHudManager.swift in Sources */,
+				3F046F18233384CB0028A908 /* businessCardCommitAlertView.swift in Sources */,
 				76C9D4F22317818A0091ECE4 /* ViewController.swift in Sources */,
 				76BED4A22322404700B7FEFC /* personInfo+Extension.swift in Sources */,
 				7603E0E82333269800C014F1 /* UserBehaviourModel.swift in Sources */,

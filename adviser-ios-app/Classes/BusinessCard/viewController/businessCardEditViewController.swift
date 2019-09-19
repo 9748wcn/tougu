@@ -242,6 +242,11 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     @objc func submitBtnBtnClicked() {
+        
+        if let errorTip = verifyCommit() {
+            businessCardCommitAlertView(content: errorTip).show()
+            return
+        }
         let paramter = ["avatar":contentArr[0][0],
                         "name":contentArr[0][1],
                         "employeeNumber":contentArr[0][2],
@@ -251,5 +256,32 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                         "email":contentArr[2][2],
                         "profile":contentArr[3][0]]
         businessCardEditManager.shared.updateCardInfo(vc: self, paramter: paramter as [String : Any])
+    }
+}
+extension businessCardEditViewController{
+    func  verifyCommit()->String? {
+        var tipArr:[String] = []
+        if let avatar = contentArr[0][0], avatar.count == 0 {
+            tipArr.append("头像")
+        }
+        if let name = contentArr[0][1], name.count == 0 {
+            tipArr.append("姓名")
+        }
+        if let employeeNumber = contentArr[0][2], employeeNumber.count == 0 {
+            tipArr.append("工号")
+        }
+        if let company = contentArr[1][0], company.count == 0 {
+            tipArr.append("公司")
+        }
+        if let jobNames = contentArr[1][1], jobNames.count == 0 {
+            tipArr.append("职位")
+        }
+        if let phoneNo = contentArr[2][0], phoneNo.count == 0 {
+            tipArr.append("手机")
+        }
+        if tipArr.count == 0 {
+            return nil
+        }
+        return tipArr.joined(separator: "、") + "为必填项，输入之后才可以保存。"
     }
 }
