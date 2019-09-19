@@ -25,8 +25,25 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
         let request = HDHTTPRequest()
         request.api = api
         request.delegate = self
+        request.tag = "1000"
         request.start()
         
+    }
+    
+    func uploadBussinessCardHeader(vc: baseViewController, image: UIImage,phoneNo: String) {
+        self.vc = vc
+        let data: NSData = image.pngData()! as NSData
+        //        let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
+        let api = uploadEditCardHeaderProto()
+        api.phoneNo = phoneNo
+        api.method = .post
+        api.imageType = 3
+        api.portraitImage = data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: UInt(0)))
+        let request = HDHTTPRequest()
+        request.api = api
+        request.delegate = self
+        request.tag = "1001"
+        request.start()
     }
     
     func asyncerDidStart(request: HDHTTPRequest) {
@@ -34,16 +51,29 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
-        
         HDHudManager.shared.hide()
-        let model = result as? HDBaseModel
-        if model?.code == 1 {
-            if model?.message != nil {
-               HDToast.showTextToast(message: model?.message!)
+        
+        if request.tag == "1000" {
+            let model = result as? HDBaseModel
+            if model?.code == 1 {
+                if model?.message != nil {
+                    HDToast.showTextToast(message: model?.message!)
+                }
+            }else {
+                HDToast.showTextToast(message: "图片上传失败")
             }
         }else {
-            HDToast.showTextToast(message: "图片上传失败")
+            
+            let model = result as? uploadCardHeaderModel
+            if model?.code == 1 {
+                //布局界面
+                if let editCardVC = self.vc as? businessCardEditViewController {
+                    editCardVC.contentArr[0][0] = model?.avatar ?? ""
+                }
+            }
+            
         }
+        
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {

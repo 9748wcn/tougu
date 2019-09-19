@@ -36,10 +36,8 @@ class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
             //布局界面
             if let HomeMineVC = self.vc as? HomeMineViewController {
                 HomeMineVC.updateHeaderInfo(model: model!)
-//                HomeMineVC.setupWithData(firstValueArray: [model?.data?.employeeName,model?.data?.phoneNo,model?.data?.employeeNumber,model?.data?.jobName], secondValueArray: [model?.data?.parentGroupName,model?.data?.groupName,model?.data?.groupType])
             }
         }
-        
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {

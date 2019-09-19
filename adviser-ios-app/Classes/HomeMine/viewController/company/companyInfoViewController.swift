@@ -22,7 +22,7 @@ class companyInfoViewController: baseViewController,ASShareClickDelegate {
         // Do any additional setup after loading the view.
         let shareItem = UIBarButtonItem(image: UIImage(named: "shareIcon"), style: .plain, target: self, action: #selector(shareItemClicked))
         navigationItem.rightBarButtonItem = shareItem
-        
+        url = "http://172.24.19.45:8080/#/hdIfon"
         webView = WKWebView(frame: self.view.frame)
         // 下面一行代码意思是充满的意思(一定要加，不然也会显示有问题)
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -41,10 +41,15 @@ class companyInfoViewController: baseViewController,ASShareClickDelegate {
     }
 
     func wechatShareClick() {
-        let messegeObject: UMSocialMessageObject = UMSocialMessageObject.init()
-//        let shareObject = UMShareObject.shareObject(withTitle: "haha", descr: "hahahahha", thumImage: nil)
-//        messegeObject.shareObject = shareObject
-        messegeObject.text = "随便写"
+        let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
+        let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "恒大金融财富管理（深圳）有限公司简介", descr: "值得信赖的财富管理平台", thumImage: UIImage(named: "appIcon"))
+//        let defaultStand = UserDefaults.standard
+//        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+        shareObjext.webpageUrl = "http://172.24.19.45:8080/#/hdIfon"
+        messegeObject.shareObject = shareObjext
+        
+        //        messegeObject.webpageUrl = ""
+        
         UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatSession, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
             
             } as? UMSocialRequestCompletionHandler)

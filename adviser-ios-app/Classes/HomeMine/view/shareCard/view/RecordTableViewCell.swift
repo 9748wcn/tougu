@@ -55,9 +55,9 @@ class RecordTableViewCell: UITableViewCell {
         }
         if recordList?.avatar != nil {
             let avatarUrl = "https://iqfdfs.hdfax.com/" + (recordList?.avatar!)!
-            headerImage.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "normalHeader"))
+            headerImage.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "userHeader"))
         }else {
-            headerImage.image = UIImage(named: "normalHeader")
+            headerImage.image = UIImage(named: "userHeader")
         }
         nameLabel = UILabel.init()
         bgView.addSubview(nameLabel)

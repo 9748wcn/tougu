@@ -28,7 +28,7 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let headerView: shareCardHeaderView = shareCardHeaderView.loadFromXib()
-//            self.sectionHeaderView = headerView
+            self.sectionHeaderView = headerView
             if headerModel != nil {
                 headerView.updateUI(dataModel: headerModel!)
             }

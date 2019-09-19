@@ -30,6 +30,12 @@ class businessCardEditViewController: baseViewController {
     let disposeBag = DisposeBag()
     var intrudutionHeight: CGFloat = 120
     
+    var iscanEdit: Bool = true {
+        didSet {
+            updateStatusOfNotWrite(canEdit: iscanEdit)
+        }
+    }
+    
     var configuration:[[(title:String,
         placeholder:String,
         isNeed:Bool,
@@ -91,6 +97,20 @@ class businessCardEditViewController: baseViewController {
         }
         self.tableView.reloadData()
     }
+    
+    func updateStatusOfNotWrite(canEdit: Bool) {
+        
+        configuration = [[("头像", "此项必填", true, canEdit, .default),
+                          ("姓名", "此项必填", true, canEdit, .default),
+                          ("工号", "此项必填", true, false, .default)],
+                         [("公司", "此项必填", true, false, .default),
+                          ("职位", "此项必填", true, canEdit, .default)],
+                         [("手机", "此项必填", true, canEdit, .namePhonePad),
+                          ("微信号", "此项必填", false, canEdit, .default),
+                          ("邮箱", "此项必填", false, canEdit, .emailAddress)],
+                         [("个人简介", "此项必填", true, canEdit, .default)]]
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -125,7 +145,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                                     let que = DispatchQueue.global(qos: .default)
                                     que.async {
                                          let defaultStand = UserDefaults.standard
-                                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                                        UploadImageManager.shared.uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                                     }
                                     return image
                                 }
@@ -147,7 +167,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                                     let que = DispatchQueue.global(qos: .default)
                                     que.async {
                                         let defaultStand = UserDefaults.standard
-                                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                                        UploadImageManager.shared.uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                                     }
                                     return image
                                     
@@ -157,7 +177,6 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                             
                         }
                     }
-//                    self.present(acVC, animated: false, completion:  nil)
                 }
                 self.present(acVC, animated: false, completion:  nil)
             }
@@ -222,12 +241,13 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
         if section == 3 {
           let spaceView = UIView.init(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 85))
             spaceView.backgroundColor = UIColor(rgb: 0xF8F8F8)
-           let submitBtn = UIButton.init(type: .roundedRect)
+           let submitBtn = HDCustomBution.init(type: .roundedRect)
             spaceView.addSubview(submitBtn)
             submitBtn.frame = CGRect(x: 15, y: 20, width: view.bounds.width - 30, height: 45)
             submitBtn.backgroundColor = UIColor(rgb: 0x497BEC)
             submitBtn.setTitle("提交审核", for: .normal)
             submitBtn.setTitleColor(UIColor.white, for: .normal)
+            submitBtn.isEnabled = iscanEdit
             submitBtn.addTarget(self, action: #selector(submitBtnBtnClicked), for: .touchUpInside)
             submitBtn.layer.cornerRadius = 23.0
             return spaceView

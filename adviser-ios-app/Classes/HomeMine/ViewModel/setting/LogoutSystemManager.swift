@@ -28,9 +28,11 @@ class LogoutSystemManager: NSObject, HDAsyncDelegate {
     
     func asyncerDidStart(request: HDHTTPRequest) {
         //        MBProgressHUD.sho
+        HDHudManager.shared.show()
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
+        HDHudManager.shared.hide()
         let model = result as? HDBaseModel
         if model?.code == 1 {
             //布局界面
@@ -42,7 +44,7 @@ class LogoutSystemManager: NSObject, HDAsyncDelegate {
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
-        
+        HDHudManager.shared.hide()
     }
 
 }

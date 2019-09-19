@@ -25,6 +25,8 @@
 		7603E0EA2333283C00C014F1 /* UserBehaviourManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E92333283C00C014F1 /* UserBehaviourManager.swift */; };
 		7603E0EE23337EBD00C014F1 /* LogoutSystemProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0ED23337EBD00C014F1 /* LogoutSystemProto.swift */; };
 		7603E0F02333805E00C014F1 /* LogoutSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0EF2333805E00C014F1 /* LogoutSystemManager.swift */; };
+		7603E0F223339E8D00C014F1 /* uploadEditCardHeaderProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0F123339E8D00C014F1 /* uploadEditCardHeaderProto.swift */; };
+		7603E0F423339EF000C014F1 /* uploadCardHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0F323339EF000C014F1 /* uploadCardHeaderModel.swift */; };
 		7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B623238F0B003DB6C4 /* TitleCell.swift */; };
 		7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */; };
 		7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */; };
@@ -206,6 +208,8 @@
 		7603E0E92333283C00C014F1 /* UserBehaviourManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBehaviourManager.swift; sourceTree = "<group>"; };
 		7603E0ED23337EBD00C014F1 /* LogoutSystemProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutSystemProto.swift; sourceTree = "<group>"; };
 		7603E0EF2333805E00C014F1 /* LogoutSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutSystemManager.swift; sourceTree = "<group>"; };
+		7603E0F123339E8D00C014F1 /* uploadEditCardHeaderProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadEditCardHeaderProto.swift; sourceTree = "<group>"; };
+		7603E0F323339EF000C014F1 /* uploadCardHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadCardHeaderModel.swift; sourceTree = "<group>"; };
 		7615F5B623238F0B003DB6C4 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMineShareCardViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 			children = (
 				3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */,
 				3F92C8E22330911A0088651C /* businessCardEditProto.swift */,
+				7603E0F323339EF000C014F1 /* uploadCardHeaderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				761B7FBB2330874200F94759 /* personInfoItemModel.swift */,
 				761B7FBD2330885F00F94759 /* personInfoModel.swift */,
 				7600D8A82332470E00084448 /* uploadImageProto.swift */,
+				7603E0F123339E8D00C014F1 /* uploadEditCardHeaderProto.swift */,
 			);
 			path = personInfo;
 			sourceTree = "<group>";
@@ -1396,6 +1402,7 @@
 				761CCB04232F969000BE7F36 /* ShareCardGetInfoManager.swift in Sources */,
 				76C9D5FE231A61380091ECE4 /* businessCardEditViewController.swift in Sources */,
 				76C9D531231784760091ECE4 /* HDAlbumModel.swift in Sources */,
+				7603E0F223339E8D00C014F1 /* uploadEditCardHeaderProto.swift in Sources */,
 				76C9D5F7231A264E0091ECE4 /* HomeMineViewController.swift in Sources */,
 				7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */,
 				76C9D53B2317A5760091ECE4 /* HDThemeColor.swift in Sources */,
@@ -1411,6 +1418,7 @@
 				7615F6032327935F003DB6C4 /* ASUserInfoModel.swift in Sources */,
 				7623DF992321230600CD79A2 /* resetPassWordVerifyViewController.swift in Sources */,
 				76C9D58F2317AF420091ECE4 /* HDDeviceInfo.swift in Sources */,
+				7603E0F423339EF000C014F1 /* uploadCardHeaderModel.swift in Sources */,
 				7623DFA62322008100CD79A2 /* HomeMineTableViewCell.swift in Sources */,
 				76C9D5F0231A1F2E0091ECE4 /* baseViewController.swift in Sources */,
 				76C9D5842317AC160091ECE4 /* HDAssert.swift in Sources */,
