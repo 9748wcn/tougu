@@ -8,8 +8,14 @@
 import HandyJSON
 import UIKit
 
+class businessCardNetModel: HDBaseModel {
+    var data:businessCardModel?
+}
+
 class businessCardModel: HDBaseModel {
     var data:businessCardItemModel?
+    var resultImage: String  = ""
+    
 }
 
 class businessCardItemModel: HandyJSON {

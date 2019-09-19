@@ -8,19 +8,14 @@
 
 import UIKit
 
-class UpdateViewController: UIViewController {
+class UpdateViewController: UIViewController, buttonClickDelegate {
     
     var cellTitleList:Array<String>?
     
     fileprivate var updateContentView: UpdateAlertView = UpdateAlertView.loadFromXib()
     fileprivate var overVeiw = UIView()
     fileprivate var contentViewHight: CGFloat {
-        if cellTitleList != nil {
-            return CGFloat((cellTitleList!.count) * 15 + 280)
-        }else {
-            return 280
-        }
-        
+        return updateContentView.getUpdateViewHeight()
     }
     
     required init?(cellContent: [String]?) {
@@ -69,8 +64,10 @@ extension UpdateViewController {
             UIView(frame: CGRect(x: 0, y: 0, width:kScreenWidth, height: kScreenHeight))
         overVeiw.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         view.addSubview(overVeiw)
-        updateContentView.frame = CGRect(x: (screenWidth - 290)/2.0, y: screenHeight, width: 290, height: contentViewHight)
-        updateContentView.contentArray = cellTitleList
+        updateContentView.contentArray = cellTitleList //先设置内容才能获取高度
+        updateContentView.delegate = self
+        updateContentView.frame = CGRect(x: (screenWidth - 300)/2.0, y: screenHeight, width: 300, height: contentViewHight)
+        
         overVeiw.addSubview(updateContentView)
         
     }
@@ -87,7 +84,11 @@ extension UpdateViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        sheetViewDismiss()
+    func butonClickBy(_ sender: UIButton) {
+        if sender.tag == 1000 { //取消更新
+            sheetViewDismiss()
+        }else { //更新
+            
+        }
     }
 }

@@ -8,13 +8,20 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class RecordTableViewCell: UITableViewCell {
     
     var nameLabel: UILabel!
     var headerImage: UIImageView!
     var timeLabel: UILabel!
-    var recordListArray: Array<String> = []
+    var recordList: UserBehaviourItemModel? {
+        didSet {
+            if recordList != nil {
+                setupUI()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +33,9 @@ class RecordTableViewCell: UITableViewCell {
         
     }
     func setupUI() {
+        for item: UIView in self.contentView.subviews {
+            item.removeFromSuperview()
+        }
         let bgView: UIView = UIView.init()
         self.contentView.addSubview(bgView)
         bgView.backgroundColor = UIColor(rgb: 0xFAFAFB)
@@ -43,8 +53,12 @@ class RecordTableViewCell: UITableViewCell {
             make.top.equalTo(bgView.snp.top).offset(12)
             make.width.height.equalTo(36)
         }
-        headerImage.image = UIImage(named: "normalHeader")
-//
+        if recordList?.avatar != nil {
+            let avatarUrl = "https://iqfdfs.hdfax.com/" + (recordList?.avatar!)!
+            headerImage.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "normalHeader"))
+        }else {
+            headerImage.image = UIImage(named: "normalHeader")
+        }
         nameLabel = UILabel.init()
         bgView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
@@ -54,7 +68,7 @@ class RecordTableViewCell: UITableViewCell {
         }
         nameLabel.font = textFont14
         nameLabel.textColor = text_Color
-        nameLabel.text = "张三"
+        nameLabel.text = (recordList?.userName != nil) ? recordList?.userName! : ""
 //
         timeLabel = UILabel.init()
         bgView.addSubview(timeLabel)
@@ -65,9 +79,31 @@ class RecordTableViewCell: UITableViewCell {
         }
         timeLabel.textColor = Notext_Color
         timeLabel.font = textFont12
-        timeLabel.text = "2019-10-07 09:10:08"
+        if recordList?.createTime != nil {
+            timeLabel.text = recordList?.createTime!
+        }
+        
+        var behaviours: Array<String> = []
+        if (recordList?.viewBusinessCard != nil) && (recordList!.viewBusinessCard! == 1) {
+            behaviours.append("查看了您的名片")
+        }
+        if(recordList?.callUp != nil) && (recordList!.callUp! == 1) {
+            behaviours.append("拨打了电话号码")
+        }
+        if (recordList?.copyWechatAccount != nil) && (recordList!.copyWechatAccount! == 1) {
+            behaviours.append("复制了微信号")
+        }
+        if (recordList?.copyEmail != nil) && (recordList!.copyEmail! == 1) {
+            behaviours.append("复制了邮箱")
+        }
+        if (recordList?.enterRegister != nil) && (recordList!.enterRegister! == 1) {
+            behaviours.append("进入注册及认证流程")
+        }
+        if (recordList?.bindSuccess != nil) && (recordList!.bindSuccess! == 1) {
+            behaviours.append("完成绑定，已成为您的客户")
+        }
 //
-        for (index,value) in recordListArray.enumerated() {
+        for (index,value) in behaviours.enumerated() {
             let circleImageView: UIImageView = UIImageView.init(image: UIImage(named: "recordCircle"))
             bgView.addSubview(circleImageView)
             circleImageView.snp.makeConstraints { (make) in
@@ -99,7 +135,7 @@ class RecordTableViewCell: UITableViewCell {
             }
             recordLabel.text = value
             
-            if (index == recordListArray.endIndex - 1) {
+            if (index == behaviours.endIndex - 1) {
                 contentView.snp_makeConstraints { (make) -> Void in
                 make.bottom.equalTo(recordLabel.snp_bottom).offset(12)
                     make.leading.equalTo(self)
@@ -122,12 +158,4 @@ class RecordTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-}
-
-extension RecordTableViewCell {
-    convenience init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, recordList: Array<String>) {
-        self.init(style: style, reuseIdentifier: reuseIdentifier)
-        recordListArray = recordList
-        setupUI()
-    }
 }

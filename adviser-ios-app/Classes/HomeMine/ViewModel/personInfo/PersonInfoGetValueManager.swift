@@ -34,8 +34,9 @@ class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
         let model = result as? personInfoModel
         if model?.code == 1 && ((model?.data) != nil) {
             //布局界面
-            if let personVC = self.vc as? personInfoViewController {
-                personVC.setupWithData(firstValueArray: [model?.data?.employeeName,model?.data?.phoneNo,model?.data?.employeeNumber,model?.data?.jobName], secondValueArray: [model?.data?.parentGroupName,model?.data?.groupName,model?.data?.groupType])
+            if let HomeMineVC = self.vc as? HomeMineViewController {
+                HomeMineVC.updateHeaderInfo(model: model!)
+//                HomeMineVC.setupWithData(firstValueArray: [model?.data?.employeeName,model?.data?.phoneNo,model?.data?.employeeNumber,model?.data?.jobName], secondValueArray: [model?.data?.parentGroupName,model?.data?.groupName,model?.data?.groupType])
             }
         }
         

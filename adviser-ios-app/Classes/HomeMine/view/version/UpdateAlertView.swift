@@ -11,10 +11,11 @@ import UIKit
 class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var contentTableView: UITableView!
+    weak var delegate: buttonClickDelegate!
     
     var contentArray:Array<String>? {
         didSet {
-            updateSelfHeight(count: contentArray!.count)
+            updateSelfHeight(array: contentArray!)
             contentTableView.reloadData()
         }
     }
@@ -27,16 +28,50 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         contentTableView.rowHeight = UITableView.automaticDimension
         contentTableView.estimatedRowHeight = 20
         contentTableView.separatorStyle = .none
+        contentTableView.isScrollEnabled = false
+        contentTableView.backgroundColor = UIColor.white
+        
     }
     
-    func updateSelfHeight(count: Int) {
+    func updateSelfHeight(array: Array<String>) {
         var selfFrame: CGRect = self.frame
-        selfFrame.size.height = CGFloat(280 + (count * 15))
+        var height: CGFloat = 0
+        for item: String in array {
+            height = height + getTextHeigh(textStr: item, font: UIFont.systemFont(ofSize: 18), width: screenWidth - 72)
+        }
+        selfFrame.size.height = CGFloat(280 + height + (CGFloat(array.count) * 5.0))
         self.frame = selfFrame
+        
+    }
+    
+    @IBAction func cancleBtnClick(_ sender: Any) {
+        delegate.butonClickBy(sender as! UIButton)
+    }
+    
+    @objc func updateButtonClick(sender: UIButton) {
+        delegate.butonClickBy(sender)
+    }
+    
+    func getUpdateViewHeight() -> CGFloat {
+       return self.frame.size.height
+    }
+    
+    func getTextHeigh(textStr :  String, font : UIFont, width : CGFloat)  -> CGFloat{
+        
+        let normalText : NSString = textStr as NSString
+        
+        let size = CGSize(width: width, height:1000)   //CGSizeMake(width,1000)
+        
+        let dic = NSDictionary(object: font, forKey : kCTFontAttributeName as! NSCopying)
+        
+        let stringSize = normalText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key:Any], context:nil).size
+        
+        return  stringSize.height
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 40))
+        let headerView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 50))
         let markLabel: UILabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 20))
         markLabel.textAlignment = .center
         markLabel.text = "发现新版本"
@@ -60,6 +95,8 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         updateButton.layer.cornerRadius = 20
         updateButton.setTitle("立即更新", for: .normal)
         updateButton.setTitleColor(UIColor.white, for: .normal)
+        updateButton.tag = 10001
+        updateButton.addTarget(self, action: #selector(updateButtonClick(sender:)), for: .touchDragInside)
         footView.addSubview(updateButton)
         footView.backgroundColor = UIColor.white
         return footView
@@ -70,7 +107,7 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,8 +121,8 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let contentCell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as UpdateVersionCell
-        contentCell.numberLabel.text = "\(indexPath.row)" + "、"
-        contentCell.contentItemLabel.text = contentArray![indexPath.row]
+        contentCell.contentItemLabel.text = "\(indexPath.row)" + "." + contentArray![indexPath.row]
+        contentCell.selectionStyle = .none
         return contentCell
     }
 

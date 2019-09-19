@@ -71,6 +71,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let setVC:resetPassWordVerifyViewController = resetPassWordVerifyViewController()
+        self.navigationController?.pushViewController(setVC, animated: true)
+    }
 }
 
 // MRAK -methods

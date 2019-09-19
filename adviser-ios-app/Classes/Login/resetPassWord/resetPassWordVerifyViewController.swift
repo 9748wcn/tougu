@@ -20,7 +20,8 @@ class resetPassWordVerifyViewController: baseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nextBtn.backgroundColor = main_buttonColor
+//        nextBtn.backgroundColor = main_buttonColor
+        nextBtn.isEnabled = false
         nextBtn.setTitleColor(UIColor.white, for: .normal)
         nextBtn.layer.cornerRadius = 22.5
         
@@ -28,6 +29,11 @@ class resetPassWordVerifyViewController: baseViewController {
         getCodeBtn.layer.borderWidth = 1.0
         getCodeBtn.layer.borderColor = main_buttonColor.cgColor
         getCodeBtn.setTitleColor(main_buttonColor, for: .normal)
+        
+        ICCardTextFeild.delegate = self
+        phoneTextFeild.delegate = self
+        codeTextFeild.delegate = self
+        
     }
     
     @IBAction func getCode(_ sender: Any) {
@@ -35,6 +41,16 @@ class resetPassWordVerifyViewController: baseViewController {
             getPhoneCodeNet(PhoneNo: phoneTextFeild.text!)
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     @IBAction func nextBtnClick(_ sender: Any) {
@@ -91,12 +107,16 @@ class resetPassWordVerifyViewController: baseViewController {
 
 extension resetPassWordVerifyViewController: HDAsyncDelegate {
     func asyncerDidStart(request: HDHTTPRequest) {
-        
+        if request.tag == "10000" {
+            HDHudManager.shared.show()
+//            nextBtn.isEnabled = false
+        }
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
         HDHudManager.shared.hide()
         if request.tag == "10000" {
+//            nextBtn.isEnabled = true
             let loginModel = result as? ASLoginModel
             if loginModel?.code == 1 {
                gotoNextPage()
@@ -112,9 +132,40 @@ extension resetPassWordVerifyViewController: HDAsyncDelegate {
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
         HDHudManager.shared.hide()
-//        let resultModel =
-        
+        if request.tag == "10000" {
+//            nextBtn.isEnabled = true
+        }
     }
     
     
+}
+
+extension resetPassWordVerifyViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        if textField == ICCardTextFeild {
+            if phoneTextFeild.text!.count > 0 && codeTextFeild.text!.count > 0 && newText.count > 0 {
+                nextBtn.isEnabled = true
+            }else {
+                nextBtn.isEnabled = false
+            }
+        }else if textField == phoneTextFeild {
+            if ICCardTextFeild.text!.count > 0 && codeTextFeild.text!.count > 0 && newText.count > 0 {
+                nextBtn.isEnabled = true
+            }else {
+                nextBtn.isEnabled = false
+            }
+        }else if textField == codeTextFeild {
+            if ICCardTextFeild.text!.count > 0 && phoneTextFeild.text!.count > 0 && newText.count > 0 {
+                nextBtn.isEnabled = true
+            }else {
+                nextBtn.isEnabled = false
+            }
+        }
+        return true
+    }
+
 }

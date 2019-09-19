@@ -51,8 +51,9 @@ class businessCardEditManager: NSObject,HDAsyncDelegate {
         guard let netType = self.netType else { return }
         switch netType {
             case .request:
-            if let model = result as? businessCardModel, model.code == 1 {
-                self.vc.refrenUI(with: model.data ??  businessCardItemModel())
+            if let model = result as? businessCardNetModel, model.code == 1 {
+//                self.vc.refrenUI(with: model.data?.data ??  businessCardItemModel())
+                self.vc.refrenUI(with: model.data?.data ??  businessCardItemModel(), avatarUrl: model.data?.resultImage ?? "")
             }
             case .update:()
             if let model = result as? HDBaseModel,model.code == 1  {

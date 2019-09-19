@@ -11,7 +11,10 @@ import Foundation
 extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if section1Values != nil {
+            return 2
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -25,7 +28,10 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let headerView: shareCardHeaderView = shareCardHeaderView.loadFromXib()
-            self.sectionHeaderView = headerView
+//            self.sectionHeaderView = headerView
+            if headerModel != nil {
+                headerView.updateUI(dataModel: headerModel!)
+            }
             return headerView
             
         }else{
@@ -57,22 +63,30 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 1 {
+            if section1Values != nil {
+                return section1Values!.count
+            }else{
+                return 0
+            }
+        }else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let introduceCell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as ShareCardIntroduceCell
-            introduceCell.introduceContentLabel.text = "累计从业经验5年，美国留学工作生活经验，知名财经论坛专业撰稿人，擅长中短线操作，为每一位投资者提供最专业的私募基金走势分析及业务咨询! 建议不少于10个字，不超过100个字，一行约20个字，不超过五行文字介绍为佳。默认文案“丰富理财业务经验，为您提供专业理财服务”以产品经理给的为准。"
+            introduceCell.introduceContentLabel.text = section0Value
             introduceCell.selectionStyle = .none
             return introduceCell
         }else{
-            var recordCell = tableView.dequeueReusableCell(withIdentifier: "recordCell")
-            if recordCell == nil {
-                recordCell = RecordTableViewCell.init(style: .default, reuseIdentifier: "recordCell", recordList: ["查看了您的名片","拨打了电话号码","复制了微信号","点击了绑定"])
+            let recordCell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as RecordTableViewCell
+            if section1Values != nil {
+                recordCell.recordList = section1Values![indexPath.row] as UserBehaviourItemModel
             }
-            recordCell!.selectionStyle = .none
-            return recordCell!
+            recordCell.selectionStyle = .none
+            return recordCell
         }
     }
     
@@ -99,10 +113,22 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
         
     }
     
-    func updateHeaderView(shareModel: shareCardInfoModel) {
-        
-        self.sectionHeaderView.updateUI(dataModel: shareModel)
+    func updateHeaderView(shareModel: shareCardModel) {
+        headerModel = shareModel
+        section0Value = (shareModel.data?.data?.profile != nil) ? shareModel.data?.data?.profile! : ""
+//        self.sectionHeaderView.updateUI(dataModel: shareModel)
+        let defaultStand = UserDefaults.standard
+        defaultStand.set(shareModel.data?.data?.jobNames!, forKey: USERJOBKEY)
+        defaultStand.set(shareModel.data?.data?.employeeName!, forKey: USERNAMEKEY)
+        tableView.reloadData()
+    }
     
+    func updateUserBehaviourUI(userBehaviour: UserBehaviourModel) {
+        if userBehaviour.data != nil {
+            section1Values = userBehaviour.data
+        }
+        tableView.reloadData()
+        
     }
 }
 
@@ -135,6 +161,35 @@ extension HomeMineShareCardViewController {
     }
     
     @objc func shareCardClick() {
+        let shareView:ASUmengshareView = ASUmengshareView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        shareView.shareDelegate = self
+        shareView.isTabbar = !isHiddenTabbar
+        shareView.showInView(bgView: view)
+    }
+}
+
+extension HomeMineShareCardViewController: ASShareClickDelegate {
+    func wechatShareClick() {
+        
+        let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
+        let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "名片分享", descr: "这是我的名片，邀您投资理财", thumImage: UIImage(named: "appIcon"))
+        let defaultStand = UserDefaults.standard
+        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+        shareObjext.webpageUrl = "http://172.24.19.45:8080/#/" + "?phoneNo=" + phoneNo!
+        messegeObject.shareObject = shareObjext
+        
+//        messegeObject.webpageUrl = ""
+        
+        UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatSession, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
+
+            } as? UMSocialRequestCompletionHandler)
+    }
+    
+    func wechatFrendsShareClick() {
+        
+    }
+    
+    func QQShareClick() {
         
     }
 }

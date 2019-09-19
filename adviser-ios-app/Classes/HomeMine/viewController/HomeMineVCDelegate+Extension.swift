@@ -37,7 +37,7 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
         
         let headerView: HomeMineHeadView = HomeMineHeadView.loadFromXib()
         headerView.delegate = self
-        
+        self.headerView = headerView
         return headerView
     }
     
@@ -60,6 +60,9 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
     func butonClickBy(_ sender: UIButton) {
         if sender.tag == 1000 {
             let personVC: personInfoViewController = personInfoViewController()
+            if personInfoModel != nil {
+                personVC.dataModel = personInfoModel
+            }
             self.navigationController?.pushViewController(personVC, animated: true)
         }else if sender.tag == 1002 {
             //分享我的名片

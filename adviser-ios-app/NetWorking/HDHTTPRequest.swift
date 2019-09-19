@@ -53,7 +53,6 @@ class HDHTTPRequest {
     var dataTask:URLSessionDataTask?
     var tag:String = ""
     
-    
     func start() {
         var url:String = ""
         if api.apiType == .normal {

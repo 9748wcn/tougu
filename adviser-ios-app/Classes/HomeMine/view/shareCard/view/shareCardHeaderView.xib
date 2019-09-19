@@ -34,14 +34,14 @@
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-bW-5VA">
-                    <rect key="frame" x="118" y="72" width="0.0" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资顾问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-bW-5VA">
+                    <rect key="frame" x="118" y="72" width="49.5" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恒大金融财富管理（深圳）有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlm-BM-tqa">
-                    <rect key="frame" x="118" y="76" width="164" height="12"/>
+                    <rect key="frame" x="118" y="90.5" width="164" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>

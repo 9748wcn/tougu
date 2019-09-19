@@ -11,6 +11,7 @@ import UIKit
 class shareCardInfoModel: HDBaseModel {
     
     var data: shareCardItemModel?
+    var resultImage: String?
     
 
 }

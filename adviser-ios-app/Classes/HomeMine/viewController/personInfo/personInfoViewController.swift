@@ -28,6 +28,14 @@ class personInfoViewController: baseViewController {
     var secondSectionValues:Array<String>?
     var headerBtn: UIButton!
     let disposeBag = DisposeBag()
+    var dataModel:personInfoModel? {
+        didSet {
+            if dataModel?.data != nil {
+                setupWithData(firstValueArray: [dataModel?.data?.employeeName,dataModel?.data?.phoneNo,dataModel?.data?.employeeNumber,dataModel?.data?.jobName], secondValueArray: [dataModel?.data?.parentGroupName,dataModel?.data?.groupName,dataModel?.data?.groupType])
+            }
+        }
+    }
+    
     
     
 
@@ -37,9 +45,9 @@ class personInfoViewController: baseViewController {
         title = "员工信息"
         view.addSubview(tableView)
         
-        let defaultStand = UserDefaults.standard
-        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
-        PersonInfoGetValueManager.shared.getPersonInfo(vc: self, phoneNo: phoneNo!)
+//        let defaultStand = UserDefaults.standard
+//        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+//        PersonInfoGetValueManager.shared.getPersonInfo(vc: self, phoneNo: phoneNo!)
         
     }
     
@@ -48,6 +56,11 @@ class personInfoViewController: baseViewController {
         firstSectionValues = firstValueArray as? Array<String>
         secondSectionValues = secondValueArray as? Array<String>
         tableView.reloadData()
+    }
+    
+    func uploadImage(image: UIImage) {
+        let defaultStand = UserDefaults.standard
+        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
     }
 
 }

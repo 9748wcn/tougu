@@ -27,7 +27,7 @@
                         <color key="textColor" red="0.15113100409999999" green="0.19411784409999999" blue="0.28955751660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUY-x9-4pC">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="为客户创造价值，为社会创造财富”，我来自恒大财富，我们致力于成为中国财富管理行业的卓越践行者与领跑者，为您的财富管理提供强而有力的支持。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUY-x9-4pC">
                         <rect key="frame" x="15" y="46" width="290" height="83.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.15113100409507751" green="0.19411784410476685" blue="0.28955751657485962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

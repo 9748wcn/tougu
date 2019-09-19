@@ -32,7 +32,8 @@ class HomeLoginViewController: baseViewController {
         super.viewDidLoad()
         currentBtn = loginByPhoneClick
         forgotPassWord.isHidden = true
-        loginClick.backgroundColor = main_buttonColor
+//        loginClick.backgroundColor = main_buttonColor
+        loginClick.isEnabled = false
         loginClick.setTitleColor(UIColor.white, for: .normal)
         loginClick.layer.cornerRadius = 22.5
         
@@ -40,6 +41,10 @@ class HomeLoginViewController: baseViewController {
         getPhoneCodeClick.layer.borderWidth = 1.0
         getPhoneCodeClick.layer.borderColor = main_buttonColor.cgColor
         getPhoneCodeClick.setTitleColor(main_buttonColor, for: .normal)
+        
+        icTextFeild.delegate = self
+        phoneNumberTextFeild.delegate = self
+        codeTextFeild.delegate = self
         
         scrollerToTypeView = UIView.init()
         scrollerToTypeView.backgroundColor = main_buttonColor
@@ -174,6 +179,7 @@ class HomeLoginViewController: baseViewController {
         }
         let request = HDHTTPRequest()
         request.api = api
+        request.tag = "1001"
         request.delegate = self
         request.start()
         
@@ -194,10 +200,17 @@ class HomeLoginViewController: baseViewController {
 // MARK: --------------HDAsyncDelegate-------------
 extension HomeLoginViewController: HDAsyncDelegate {
     func asyncerDidStart(request: HDHTTPRequest) {
+        if request.tag == "1001" {
+            HDHudManager.shared.show()
+//            loginClick.isEnabled = false
+        }
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
         HDHudManager.shared.hide()
+//        if request.tag == "1001" {
+//            loginClick.isEnabled = true
+//        }
         guard request.tag == "1000" else {
             let loginModel = result as? ASLoginModel
             if loginModel?.code == 0{
@@ -211,8 +224,6 @@ extension HomeLoginViewController: HDAsyncDelegate {
             let defaultStand = UserDefaults.standard
             defaultStand.set(self.phoneNumberTextFeild.text!, forKey: USERPHONEKEY)
             defaultStand.set((loginModel?.data?.employeeNumber!)!, forKey: USERICNO)
-//            HDUserDefaults.hd_add(object: self.phoneNumberTextFeild.text!, forKey: USERPHONEKEY)
-//            HDUserDefaults.hd_add(object: (loginModel?.data?.employeeNumber!)!, forKey: USERICNO)
             //进入首页
             appDelegate.gotoMainVC()
             return
@@ -221,8 +232,38 @@ extension HomeLoginViewController: HDAsyncDelegate {
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
-        
+//        if request.tag == "1001" {
+//            loginClick.isEnabled = true
+//        }
     }
     
     
+}
+extension HomeLoginViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        if textField == icTextFeild {
+             if phoneNumberTextFeild.text!.count > 0 && codeTextFeild.text!.count > 0 && newText.count > 0 {
+                loginClick.isEnabled = true
+             }else {
+                loginClick.isEnabled = false
+            }
+        }else if textField == phoneNumberTextFeild {
+            if icTextFeild.text!.count > 0 && codeTextFeild.text!.count > 0 && newText.count > 0 {
+                loginClick.isEnabled = true
+            }else {
+                loginClick.isEnabled = false
+            }
+        }else if textField == codeTextFeild {
+            if icTextFeild.text!.count > 0 && phoneNumberTextFeild.text!.count > 0 && newText.count > 0 {
+                loginClick.isEnabled = true
+            }else {
+                loginClick.isEnabled = false
+            }
+        }
+        return true
+    }
+
 }

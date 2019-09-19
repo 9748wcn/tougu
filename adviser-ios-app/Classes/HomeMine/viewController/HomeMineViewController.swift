@@ -21,6 +21,11 @@ class HomeMineViewController: baseViewController {
         
     }()
     
+    var headerView: HomeMineHeadView!
+    var personInfoModel: personInfoModel?
+    
+    
+    
     let headImages: Array = ["infoImage","settingImage","versionImage"]
     let headTitles: Array = ["公司对外信息","设置","版本信息"]
     
@@ -31,15 +36,16 @@ class HomeMineViewController: baseViewController {
         view.addSubview(tableView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let defaultStand = UserDefaults.standard
+        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+        PersonInfoGetValueManager.shared.getPersonInfo(vc: self, phoneNo: phoneNo!)
     }
-    */
+    
+    func updateHeaderInfo(model: personInfoModel) {
+        self.headerView.updateUI(model: model)
+        personInfoModel = model
+    }
 
 }

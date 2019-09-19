@@ -19,6 +19,8 @@ class ASUmengshareView: UIView,buttonClickDelegate {
     
     let tap = UITapGestureRecognizer()
     var isShowing: Bool = false
+    var isTabbar: Bool = false
+    
     
     weak var shareDelegate: ASShareClickDelegate!
     
@@ -67,7 +69,7 @@ class ASUmengshareView: UIView,buttonClickDelegate {
         bgView.addSubview(self)
         UIView.animate(withDuration: 0.25, animations: {
             var frame = self.alertBottomView.frame
-            frame.origin.y = screenHeight - (177 + bottomSafeHeight)
+            frame.origin.y = screenHeight - (177 + bottomSafeHeight + (self.isTabbar ? 49 : 0))
             self.alertBottomView.frame = frame
         }) { (_) in
             

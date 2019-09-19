@@ -32,8 +32,8 @@
                         <constraint firstAttribute="width" constant="72" id="dGI-jf-k2p"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张大海" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXB-rP-3A1">
-                    <rect key="frame" x="113" y="45" width="55.5" height="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXB-rP-3A1">
+                    <rect key="frame" x="113" y="45" width="0.0" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="L7V-U8-OqP"/>
                     </constraints>
@@ -41,8 +41,8 @@
                     <color key="textColor" red="0.99978178739547729" green="0.85732799768447876" blue="0.65467745065689087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初级投资顾问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKC-Ta-MIQ">
-                    <rect key="frame" x="113" y="77" width="80" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资顾问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKC-Ta-MIQ">
+                    <rect key="frame" x="113" y="77" width="53.5" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="U5U-aw-KXH"/>
                     </constraints>
@@ -50,22 +50,22 @@
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IC5016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75Y-AG-zcE">
-                    <rect key="frame" x="178.5" y="49.5" width="43" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75Y-AG-zcE">
+                    <rect key="frame" x="123" y="57.5" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.99978178740000001" green="0.85732799770000001" blue="0.65467745070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dU-K5-IpP">
-                    <rect key="frame" x="203" y="81" width="1" height="10"/>
+                    <rect key="frame" x="176.5" y="81" width="1" height="10"/>
                     <color key="backgroundColor" red="0.38899043202400208" green="0.33382865786552429" blue="0.47865855693817139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="ChG-EA-t6S"/>
                         <constraint firstAttribute="height" constant="10" id="ioG-IC-VcB"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恒大上海电销团队" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2e-JW-FwY">
-                    <rect key="frame" x="214" y="77" width="106.5" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2e-JW-FwY">
+                    <rect key="frame" x="187.5" y="77" width="0.0" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="GOe-pa-kln"/>
                     </constraints>
@@ -157,12 +157,18 @@
                 <constraint firstItem="6Nz-oZ-xPb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="zXJ-oB-eVu"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="iCNumberLabel" destination="75Y-AG-zcE" id="Kq4-HY-DBZ"/>
+                <outlet property="jobLabel" destination="wKC-Ta-MIQ" id="Wj7-d3-gFl"/>
+                <outlet property="nameLabel" destination="bXB-rP-3A1" id="859-WE-YOf"/>
+                <outlet property="teamLabel" destination="v2e-JW-FwY" id="g4Y-Rc-mDF"/>
+            </connections>
             <point key="canvasLocation" x="85.599999999999994" y="48.575712143928037"/>
         </view>
     </objects>
     <resources>
         <image name="headBGImage" width="350" height="160"/>
         <image name="headNext" width="7" height="12"/>
-        <image name="normalHeader" width="92" height="92"/>
+        <image name="normalHeader" width="74" height="74"/>
     </resources>
 </document>

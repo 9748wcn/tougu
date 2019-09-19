@@ -27,29 +27,19 @@ class VersionViewController: baseViewController {
     }
 
     @IBAction func checkVersionClick(_ sender: Any) {
-//        VersionValueManager.shared.getVersionValue(vc: self)
-//        let updateView: UpdateAlertView = UpdateAlertView.loadFromXib()
-//        updateView.frame = CGRect(x: 30, y: 100, width: 290, height: 388)
-//        updateView.contentArray = ["添加了新内容","一键分享功能"]
-//        appDelegate.window?.addSubview(updateView)
+        VersionValueManager.shared.getVersionValue(vc: self)
         
-        let acVC = UpdateViewController(cellContent: ["添加了新内容","一键分享功能"])
-        present(acVC!, animated: false, completion:  nil)
+//        let acVC = UpdateViewController(cellContent: ["添加了新内容","一内容添加了新内容添加了新内容添加了新内","哈哈哈一键分享功能添加了添加了","哈哈哈一键分享功能添加","哈哈哈一键分享功能添加了"])
+//        present(acVC!, animated: false, completion:  nil)
     }
     
     func updateVersion(versionModel: VersionModel) {
-        
-        let updateView: UpdateAlertView = UpdateAlertView.loadFromXib()
-        appDelegate.window?.addSubview(updateView)
-//        .addSubview(updateView)
-        
-        
-//        let shouUpdate:Bool = compareVersions(v1: versionModel.data?.version_no, v2: versionLocal)
-//        if shouUpdate {
-//            if UIApplication.shared.canOpenURL(URL(string: versionModel.data!.iosAddress!)!) {
-//                UIApplication.shared.openURL(URL(string: versionModel.data!.iosAddress!)!)
-//            }
-//        }
+        let shouUpdate:Bool = compareVersions(v1: versionModel.data?.version_no, v2: versionLocal)
+        if shouUpdate {
+            if UIApplication.shared.canOpenURL(URL(string: versionModel.data!.iosAddress!)!) {
+                UIApplication.shared.openURL(URL(string: versionModel.data!.iosAddress!)!)
+            }
+        }
         
     }
     

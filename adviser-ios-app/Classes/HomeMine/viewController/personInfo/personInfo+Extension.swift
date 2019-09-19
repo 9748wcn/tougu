@@ -40,11 +40,13 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as personInfoTableViewCell
             cell.typeLabel.text = firstSectionKeys[indexPath.row]
             cell.typeValueLabel.text = (firstSectionValues?[indexPath.row] != nil) ? firstSectionValues?[indexPath.row] : ""
+            cell.selectionStyle = .none
             return cell
         }else{
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as personInfoTableViewCell
             cell.typeLabel.text = secondSectionKeys[indexPath.row]
             cell.typeValueLabel.text = (secondSectionValues?[indexPath.row] != nil) ? firstSectionValues?[indexPath.row] : ""
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -87,9 +89,21 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
                 picker.modalPresentationStyle = .overCurrentContext
                 }
                 .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                .map { $0[.originalImage] as! UIImage}
+                .map {
+                    
+                    let image  =  $0[.originalImage] as! UIImage
+                    let que = DispatchQueue.global(qos: .default)
+                    que.async {
+                        let defaultStand = UserDefaults.standard
+                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                    }
+                    return image
+                }
                 .bind(to: self.headerBtn.rx.image())
                 .disposed(by: self.disposeBag)
+            
+//            let defaultStand = UserDefaults.standard
+//            UploadImageManager.shared.uploadImage(vc: self, image: UIImage(named: "appIcon")!, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
             
         }
     }
@@ -103,12 +117,20 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
                 picker.sourceType = .camera
                 picker.modalPresentationStyle = .overCurrentContext
                 }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                .map{ $0[.originalImage] as! UIImage }
+                .map{
+                    
+                    let image  =  $0[.originalImage] as! UIImage
+                    let que = DispatchQueue.global(qos: .default)
+                    que.async {
+                        let defaultStand = UserDefaults.standard
+                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                    }
+                    return image
+                }
                 .bind(to: self.headerBtn.rx.image())
                 .disposed(by: self.disposeBag)
             
         }
     }
-    
     
 }

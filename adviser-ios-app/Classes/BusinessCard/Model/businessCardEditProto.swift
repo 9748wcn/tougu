@@ -17,7 +17,7 @@ class businessCardEditProto: HDBaseApi {
         self.urlString = "/investadviser/queryInvestAdviser"
     }
     override func responseObjectFromJson<T>(jsonStr: String) -> T where T : HDBaseModel {
-        return businessCardModel.deserialize(from: jsonStr) as! T
+        return businessCardNetModel.deserialize(from: jsonStr) as! T
     }
     override func getParameters() -> [String: Any]? {
         return ["phoneNo":phoneNo]

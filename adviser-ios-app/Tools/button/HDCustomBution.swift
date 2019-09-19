@@ -95,14 +95,16 @@ class HDCustomBution: UIButton {
     
     func updateApperance(enable:Bool) {
         if enable {
+            self.backgroundColor = main_buttonColor
+            self.borderColor = main_buttonColor.cgColor
+            self.borderWidth = 1.0
             
-            self.backgroundColor = noClick_buttonColor
-            self.borderColor = noClick_buttonColor.cgColor
             
         }else {
             
-            self.backgroundColor = main_buttonColor
-            self.borderColor = main_buttonColor.cgColor
+            self.backgroundColor = noClick_buttonColor
+            self.borderColor = noClick_buttonColor.cgColor
+            self.borderWidth = 1.0
         }
     }
     

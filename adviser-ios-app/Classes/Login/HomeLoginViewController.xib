@@ -127,7 +127,7 @@
                         <action selector="getPhoneCode:" destination="-1" eventType="touchUpInside" id="bCi-jQ-UMf"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-Ob-iiD">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-Ob-iiD" customClass="HDCustomBution" customModule="adviser_ios_app" customModuleProvider="target">
                     <rect key="frame" x="14" y="471" width="346" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="rE6-Fi-rsl"/>

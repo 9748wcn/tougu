@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class businessCardEditViewController: baseViewController {
     private lazy var tableView: UITableView = {
@@ -36,7 +37,7 @@ class businessCardEditViewController: baseViewController {
         keyboardType: UIKeyboardType)]]
         = [[("头像", "此项必填", true, true, .default),
             ("姓名", "此项必填", true, true, .default),
-            ("工号", "此项必填", true, true, .default)],
+            ("工号", "此项必填", true, false, .default)],
            [("公司", "此项必填", true, false, .default),
             ("职位", "此项必填", true, true, .default)],
           [("手机", "此项必填", true, true, .namePhonePad),
@@ -44,10 +45,11 @@ class businessCardEditViewController: baseViewController {
            ("邮箱", "此项必填", false, true, .emailAddress)],
           [("个人简介", "此项必填", true, true, .default)]]
 
-    var contentArr    =  [["","",""],
+    var contentArr    =  [["","",UserDefaults.standard.string(forKey: USERICNO)],
                           ["恒大金融财富管理（深圳）有限公司",""],
                           ["","",""],
                           [""]]
+    
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(contentTextFieldDidEndEditing(_:)), name: UITextField.textDidEndEditingNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(contentTextFieldDidEndEditing(_:)), name: UITextView.textDidEndEditingNotification, object: nil)
@@ -66,8 +68,8 @@ class businessCardEditViewController: baseViewController {
             businessCardEditManager.shared.getCardInfo(vc: self, phoneNo: phoneNo)
         }
     }
-    func refrenUI(with model:businessCardItemModel) {
-        let content = [[model.avatar,model.employeeName,model.employeeNo],
+    func refrenUI(with model:businessCardItemModel, avatarUrl: String) {
+        let content = [[avatarUrl,model.employeeName,model.employeeNo],
                        ["恒大金融财富管理（深圳）有限公司",model.jobNames],
                        [model.phoneNo,model.wechatAccount,model.email],
                        [model.profile]]
@@ -76,6 +78,7 @@ class businessCardEditViewController: baseViewController {
                 contentArr[section][row] = contentStr
             }
         }
+        tableView.reloadData()
     }
     @objc func contentTextFieldDidEndEditing(_ noti:NSNotification) {
         if let textFiled = noti.object as? BusinessCardTextField,
@@ -100,7 +103,12 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0,indexPath.row == 0  {
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardHeadCell
-            cell.headImageView.image = UIImage.init(named: "normalHeader")
+            if let avatar: String = contentArr[0][0],
+                let headrurl = URL(string: "https://iqfdfs.hdfax.com/" + avatar){
+                cell.headImageView.kf.setImage(with: ImageResource(downloadURL: headrurl), placeholder: UIImage(named: "normalHeader"))
+            }else {
+                cell.headImageView.image = UIImage.init(named: "normalHeader")
+            }
             cell.headerClickBlock = {[unowned self] () in
                 let acVC = ActionSheetViewController(cellTitleList: ["拍照", "从手机相册选择"])!
                 acVC.valueBlock = { [unowned self] index  in
@@ -112,10 +120,17 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                             UIImagePickerController.rx.createWithParent(self) { picker in
                                 picker.sourceType = .camera
                                 }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                                .map{ $0[.originalImage] as! UIImage }
+                                .map{
+                                    let  image  =  $0[.originalImage] as! UIImage
+                                    let que = DispatchQueue.global(qos: .default)
+                                    que.async {
+                                         let defaultStand = UserDefaults.standard
+                                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                                    }
+                                    return image
+                                }
                                 .bind(to: cell.headImageView.rx.image)
                                 .disposed(by: self.disposeBag)
-                            
                         })
                     }else if index == 1 {
                         HDPhotoImageManager.getPhotoLibraryAuthorization { [unowned self](bool) in
@@ -127,7 +142,16 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                                 picker.modalPresentationStyle = .overCurrentContext
                                 }
                                 .flatMap { $0.rx.didFinishPickingMediaWithInfo }
-                                .map { $0[.originalImage] as! UIImage}
+                                .map {
+                                    let  image  =  $0[.originalImage] as! UIImage
+                                    let que = DispatchQueue.global(qos: .default)
+                                    que.async {
+                                        let defaultStand = UserDefaults.standard
+                                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                                    }
+                                    return image
+                                    
+                                }
                                 .bind(to: cell.headImageView.rx.image)
                                 .disposed(by: self.disposeBag)
                             
@@ -226,6 +250,6 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                         "wechatAccount":contentArr[2][1],
                         "email":contentArr[2][2],
                         "profile":contentArr[3][0]]
-        businessCardEditManager.shared.updateCardInfo(vc: self, paramter: paramter)
+        businessCardEditManager.shared.updateCardInfo(vc: self, paramter: paramter as [String : Any])
     }
 }

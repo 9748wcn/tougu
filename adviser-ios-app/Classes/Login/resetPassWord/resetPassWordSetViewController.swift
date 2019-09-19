@@ -17,10 +17,22 @@ class resetPassWordSetViewController: baseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        finishBtn.backgroundColor = main_buttonColor
+        
+        finishBtn.isEnabled = false
         finishBtn.setTitleColor(UIColor.white, for: .normal)
         finishBtn.layer.cornerRadius = 22.5
+        firstNewPassWordFeild.delegate = self
+        secondPassWordFeild.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     //这里重置密码之后跳转到登录页
@@ -36,9 +48,13 @@ class resetPassWordSetViewController: baseViewController {
     
     func gotoLoginVC() {
         let vcArray = self.navigationController?.viewControllers
-        for vc: UIViewController? in vcArray! {
-            if (vc?.isKind(of: HomeLoginViewController.self))! {
-                self.navigationController?.popToViewController(vc!, animated: true)
+        for (index,value) in vcArray!.enumerated() {
+            if (value.isKind(of: HomeLoginViewController.self)) {
+                self.navigationController?.popToViewController(value, animated: true)
+            }
+            if index == vcArray!.count - 1 {
+                let vc: HomeLoginViewController = HomeLoginViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
         
@@ -53,6 +69,7 @@ class resetPassWordSetViewController: baseViewController {
         let request = HDHTTPRequest()
         request.api = api
         request.delegate = self
+        request.tag = "100000"
         request.start()
     }
 
@@ -60,10 +77,17 @@ class resetPassWordSetViewController: baseViewController {
 
 extension resetPassWordSetViewController: HDAsyncDelegate {
     func asyncerDidStart(request: HDHTTPRequest) {
-        
+        if request.tag == "100000" {
+            HDHudManager.shared.show()
+//            finishBtn.isEnabled = false
+        }
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
+        if request.tag == "100000" {
+            HDHudManager.shared.hide()
+//            finishBtn.isEnabled = true
+        }
         let resultModel = result as? HDBaseModel
         if resultModel?.code == 1 {
             //重置密码成功，跳转到登录页重新登录
@@ -75,8 +99,34 @@ extension resetPassWordSetViewController: HDAsyncDelegate {
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
-        
+        if request.tag == "100000" {
+            HDHudManager.shared.hide()
+//            finishBtn.isEnabled = true
+        }
     }
     
     
+}
+
+extension resetPassWordSetViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        if textField == secondPassWordFeild {
+            if firstNewPassWordFeild.text!.count > 0 && newText.count > 0 {
+                finishBtn.isEnabled = true
+            }else {
+                finishBtn.isEnabled = false
+            }
+        }else if textField == firstNewPassWordFeild {
+            if secondPassWordFeild.text!.count > 0 && newText.count > 0 {
+                finishBtn.isEnabled = true
+            }else {
+                finishBtn.isEnabled = false
+            }
+        }
+        return true
+    }
 }

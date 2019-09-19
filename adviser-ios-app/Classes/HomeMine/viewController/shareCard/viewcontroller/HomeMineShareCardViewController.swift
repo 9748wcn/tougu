@@ -15,13 +15,19 @@ class HomeMineShareCardViewController: baseViewController {
     
     var sectionHeaderView: shareCardHeaderView!
     
-    private lazy var tableView: UITableView = {
+    var section0Value: String!
+    var section1Values: Array<UserBehaviourItemModel>?
+    var headerModel: shareCardModel?
+    
+    
+    lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0, y: navHeight, width: view.bounds.width, height: view.bounds.height-52 - bottomSafeHeight - (isHiddenTabbar ? 0 : 49) - navHeight), style: .grouped)
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.white
         tableView.hx_registerCell(cellClass: ShareCardIntroduceCell.self)
+        tableView.hx_registerCell(cellClass: RecordTableViewCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300
         return tableView
@@ -37,12 +43,8 @@ class HomeMineShareCardViewController: baseViewController {
         let headerRefresh: ASRefreshHeader = ASRefreshHeader()
         headerRefresh.setRefreshingTarget(self, refreshingAction: #selector(refreshDate))
         tableView.mj_header = headerRefresh
-        
-        let defaultStand = UserDefaults.standard
-        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
-//        let phoneNo = HDUserDefaults.hd_getCurrentUser()!
-        ShareCardGetInfoManager.shared.getemployeeInfo(vc: self, phoneNo: phoneNo!)
-        
+        startGetData()
+        section0Value = "为客户创造价值，为社会创造财富”，我来自恒大财富，我们致力于成为中国财富管理行业的卓越践行者与领跑者，为您的财富管理提供强而有力的支持。"
     }
     
     func bottomView() -> UIView {
@@ -79,13 +81,15 @@ class HomeMineShareCardViewController: baseViewController {
     }
     
     @objc func refreshDate() {
-        
         let defaultStand = UserDefaults.standard
         let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
         ShareCardGetInfoManager.shared.getemployeeInfo(vc: self, phoneNo: phoneNo!)
+        UserBehaviourManager.shared.getBehaviourInfo(vc: self, phoneNo: "18236915888")
+        
     }
     func startGetData() {
         tableView.mj_header.beginRefreshing()
+        
     }
     
     func getDataFinish() {

@@ -10,12 +10,18 @@
 		3F1F5BE02330AFAE00EC1ABF /* businessCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */; };
 		3F92C8E1233090210088651C /* businessCardEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92C8E0233090210088651C /* businessCardEditManager.swift */; };
 		3F92C8E32330911A0088651C /* businessCardEditProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92C8E22330911A0088651C /* businessCardEditProto.swift */; };
+		7600D8A92332470E00084448 /* uploadImageProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600D8A82332470E00084448 /* uploadImageProto.swift */; };
+		7600D8AB2332487100084448 /* UploadImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7600D8AA2332487100084448 /* UploadImageManager.swift */; };
 		7601B2222328851A009D7C78 /* ASRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2212328851A009D7C78 /* ASRefreshHeader.swift */; };
 		7601B22423289050009D7C78 /* shareBottomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B22323289050009D7C78 /* shareBottomAlertView.swift */; };
 		7601B22623289064009D7C78 /* shareBottomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7601B22523289064009D7C78 /* shareBottomAlertView.xib */; };
 		7601B2282328A218009D7C78 /* ASUmengshareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2272328A218009D7C78 /* ASUmengshareView.swift */; };
 		7601B22B2328EB56009D7C78 /* editCardIntroduceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601B2292328EB56009D7C78 /* editCardIntroduceCell.swift */; };
 		7601B22C2328EB56009D7C78 /* editCardIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7601B22A2328EB56009D7C78 /* editCardIntroduceCell.xib */; };
+		7603E0E42333088500C014F1 /* shareCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E32333088500C014F1 /* shareCardModel.swift */; };
+		7603E0E6233324EF00C014F1 /* UserBehaviourCountProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E5233324EF00C014F1 /* UserBehaviourCountProto.swift */; };
+		7603E0E82333269800C014F1 /* UserBehaviourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E72333269800C014F1 /* UserBehaviourModel.swift */; };
+		7603E0EA2333283C00C014F1 /* UserBehaviourManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E92333283C00C014F1 /* UserBehaviourManager.swift */; };
 		7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B623238F0B003DB6C4 /* TitleCell.swift */; };
 		7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */; };
 		7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */; };
@@ -182,12 +188,18 @@
 		3F1F5BDF2330AFAE00EC1ABF /* businessCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardModel.swift; sourceTree = "<group>"; };
 		3F92C8E0233090210088651C /* businessCardEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardEditManager.swift; sourceTree = "<group>"; };
 		3F92C8E22330911A0088651C /* businessCardEditProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessCardEditProto.swift; sourceTree = "<group>"; };
+		7600D8A82332470E00084448 /* uploadImageProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadImageProto.swift; sourceTree = "<group>"; };
+		7600D8AA2332487100084448 /* UploadImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageManager.swift; sourceTree = "<group>"; };
 		7601B2212328851A009D7C78 /* ASRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRefreshHeader.swift; sourceTree = "<group>"; };
 		7601B22323289050009D7C78 /* shareBottomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareBottomAlertView.swift; sourceTree = "<group>"; };
 		7601B22523289064009D7C78 /* shareBottomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shareBottomAlertView.xib; sourceTree = "<group>"; };
 		7601B2272328A218009D7C78 /* ASUmengshareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASUmengshareView.swift; sourceTree = "<group>"; };
 		7601B2292328EB56009D7C78 /* editCardIntroduceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editCardIntroduceCell.swift; sourceTree = "<group>"; };
 		7601B22A2328EB56009D7C78 /* editCardIntroduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = editCardIntroduceCell.xib; sourceTree = "<group>"; };
+		7603E0E32333088500C014F1 /* shareCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shareCardModel.swift; sourceTree = "<group>"; };
+		7603E0E5233324EF00C014F1 /* UserBehaviourCountProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBehaviourCountProto.swift; sourceTree = "<group>"; };
+		7603E0E72333269800C014F1 /* UserBehaviourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBehaviourModel.swift; sourceTree = "<group>"; };
+		7603E0E92333283C00C014F1 /* UserBehaviourManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBehaviourManager.swift; sourceTree = "<group>"; };
 		7615F5B623238F0B003DB6C4 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMineShareCardViewController.swift; sourceTree = "<group>"; };
@@ -543,6 +555,7 @@
 				761B7FB923306FD900F94759 /* personInfoProto.swift */,
 				761B7FBB2330874200F94759 /* personInfoItemModel.swift */,
 				761B7FBD2330885F00F94759 /* personInfoModel.swift */,
+				7600D8A82332470E00084448 /* uploadImageProto.swift */,
 			);
 			path = personInfo;
 			sourceTree = "<group>";
@@ -551,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				761B7FB723306F9C00F94759 /* PersonInfoGetValueManager.swift */,
+				7600D8AA2332487100084448 /* UploadImageManager.swift */,
 			);
 			path = personInfo;
 			sourceTree = "<group>";
@@ -589,6 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				761CCB03232F968F00BE7F36 /* ShareCardGetInfoManager.swift */,
+				7603E0E92333283C00C014F1 /* UserBehaviourManager.swift */,
 			);
 			path = shareCard;
 			sourceTree = "<group>";
@@ -609,6 +624,9 @@
 				761CCB05232F96E000BE7F36 /* shareCardGetInfoProto.swift */,
 				761CCB07232F981000BE7F36 /* shareCardInfoModel.swift */,
 				761B7FB22330687000F94759 /* shareCardItemModel.swift */,
+				7603E0E32333088500C014F1 /* shareCardModel.swift */,
+				7603E0E5233324EF00C014F1 /* UserBehaviourCountProto.swift */,
+				7603E0E72333269800C014F1 /* UserBehaviourModel.swift */,
 			);
 			path = shareCard;
 			sourceTree = "<group>";
@@ -1363,6 +1381,7 @@
 				7615F5C72325E88D003DB6C4 /* ShareCardIntroduceCell.swift in Sources */,
 				76C9D5462317A7910091ECE4 /* HXReuseable.swift in Sources */,
 				76BED4AC23226EC900B7FEFC /* ASBottomAlertView.swift in Sources */,
+				7600D8A92332470E00084448 /* uploadImageProto.swift in Sources */,
 				3F92C8E1233090210088651C /* businessCardEditManager.swift in Sources */,
 				7615F6032327935F003DB6C4 /* ASUserInfoModel.swift in Sources */,
 				7623DF992321230600CD79A2 /* resetPassWordVerifyViewController.swift in Sources */,
@@ -1400,12 +1419,14 @@
 				76C9D5502317A9610091ECE4 /* HDHudManager.swift in Sources */,
 				76C9D4F22317818A0091ECE4 /* ViewController.swift in Sources */,
 				76BED4A22322404700B7FEFC /* personInfo+Extension.swift in Sources */,
+				7603E0E82333269800C014F1 /* UserBehaviourModel.swift in Sources */,
 				76C9D535231785130091ECE4 /* UIColorHex.swift in Sources */,
 				7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */,
 				7615F5CA2325EA9F003DB6C4 /* RecordTableViewCell.swift in Sources */,
 				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
 				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,
 				761B7FB823306F9C00F94759 /* PersonInfoGetValueManager.swift in Sources */,
+				7600D8AB2332487100084448 /* UploadImageManager.swift in Sources */,
 				7623DFA32321FF2D00CD79A2 /* HomeMineVCDelegate+Extension.swift in Sources */,
 				7615F5FC232788AE003DB6C4 /* HDView+Extend.swift in Sources */,
 				7615F5E52327566D003DB6C4 /* VersionViewController.swift in Sources */,
@@ -1422,6 +1443,7 @@
 				7636FAC7231D119D008B1F80 /* baseNavigationViewController.swift in Sources */,
 				7601B22B2328EB56009D7C78 /* editCardIntroduceCell.swift in Sources */,
 				761B7FD02330D62E00F94759 /* UpdateVersionCell.swift in Sources */,
+				7603E0E42333088500C014F1 /* shareCardModel.swift in Sources */,
 				76C9D5F2231A20000091ECE4 /* baseTabbarController.swift in Sources */,
 				7636FAC3231CF4C2008B1F80 /* businessCardIntroduceView.swift in Sources */,
 				761B7FBA23306FD900F94759 /* personInfoProto.swift in Sources */,
@@ -1437,6 +1459,7 @@
 				7615F5BD2323AA02003DB6C4 /* shareCard+Extension.swift in Sources */,
 				761B7FBC2330874200F94759 /* personInfoItemModel.swift in Sources */,
 				7636FABD231CC2B9008B1F80 /* businessCardEditVC+Extention.swift in Sources */,
+				7603E0E6233324EF00C014F1 /* UserBehaviourCountProto.swift in Sources */,
 				76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */,
 				76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */,
 				7615F5EB2327867B003DB6C4 /* HDCustomBution.swift in Sources */,
@@ -1448,6 +1471,7 @@
 				761CCB06232F96E000BE7F36 /* shareCardGetInfoProto.swift in Sources */,
 				7601B2282328A218009D7C78 /* ASUmengshareView.swift in Sources */,
 				76C9D5A12317B2830091ECE4 /* UIView+HDEmptyView.swift in Sources */,
+				7603E0EA2333283C00C014F1 /* UserBehaviourManager.swift in Sources */,
 				7623DF9023209D5300CD79A2 /* businessSubmitBtnCell.swift in Sources */,
 				76C9D4F02317818A0091ECE4 /* AppDelegate.swift in Sources */,
 				76C9D5A32317B2830091ECE4 /* HDLoadingEmptyView.swift in Sources */,
