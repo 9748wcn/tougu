@@ -84,9 +84,16 @@ extension SettingViewController {
     
     //退出登录
     @objc func logoutBtnClick() {
-//        HDUserDefaults.hd_deleteObject(forKey: USERPHONEKEY)
+        let defaultStand = UserDefaults.standard
+        LogoutSystemManager.shared.logoutSystem(vc: self, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+    }
+    
+    func logoutSeccuss() {
         let defaultStand = UserDefaults.standard
         defaultStand.removeObject(forKey: USERPHONEKEY)
+        defaultStand.removeObject(forKey: USERICNO)
+        defaultStand.removeObject(forKey: USERNAMEKEY)
+        defaultStand.removeObject(forKey: USERJOBKEY)
         let vc: HomeLoginViewController = HomeLoginViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

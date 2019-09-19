@@ -8,15 +8,29 @@
 
 import UIKit
 
+protocol UpdateViewDelegate: NSObjectProtocol {
+    
+    func updateVersion(_ sender: UIButton)
+}
+
 class UpdateViewController: UIViewController, buttonClickDelegate {
     
     var cellTitleList:Array<String>?
+    var delegate: UpdateViewDelegate!
+    
     
     fileprivate var updateContentView: UpdateAlertView = UpdateAlertView.loadFromXib()
     fileprivate var overVeiw = UIView()
     fileprivate var contentViewHight: CGFloat {
         return updateContentView.getUpdateViewHeight()
     }
+    
+    var isforce: Bool = false {
+        didSet {
+            updateContentView.isforce = isforce
+        }
+    }
+    
     
     required init?(cellContent: [String]?) {
         super.init(nibName: nil, bundle: nil)
@@ -88,7 +102,7 @@ extension UpdateViewController {
         if sender.tag == 1000 { //取消更新
             sheetViewDismiss()
         }else { //更新
-            
+            self.delegate.updateVersion(sender)
         }
     }
 }

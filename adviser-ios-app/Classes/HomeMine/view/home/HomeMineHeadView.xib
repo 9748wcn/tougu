@@ -158,6 +158,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="headerView" destination="j0T-9R-gGI" id="lU7-My-ba7"/>
                 <outlet property="iCNumberLabel" destination="75Y-AG-zcE" id="Kq4-HY-DBZ"/>
                 <outlet property="jobLabel" destination="wKC-Ta-MIQ" id="Wj7-d3-gFl"/>
                 <outlet property="nameLabel" destination="bXB-rP-3A1" id="859-WE-YOf"/>

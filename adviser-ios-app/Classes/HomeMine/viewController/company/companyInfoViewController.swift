@@ -7,26 +7,37 @@
 //
 
 import UIKit
+import WebKit
 
 class companyInfoViewController: baseViewController,ASShareClickDelegate {
+    
+    var webView: WKWebView!
+    
+    var url: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "公司对外信息"
         // Do any additional setup after loading the view.
         let shareItem = UIBarButtonItem(image: UIImage(named: "shareIcon"), style: .plain, target: self, action: #selector(shareItemClicked))
-//        let shareItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancelItemClicked))
         navigationItem.rightBarButtonItem = shareItem
+        
+        webView = WKWebView(frame: self.view.frame)
+        // 下面一行代码意思是充满的意思(一定要加，不然也会显示有问题)
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        
+        self.view.addSubview(webView)
+        let mapwayURL = URL(string: url)!
+        let mapwayRequest = URLRequest(url: mapwayURL)
+        webView.load(mapwayRequest)
     }
     
     @objc private func shareItemClicked() {
         let shareView:ASUmengshareView = ASUmengshareView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         shareView.shareDelegate = self
         shareView.showInView(bgView: view)
-        
-//        UMSocialUIManager.showShareMenuViewInWindow { (UMSocialPlatformType, [AnyHashable : Any]?) in
-//
-//        }
     }
 
     func wechatShareClick() {

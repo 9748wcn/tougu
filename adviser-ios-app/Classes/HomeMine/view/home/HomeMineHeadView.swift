@@ -7,20 +7,14 @@
 //
 
 import UIKit
-
-//protocol HomeMineHeadViewDelegate: NSObjectProtocol {
-//    
-//    func seePersionInfoClick(_ sender: UIButton)
-//    func editCardButtonClick(_ sender: UIButton)
-//    func shareCardButtonClick(_ sender: UIButton)
-//    
-//}
+import Kingfisher
 
 class HomeMineHeadView: UIView {
     
     @IBOutlet weak var teamLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var headerView: UIImageView!
     @IBOutlet weak var iCNumberLabel: UILabel!
     @IBOutlet weak var jobLabel: UILabel!
     weak var delegate:buttonClickDelegate?
@@ -36,6 +30,8 @@ class HomeMineHeadView: UIView {
         if (defaultStand.string(forKey: USERJOBKEY) != nil) {
             jobLabel.text = defaultStand.string(forKey: USERJOBKEY)!
         }
+        headerView.layer.cornerRadius = 36.0
+        headerView.clipsToBounds = true
     }
     
     @IBAction func seePersionInfo(_ sender: Any) {
@@ -53,5 +49,9 @@ class HomeMineHeadView: UIView {
         iCNumberLabel.text = (model.data?.employeeNumber != nil) ? model.data!.employeeNumber! : ""
         jobLabel.text = (model.data?.jobName != nil) ? model.data!.jobName! : ""
         teamLabel.text = (model.data?.groupName != nil) ? model.data!.groupName! : ""
+        if model.data?.avatar != nil {
+            let avatarUrl = "https://iqfdfs.hdfax.com/" + (model.data?.avatar!)!
+            headerView.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "normalHeader"))
+        }
     }
 }

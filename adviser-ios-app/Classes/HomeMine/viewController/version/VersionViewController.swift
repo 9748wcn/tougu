@@ -8,8 +8,11 @@
 
 import UIKit
 
-class VersionViewController: baseViewController {
+class VersionViewController: baseViewController, UpdateViewDelegate {
     @IBOutlet weak var checkVersionBtn: UIButton!
+    
+    var updateModel: VersionModel?
+    
     
     @IBOutlet weak var versionLabel: UILabel!
     let versionLocal: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
@@ -28,19 +31,34 @@ class VersionViewController: baseViewController {
 
     @IBAction func checkVersionClick(_ sender: Any) {
         VersionValueManager.shared.getVersionValue(vc: self)
-        
-//        let acVC = UpdateViewController(cellContent: ["添加了新内容","一内容添加了新内容添加了新内容添加了新内","哈哈哈一键分享功能添加了添加了","哈哈哈一键分享功能添加","哈哈哈一键分享功能添加了"])
-//        present(acVC!, animated: false, completion:  nil)
     }
     
     func updateVersion(versionModel: VersionModel) {
-        let shouUpdate:Bool = compareVersions(v1: versionModel.data?.version_no, v2: versionLocal)
+        updateModel = versionModel
+        let shouUpdate:Bool = compareVersions(v1: versionModel.data?.versionName, v2: versionLocal)
         if shouUpdate {
-            if UIApplication.shared.canOpenURL(URL(string: versionModel.data!.iosAddress!)!) {
-                UIApplication.shared.openURL(URL(string: versionModel.data!.iosAddress!)!)
+            let contentArray: Array<String> = (versionModel.data?.profile?.components(separatedBy: "/"))!
+            
+            let alertUpdate: UpdateViewController = UpdateViewController.init(cellContent: contentArray)!
+            if versionModel.data?.flag == "true" {
+                alertUpdate.isforce = true
+            }else {
+                alertUpdate.isforce = false
             }
+            alertUpdate.delegate = self
+            self.present(alertUpdate, animated: true, completion: nil)
+        }else {
+            HDToast.showTextToast(message: "无新版本")
         }
         
+    }
+    
+    func updateVersion(_ sender: UIButton) {
+        
+        if UIApplication.shared.canOpenURL(URL(string: updateModel!.data!.iosAddress!)!) {
+            
+            UIApplication.shared.openURL(URL(string: updateModel!.data!.iosAddress!)!)
+        }
     }
     
     /// 比较版本大小，返回是否需要更新

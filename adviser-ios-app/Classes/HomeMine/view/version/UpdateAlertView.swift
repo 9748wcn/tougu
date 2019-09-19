@@ -12,7 +12,17 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var contentTableView: UITableView!
     weak var delegate: buttonClickDelegate!
+    var isforce: Bool = false {
+        didSet {
+            if isforce {
+                cancleBtn.isHidden = true
+            }else {
+                cancleBtn.isHidden = false
+            }
+        }
+    }
     
+    @IBOutlet weak var cancleBtn: UIButton!
     var contentArray:Array<String>? {
         didSet {
             updateSelfHeight(array: contentArray!)
@@ -30,6 +40,7 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         contentTableView.separatorStyle = .none
         contentTableView.isScrollEnabled = false
         contentTableView.backgroundColor = UIColor.white
+        cancleBtn.isHidden = isforce
         
     }
     

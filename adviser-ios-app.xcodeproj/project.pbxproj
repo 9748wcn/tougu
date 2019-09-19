@@ -22,6 +22,8 @@
 		7603E0E6233324EF00C014F1 /* UserBehaviourCountProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E5233324EF00C014F1 /* UserBehaviourCountProto.swift */; };
 		7603E0E82333269800C014F1 /* UserBehaviourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E72333269800C014F1 /* UserBehaviourModel.swift */; };
 		7603E0EA2333283C00C014F1 /* UserBehaviourManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0E92333283C00C014F1 /* UserBehaviourManager.swift */; };
+		7603E0EE23337EBD00C014F1 /* LogoutSystemProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0ED23337EBD00C014F1 /* LogoutSystemProto.swift */; };
+		7603E0F02333805E00C014F1 /* LogoutSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603E0EF2333805E00C014F1 /* LogoutSystemManager.swift */; };
 		7615F5B723238F0B003DB6C4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B623238F0B003DB6C4 /* TitleCell.swift */; };
 		7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */; };
 		7615F5BB2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */; };
@@ -200,6 +202,8 @@
 		7603E0E5233324EF00C014F1 /* UserBehaviourCountProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBehaviourCountProto.swift; sourceTree = "<group>"; };
 		7603E0E72333269800C014F1 /* UserBehaviourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBehaviourModel.swift; sourceTree = "<group>"; };
 		7603E0E92333283C00C014F1 /* UserBehaviourManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBehaviourManager.swift; sourceTree = "<group>"; };
+		7603E0ED23337EBD00C014F1 /* LogoutSystemProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutSystemProto.swift; sourceTree = "<group>"; };
+		7603E0EF2333805E00C014F1 /* LogoutSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutSystemManager.swift; sourceTree = "<group>"; };
 		7615F5B623238F0B003DB6C4 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		7615F5BA2323A9D4003DB6C4 /* HomeMineShareCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMineShareCardViewController.swift; sourceTree = "<group>"; };
@@ -396,6 +400,22 @@
 				0F5BFE533D3DF4B4748B53AE /* libPods-adviser-ios-app.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7603E0EB23337E7D00C014F1 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				7603E0EF2333805E00C014F1 /* LogoutSystemManager.swift */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		7603E0EC23337E9400C014F1 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				7603E0ED23337EBD00C014F1 /* LogoutSystemProto.swift */,
+			);
+			path = setting;
 			sourceTree = "<group>";
 		};
 		7615F5C22325E816003DB6C4 /* shareCard */ = {
@@ -611,6 +631,7 @@
 		761CCB01232F964600BE7F36 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7603E0EB23337E7D00C014F1 /* setting */,
 				761B7FC62330BEC200F94759 /* version */,
 				761B7FB623306F6900F94759 /* personInfo */,
 				761CCB00232F962F00BE7F36 /* shareCard */,
@@ -679,6 +700,7 @@
 		7623DFA12321FD7D00CD79A2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				7603E0EC23337E9400C014F1 /* setting */,
 				761B7FBF2330BCED00F94759 /* version */,
 				761B7FB523306F5B00F94759 /* personInfo */,
 				761CCB02232F965B00BE7F36 /* shareCard */,
@@ -1395,6 +1417,7 @@
 				76C9D52C231784760091ECE4 /* HDImageCell.swift in Sources */,
 				76C9D58C2317AEB80091ECE4 /* MBProgressHUD.m in Sources */,
 				76C9D5812317ABEC0091ECE4 /* HDBaseModel.swift in Sources */,
+				7603E0EE23337EBD00C014F1 /* LogoutSystemProto.swift in Sources */,
 				76C9D5602317AAC80091ECE4 /* HDLog.swift in Sources */,
 				76C9D530231784760091ECE4 /* HDImageModel.swift in Sources */,
 				7615F5BF2323AA64003DB6C4 /* shareCardHeaderView.swift in Sources */,
@@ -1422,6 +1445,7 @@
 				7603E0E82333269800C014F1 /* UserBehaviourModel.swift in Sources */,
 				76C9D535231785130091ECE4 /* UIColorHex.swift in Sources */,
 				7615F5B9232390D0003DB6C4 /* ActionSheetViewController.swift in Sources */,
+				7603E0F02333805E00C014F1 /* LogoutSystemManager.swift in Sources */,
 				7615F5CA2325EA9F003DB6C4 /* RecordTableViewCell.swift in Sources */,
 				76C9D5AE2317B2BC0091ECE4 /* HDClientIDService.swift in Sources */,
 				76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */,

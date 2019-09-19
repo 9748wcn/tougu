@@ -51,6 +51,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cancleBtn" destination="RM9-18-Zlf" id="DOl-Zi-zYD"/>
                 <outlet property="contentTableView" destination="G1R-Tv-8B4" id="Tev-40-KiH"/>
             </connections>
         </view>

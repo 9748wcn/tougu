@@ -14,6 +14,8 @@ class VersionItemModel: HandyJSON {
     var androidAddress: String?
     var iosAddress: String?
     var profile: String?
+    var versionName: String?
+    var flag: String = ""
     
     required init() {}
 
