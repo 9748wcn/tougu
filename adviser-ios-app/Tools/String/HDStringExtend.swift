@@ -91,3 +91,36 @@ extension String {
     
     
 }
+//MARK:-- 获取文本的宽高 --
+extension String{
+    /// 获取文本高度
+    ///
+    /// - Parameters:
+    ///   - font: font
+    ///   - fixedWidth: fixedWidth
+    func obtainTextHeight(font : UIFont = UIFont.systemFont(ofSize: 18), fixedWidth : CGFloat) -> CGFloat {
+        
+        guard self.count > 0 && fixedWidth > 0 else {
+            return 0
+        }
+        let size = CGSize(width:fixedWidth, height:CGFloat.greatestFiniteMagnitude)
+        let text = self as NSString
+        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : font], context:nil)
+        
+        return rect.size.height
+    }
+    /// 获取文本宽度
+    ///
+    /// - Parameter font: font
+    func obtainTextWidth(font : UIFont = UIFont.systemFont(ofSize: 17)) -> CGFloat {
+        
+        guard self.count > 0 else {
+            return 0
+        }
+        let size = CGSize(width:CGFloat.greatestFiniteMagnitude, height:0)
+        let text = self as NSString
+        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : font], context:nil)
+        return rect.size.width
+    }
+    
+}
