@@ -31,6 +31,13 @@ class UpdateViewController: UIViewController, buttonClickDelegate {
         }
     }
     
+    var versionValue: String = "" {
+        didSet {
+            updateContentView.versionValue = versionValue
+        }
+    }
+    
+    
     
     required init?(cellContent: [String]?) {
         super.init(nibName: nil, bundle: nil)
@@ -103,6 +110,7 @@ extension UpdateViewController {
             sheetViewDismiss()
         }else { //更新
             self.delegate.updateVersion(sender)
+            sheetViewDismiss()
         }
     }
 }

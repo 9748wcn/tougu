@@ -50,7 +50,7 @@ class HomeMineHeadView: UIView {
         jobLabel.text = (model.data?.jobName != nil) ? model.data!.jobName! : ""
         teamLabel.text = (model.data?.groupName != nil) ? model.data!.groupName! : ""
         if model.data?.avatar != nil {
-            let avatarUrl = "https://iqfdfs.hdfax.com/" + (model.data?.avatar!)!
+            let avatarUrl = imageBaseUrl + (model.data?.avatar!)!
             headerView.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "normalHeader"))
         }
     }

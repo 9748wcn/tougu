@@ -25,11 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarManageBehaviour = .byPosition
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-//        if (HDUserDefaults.hd_getCurrentUser() != nil) {
-//            gotoMainVC()
-//        }else{
-        
-//        }
         let defaultStand = UserDefaults.standard
         if (defaultStand.string(forKey: USERPHONEKEY) != nil) {
             gotoMainVC()

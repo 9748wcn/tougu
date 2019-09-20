@@ -14,8 +14,9 @@ class businessCardNetModel: HDBaseModel {
 
 class businessCardModel: HDBaseModel {
     var data:businessCardItemModel?
-    var resultImage: String  = ""
-    
+    var createTime: String = ""
+    var refuseReason: String = ""
+    var examineStatus: Int = 0
 }
 
 class businessCardItemModel: HandyJSON {
@@ -28,5 +29,13 @@ class businessCardItemModel: HandyJSON {
     var phoneNo:String = ""
     var email:String = ""
     var jobNames:String = ""
+    var updateTime:String = ""
+    var employeeNumber:String = ""
+    var memberNo:String = ""
+    var createBy:String = ""
+    var createTime:String = ""
+    var updateBy:String = ""
+    var landline:String = ""
+    var status: Int = 0
     
 }

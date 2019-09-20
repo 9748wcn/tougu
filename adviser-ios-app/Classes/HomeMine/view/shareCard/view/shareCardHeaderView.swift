@@ -36,7 +36,7 @@ class shareCardHeaderView: UIView {
     
     func updateUI(dataModel: shareCardModel) {
         if dataModel.data?.data?.avatar != nil {
-            let avatarUrl = "https://iqfdfs.hdfax.com/" + (dataModel.data?.data?.avatar!)!
+            let avatarUrl = imageBaseUrl + (dataModel.data?.data?.avatar!)!
             
             self.headerImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "normalHeader"))
         }

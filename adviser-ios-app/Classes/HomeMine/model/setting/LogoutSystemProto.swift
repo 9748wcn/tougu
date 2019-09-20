@@ -22,7 +22,8 @@ class LogoutSystemProto: HDBaseApi {
     }
     
     override func getParameters() -> [String: Any]? {
-        return ["phoneNo":phoneNo]
+//        return ["phoneNo":phoneNo]
+        return [:]
     }
 
 }

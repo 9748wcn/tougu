@@ -15,12 +15,12 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
     func uploadImage(vc: baseViewController, image: UIImage,phoneNo: String) {
         
         self.vc = vc
-        let data: NSData = image.pngData()! as NSData
-//        let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
+//        let data: NSData = image.pngData()! as NSData
+        let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
         let api = uploadImageProto()
         api.phoneNo = phoneNo
         api.method = .post
-        api.imageType = 3
+        api.imageType = 1
         api.portraitImage = data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: UInt(0)))
         let request = HDHTTPRequest()
         request.api = api
@@ -37,7 +37,7 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
         let api = uploadEditCardHeaderProto()
         api.phoneNo = phoneNo
         api.method = .post
-        api.imageType = 3
+        api.imageType = 1
         api.portraitImage = data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: UInt(0)))
         let request = HDHTTPRequest()
         request.api = api

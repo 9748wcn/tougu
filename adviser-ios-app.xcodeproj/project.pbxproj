@@ -147,13 +147,10 @@
 		76C9D5AF2317B2BC0091ECE4 /* HDKeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */; };
 		76C9D5B32317B2D40091ECE4 /* HDStringExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */; };
 		76C9D5B42317B2D40091ECE4 /* HDSting-Ecryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5B22317B2D40091ECE4 /* HDSting-Ecryption.swift */; };
-		76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */; };
 		76C9D5C62317B2F10091ECE4 /* HDAlertDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */; };
 		76C9D5C72317B2F10091ECE4 /* HDAlertDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */; };
-		76C9D5C82317B2F10091ECE4 /* HDAlertImagePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D5BE2317B2F10091ECE4 /* HDAlertImagePickerView.xib */; };
 		76C9D5C92317B2F10091ECE4 /* HDAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5BF2317B2F10091ECE4 /* HDAlertManager.swift */; };
 		76C9D5CA2317B2F10091ECE4 /* HDAlertBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5C02317B2F10091ECE4 /* HDAlertBgView.swift */; };
-		76C9D5CB2317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9D5C12317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib */; };
 		76C9D5CC2317B2F10091ECE4 /* HDAlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */; };
 		76C9D5CD2317B2F10091ECE4 /* HDAlertBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */; };
 		76C9D5ED231A11B10091ECE4 /* HomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C9D5EC231A11B10091ECE4 /* HomeMainViewController.swift */; };
@@ -340,13 +337,10 @@
 		76C9D5AD2317B2BC0091ECE4 /* HDKeyChainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDKeyChainHelper.swift; sourceTree = "<group>"; };
 		76C9D5B12317B2D40091ECE4 /* HDStringExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDStringExtend.swift; sourceTree = "<group>"; };
 		76C9D5B22317B2D40091ECE4 /* HDSting-Ecryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HDSting-Ecryption.swift"; sourceTree = "<group>"; };
-		76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertImagePickerView.swift; sourceTree = "<group>"; };
 		76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertDefaultView.swift; sourceTree = "<group>"; };
 		76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlertDefaultView.xib; sourceTree = "<group>"; };
-		76C9D5BE2317B2F10091ECE4 /* HDAlertImagePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlertImagePickerView.xib; sourceTree = "<group>"; };
 		76C9D5BF2317B2F10091ECE4 /* HDAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertManager.swift; sourceTree = "<group>"; };
 		76C9D5C02317B2F10091ECE4 /* HDAlertBgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertBgView.swift; sourceTree = "<group>"; };
-		76C9D5C12317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDAlertInvestDetailPopupView.xib; sourceTree = "<group>"; };
 		76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertWindow.swift; sourceTree = "<group>"; };
 		76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDAlertBaseView.swift; sourceTree = "<group>"; };
 		76C9D5EC231A11B10091ECE4 /* HomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewController.swift; sourceTree = "<group>"; };
@@ -1084,13 +1078,10 @@
 			children = (
 				7615F5B8232390D0003DB6C4 /* ActionSheetViewController.swift */,
 				7615F5B623238F0B003DB6C4 /* TitleCell.swift */,
-				76C9D5BB2317B2F10091ECE4 /* HDAlertImagePickerView.swift */,
-				76C9D5BE2317B2F10091ECE4 /* HDAlertImagePickerView.xib */,
 				76C9D5BC2317B2F10091ECE4 /* HDAlertDefaultView.swift */,
 				76C9D5BD2317B2F10091ECE4 /* HDAlertDefaultView.xib */,
 				76C9D5BF2317B2F10091ECE4 /* HDAlertManager.swift */,
 				76C9D5C02317B2F10091ECE4 /* HDAlertBgView.swift */,
-				76C9D5C12317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib */,
 				76C9D5C22317B2F10091ECE4 /* HDAlertWindow.swift */,
 				76C9D5C32317B2F10091ECE4 /* HDAlertBaseView.swift */,
 				76BED4AB23226EC900B7FEFC /* ASBottomAlertView.swift */,
@@ -1294,7 +1285,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76C9D5CB2317B2F10091ECE4 /* HDAlertInvestDetailPopupView.xib in Resources */,
 				76C9D604231A61F00091ECE4 /* businessCardEditTableViewCell.xib in Resources */,
 				7623DF9123209D5300CD79A2 /* businessSubmitBtnCell.xib in Resources */,
 				7615F5E62327566D003DB6C4 /* VersionViewController.xib in Resources */,
@@ -1303,7 +1293,6 @@
 				76BED4AA2322446600B7FEFC /* personInfoHeadView.xib in Resources */,
 				7623DFAB2322038B00CD79A2 /* HomeMineHeadView.xib in Resources */,
 				7623DF9E2321F0B700CD79A2 /* resetPassWordSetViewController.xib in Resources */,
-				76C9D5C82317B2F10091ECE4 /* HDAlertImagePickerView.xib in Resources */,
 				76BED4A62322426F00B7FEFC /* personInfoTableViewCell.xib in Resources */,
 				7615F5C82325E88D003DB6C4 /* ShareCardIntroduceCell.xib in Resources */,
 				7601B22623289064009D7C78 /* shareBottomAlertView.xib in Resources */,
@@ -1515,7 +1504,6 @@
 				761CCAFF232F821F00BE7F36 /* ASResetPassWordProto.swift in Sources */,
 				7615F605232793BA003DB6C4 /* ASLoginModel.swift in Sources */,
 				7615F5FA232788A8003DB6C4 /* ASAutoHeightTextView.swift in Sources */,
-				76C9D5C52317B2F10091ECE4 /* HDAlertImagePickerView.swift in Sources */,
 				3F1F5BE02330AFAE00EC1ABF /* businessCardModel.swift in Sources */,
 				761B7FB32330687000F94759 /* shareCardItemModel.swift in Sources */,
 				76C9D5512317A9610091ECE4 /* HDToast.swift in Sources */,

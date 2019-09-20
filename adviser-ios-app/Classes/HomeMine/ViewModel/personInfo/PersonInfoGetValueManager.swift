@@ -27,10 +27,11 @@ class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
     }
     
     func asyncerDidStart(request: HDHTTPRequest) {
-//        MBProgressHUD.sho
+        HDHudManager.shared.show()
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
+        HDHudManager.shared.hide()
         let model = result as? personInfoModel
         if model?.code == 1 && ((model?.data) != nil) {
             //布局界面
@@ -41,7 +42,7 @@ class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
-        
+        HDHudManager.shared.hide()
     }
 
 }

@@ -57,11 +57,30 @@ class companyInfoViewController: baseViewController,ASShareClickDelegate {
     
     func wechatFrendsShareClick() {
         
+        let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
+        let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "恒大金融财富管理（深圳）有限公司简介", descr: "值得信赖的财富管理平台", thumImage: UIImage(named: "appIcon"))
+        //        let defaultStand = UserDefaults.standard
+        //        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+        shareObjext.webpageUrl = "http://172.24.19.45:8080/#/hdIfon"
+        messegeObject.shareObject = shareObjext
+        
+        //        messegeObject.webpageUrl = ""
+        
+        UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatTimeLine, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
+            
+            } as? UMSocialRequestCompletionHandler)
     }
     
     func QQShareClick() {
-        let messegeObject: UMSocialMessageObject = UMSocialMessageObject.init()
-        messegeObject.text = "随便写"
+        let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
+        let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "恒大金融财富管理（深圳）有限公司简介", descr: "值得信赖的财富管理平台", thumImage: UIImage(named: "appIcon"))
+        //        let defaultStand = UserDefaults.standard
+        //        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+        shareObjext.webpageUrl = "http://172.24.19.45:8080/#/hdIfon"
+        messegeObject.shareObject = shareObjext
+        
+        //        messegeObject.webpageUrl = ""
+        
         UMSocialManager.default()?.share(to: UMSocialPlatformType.QQ, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
             
             } as? UMSocialRequestCompletionHandler)

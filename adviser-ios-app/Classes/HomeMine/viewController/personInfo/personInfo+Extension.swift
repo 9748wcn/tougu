@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Kingfisher
 
 extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,buttonClickDelegate {
     
@@ -45,7 +46,7 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
         }else{
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as personInfoTableViewCell
             cell.typeLabel.text = secondSectionKeys[indexPath.row]
-            cell.typeValueLabel.text = (secondSectionValues?[indexPath.row] != nil) ? firstSectionValues?[indexPath.row] : ""
+            cell.typeValueLabel.text = (secondSectionValues?[indexPath.row] != nil) ? secondSectionValues?[indexPath.row] : ""
             cell.selectionStyle = .none
             return cell
         }
@@ -56,6 +57,10 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
             let headerView: personInfoHeadView = personInfoHeadView.loadFromXib()
             headerView.delegate = self
             headerBtn = headerView.headerImageBtn
+            if dataModel?.data?.avatar != nil {
+                let headrurl = URL(string: imageBaseUrl + (dataModel?.data?.avatar!)!)
+                headerView.headerImageBtn.kf.setImage(with: ImageResource(downloadURL: headrurl!), for:.normal, placeholder: UIImage(named: "normalHeader"))
+            }
             return headerView
         }else{
             let lineView = UIView.init(frame: CGRect(x: 23, y: 0, width: view.bounds.width - 46, height: 1))
@@ -101,10 +106,6 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
                 }
                 .bind(to: self.headerBtn.rx.image())
                 .disposed(by: self.disposeBag)
-            
-//            let defaultStand = UserDefaults.standard
-//            UploadImageManager.shared.uploadImage(vc: self, image: UIImage(named: "appIcon")!, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
-            
         }
     }
     

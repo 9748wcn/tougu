@@ -12,6 +12,10 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var contentTableView: UITableView!
     weak var delegate: buttonClickDelegate!
+    
+//    var windowSub: UIWindow?
+    
+    
     var isforce: Bool = false {
         didSet {
             if isforce {
@@ -30,7 +34,11 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
-    
+    var versionValue: String? {
+        didSet {
+            contentTableView.reloadData()
+        }
+    }
     override func awakeFromNib() {
         contentTableView.delegate = self
         contentTableView.dataSource = self
@@ -43,7 +51,6 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         cancleBtn.isHidden = isforce
         
     }
-    
     func updateSelfHeight(array: Array<String>) {
         var selfFrame: CGRect = self.frame
         var height: CGFloat = 0
@@ -91,7 +98,7 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
         let versionLabel: UILabel = UILabel.init(frame: CGRect(x: 0, y: 28, width: self.bounds.width, height: 12))
         headerView.addSubview(versionLabel)
         versionLabel.textAlignment = .center
-        versionLabel.text = "v1.0.0"
+        versionLabel.text = (versionValue != nil) ? ("V" + versionValue!) : ""
         versionLabel.font = UIFont.systemFont(ofSize: 10)
         headerView.backgroundColor = UIColor.white
         return headerView

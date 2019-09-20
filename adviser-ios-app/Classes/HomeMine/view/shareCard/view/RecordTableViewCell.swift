@@ -54,7 +54,7 @@ class RecordTableViewCell: UITableViewCell {
             make.width.height.equalTo(36)
         }
         if recordList?.avatar != nil {
-            let avatarUrl = "https://iqfdfs.hdfax.com/" + (recordList?.avatar!)!
+            let avatarUrl = imageBaseUrl + (recordList?.avatar!)!
             headerImage.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "userHeader"))
         }else {
             headerImage.image = UIImage(named: "userHeader")
@@ -80,7 +80,7 @@ class RecordTableViewCell: UITableViewCell {
         timeLabel.textColor = Notext_Color
         timeLabel.font = textFont12
         if recordList?.createTime != nil {
-            timeLabel.text = recordList?.createTime!
+            timeLabel.text = recordList?.createTime!.turnToNormalDate()
         }
         
         var behaviours: Array<String> = []

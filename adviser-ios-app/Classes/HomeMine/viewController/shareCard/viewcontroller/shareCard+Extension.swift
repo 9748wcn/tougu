@@ -170,26 +170,51 @@ extension HomeMineShareCardViewController {
 
 extension HomeMineShareCardViewController: ASShareClickDelegate {
     func wechatShareClick() {
+        if (UserDefaults.standard.string(forKey: USERNAMEKEY) != nil) {
+            let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
+            let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "您好，我是" + UserDefaults.standard.string(forKey: USERNAMEKEY)! + ",这是我的名片", descr: "工号为" + UserDefaults.standard.string(forKey: USERICNO)! + "，职位为" + UserDefaults.standard.string(forKey: USERJOBKEY)!, thumImage: sectionHeaderView.headerImageView.image)
+            let defaultStand = UserDefaults.standard
+            let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+            shareObjext.webpageUrl = shareCardUrl + "?phoneNo=" + phoneNo!
+            messegeObject.shareObject = shareObjext
+            UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatSession, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
+                
+                } as? UMSocialRequestCompletionHandler)
+        }else {
+            HDToast.showTextToast(message: "数据异常，请刷新后重试")
+        }
         
-        let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
-        let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "名片分享", descr: "这是我的名片，邀您投资理财", thumImage: UIImage(named: "appIcon"))
-        let defaultStand = UserDefaults.standard
-        let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
-        shareObjext.webpageUrl = "http://172.24.19.45:8080/#/" + "?phoneNo=" + phoneNo!
-        messegeObject.shareObject = shareObjext
-        
-//        messegeObject.webpageUrl = ""
-        
-        UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatSession, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
-
-            } as? UMSocialRequestCompletionHandler)
     }
     
     func wechatFrendsShareClick() {
-        
+        if (UserDefaults.standard.string(forKey: USERNAMEKEY) != nil) {
+            let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
+            let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "您好，我是" + UserDefaults.standard.string(forKey: USERNAMEKEY)! + ",这是我的名片", descr: "工号为" + UserDefaults.standard.string(forKey: USERICNO)! + "，职位为" + UserDefaults.standard.string(forKey: USERJOBKEY)!, thumImage: sectionHeaderView.headerImageView.image)
+            let defaultStand = UserDefaults.standard
+            let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+            shareObjext.webpageUrl = shareCardUrl + "?phoneNo=" + phoneNo!
+            messegeObject.shareObject = shareObjext
+            UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatTimeLine, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
+                
+                } as? UMSocialRequestCompletionHandler)
+        }else {
+            HDToast.showTextToast(message: "数据异常，请刷新后重试")
+        }
     }
     
     func QQShareClick() {
-        
+        if (UserDefaults.standard.string(forKey: USERNAMEKEY) != nil) {
+            let messegeObject: UMSocialMessageObject = UMSocialMessageObject()
+            let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "您好，我是" + UserDefaults.standard.string(forKey: USERNAMEKEY)! + ",这是我的名片", descr: "工号为" + UserDefaults.standard.string(forKey: USERICNO)! + "，职位为" + UserDefaults.standard.string(forKey: USERJOBKEY)!, thumImage: sectionHeaderView.headerImageView.image)
+            let defaultStand = UserDefaults.standard
+            let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+            shareObjext.webpageUrl = shareCardUrl + "?phoneNo=" + phoneNo!
+            messegeObject.shareObject = shareObjext
+            UMSocialManager.default()?.share(to: UMSocialPlatformType.QQ, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
+                
+                } as? UMSocialRequestCompletionHandler)
+        }else {
+            HDToast.showTextToast(message: "数据异常，请刷新后重试")
+        }
     }
 }

@@ -9,18 +9,18 @@
 import UIKit
 
 class businessCardEditProto: HDBaseApi {
-    var phoneNo: String = ""
-    convenience init(phoneNo:String) {
+    var employeeNumber: String = ""
+    convenience init(employeeNumber:String) {
         self.init()
-        self.phoneNo = phoneNo
+        self.employeeNumber = employeeNumber
         self.method = .get
-        self.urlString = "/investadviser/queryInvestAdviser"
+        self.urlString = "/investadviser/showEditInvestAdviserInfo"
     }
     override func responseObjectFromJson<T>(jsonStr: String) -> T where T : HDBaseModel {
         return businessCardNetModel.deserialize(from: jsonStr) as! T
     }
     override func getParameters() -> [String: Any]? {
-        return ["phoneNo":phoneNo]
+        return ["employeeNumber":employeeNumber]
     }
 }
 

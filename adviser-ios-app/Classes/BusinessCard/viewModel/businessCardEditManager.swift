@@ -22,10 +22,10 @@ class businessCardEditManager: NSObject,HDAsyncDelegate {
     private override init() {}
     
     func getCardInfo(vc: businessCardEditViewController,
-                     phoneNo: String) {
+                     employeeNumber: String) {
         self.vc = vc
         self.netType = .request
-        let api = businessCardEditProto(phoneNo: phoneNo)
+        let api = businessCardEditProto(employeeNumber: employeeNumber)
         let request = HDHTTPRequest()
         request.api = api
         request.delegate = self
@@ -53,7 +53,8 @@ class businessCardEditManager: NSObject,HDAsyncDelegate {
             case .request:
             if let model = result as? businessCardNetModel, model.code == 1 {
 //                self.vc.refrenUI(with: model.data?.data ??  businessCardItemModel())
-                self.vc.refrenUI(with: model.data?.data ??  businessCardItemModel(), avatarUrl: model.data?.resultImage ?? "")
+//                self.vc.refrenUI(with: model.data?.data ??  businessCardItemModel(), avatarUrl: model.data?.resultImage ?? "")
+                self.vc.refrenUI(with: model.data ?? businessCardModel())
             }
             case .update:()
             if let model = result as? HDBaseModel,model.code == 1  {

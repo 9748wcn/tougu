@@ -30,26 +30,26 @@ class businessCardEditViewController: baseViewController {
     let disposeBag = DisposeBag()
     var intrudutionHeight: CGFloat = 120
     
+    var headerNormalImage: UIImage!
+    
+    
+//    var dataModel: businessCardModel?
+    
+    
     var iscanEdit: Bool = true {
         didSet {
-            updateStatusOfNotWrite(canEdit: iscanEdit)
+            tableView.reloadData()
         }
     }
+    
+    var headerAttriStr: NSMutableAttributedString!
+    
     
     var configuration:[[(title:String,
         placeholder:String,
         isNeed:Bool,
         isEnabled:Bool,
-        keyboardType: UIKeyboardType)]]
-        = [[("头像", "此项必填", true, true, .default),
-            ("姓名", "此项必填", true, true, .default),
-            ("工号", "此项必填", true, false, .default)],
-           [("公司", "此项必填", true, false, .default),
-            ("职位", "此项必填", true, true, .default)],
-          [("手机", "此项必填", true, true, .namePhonePad),
-           ("微信号", "此项必填", false, true, .default),
-           ("邮箱", "此项必填", false, true, .emailAddress)],
-          [("个人简介", "此项必填", true, true, .default)]]
+        keyboardType: UIKeyboardType)]]!
 
     var contentArr    =  [["","",UserDefaults.standard.string(forKey: USERICNO)],
                           ["恒大金融财富管理（深圳）有限公司",""],
@@ -70,15 +70,39 @@ class businessCardEditViewController: baseViewController {
         title = "名片编辑"
         view.backgroundColor = UIColor(rgb: 0xF8F8F8)
         view.addSubview(tableView)
-        if let phoneNo = UserDefaults.standard.string(forKey: USERPHONEKEY) {
-            businessCardEditManager.shared.getCardInfo(vc: self, phoneNo: phoneNo)
+        headerNormalImage = UIImage(named: "normalHeader")
+       configuration = [[("头像", "此项必填", true, iscanEdit, .default),
+          ("姓名", "此项必填", true, iscanEdit, .default),
+          ("工号", "此项必填", true, false, .default)],
+         [("公司", "此项必填", true, false, .default),
+          ("职位", "此项必填", true, iscanEdit, .default)],
+         [("手机", "此项必填", true, iscanEdit, .namePhonePad),
+          ("微信号", "此项必填", false, iscanEdit, .default),
+          ("邮箱", "此项必填", false, iscanEdit, .emailAddress)],
+         [("个人简介", "此项必填", true, iscanEdit, .default)]]
+        headerAttriStr = attributedString(value: "带*号为必填项，当填写完成后提交公司审核，审核通过后，新内容生效，名片信息更新。", attriString: "*")
+        if let employeeNumber = UserDefaults.standard.string(forKey: USERICNO) {
+            businessCardEditManager.shared.getCardInfo(vc: self, employeeNumber: employeeNumber)
         }
     }
-    func refrenUI(with model:businessCardItemModel, avatarUrl: String) {
-        let content = [[avatarUrl,model.employeeName,model.employeeNo],
-                       ["恒大金融财富管理（深圳）有限公司",model.jobNames],
-                       [model.phoneNo,model.wechatAccount,model.email],
-                       [model.profile]]
+    func refrenUI(with model:businessCardModel) {
+        if model.examineStatus == 0 {
+            headerAttriStr = attributedString(value: "带*号为必填项，当填写完成后提交公司审核，审核通过后，新内容生效，名片信息更新。", attriString: "*")
+            iscanEdit = true
+        }else if model.examineStatus == 1 {
+            headerAttriStr = attributedString(value: "您已于" + model.createTime + "提交审核，本页内容为待审核内容，请等待审核结果，审核通过后新内容生效。", attriString: model.createTime)
+            iscanEdit = false
+        }else if model.examineStatus == 2 {
+            headerAttriStr = attributedString(value: "您已于" + model.createTime + "审核通过。", attriString: model.createTime)
+            iscanEdit = true
+        }else if model.examineStatus == 3 {
+            headerAttriStr = attributedString(value: "您于" + model.createTime + "提交的审核未通过，主要原因为：" + model.refuseReason + "敬请修改后，再次提交审核。", attriString: model.refuseReason)
+            iscanEdit = true
+        }
+        let content = [[model.data!.avatar,model.data!.employeeName,UserDefaults.standard.string(forKey: USERICNO)],
+                       ["恒大金融财富管理（深圳）有限公司",model.data!.jobNames],
+                       [model.data!.phoneNo,model.data!.wechatAccount,model.data!.email],
+                       [model.data!.profile]]
         for (section, arr) in content.enumerated() {
             for(row, contentStr) in arr.enumerated() {
                 contentArr[section][row] = contentStr
@@ -98,18 +122,14 @@ class businessCardEditViewController: baseViewController {
         self.tableView.reloadData()
     }
     
-    func updateStatusOfNotWrite(canEdit: Bool) {
-        
-        configuration = [[("头像", "此项必填", true, canEdit, .default),
-                          ("姓名", "此项必填", true, canEdit, .default),
-                          ("工号", "此项必填", true, false, .default)],
-                         [("公司", "此项必填", true, false, .default),
-                          ("职位", "此项必填", true, canEdit, .default)],
-                         [("手机", "此项必填", true, canEdit, .namePhonePad),
-                          ("微信号", "此项必填", false, canEdit, .default),
-                          ("邮箱", "此项必填", false, canEdit, .emailAddress)],
-                         [("个人简介", "此项必填", true, canEdit, .default)]]
-        tableView.reloadData()
+    func attributedString(value: String,attriString: String) -> NSMutableAttributedString {
+        let attrStr = NSMutableAttributedString.init(string: value)
+        if attriString.count > 0 {
+            let range = value.range(of: attriString)
+            let nsrange = NSRange(range!, in: value) // Range to NSRange
+            attrStr.addAttribute(.foregroundColor, value: UIColor.red, range: nsrange)
+        }
+        return attrStr
     }
 }
 
@@ -124,10 +144,10 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
         if indexPath.section == 0,indexPath.row == 0  {
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardHeadCell
             if let avatar: String = contentArr[0][0],
-                let headrurl = URL(string: "https://iqfdfs.hdfax.com/" + avatar){
-                cell.headImageView.kf.setImage(with: ImageResource(downloadURL: headrurl), placeholder: UIImage(named: "normalHeader"))
+                let headrurl = URL(string: imageBaseUrl + avatar){
+                cell.headImageView.kf.setImage(with: ImageResource(downloadURL: headrurl), placeholder: headerNormalImage)
             }else {
-                cell.headImageView.image = UIImage.init(named: "normalHeader")
+                cell.headImageView.image = headerNormalImage
             }
             cell.headerClickBlock = {[unowned self] () in
                 let acVC = ActionSheetViewController(cellTitleList: ["拍照", "从手机相册选择"])!
@@ -147,6 +167,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                                          let defaultStand = UserDefaults.standard
                                         UploadImageManager.shared.uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                                     }
+                                    self.headerNormalImage = image
                                     return image
                                 }
                                 .bind(to: cell.headImageView.rx.image)
@@ -169,6 +190,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                                         let defaultStand = UserDefaults.standard
                                         UploadImageManager.shared.uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                                     }
+                                    self.headerNormalImage = image
                                     return image
                                     
                                 }
@@ -185,6 +207,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as editCardIntroduceCell
             cell.contentTextView.indexPath = indexPath
             cell.contentTextView.text = contentArr[indexPath.section][indexPath.row]
+            cell.contentTextView.isEditable = iscanEdit
             return cell
         }
         let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as businessCardEditTableViewCell
@@ -225,10 +248,10 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             
             let headMarkL: UILabel = UILabel(frame: CGRect(x: 15, y: 0, width: view.bounds.width - 30, height: 50))
             headMarkL.backgroundColor = UIColor(rgb: 0xF1F5FE)
-            headMarkL.text = "带*号为必填项，当填写完成后提交公司审核，审核通过后，新内容生效，名片信息更新。"
             headMarkL.textColor = UIColor(rgb: 0x497BEC)
             headMarkL.numberOfLines = 0
             headMarkL.font = UIFont.systemFont(ofSize: 13.0)
+            headMarkL.attributedText = headerAttriStr
             headView.addSubview(headMarkL)
             return headView
         }
@@ -262,7 +285,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     @objc func submitBtnBtnClicked() {
-        
+        self.view.endEditing(true)
         if let errorTip = verifyCommit() {
             businessCardCommitAlertView(content: errorTip).show()
             return

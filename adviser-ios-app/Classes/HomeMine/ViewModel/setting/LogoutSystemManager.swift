@@ -18,7 +18,7 @@ class LogoutSystemManager: NSObject, HDAsyncDelegate {
         self.vc = vc
         let api = LogoutSystemProto()
         api.phoneNo = phoneNo
-        api.method = .post
+        api.method = .get
         let request = HDHTTPRequest()
         request.api = api
         request.delegate = self

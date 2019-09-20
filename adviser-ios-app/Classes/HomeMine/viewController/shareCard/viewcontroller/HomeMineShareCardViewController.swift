@@ -83,8 +83,9 @@ class HomeMineShareCardViewController: baseViewController {
     @objc func refreshDate() {
         let defaultStand = UserDefaults.standard
         let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
+        
         ShareCardGetInfoManager.shared.getemployeeInfo(vc: self, phoneNo: phoneNo!)
-        UserBehaviourManager.shared.getBehaviourInfo(vc: self, phoneNo: "18236915888")
+        UserBehaviourManager.shared.getBehaviourInfo(vc: self, phoneNo: phoneNo!)
         
     }
     func startGetData() {

@@ -27,8 +27,10 @@ enum HTTPMethod: String {
     func asyncerdidFinishWithResult(request:HDHTTPRequest,result:AnyObject)
     func asyncerdidFailWithError(request:HDHTTPRequest,error:NSError)
 }
-    let baseUrl:String = "http://172.24.19.132:8749"
-//let baseUrl:String = "http://combatmap.hdfax.com"
+//    let baseUrl:String = "http://172.24.19.132:8749"
+let baseUrl:String = "http://172.16.81.184:8749"
+let imageBaseUrl:String = "https://iqfdfs.hdfax.com/"
+let shareCardUrl:String = "http://172.24.19.45:8080/#/"
     let baseSettingUrl:String = "http://17391l3n18.imwork.net"
 //let baseUrl:String = "http://172.16.40.34:8082"
 class HDHTTPRequest {
@@ -69,6 +71,7 @@ class HDHTTPRequest {
             if let param = api.getParameters() {
                 let jsonData = try? JSONSerialization.data(withJSONObject: param)
                 urlRequest.httpBody = jsonData
+                print("param = \(param)")
             }
         }
         for (key,value) in api.httpHeaders {
@@ -211,7 +214,7 @@ class HDHTTPRequest {
             return String(format:"%@=%@",value,String(describing: aa[value]!))
         }
         let str = strArr.joined(separator: "&")
-        
+        print("get param \(url + "?" + str)")
         return url + "?" + str
    }
     
