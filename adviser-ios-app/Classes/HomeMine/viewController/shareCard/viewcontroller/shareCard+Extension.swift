@@ -11,7 +11,7 @@ import Foundation
 extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if section1Values != nil {
+        if section1Values != nil && section1Values!.count > 0  {
             return 2
         }
         return 1
