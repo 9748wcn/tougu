@@ -96,5 +96,9 @@ class baseViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
     }
+    
+    deinit {
+        print("-[\(self.className)] dealloc")
+    }
 
 }

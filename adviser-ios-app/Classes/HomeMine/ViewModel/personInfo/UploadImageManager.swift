@@ -9,8 +9,12 @@
 import UIKit
 
 class UploadImageManager: NSObject,HDAsyncDelegate {
-    static let shared = UploadImageManager()
+//    static let shared = UploadImageManager()
     var vc:baseViewController!
+    
+    override init() {
+        super.init()
+    }
     
     func uploadImage(vc: baseViewController, image: UIImage,phoneNo: String) {
         
@@ -32,7 +36,7 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
     
     func uploadBussinessCardHeader(vc: baseViewController, image: UIImage,phoneNo: String) {
         self.vc = vc
-        let data: NSData = image.pngData()! as NSData
+        let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
         //        let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
         let api = uploadEditCardHeaderProto()
         api.phoneNo = phoneNo
@@ -52,7 +56,6 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
         HDHudManager.shared.hide()
-        
         if request.tag == "1000" {
             let model = result as? HDBaseModel
             if model?.code == 1 {

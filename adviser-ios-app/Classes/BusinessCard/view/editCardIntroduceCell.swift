@@ -19,6 +19,8 @@ class editCardIntroduceCell: UITableViewCell, UITextViewDelegate {
         contentTextView.delegate = self
         contentTextView.isScrollEnabled = false
         self.selectionStyle = .none
+        
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,11 +52,31 @@ class editCardIntroduceCell: UITableViewCell, UITextViewDelegate {
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        if textView.text.count > 200 {
-            return false
-        }else{
+        wordCountLabel.text = "\(textView.text.count)"
+        return true
+    }
+    
+    
+    @available(iOS 2.0, *)
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "" {
             return true
         }
+        if textView.text.count >= 200 {
+            return false
+        }
+        return true
     }
+    
+//    @available(iOS 2.0, *)
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        if text == "" {
+//            return true
+//        }
+//        if textView.text.count >= 200 {
+//            return false
+//        }
+//        return true
+//    }
     
 }

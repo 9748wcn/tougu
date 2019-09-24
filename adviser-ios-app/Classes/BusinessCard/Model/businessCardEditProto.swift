@@ -28,6 +28,7 @@ class businessUpdateCardProto: HDBaseApi {
     var paramert:[String:Any] = [:]
     convenience init(paramert:[String:Any]) {
         self.init()
+        self.paramert = paramert
         urlString = "/investadviser/updateInvestAdviser"
         method = .post
     }

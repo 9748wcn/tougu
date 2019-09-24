@@ -60,7 +60,7 @@ class personInfoViewController: baseViewController {
     
     func uploadImage(image: UIImage) {
         let defaultStand = UserDefaults.standard
-        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+        UploadImageManager().uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
     }
 
 }

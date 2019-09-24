@@ -10,7 +10,10 @@ import UIKit
 
 class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
     
-    static let shared = PersonInfoGetValueManager()
+//    static let shared = PersonInfoGetValueManager()
+    override init() {
+        super.init()
+    }
     var vc:baseViewController!
     
     func getPersonInfo(vc: baseViewController, phoneNo: String) {

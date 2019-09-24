@@ -40,7 +40,7 @@ class HomeMineViewController: baseViewController {
         super.viewWillAppear(animated)
         let defaultStand = UserDefaults.standard
         let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
-        PersonInfoGetValueManager.shared.getPersonInfo(vc: self, phoneNo: phoneNo!)
+        PersonInfoGetValueManager().getPersonInfo(vc: self, phoneNo: phoneNo!)
     }
     
     func updateHeaderInfo(model: personInfoModel) {

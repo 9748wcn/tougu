@@ -10,7 +10,10 @@ import UIKit
 
 class VersionValueManager: NSObject, HDAsyncDelegate,UpdateViewDelegate {
     
-    static let shared = VersionValueManager()
+//    static let shared = VersionValueManager()
+    override init() {
+        super.init()
+    }
     var vc:baseViewController!
     var updateModel: VersionModel?
     
@@ -33,8 +36,7 @@ class VersionValueManager: NSObject, HDAsyncDelegate,UpdateViewDelegate {
         let model = result as? VersionModel
         if model?.code == 1 && ((model?.data) != nil) {
             updateModel = model
-            var versionLocal: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-            versionLocal = "0.0.1"
+            let versionLocal: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
             let shouUpdate:Bool = compareVersions(v1: model!.data?.versionName, v2: versionLocal)
             if shouUpdate {
                 let contentArray: Array<String> = (model!.data?.profile?.components(separatedBy: "/"))!

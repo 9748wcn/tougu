@@ -30,7 +30,7 @@ class VersionViewController: baseViewController {
     }
 
     @IBAction func checkVersionClick(_ sender: Any) {
-        VersionValueManager.shared.getVersionValue(vc: self)
+        VersionValueManager().getVersionValue(vc: self)
     }
     
 //    func updateVersion(versionModel: VersionModel) {

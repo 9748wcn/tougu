@@ -10,7 +10,10 @@ import UIKit
 
 class ShareCardGetInfoManager: NSObject,HDAsyncDelegate {
     
-    static let shared = ShareCardGetInfoManager()
+//    static let shared = ShareCardGetInfoManager()
+    override init() {
+        super.init()
+    }
     var vc:baseViewController!
     
     func getemployeeInfo(vc: baseViewController,phoneNo: String) {

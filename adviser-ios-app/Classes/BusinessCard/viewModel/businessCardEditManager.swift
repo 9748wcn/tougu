@@ -15,11 +15,13 @@ enum businessCardActionType {
 
 class businessCardEditManager: NSObject,HDAsyncDelegate {
     
-    static let shared = businessCardEditManager()
+//    static let shared = businessCardEditManager()
     
     private var vc:businessCardEditViewController!
     private var netType:businessCardActionType!
-    private override init() {}
+    override init() {
+        super.init()
+    }
     
     func getCardInfo(vc: businessCardEditViewController,
                      employeeNumber: String) {
@@ -52,8 +54,6 @@ class businessCardEditManager: NSObject,HDAsyncDelegate {
         switch netType {
             case .request:
             if let model = result as? businessCardNetModel, model.code == 1 {
-//                self.vc.refrenUI(with: model.data?.data ??  businessCardItemModel())
-//                self.vc.refrenUI(with: model.data?.data ??  businessCardItemModel(), avatarUrl: model.data?.resultImage ?? "")
                 self.vc.refrenUI(with: model.data ?? businessCardModel())
             }
             case .update:()

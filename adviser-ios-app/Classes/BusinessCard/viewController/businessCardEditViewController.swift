@@ -32,13 +32,9 @@ class businessCardEditViewController: baseViewController {
     
     var headerNormalImage: UIImage!
     
-    
-//    var dataModel: businessCardModel?
-    
-    
     var iscanEdit: Bool = true {
         didSet {
-            tableView.reloadData()
+            updateConfige()
         }
     }
     
@@ -77,14 +73,28 @@ class businessCardEditViewController: baseViewController {
          [("公司", "此项必填", true, false, .default),
           ("职位", "此项必填", true, iscanEdit, .default)],
          [("手机", "此项必填", true, iscanEdit, .namePhonePad),
-          ("微信号", "此项必填", false, iscanEdit, .default),
-          ("邮箱", "此项必填", false, iscanEdit, .emailAddress)],
-         [("个人简介", "此项必填", true, iscanEdit, .default)]]
+          ("微信号", "未填写", false, iscanEdit, .default),
+          ("邮箱", "未填写", false, iscanEdit, .emailAddress)],
+         [("个人简介", "可输入您的从业经验、所获荣誉、简单介绍等", true, iscanEdit, .default)]]
         headerAttriStr = attributedString(value: "带*号为必填项，当填写完成后提交公司审核，审核通过后，新内容生效，名片信息更新。", attriString: "*")
         if let employeeNumber = UserDefaults.standard.string(forKey: USERICNO) {
-            businessCardEditManager.shared.getCardInfo(vc: self, employeeNumber: employeeNumber)
+            let manager = businessCardEditManager()
+            manager.getCardInfo(vc: self, employeeNumber: employeeNumber)
         }
     }
+    
+    func updateConfige() {
+        configuration = [[("头像", "此项必填", true, iscanEdit, .default),
+         ("姓名", "此项必填", true, iscanEdit, .default),
+         ("工号", "此项必填", true, false, .default)],
+        [("公司", "此项必填", true, false, .default),
+         ("职位", "此项必填", true, iscanEdit, .default)],
+        [("手机", "此项必填", true, iscanEdit, .namePhonePad),
+         ("微信号", "未填写", false, iscanEdit, .default),
+         ("邮箱", "未填写", false, iscanEdit, .emailAddress)],
+        [("个人简介", "可输入您的从业经验、所获荣誉、简单介绍等", true, iscanEdit, .default)]]
+    }
+    
     func refrenUI(with model:businessCardModel) {
         if model.examineStatus == 0 {
             headerAttriStr = attributedString(value: "带*号为必填项，当填写完成后提交公司审核，审核通过后，新内容生效，名片信息更新。", attriString: "*")
@@ -99,10 +109,10 @@ class businessCardEditViewController: baseViewController {
             headerAttriStr = attributedString(value: "您于" + model.createTime + "提交的审核未通过，主要原因为：" + model.refuseReason + "敬请修改后，再次提交审核。", attriString: model.refuseReason)
             iscanEdit = true
         }
-        let content = [[model.data!.avatar,model.data!.employeeName,UserDefaults.standard.string(forKey: USERICNO)],
-                       ["恒大金融财富管理（深圳）有限公司",model.data!.jobNames],
-                       [model.data!.phoneNo,model.data!.wechatAccount,model.data!.email],
-                       [model.data!.profile]]
+        let content = [[model.data?.data!.avatar,model.data?.data!.employeeName,UserDefaults.standard.string(forKey: USERICNO)],
+                       ["恒大金融财富管理（深圳）有限公司",model.data?.data!.jobNames],
+                       [model.data?.data!.phoneNo,model.data?.data!.wechatAccount,model.data?.data!.email],
+                       [model.data?.data!.profile]]
         for (section, arr) in content.enumerated() {
             for(row, contentStr) in arr.enumerated() {
                 contentArr[section][row] = contentStr
@@ -165,7 +175,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                                     let que = DispatchQueue.global(qos: .default)
                                     que.async {
                                          let defaultStand = UserDefaults.standard
-                                        UploadImageManager.shared.uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                                        UploadImageManager().uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                                     }
                                     self.headerNormalImage = image
                                     return image
@@ -188,15 +198,15 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                                     let que = DispatchQueue.global(qos: .default)
                                     que.async {
                                         let defaultStand = UserDefaults.standard
-                                        UploadImageManager.shared.uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                                        UploadImageManager().uploadBussinessCardHeader(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                                     }
                                     self.headerNormalImage = image
                                     return image
-                                    
+
                                 }
                                 .bind(to: cell.headImageView.rx.image)
                                 .disposed(by: self.disposeBag)
-                            
+
                         }
                     }
                 }
@@ -298,7 +308,7 @@ extension businessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                         "wechatAccount":contentArr[2][1],
                         "email":contentArr[2][2],
                         "profile":contentArr[3][0]]
-        businessCardEditManager.shared.updateCardInfo(vc: self, paramter: paramter as [String : Any])
+        businessCardEditManager().updateCardInfo(vc: self, paramter: paramter as [String : Any])
     }
 }
 extension businessCardEditViewController{

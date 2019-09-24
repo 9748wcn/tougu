@@ -95,12 +95,11 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
                 }
                 .flatMap { $0.rx.didFinishPickingMediaWithInfo }
                 .map {
-                    
                     let image  =  $0[.originalImage] as! UIImage
                     let que = DispatchQueue.global(qos: .default)
                     que.async {
                         let defaultStand = UserDefaults.standard
-                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                        UploadImageManager().uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                     }
                     return image
                 }
@@ -124,7 +123,7 @@ extension personInfoViewController: UITableViewDelegate,UITableViewDataSource,bu
                     let que = DispatchQueue.global(qos: .default)
                     que.async {
                         let defaultStand = UserDefaults.standard
-                        UploadImageManager.shared.uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+                        UploadImageManager().uploadImage(vc: self, image: image, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
                     }
                     return image
                 }

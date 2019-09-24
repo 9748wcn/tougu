@@ -13,14 +13,13 @@ class resetPassWordVerifyViewController: baseViewController {
     @IBOutlet weak var ICCardTextFeild: UITextField!
     @IBOutlet weak var phoneTextFeild: UITextField!
     @IBOutlet weak var codeTextFeild: UITextField!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: HDCustomBution!
     @IBOutlet weak var getCodeBtn: HDCountDownButtion!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        nextBtn.backgroundColor = main_buttonColor
+        
         nextBtn.isEnabled = false
         nextBtn.setTitleColor(UIColor.white, for: .normal)
         nextBtn.layer.cornerRadius = 22.5
@@ -45,12 +44,10 @@ class resetPassWordVerifyViewController: baseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     @IBAction func nextBtnClick(_ sender: Any) {
@@ -109,14 +106,12 @@ extension resetPassWordVerifyViewController: HDAsyncDelegate {
     func asyncerDidStart(request: HDHTTPRequest) {
         if request.tag == "10000" {
             HDHudManager.shared.show()
-//            nextBtn.isEnabled = false
         }
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
         HDHudManager.shared.hide()
         if request.tag == "10000" {
-//            nextBtn.isEnabled = true
             let loginModel = result as? ASLoginModel
             if loginModel?.code == 1 {
                gotoNextPage()
@@ -133,7 +128,6 @@ extension resetPassWordVerifyViewController: HDAsyncDelegate {
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
         HDHudManager.shared.hide()
         if request.tag == "10000" {
-//            nextBtn.isEnabled = true
         }
     }
     

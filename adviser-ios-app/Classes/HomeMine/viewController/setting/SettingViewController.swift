@@ -85,7 +85,7 @@ extension SettingViewController {
     //退出登录
     @objc func logoutBtnClick() {
         let defaultStand = UserDefaults.standard
-        LogoutSystemManager.shared.logoutSystem(vc: self, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+        LogoutSystemManager().logoutSystem(vc: self, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
     }
     
     func logoutSeccuss() {

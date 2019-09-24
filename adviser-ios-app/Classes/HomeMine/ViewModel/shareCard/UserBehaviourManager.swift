@@ -10,7 +10,10 @@ import UIKit
 
 class UserBehaviourManager: NSObject,HDAsyncDelegate {
     
-    static let shared = UserBehaviourManager()
+//    static let shared = UserBehaviourManager()
+    override init() {
+        super.init()
+    }
     var vc:baseViewController!
     
     func getBehaviourInfo(vc: baseViewController,phoneNo: String) {

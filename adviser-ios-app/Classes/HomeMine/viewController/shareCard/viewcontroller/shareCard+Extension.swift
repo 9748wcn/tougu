@@ -110,7 +110,6 @@ extension HomeMineShareCardViewController: UITableViewDelegate, UITableViewDataS
         subContent.font = textFont12
         subContent.frame = CGRect(x: 15, y: 50, width: view.bounds.width - 50, height: 20)
         return headerView
-        
     }
     
     func updateHeaderView(shareModel: shareCardModel) {
@@ -140,13 +139,14 @@ extension HomeMineShareCardViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func saveCardClick() {
+    @objc func saveCardClick(_ sender: UIButton) {
+//        sender.isEnabled = false
         let size: CGSize = sectionHeaderView.bounds.size
         UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale);
         sectionHeaderView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext();
-        UIImageWriteToSavedPhotosAlbum(image,self,nil,nil);
+//        UIImageWriteToSavedPhotosAlbum(image,self,nil,nil);
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(save(image:didFinishSavingWithError:contextInfo:)), nil)
         
     }
@@ -193,6 +193,7 @@ extension HomeMineShareCardViewController: ASShareClickDelegate {
             let defaultStand = UserDefaults.standard
             let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
             shareObjext.webpageUrl = shareCardUrl + "?phoneNo=" + phoneNo!
+//            shareObjext.webpageUrl = "https://www.baidu.com"
             messegeObject.shareObject = shareObjext
             UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatTimeLine, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
                 

@@ -13,10 +13,14 @@ class businessCardNetModel: HDBaseModel {
 }
 
 class businessCardModel: HDBaseModel {
-    var data:businessCardItemModel?
+    var data:businessCarddataModel?
     var createTime: String = ""
     var refuseReason: String = ""
     var examineStatus: Int = 0
+}
+
+class businessCarddataModel: HDBaseModel {
+    var data:businessCardItemModel?
 }
 
 class businessCardItemModel: HandyJSON {

@@ -10,7 +10,10 @@ import UIKit
 
 class LogoutSystemManager: NSObject, HDAsyncDelegate {
     
-    static let shared = LogoutSystemManager()
+//    static let shared = LogoutSystemManager()
+    override init() {
+        super.init()
+    }
     var vc:baseViewController!
     
     func logoutSystem(vc: baseViewController, phoneNo: String) {
