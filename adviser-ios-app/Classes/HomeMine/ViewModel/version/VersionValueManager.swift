@@ -14,10 +14,12 @@ class VersionValueManager: NSObject, HDAsyncDelegate,UpdateViewDelegate {
     override init() {
         super.init()
     }
-    var vc:baseViewController!
+    var vc:UIViewController!
     var updateModel: VersionModel?
+    var isShowHub: Bool = true
     
-    func getVersionValue(vc: baseViewController) {
+    
+    func getVersionValue(vc: UIViewController) {
         self.vc = vc
         let api = VersionValueProto()
         api.method = .get
@@ -28,7 +30,9 @@ class VersionValueManager: NSObject, HDAsyncDelegate,UpdateViewDelegate {
     }
     
     func asyncerDidStart(request: HDHTTPRequest) {
-        HDHudManager.shared.show()
+        if isShowHub {
+            HDHudManager.shared.show()
+        }
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
@@ -40,26 +44,31 @@ class VersionValueManager: NSObject, HDAsyncDelegate,UpdateViewDelegate {
             let shouUpdate:Bool = compareVersions(v1: model!.data?.versionName, v2: versionLocal)
             if shouUpdate {
                 let contentArray: Array<String> = (model!.data?.profile?.components(separatedBy: "/"))!
-//
-                let alertUpdate: UpdateViewController = UpdateViewController.init(cellContent: contentArray)!
+                
+                let updateVersionView: VersionUpdateView = VersionUpdateView(contents: contentArray)
                 if model!.data?.flag == "true" {
-                    alertUpdate.isforce = true
+                    updateVersionView.isforce = true
                 }else {
-                    alertUpdate.isforce = false
+                    updateVersionView.isforce = false
                 }
-                alertUpdate.versionValue = (model?.data?.versionName!)!
-                alertUpdate.delegate = self
-                self.vc.present(alertUpdate, animated: true, completion: nil)
+                updateVersionView.versionValue = (model?.data?.versionName!)!
+                updateVersionView.delegate = self
+                updateVersionView.show()
+//
+//                let alertUpdate: UpdateViewController = UpdateViewController.init(cellContent: contentArray)!
+//
+//
+//                self.vc.present(alertUpdate, animated: true, completion: nil)
             }
             //布局界面
-//            if let versionVC = self.vc as? VersionViewController {
-//                versionVC.updateVersion(versionModel: model!)
+//            if let shareVC = self.vc as? HomeMineShareCardViewController {
+////                versionVC.updateVersion(versionModel: model!)
 //            }
         }
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
-        
+       HDHudManager.shared.hide()
     }
     
     func updateVersion(_ sender: UIButton) {

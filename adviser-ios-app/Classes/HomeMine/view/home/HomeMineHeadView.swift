@@ -44,7 +44,7 @@ class HomeMineHeadView: UIView {
         delegate?.butonClickBy(sender as! UIButton)
     }
     
-    func updateUI(model: personInfoModel) {
+    func updateUI(model: PersonInfoModel) {
         nameLabel.text = (model.data?.employeeName != nil) ? model.data!.employeeName! : ""
         iCNumberLabel.text = (model.data?.employeeNumber != nil) ? model.data!.employeeNumber! : ""
         jobLabel.text = (model.data?.jobName != nil) ? model.data!.jobName! : ""

@@ -40,13 +40,27 @@ class HDBaseApi: HDBaseApiProtocol {
     var multipartFormDataBlock: MultipartFormDataBlock?
     var urlString: String
     var apiType: HDApiType
+    var needToken: Bool = true {
+        didSet {
+            if needToken {
+                
+            }else {
+               httpHeaders = ["Content-Type":"application/json"]
+            }
+        }
+    }
     var httpHeaders:[String:String]
     var requestWithoutCookie: Bool
      init() {
         urlString = ""
         method = .post
-        httpHeaders = ["Content-Type":"application/json"]
         apiType = .normal
+        let defaultStand = UserDefaults.standard
+        if let token = defaultStand.string(forKey: USERTOKENKEY) {
+            httpHeaders = ["Content-Type":"application/json","token":token]
+        }else {
+            httpHeaders = ["Content-Type":"application/json"]
+        }
         multipartFormDataBlock = nil
         requestWithoutCookie = false
     }

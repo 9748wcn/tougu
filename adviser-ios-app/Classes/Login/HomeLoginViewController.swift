@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeLoginViewController: baseViewController {
+class HomeLoginViewController: BaseViewController {
 
     @IBOutlet weak var loginClick: UIButton!
     @IBOutlet weak var loginByPhoneClick: UIButton!
@@ -44,7 +44,9 @@ class HomeLoginViewController: baseViewController {
         
         icTextFeild.delegate = self
         phoneNumberTextFeild.delegate = self
+        phoneNumberTextFeild.keyboardType = .phonePad
         codeTextFeild.delegate = self
+        codeTextFeild.keyboardType = .numberPad
         
         scrollerToTypeView = UIView.init()
         scrollerToTypeView.backgroundColor = main_buttonColor
@@ -104,7 +106,8 @@ class HomeLoginViewController: baseViewController {
     
     @IBAction func forgotPassWordClick(_ sender: Any) {
         
-        let setVC:resetPassWordVerifyViewController = resetPassWordVerifyViewController()
+        let setVC:ResetPassWordVerifyViewController = ResetPassWordVerifyViewController()
+        setVC.isfromLoginVC = true
         self.navigationController?.pushViewController(setVC, animated: true)
         
     }
@@ -201,6 +204,7 @@ class HomeLoginViewController: baseViewController {
         api.apiType = .normal
         api.phoneNo = PhoneNo
         api.method = .get
+        api.needToken = false
         let request = HDHTTPRequest()
         request.api = api
         request.tag = "1000"
@@ -235,6 +239,7 @@ extension HomeLoginViewController: HDAsyncDelegate {
             let defaultStand = UserDefaults.standard
             defaultStand.set(self.phoneNumberTextFeild.text!, forKey: USERPHONEKEY)
             defaultStand.set((loginModel?.data?.employeeNumber!)!, forKey: USERICNO)
+            defaultStand.set((loginModel?.data?.token!)!, forKey: USERTOKENKEY)
             //进入首页
             appDelegate.gotoMainVC()
             return
@@ -261,11 +266,21 @@ extension HomeLoginViewController: UITextFieldDelegate {
              }else {
                 loginClick.isEnabled = false
             }
+            if string == "" {
+                return true
+            }else if currentText.count >= 15 {
+                return false
+            }
         }else if textField == phoneNumberTextFeild {
             if icTextFeild.text!.count > 0 && codeTextFeild.text!.count > 0 && newText.count > 0 {
                 loginClick.isEnabled = true
             }else {
                 loginClick.isEnabled = false
+            }
+            if string == "" {
+                return true
+            }else if currentText.count >= 11 {
+                return false
             }
         }else if textField == codeTextFeild {
             if icTextFeild.text!.count > 0 && phoneNumberTextFeild.text!.count > 0 && newText.count > 0 {

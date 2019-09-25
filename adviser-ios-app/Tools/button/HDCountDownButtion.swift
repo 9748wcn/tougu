@@ -14,7 +14,10 @@ class HDCountDownButtion: UIButton {
     
     var remainingSeconds: Int = 0 {
         willSet {
-            self.setTitle("\(newValue)S后重新获取", for: .normal)
+            
+            let title = "\(newValue)S后重新获取"
+            self.titleLabel?.text = title
+            self.setTitle(title, for: .normal)
             self.backgroundColor = noClick_buttonColor
             self.setTitleColor(UIColor.white, for: .normal)
             self.layer.borderWidth = 0.0

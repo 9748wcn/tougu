@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeMineViewController: baseViewController {
+class HomeMineViewController: BaseViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), style: .plain)
@@ -22,7 +22,7 @@ class HomeMineViewController: baseViewController {
     }()
     
     var headerView: HomeMineHeadView!
-    var personInfoModel: personInfoModel?
+    var personInfoModel: PersonInfoModel?
     
     
     
@@ -43,7 +43,7 @@ class HomeMineViewController: baseViewController {
         PersonInfoGetValueManager().getPersonInfo(vc: self, phoneNo: phoneNo!)
     }
     
-    func updateHeaderInfo(model: personInfoModel) {
+    func updateHeaderInfo(model: PersonInfoModel) {
         self.headerView.updateUI(model: model)
         personInfoModel = model
     }

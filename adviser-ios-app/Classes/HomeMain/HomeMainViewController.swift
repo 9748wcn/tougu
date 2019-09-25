@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeMainViewController: baseViewController {
+class HomeMainViewController: BaseViewController {
 
     
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class HomeMainViewController: baseViewController {
     }
     
     @objc func gotoVC() {
-        let vc:businessCardEditViewController = businessCardEditViewController()
+        let vc:BusinessCardEditViewController = BusinessCardEditViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

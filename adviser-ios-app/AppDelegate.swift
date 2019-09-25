@@ -33,6 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             gotoLogin()
         }
         configShared()
+        //版本检测
+//        let versionManager = VersionValueManager()
+//        versionManager.isShowHub = false
+//        versionManager.getVersionValue(vc: window!.rootViewController!)
+        
         window?.makeKeyAndVisible()
         return true
     }
@@ -84,9 +89,15 @@ extension AppDelegate{
     }
     
     func gotoLogin() {
+        //清空信息，跳转到登录界面
+        let defaultStand = UserDefaults.standard
+        defaultStand.removeObject(forKey: USERPHONEKEY)
+        defaultStand.removeObject(forKey: USERICNO)
+        defaultStand.removeObject(forKey: USERNAMEKEY)
+        defaultStand.removeObject(forKey: USERJOBKEY)
+        defaultStand.removeObject(forKey: USERTOKENKEY)
         let loginVC = HomeLoginViewController()
-        let navLogin = baseNavigationViewController.init(rootViewController: loginVC)
-        
+        let navLogin = BaseNavigationViewController.init(rootViewController: loginVC)
         window?.rootViewController = navLogin
         
     }

@@ -14,11 +14,11 @@ class ShareCardGetInfoManager: NSObject,HDAsyncDelegate {
     override init() {
         super.init()
     }
-    var vc:baseViewController!
+    var vc:BaseViewController!
     
-    func getemployeeInfo(vc: baseViewController,phoneNo: String) {
+    func getemployeeInfo(vc: BaseViewController,phoneNo: String) {
         self.vc = vc
-        let api = shareCardGetInfoProto()
+        let api = ShareCardGetInfoProto()
         api.phoneNo = phoneNo
         api.method = .get
         let request = HDHTTPRequest()
@@ -37,7 +37,7 @@ class ShareCardGetInfoManager: NSObject,HDAsyncDelegate {
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
         HDHudManager.shared.hide()
-        let model = result as? shareCardModel
+        let model = result as? ShareCardModel
         if model?.code == 1 && ((model?.data) != nil) && ((model?.data?.data) != nil) {
             //布局界面
             if let shareMainVC = self.vc as? HomeMineShareCardViewController {

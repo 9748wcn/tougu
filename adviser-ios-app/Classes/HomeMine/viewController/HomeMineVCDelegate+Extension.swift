@@ -44,7 +44,7 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
-            let companyVC: companyInfoViewController = companyInfoViewController()
+            let companyVC: CompanyInfoViewController = CompanyInfoViewController()
             self.navigationController?.pushViewController(companyVC, animated: true)
         }else if indexPath.row == 1 {
             let settingVC: SettingViewController = SettingViewController()
@@ -59,7 +59,7 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
     
     func butonClickBy(_ sender: UIButton) {
         if sender.tag == 1000 {
-            let personVC: personInfoViewController = personInfoViewController()
+            let personVC: PersonInfoViewController = PersonInfoViewController()
             if personInfoModel != nil {
                 personVC.dataModel = personInfoModel
             }
@@ -71,7 +71,7 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
             self.navigationController?.pushViewController(shareCardVC, animated: true)
         }else if sender.tag == 1001 {
             //编辑我的名片
-            let vc:businessCardEditViewController = businessCardEditViewController()
+            let vc:BusinessCardEditViewController = BusinessCardEditViewController()
             self.navigationController?.pushViewController(vc, animated: true)
             
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingViewController: baseViewController {
+class SettingViewController: BaseViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - navHeight), style: .plain)
@@ -73,7 +73,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let setVC:resetPassWordVerifyViewController = resetPassWordVerifyViewController()
+        let setVC:ResetPassWordVerifyViewController = ResetPassWordVerifyViewController()
+        setVC.isfromLoginVC = false
         self.navigationController?.pushViewController(setVC, animated: true)
     }
 }
@@ -84,17 +85,18 @@ extension SettingViewController {
     
     //退出登录
     @objc func logoutBtnClick() {
-        let defaultStand = UserDefaults.standard
-        LogoutSystemManager().logoutSystem(vc: self, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+//        let defaultStand = UserDefaults.standard
+//        LogoutSystemManager().logoutSystem(vc: self, phoneNo: defaultStand.string(forKey: USERPHONEKEY)!)
+        appDelegate.gotoLogin()
     }
     
     func logoutSeccuss() {
-        let defaultStand = UserDefaults.standard
-        defaultStand.removeObject(forKey: USERPHONEKEY)
-        defaultStand.removeObject(forKey: USERICNO)
-        defaultStand.removeObject(forKey: USERNAMEKEY)
-        defaultStand.removeObject(forKey: USERJOBKEY)
-        let vc: HomeLoginViewController = HomeLoginViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let defaultStand = UserDefaults.standard
+//        defaultStand.removeObject(forKey: USERPHONEKEY)
+//        defaultStand.removeObject(forKey: USERICNO)
+//        defaultStand.removeObject(forKey: USERNAMEKEY)
+//        defaultStand.removeObject(forKey: USERJOBKEY)
+//        let vc: HomeLoginViewController = HomeLoginViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

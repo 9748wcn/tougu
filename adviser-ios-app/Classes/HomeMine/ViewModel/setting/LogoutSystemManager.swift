@@ -14,9 +14,9 @@ class LogoutSystemManager: NSObject, HDAsyncDelegate {
     override init() {
         super.init()
     }
-    var vc:baseViewController!
+    var vc:BaseViewController!
     
-    func logoutSystem(vc: baseViewController, phoneNo: String) {
+    func logoutSystem(vc: BaseViewController, phoneNo: String) {
         
         self.vc = vc
         let api = LogoutSystemProto()

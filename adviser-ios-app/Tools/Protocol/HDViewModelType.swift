@@ -10,6 +10,11 @@ import RxSwift
 import Foundation
 //typealias State = PublishRelay<UIState>
 
+protocol buttonClickDelegate: NSObjectProtocol {
+    
+    func butonClickBy(_ sender: UIButton)
+}
+
 protocol HDViewModelType {
     associatedtype Input
     associatedtype Output

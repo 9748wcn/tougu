@@ -38,10 +38,10 @@ class ASUmengshareView: UIView,buttonClickDelegate {
         
     }
     
-    private lazy var alertBottomView: shareBottomAlertView = {
-        let alertBottomView = shareBottomAlertView.loadFromXib()
+    private lazy var alertBottomView: ShareBottomAlertView = {
+        let alertBottomView = ShareBottomAlertView.loadFromXib()
         alertBottomView.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: 177)
-        return alertBottomView as! shareBottomAlertView
+        return alertBottomView as! ShareBottomAlertView
     }()
     
     required init?(coder aDecoder: NSCoder) {

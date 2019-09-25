@@ -30,11 +30,6 @@ class HDCustomBution: UIButton {
         }
     }
     
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        self.commonInit()
-//    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.commonInit()

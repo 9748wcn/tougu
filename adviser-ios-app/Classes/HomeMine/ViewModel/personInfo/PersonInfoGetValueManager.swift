@@ -14,12 +14,12 @@ class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
     override init() {
         super.init()
     }
-    var vc:baseViewController!
+    var vc:BaseViewController!
     
-    func getPersonInfo(vc: baseViewController, phoneNo: String) {
+    func getPersonInfo(vc: BaseViewController, phoneNo: String) {
         
         self.vc = vc
-        let api = personInfoProto()
+        let api = PersonInfoProto()
         api.phoneNo = phoneNo
         api.method = .get
         let request = HDHTTPRequest()
@@ -30,12 +30,12 @@ class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
     }
     
     func asyncerDidStart(request: HDHTTPRequest) {
-        HDHudManager.shared.show()
+//        HDHudManager.shared.show()
     }
     
     func asyncerdidFinishWithResult(request: HDHTTPRequest, result: AnyObject) {
-        HDHudManager.shared.hide()
-        let model = result as? personInfoModel
+//        HDHudManager.shared.hide()
+        let model = result as? PersonInfoModel
         if model?.code == 1 && ((model?.data) != nil) {
             //布局界面
             if let HomeMineVC = self.vc as? HomeMineViewController {
@@ -45,7 +45,7 @@ class PersonInfoGetValueManager: NSObject, HDAsyncDelegate {
     }
     
     func asyncerdidFailWithError(request: HDHTTPRequest, error: NSError) {
-        HDHudManager.shared.hide()
+//        HDHudManager.shared.hide()
     }
 
 }

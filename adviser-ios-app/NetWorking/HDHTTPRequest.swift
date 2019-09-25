@@ -140,10 +140,10 @@ class HDHTTPRequest {
                     self.performFailure(code: model.code,errorMessage: "手机号未注册")
                 case 1003:
                     HDToast.showTextToast(message: model.message)
-                    self.performFailure(code: model.code,errorMessage: "手机号未注册")
+                    self.performFailure(code: model.code,errorMessage: "Token失效，请重新登录")
                 case 1004:
                     HDToast.showTextToast(message: model.message)
-                    self.performFailure(code: model.code,errorMessage: "验证码已过期")
+                    self.performFailure(code: model.code,errorMessage: "Token失效，请重新登录")
                 case 5001:
                     HDToast.showTextToast(message: model.message)
                     self.performFailure(code: model.code,errorMessage: "未知错误")
@@ -186,6 +186,9 @@ class HDHTTPRequest {
         let error:NSError = NSError.init(domain: api.getClassName(), code: code, userInfo: userInfo)
         HDHudManager.shared.hide()
         self.delegate?.asyncerdidFailWithError(request: self, error: error)
+        if code == 1004{
+            appDelegate.gotoLogin()
+        }
     }
     
     func jsonCheck(json:JSON) -> Bool {

@@ -10,18 +10,18 @@ import UIKit
 
 class UploadImageManager: NSObject,HDAsyncDelegate {
 //    static let shared = UploadImageManager()
-    var vc:baseViewController!
+    var vc:BaseViewController!
     
     override init() {
         super.init()
     }
     
-    func uploadImage(vc: baseViewController, image: UIImage,phoneNo: String) {
+    func uploadImage(vc: BaseViewController, image: UIImage,phoneNo: String) {
         
         self.vc = vc
 //        let data: NSData = image.pngData()! as NSData
         let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
-        let api = uploadImageProto()
+        let api = UploadImageProto()
         api.phoneNo = phoneNo
         api.method = .post
         api.imageType = 1
@@ -34,11 +34,11 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
         
     }
     
-    func uploadBussinessCardHeader(vc: baseViewController, image: UIImage,phoneNo: String) {
+    func uploadBussinessCardHeader(vc: BaseViewController, image: UIImage,phoneNo: String) {
         self.vc = vc
         let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
         //        let data: NSData = image.jpegData(compressionQuality: 0.7)! as NSData
-        let api = uploadEditCardHeaderProto()
+        let api = UploadEditCardHeaderProto()
         api.phoneNo = phoneNo
         api.method = .post
         api.imageType = 1
@@ -67,10 +67,10 @@ class UploadImageManager: NSObject,HDAsyncDelegate {
             }
         }else {
             
-            let model = result as? uploadCardHeaderModel
+            let model = result as? UploadCardHeaderModel
             if model?.code == 1 {
                 //布局界面
-                if let editCardVC = self.vc as? businessCardEditViewController {
+                if let editCardVC = self.vc as? BusinessCardEditViewController {
                     editCardVC.contentArr[0][0] = model?.avatar ?? ""
                 }
             }

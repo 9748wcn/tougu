@@ -14,9 +14,9 @@ class UserBehaviourManager: NSObject,HDAsyncDelegate {
     override init() {
         super.init()
     }
-    var vc:baseViewController!
+    var vc:BaseViewController!
     
-    func getBehaviourInfo(vc: baseViewController,phoneNo: String) {
+    func getBehaviourInfo(vc: BaseViewController,phoneNo: String) {
         self.vc = vc
         let api = UserBehaviourCountProto()
         api.phoneNo = phoneNo

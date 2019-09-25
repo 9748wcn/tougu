@@ -15,6 +15,8 @@
 #import <UShareUI/UShareUI.h>
 #import <UMCommon/UMCommon.h>
 #import <UMCommonLog/UMCommonLogHeaders.h>
+#import <TencentOpenAPI/QQApiInterface.h>
 #import "MJRefresh.h"
+#import "WXApi.h"
 
 #endif /* SwiftOC_Header_h */

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VersionViewController: baseViewController {
+class VersionViewController: BaseViewController {
     @IBOutlet weak var checkVersionBtn: UIButton!
     
     

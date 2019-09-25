@@ -12,5 +12,6 @@ import HandyJSON
 class ASUserInfoModel: HandyJSON {
     var loginName:String!
     var employeeNumber:String!
+    var token:String!
     required init() {}
 }
