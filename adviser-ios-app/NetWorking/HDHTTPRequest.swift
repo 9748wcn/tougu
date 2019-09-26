@@ -23,6 +23,7 @@ enum HTTPMethod: String {
 }
 
  protocol HDAsyncDelegate {
+    
     func asyncerDidStart(request:HDHTTPRequest)
     func asyncerdidFinishWithResult(request:HDHTTPRequest,result:AnyObject)
     func asyncerdidFailWithError(request:HDHTTPRequest,error:NSError)
