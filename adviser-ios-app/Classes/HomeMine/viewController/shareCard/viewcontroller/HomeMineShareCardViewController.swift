@@ -56,11 +56,17 @@ class HomeMineShareCardViewController: BaseViewController {
         editBtn.buttonNameLabel.text = "名片编辑"
         editBtn.frame = CGRect(x: view.bounds.width - 345, y: (52 - 38)/2.0, width: 50, height: 38)
         editBtn.imageButton.addTarget(self, action: #selector(editCardClick), for: .touchUpInside)
+        editBtn.clickBlobk = {
+            self.editCardClick()
+        }
         let saveBtn: TabbarButton = TabbarButton.loadFromXib()
         bottonView.addSubview(saveBtn)
         saveBtn.imageButton.setImage(UIImage(named: "saveCard"), for: .normal)
         saveBtn.buttonNameLabel.text = "名片保存"
-        saveBtn.imageButton.addTarget(self, action: #selector(saveCardClick(_:)), for: .touchUpInside)
+        saveBtn.imageButton.addTarget(self, action: #selector(saveCardClick), for: .touchUpInside)
+        saveBtn.clickBlobk = {
+            self.saveCardClick()
+        }
         saveBtn.frame = CGRect(x: view.bounds.width - 345 + 50 + 50, y: (52 - 38)/2.0, width: 50, height: 38)
         let shareCardBtn: HDCustomBution = HDCustomBution()
         shareCardBtn.setupConfig(radius: 16.0, borderW: 1.0, borderC: UIColor(rgb: 0x497BEC).cgColor, defaultColor: UIColor(rgb: 0x497BEC), selectColor: UIColor(rgb: 0x497BEC))

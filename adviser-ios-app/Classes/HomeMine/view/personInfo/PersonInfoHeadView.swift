@@ -23,6 +23,7 @@ class PersonInfoHeadView: UIView {
         
         headerImageBtn.layer.cornerRadius = 36
         headerImageBtn.clipsToBounds = true
+        headerImageBtn.imageView?.contentMode = .scaleAspectFill
     }
 
 }

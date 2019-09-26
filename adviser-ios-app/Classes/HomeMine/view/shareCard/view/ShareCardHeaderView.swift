@@ -37,8 +37,7 @@ class ShareCardHeaderView: UIView {
     func updateUI(dataModel: ShareCardModel) {
         if dataModel.data?.data?.avatar != nil {
             let avatarUrl = imageBaseUrl + (dataModel.data?.data?.avatar!)!
-            
-            self.headerImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "normalHeader"))
+            self.headerImageView.setImage(avatarUrl, "normalHeader")
         }
         if dataModel.data?.data?.employeeName != nil {
             self.nameLabel.text = dataModel.data?.data?.employeeName

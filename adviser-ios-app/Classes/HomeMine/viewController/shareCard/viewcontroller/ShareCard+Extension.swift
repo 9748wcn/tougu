@@ -139,7 +139,7 @@ extension HomeMineShareCardViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func saveCardClick(_ sender: UIButton) {
+    @objc func saveCardClick() {
 //        sender.isEnabled = false
         let size: CGSize = sectionHeaderView.bounds.size
         UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale);
@@ -179,7 +179,7 @@ extension HomeMineShareCardViewController: ASShareClickDelegate {
             let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "您好，我是" + UserDefaults.standard.string(forKey: USERNAMEKEY)! + ",这是我的名片", descr: "工号为" + UserDefaults.standard.string(forKey: USERICNO)! + "，职位为" + UserDefaults.standard.string(forKey: USERJOBKEY)!, thumImage: sectionHeaderView.headerImageView.image)
             let defaultStand = UserDefaults.standard
             let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
-            shareObjext.webpageUrl = shareCardUrl + "?phoneNo=" + phoneNo!
+            shareObjext.webpageUrl = shareCardUrl + "/?phoneNo=" + phoneNo! + "#/blank?phoneNo=" + phoneNo!
             messegeObject.shareObject = shareObjext
             UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatSession, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
                 
@@ -200,7 +200,7 @@ extension HomeMineShareCardViewController: ASShareClickDelegate {
             let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "您好，我是" + UserDefaults.standard.string(forKey: USERNAMEKEY)! + ",这是我的名片", descr: "工号为" + UserDefaults.standard.string(forKey: USERICNO)! + "，职位为" + UserDefaults.standard.string(forKey: USERJOBKEY)!, thumImage: sectionHeaderView.headerImageView.image)
             let defaultStand = UserDefaults.standard
             let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
-            shareObjext.webpageUrl = shareCardUrl + "?phoneNo=" + phoneNo!
+            shareObjext.webpageUrl = shareCardUrl + "/?phoneNo=" + phoneNo! + "#/blank?phoneNo=" + phoneNo!
             messegeObject.shareObject = shareObjext
             UMSocialManager.default()?.share(to: UMSocialPlatformType.wechatTimeLine, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
                 
@@ -220,7 +220,7 @@ extension HomeMineShareCardViewController: ASShareClickDelegate {
             let shareObjext: UMShareWebpageObject = UMShareWebpageObject.shareObject(withTitle: "您好，我是" + UserDefaults.standard.string(forKey: USERNAMEKEY)! + ",这是我的名片", descr: "工号为" + UserDefaults.standard.string(forKey: USERICNO)! + "，职位为" + UserDefaults.standard.string(forKey: USERJOBKEY)!, thumImage: sectionHeaderView.headerImageView.image)
             let defaultStand = UserDefaults.standard
             let phoneNo = defaultStand.string(forKey: USERPHONEKEY)
-            shareObjext.webpageUrl = shareCardUrl + "?phoneNo=" + phoneNo!
+            shareObjext.webpageUrl = shareCardUrl + "/?phoneNo=" + phoneNo! + "#/blank?phoneNo=" + phoneNo!
             messegeObject.shareObject = shareObjext
             UMSocialManager.default()?.share(to: UMSocialPlatformType.QQ, messageObject: messegeObject, currentViewController: self, completion: { (data: Any, err: Error) in
                 

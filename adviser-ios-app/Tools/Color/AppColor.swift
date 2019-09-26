@@ -36,28 +36,5 @@ public let bottomSafeHeight = CGFloat(is_iphoneX ? 34.0 : 0)
 public let navHeight = CGFloat(is_iphoneX ? 88.0 : 64.0)
 
 
-//12号字体
-public let textFont12 = UIFont.systemFont(ofSize: 12.0)
-//10号字体
-public let textFont10 = UIFont.systemFont(ofSize: 10.0)
-//14号字体
-public let textFont14 = UIFont.systemFont(ofSize: 14.0)
 
-extension String {
-    
-       func turnToNormalDate() -> String {
-        let dateFormat: DateFormatter = DateFormatter.init()
-        dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let localTimeZone = NSTimeZone.local
-        dateFormat.timeZone = localTimeZone
-        let dateFormatted = dateFormat.date(from: self)
-        dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        if dateFormatted != nil {
-            let value = dateFormat.string(from: dateFormatted!)
-            return value
-        }else {
-            return self
-        }
-    }
-}
 

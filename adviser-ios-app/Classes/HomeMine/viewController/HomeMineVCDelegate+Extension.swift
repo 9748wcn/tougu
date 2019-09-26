@@ -45,7 +45,9 @@ extension HomeMineViewController: UITableViewDelegate,UITableViewDataSource,butt
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
             let companyVC: CompanyInfoViewController = CompanyInfoViewController()
+            companyVC.url = companyShareUrl
             self.navigationController?.pushViewController(companyVC, animated: true)
+//            CompanyInfoViewController.showVC(formVC: self, url: companyShareUrl, completion: nil)
         }else if indexPath.row == 1 {
             let settingVC: SettingViewController = SettingViewController()
             self.navigationController?.pushViewController(settingVC, animated: true)

@@ -51,7 +51,7 @@ class HomeMineHeadView: UIView {
         teamLabel.text = (model.data?.groupName != nil) ? model.data!.groupName! : ""
         if model.data?.avatar != nil {
             let avatarUrl = imageBaseUrl + (model.data?.avatar!)!
-            headerView.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "normalHeader"))
+            headerView.setImage(avatarUrl, "normalHeader")
         }
     }
 }

@@ -55,7 +55,7 @@ class RecordTableViewCell: UITableViewCell {
         }
         if recordList?.avatar != nil {
             let avatarUrl = imageBaseUrl + (recordList?.avatar!)!
-            headerImage.kf.setImage(with: ImageResource(downloadURL: URL(string: avatarUrl)!), placeholder: UIImage(named: "userHeader"))
+            headerImage.setImage(avatarUrl, "userHeader")
         }else {
             headerImage.image = UIImage(named: "userHeader")
         }

@@ -21,6 +21,7 @@ class EditCardIntroduceCell: UITableViewCell, UITextViewDelegate {
         self.selectionStyle = .none
         contentTextView.id_maxLength = 200
         contentTextView.id_allowEmoji = false
+        contentTextView.id_placehoder = "可输入您的从业经验、所获荣誉、简单介绍等"
         contentTextView.textChangeClouse = { [unowned self] (height: CGFloat, lenght: Int) -> Void in
             self.wordCountLabel.text = "\(lenght)"
             let tableView = self.getTableView()

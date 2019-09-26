@@ -16,12 +16,13 @@ class ASResetPassWordProto: HDBaseApi {
     
     var password: String = ""
     var phoneNo: String = ""
+    var employeeNumber: String = ""
 
     override func responseObjectFromJson<T>(jsonStr: String) -> T where T : HDBaseModel {
         return HDBaseModel.deserialize(from: jsonStr) as! T
     }
     
    override func getParameters() -> [String: Any]? {
-    return ["phoneNo":phoneNo, "password":password]
+    return ["phoneNo":phoneNo, "password":password,"employeeNumber":employeeNumber]
     }
 }

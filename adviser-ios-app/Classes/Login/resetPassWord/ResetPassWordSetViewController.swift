@@ -14,6 +14,7 @@ class ResetPassWordSetViewController: BaseViewController {
     @IBOutlet weak var secondPassWordFeild: UITextField!
     @IBOutlet weak var firstNewPassWordFeild: UITextField!
     public var phoneNumber: String!
+    public var employeeNumber: String!
     
     var isfromLoginVC: Bool!
     
@@ -46,7 +47,7 @@ class ResetPassWordSetViewController: BaseViewController {
                 HDToast.showTextToast(message: "请输入8位及以上密码")
                 return
             }
-            requestSetPassWord(phoneNo: phoneNumber, password: firstNewPassWordFeild.text!)
+            requestSetPassWord(phoneNo: phoneNumber, password: firstNewPassWordFeild.text!, employeeNumber: employeeNumber)
         }else{
             HDToast.showTextToast(message: "两次输入的密码不一致")
             return
@@ -71,11 +72,12 @@ class ResetPassWordSetViewController: BaseViewController {
         }
     }
     
-    func requestSetPassWord(phoneNo: String, password: String) {
+    func requestSetPassWord(phoneNo: String, password: String, employeeNumber: String) {
         let api = ASResetPassWordProto()
         api.apiType = .normal
         api.phoneNo = phoneNo
         api.password = password
+        api.employeeNumber = employeeNumber
         api.method = .post
         let request = HDHTTPRequest()
         request.api = api

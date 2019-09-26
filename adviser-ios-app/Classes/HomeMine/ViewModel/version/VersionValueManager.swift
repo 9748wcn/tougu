@@ -43,7 +43,7 @@ class VersionValueManager: NSObject, HDAsyncDelegate,UpdateViewDelegate {
             let versionLocal: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
             let shouUpdate:Bool = compareVersions(v1: model!.data?.versionName, v2: versionLocal)
             if shouUpdate {
-                let contentArray: Array<String> = (model!.data?.profile?.components(separatedBy: "/"))!
+                let contentArray: Array<String> = (model!.data?.profile?.components(separatedBy: "#"))!
                 
                 let updateVersionView: VersionUpdateView = VersionUpdateView(contents: contentArray)
                 if model!.data?.flag == "true" {

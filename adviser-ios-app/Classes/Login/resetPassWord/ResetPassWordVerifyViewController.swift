@@ -102,6 +102,7 @@ class ResetPassWordVerifyViewController: BaseViewController {
     func gotoNextPage() {
         let setPassWordVC: ResetPassWordSetViewController = ResetPassWordSetViewController()
         setPassWordVC.phoneNumber = self.phoneTextFeild.text!
+        setPassWordVC.employeeNumber = self.ICCardTextFeild.text!
         setPassWordVC.isfromLoginVC = isfromLoginVC
         self.navigationController?.pushViewController(setPassWordVC, animated: true)
     }

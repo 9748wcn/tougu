@@ -24,10 +24,11 @@ class VersionUpdateView: UIView, buttonClickDelegate {
             contentView.versionValue = versionValue
         }
     }
-    var delegate: UpdateViewDelegate!
+    weak var delegate: UpdateViewDelegate!
     
     private override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

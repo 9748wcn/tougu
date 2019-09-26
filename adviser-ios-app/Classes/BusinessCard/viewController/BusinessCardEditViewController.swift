@@ -170,6 +170,7 @@ extension BusinessCardEditViewController: UITableViewDelegate, UITableViewDataSo
                             }
                             UIImagePickerController.rx.createWithParent(self) { picker in
                                 picker.sourceType = .camera
+                                picker.modalPresentationStyle = .overCurrentContext
                                 }.flatMap { $0.rx.didFinishPickingMediaWithInfo }
                                 .map{
                                     let  image  =  $0[.originalImage] as! UIImage
@@ -218,8 +219,9 @@ extension BusinessCardEditViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as EditCardIntroduceCell
             cell.contentTextView.indexPath = indexPath
             cell.contentTextView.text = contentArr[indexPath.section][indexPath.row]
-            cell.wordCountLabel.text = "\(cell.contentTextView.text.count)"
             cell.contentTextView.isEditable = iscanEdit
+            cell.contentTextView.placehoderLabel?.isHidden = (cell.contentTextView.text.count > 0)
+            cell.wordCountLabel.text = "\(cell.contentTextView.text.count)"
             return cell
         }
         let cell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as BusinessCardEditTableViewCell

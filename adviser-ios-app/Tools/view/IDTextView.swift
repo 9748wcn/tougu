@@ -68,6 +68,7 @@ public class IDTextView: UITextView {
         let placehoderLabel = UILabel()
         placehoderLabel.numberOfLines = 0
         placehoderLabel.backgroundColor = UIColor.clear
+        placehoderLabel.font = UIFont.systemFont(ofSize: 12.0)
         self.addSubview(placehoderLabel)
         self.placehoderLabel = placehoderLabel
         

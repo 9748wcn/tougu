@@ -139,7 +139,7 @@ class UpdateAlertView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let contentCell = tableView.hx_dequeueReusableCell(indexPath: indexPath) as UpdateVersionCell
-        contentCell.contentItemLabel.text = "\(indexPath.row)" + "." + contentArray![indexPath.row]
+        contentCell.contentItemLabel.text = "\(indexPath.row + 1)" + "." + contentArray![indexPath.row]
         contentCell.selectionStyle = .none
         return contentCell
     }

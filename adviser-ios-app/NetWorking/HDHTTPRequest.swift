@@ -31,8 +31,10 @@ enum HTTPMethod: String {
 //let baseUrl:String = "http://172.16.81.184:8749"
 let baseUrl:String = "http://172.16.81.202:8749"
 let imageBaseUrl:String = "https://iqfdfs.hdfax.com/"
-let shareCardUrl:String = "http://172.24.19.45:8080/#/"
-    let baseSettingUrl:String = "http://17391l3n18.imwork.net"
+let shareCardUrl:String = "http://172.16.81.184:80"
+let companyShareUrl:String = "http://172.16.81.184:80/#/hdIfon"
+//    let baseSettingUrl:String = "http://17391l3n18.imwork.net"
+let baseSettingUrl:String = ""
 //let baseUrl:String = "http://172.16.40.34:8082"
 class HDHTTPRequest {
     

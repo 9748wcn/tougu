@@ -25,6 +25,7 @@ extension HomeLoginViewController: buttonClickDelegate{
             codeTextFeild.text = nil
             codeTextFeild.isSecureTextEntry = false
             forgotPassWord.isHidden = true
+            codeTextFeild.keyboardType = .numberPad
             scrollerToTypeView.snp.remakeConstraints { (make) in
                 make.centerX.equalTo(loginByPhoneClick.snp.centerX)
                 make.width.equalTo(29)
@@ -50,6 +51,7 @@ extension HomeLoginViewController: buttonClickDelegate{
             codeTextFeild.text = nil
             codeTextFeild.isSecureTextEntry = true
             forgotPassWord.isHidden = false
+            codeTextFeild.keyboardType = .default
             scrollerToTypeView.snp.remakeConstraints { (make) in
                 make.centerX.equalTo(loginByPassWordClick.snp.centerX)
                 make.width.equalTo(29)

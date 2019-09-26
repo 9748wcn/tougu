@@ -10,12 +10,22 @@ import UIKit
 
 class TabbarButton: UIView {
     
+    typealias barButtonClickBlobk = () -> Void
     
     @IBOutlet weak var imageButton: UIButton!
-    
     @IBOutlet weak var buttonNameLabel: UILabel!
+    var clickBlobk: barButtonClickBlobk?
+    
     override func awakeFromNib() {
         imageButton.imageView?.contentMode = .scaleAspectFill
+        let action = UITapGestureRecognizer(target: self, action: #selector(barButtonClick))
+        self.addGestureRecognizer(action)
+    }
+    
+    @objc func barButtonClick(){
+        if self.clickBlobk != nil {
+            self.clickBlobk!()
+        }
     }
     
 }
